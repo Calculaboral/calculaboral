@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Finiquito 2026 (España) | CalculaLaboral</title>
+<meta name="description" content="Calcula gratis y al instante tu finiquito en España: vacaciones no disfrutadas, parte proporcional de pagas extra y salario pendiente. Actualizado 2026.">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
+<style>
+  :root{
+    --azul:#1a3a5c;
+    --verde:#1e7a4c;
+    --gris-fondo:#f7f8fa;
+    --gris-texto:#333;
+    --gris-borde:#e2e5e9;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--gris-texto);
+    background: var(--gris-fondo);
+    line-height:1.55;
+  }
+  header{ background: var(--azul); color:#fff; padding: 1rem 1.5rem; }
+  header .wrap{ max-width: 1100px; margin:0 auto; }
+  header a{ color:#fff; text-decoration:none; font-weight:700; }
+  main{ max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  h1{ color: var(--azul); font-size:1.6rem; margin-bottom:0.25rem; }
+  .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
+  .intro{ color:#555; margin-bottom:1.75rem; }
+  form{
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:12px;
+    padding:1.5rem;
+  }
+  fieldset{ border:none; padding:0; margin:0 0 1.25rem; }
+  legend{ font-weight:700; color:var(--azul); padding:0 0 0.5rem; font-size:1rem; }
+  label{ display:block; font-size:0.9rem; margin-bottom:0.35rem; font-weight:600; }
+  .hint{ font-size:0.78rem; color:#777; margin: -0.2rem 0 0.6rem; }
+  input[type="date"], input[type="number"], select{
+    width:100%;
+    padding:0.6rem 0.7rem;
+    border:1px solid var(--gris-borde);
+    border-radius:8px;
+    font-size:0.95rem;
+    margin-bottom:1rem;
+  }
+  .row{ display:grid; grid-template-columns: 1fr 1fr; gap:1rem; }
+  @media (max-width:520px){ .row{ grid-template-columns: 1fr; } }
+  .checkbox-row{ display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem; }
+  .checkbox-row input{ width:auto; margin:0; }
+  .checkbox-row label{ margin:0; font-weight:500; }
+  button{
+    background: var(--verde);
+    color:#fff;
+    border:none;
+    padding:0.85rem 1.5rem;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    width:100%;
+  }
+  button:hover{ background:#166b41; }
+  #resultado{
+    margin-top:1.5rem;
+    padding:1.25rem 1.5rem;
+    border-radius:10px;
+    background:#eef7f1;
+    border:1px solid #cfe8d8;
+    display:none;
+  }
+  #resultado.error{ background:#fbeceb; border-color:#f0c9c6; }
+  #resultado h2{ margin-top:0; color:var(--azul); font-size:1.15rem; }
+  #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde); margin: 0.25rem 0 0.75rem; }
+  #resultado table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
+  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
+  #resultado td:last-child{ text-align:right; font-weight:600; }
+  .legal-box{
+    margin-top:2rem;
+    padding:1.25rem 1.5rem;
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:10px;
+    font-size:0.88rem;
+    color:#555;
+  }
+  .legal-box h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .disclaimer{
+    margin-top:1.5rem;
+    background:#fff8e6;
+    border:1px solid #f0e0a8;
+    border-radius:8px;
+    padding:1rem 1.25rem;
+    font-size:0.85rem;
+    color:#6b5a1e;
+  }
+  a.volver{ display:inline-block; margin-top:2rem; font-size:0.9rem; color: var(--azul); }
+  a.enlace-relacionado{ color: var(--azul); font-weight:600; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap"><a href="index.html">CalculaLaboral</a></div>
+</header>
+
+<main>
+  <h1>Calculadora de finiquito</h1>
+  <p class="updated">Actualizado: 2026 · Normativa: Estatuto de los Trabajadores (Real Decreto Legislativo 2/2015)</p>
+  <p class="intro">El finiquito es el documento y el pago que liquida todo lo que la empresa te debe al terminar la relación laboral, independientemente del motivo (despido, baja voluntaria, fin de contrato temporal). Esta calculadora estima sus tres componentes más habituales: vacaciones no disfrutadas, parte proporcional de pagas extra, y salario pendiente del último periodo trabajado.</p>
+
+  <form id="form-finiquito">
+    <fieldset>
+      <legend>1. Datos básicos</legend>
+      <label for="salario-bruto">Salario bruto mensual (sin pagas extra prorrateadas)</label>
+      <input type="number" id="salario-bruto" min="0" step="0.01" placeholder="Ej: 1800" required>
+      <p class="hint">Introduce el salario bruto mensual "de base", sin incluir las pagas extra, aunque estén prorrateadas (las calculamos aparte, en el punto 3).</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Vacaciones no disfrutadas</legend>
+      <div class="row">
+        <div>
+          <label for="fecha-inicio-año">Fecha de inicio del año trabajado (o del contrato si empezó este año)</label>
+          <input type="date" id="fecha-inicio-año" required>
+        </div>
+        <div>
+          <label for="fecha-fin">Fecha de fin de contrato</label>
+          <input type="date" id="fecha-fin" required>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="dias-vacaciones-anuales">Días de vacaciones anuales (según convenio; 30 naturales es lo habitual)</label>
+          <input type="number" id="dias-vacaciones-anuales" min="0" step="0.5" value="30">
+        </div>
+        <div>
+          <label for="dias-disfrutados">Días de vacaciones ya disfrutados este año</label>
+          <input type="number" id="dias-disfrutados" min="0" step="0.5" value="0">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Pagas extra</legend>
+      <div class="row">
+        <div>
+          <label for="num-pagas-extra">Número de pagas extra al año</label>
+          <input type="number" id="num-pagas-extra" min="0" step="1" value="2">
+        </div>
+        <div>
+          <label for="dias-desde-ultima-paga">Días trabajados desde el último pago de paga extra (o desde el inicio del contrato si no has cobrado ninguna)</label>
+          <input type="number" id="dias-desde-ultima-paga" min="0" step="1" value="0">
+        </div>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="pagas-prorrateadas">
+        <label for="pagas-prorrateadas">Mis pagas extra ya están prorrateadas cada mes en mi nómina (si marcas esto, no se añade nada aquí, ya está incluido en tu salario mensual)</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Otros conceptos pendientes</legend>
+      <div class="row">
+        <div>
+          <label for="dias-salario-pendiente">Días de salario del último mes pendientes de pago</label>
+          <input type="number" id="dias-salario-pendiente" min="0" step="1" value="0">
+        </div>
+        <div>
+          <label for="otros-conceptos">Otros importes pendientes (comisiones, horas extra, etc.) en €</label>
+          <input type="number" id="otros-conceptos" min="0" step="0.01" value="0">
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit">Calcular finiquito</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <div class="legal-box">
+    <h2>¿Qué incluye el finiquito?</h2>
+    <p>El finiquito no tiene una fórmula única fija en la ley, sino que recoge todos los conceptos económicos pendientes en el momento de finalizar el contrato. Los más habituales son:</p>
+    <ul>
+      <li><strong>Vacaciones no disfrutadas:</strong> si te quedan días de vacaciones generados y no tomados, se pagan en dinero de forma proporcional.</li>
+      <li><strong>Parte proporcional de pagas extra:</strong> si tus pagas extra no están prorrateadas mensualmente, se calcula la parte que ya has generado desde el último pago.</li>
+      <li><strong>Salario pendiente:</strong> los días trabajados en el último periodo que aún no se te hayan pagado.</li>
+      <li><strong>Otros conceptos:</strong> comisiones, horas extra u otros importes pactados que estén pendientes.</li>
+    </ul>
+    <p>El finiquito es independiente de la indemnización por despido, si la hubiera. Si tu caso incluye un despido, puedes calcular la indemnización correspondiente en nuestra <a class="enlace-relacionado" href="calculadora-indemnizacion-despido.html">calculadora de indemnización por despido</a>.</p>
+  </div>
+
+  <div class="disclaimer">
+    Esta calculadora ofrece una <strong>estimación orientativa</strong>. El cálculo real puede variar según tu convenio colectivo, acuerdos individuales, o conceptos salariales específicos no contemplados aquí. Antes de firmar cualquier finiquito, revisa con detalle el desglose que te entregue la empresa y, si tienes dudas, consulta con un graduado social o abogado laboralista: firmar el finiquito sin revisarlo puede limitar tu capacidad de reclamar después.
+  </div>
+
+  <a class="volver" href="index.html">← Volver al inicio</a>
+</main>
+
+<script>
+(function () {
+  const form = document.getElementById('form-finiquito');
+  const resultadoDiv = document.getElementById('resultado');
+  const DIAS_ANIO = 365.25;
+
+  function formatoEuro(numero) {
+    return numero.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const salarioBruto = parseFloat(document.getElementById('salario-bruto').value);
+    const fechaInicioAño = new Date(document.getElementById('fecha-inicio-año').value);
+    const fechaFin = new Date(document.getElementById('fecha-fin').value);
+    const diasVacacionesAnuales = parseFloat(document.getElementById('dias-vacaciones-anuales').value) || 0;
+    const diasDisfrutados = parseFloat(document.getElementById('dias-disfrutados').value) || 0;
+    const numPagasExtra = parseFloat(document.getElementById('num-pagas-extra').value) || 0;
+    const diasDesdeUltimaPaga = parseFloat(document.getElementById('dias-desde-ultima-paga').value) || 0;
+    const pagasProrrateadas = document.getElementById('pagas-prorrateadas').checked;
+    const diasSalarioPendiente = parseFloat(document.getElementById('dias-salario-pendiente').value) || 0;
+    const otrosConceptos = parseFloat(document.getElementById('otros-conceptos').value) || 0;
+
+    resultadoDiv.className = '';
+    resultadoDiv.style.display = 'block';
+
+    if (isNaN(salarioBruto) || salarioBruto <= 0) {
+      resultadoDiv.className = 'error';
+      resultadoDiv.innerHTML = '<h2>Revisa el salario</h2><p>Introduce un salario bruto mensual válido.</p>';
+      return;
+    }
+    if (isNaN(fechaInicioAño) || isNaN(fechaFin) || fechaFin <= fechaInicioAño) {
+      resultadoDiv.className = 'error';
+      resultadoDiv.innerHTML = '<h2>Revisa las fechas</h2><p>La fecha de fin debe ser posterior a la fecha de inicio del año trabajado.</p>';
+      return;
+    }
+
+    const salarioDiario = (salarioBruto * 12) / DIAS_ANIO;
+
+    // 1. Vacaciones proporcionales
+    const diasTrabajadosAño = (fechaFin - fechaInicioAño) / (1000 * 60 * 60 * 24);
+    const vacacionesGeneradas = (diasTrabajadosAño / DIAS_ANIO) * diasVacacionesAnuales;
+    const vacacionesPendientes = Math.max(vacacionesGeneradas - diasDisfrutados, 0);
+    const importeVacaciones = vacacionesPendientes * salarioDiario;
+
+    // 2. Parte proporcional de pagas extra
+    let importePagasExtra = 0;
+    if (!pagasProrrateadas && numPagasExtra > 0) {
+      const valorDiarioPagaExtra = (salarioBruto * numPagasExtra) / DIAS_ANIO;
+      importePagasExtra = valorDiarioPagaExtra * diasDesdeUltimaPaga;
+    }
+
+    // 3. Salario pendiente del último periodo
+    const importeSalarioPendiente = diasSalarioPendiente * salarioDiario;
+
+    // 4. Otros conceptos
+    const importeOtros = otrosConceptos;
+
+    const total = importeVacaciones + importePagasExtra + importeSalarioPendiente + importeOtros;
+
+    resultadoDiv.innerHTML = `
+      <h2>Finiquito estimado</h2>
+      <div class="cifra">${formatoEuro(total)}</div>
+      <table>
+        <tr><td>Vacaciones no disfrutadas (${vacacionesPendientes.toFixed(2)} días)</td><td>${formatoEuro(importeVacaciones)}</td></tr>
+        <tr><td>Parte proporcional de pagas extra</td><td>${formatoEuro(importePagasExtra)}</td></tr>
+        <tr><td>Salario pendiente (${diasSalarioPendiente} días)</td><td>${formatoEuro(importeSalarioPendiente)}</td></tr>
+        <tr><td>Otros conceptos pendientes</td><td>${formatoEuro(importeOtros)}</td></tr>
+      </table>
+    `;
+  });
+})();
+</script>
+
+</body>
+</html>
