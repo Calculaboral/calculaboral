@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Cuota de Autónomos 2026 (por Rendimientos Netos) | CalculaLaboral</title>
+<meta name="description" content="Estima tu cuota mensual de autónomos (RETA) según tus rendimientos netos reales. Calculadora orientativa actualizada 2026, con tarifa plana para nuevos autónomos.">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
+<style>
+  :root{
+    --azul:#1a3a5c;
+    --verde:#1e7a4c;
+    --gris-fondo:#f7f8fa;
+    --gris-texto:#333;
+    --gris-borde:#e2e5e9;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--gris-texto);
+    background: var(--gris-fondo);
+    line-height:1.55;
+  }
+  header{ background: var(--azul); color:#fff; padding: 1rem 1.5rem; }
+  header .wrap{ max-width: 1100px; margin:0 auto; }
+  header a{ color:#fff; text-decoration:none; font-weight:700; }
+  main{ max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  h1{ color: var(--azul); font-size:1.6rem; margin-bottom:0.25rem; }
+  .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
+  .intro{ color:#555; margin-bottom:1.75rem; }
+  form{
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:12px;
+    padding:1.5rem;
+  }
+  fieldset{ border:none; padding:0; margin:0 0 1.25rem; }
+  legend{ font-weight:700; color:var(--azul); padding:0 0 0.5rem; font-size:1rem; }
+  label{ display:block; font-size:0.9rem; margin-bottom:0.35rem; font-weight:600; }
+  .hint{ font-size:0.78rem; color:#777; margin: -0.2rem 0 0.6rem; }
+  input[type="number"], select{
+    width:100%;
+    padding:0.6rem 0.7rem;
+    border:1px solid var(--gris-borde);
+    border-radius:8px;
+    font-size:0.95rem;
+    margin-bottom:1rem;
+  }
+  .row{ display:grid; grid-template-columns: 1fr 1fr; gap:1rem; }
+  @media (max-width:520px){ .row{ grid-template-columns: 1fr; } }
+  .checkbox-row{ display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem; }
+  .checkbox-row input{ width:auto; margin:0; }
+  .checkbox-row label{ margin:0; font-weight:500; }
+  button{
+    background: var(--verde);
+    color:#fff;
+    border:none;
+    padding:0.85rem 1.5rem;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    width:100%;
+  }
+  button:hover{ background:#166b41; }
+  #resultado{
+    margin-top:1.5rem;
+    padding:1.25rem 1.5rem;
+    border-radius:10px;
+    background:#eef7f1;
+    border:1px solid #cfe8d8;
+    display:none;
+  }
+  #resultado.error{ background:#fbeceb; border-color:#f0c9c6; }
+  #resultado h2{ margin-top:0; color:var(--azul); font-size:1.15rem; }
+  #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde); margin: 0.25rem 0 0.75rem; }
+  #resultado table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
+  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
+  #resultado td:last-child{ text-align:right; font-weight:600; }
+  .legal-box{
+    margin-top:2rem;
+    padding:1.25rem 1.5rem;
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:10px;
+    font-size:0.88rem;
+    color:#555;
+  }
+  .legal-box h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .legal-box a{ color: var(--azul); font-weight:600; }
+  .disclaimer{
+    margin-top:1.5rem;
+    background:#fff8e6;
+    border:1px solid #f0e0a8;
+    border-radius:8px;
+    padding:1rem 1.25rem;
+    font-size:0.85rem;
+    color:#6b5a1e;
+  }
+  a.volver{ display:inline-block; margin-top:2rem; font-size:0.9rem; color: var(--azul); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap"><a href="index.html">CalculaLaboral</a></div>
+</header>
+
+<main>
+  <h1>Calculadora de cuota de autónomos (RETA)</h1>
+  <p class="updated">Actualizado: 2026 · Normativa: Orden PJC/297/2026 (bases y tipos de cotización RETA)</p>
+  <p class="intro">Desde 2023, la cuota de autónomos se calcula según tus rendimientos netos reales, no según una base fija elegida libremente. Esta calculadora estima tu cuota mensual aproximada a partir de tus ingresos y gastos.</p>
+
+  <form id="form-autonomos">
+    <fieldset>
+      <legend>1. Rendimientos de tu actividad</legend>
+      <div class="row">
+        <div>
+          <label for="ingresos-anuales">Ingresos brutos anuales de la actividad (€)</label>
+          <input type="number" id="ingresos-anuales" min="0" step="0.01" placeholder="Ej: 30000" required>
+        </div>
+        <div>
+          <label for="gastos-anuales">Gastos deducibles anuales (€)</label>
+          <input type="number" id="gastos-anuales" min="0" step="0.01" placeholder="Ej: 8000" value="0">
+        </div>
+      </div>
+      <label for="tipo-autonomo">Tipo de autónomo</label>
+      <select id="tipo-autonomo">
+        <option value="fisica">Persona física (deducción adicional del 7%)</option>
+        <option value="societario">Autónomo societario (deducción adicional del 3%)</option>
+      </select>
+      <p class="hint">La deducción adicional ("gastos de difícil justificación") se aplica automáticamente sobre tu rendimiento neto, según marca la normativa.</p>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="tarifa-plana">
+        <label for="tarifa-plana">Acabo de darme de alta (o llevo más de 2 años sin estar de alta): quiero ver la tarifa plana</label>
+      </div>
+    </fieldset>
+
+    <button type="submit">Calcular cuota</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <div class="legal-box">
+    <h2>Cómo se calcula</h2>
+    <p><strong>Rendimiento neto:</strong> se calcula restando a tus ingresos los gastos deducibles de la actividad, y aplicando después una deducción adicional del 7% (persona física) o 3% (autónomo societario) en concepto de gastos de difícil justificación.</p>
+    <p><strong>Tramo y base de cotización:</strong> según tu rendimiento neto mensual, te corresponde un tramo de cotización (hay 15 en total, agrupados en tabla reducida y tabla general), cada uno con una base mínima y máxima entre las que puedes elegir cotizar. <strong>Esta calculadora simplifica el cálculo</strong> tomando tu rendimiento neto mensual como base aproximada (ajustada a los límites globales del sistema, entre unos 653€ y unos 4.720€ mensuales), en vez de aplicar la tabla exacta de 15 tramos, para darte una estimación rápida sin arriesgarnos a mostrarte una cifra de tramo que pueda estar desactualizada.</p>
+    <p><strong>Tipo de cotización total en 2026: 31,5%</strong> sobre la base elegida, que incluye contingencias comunes, contingencias profesionales, cese de actividad, formación profesional y el Mecanismo de Equidad Intergeneracional (MEI).</p>
+    <p><strong>Tarifa plana:</strong> si te acabas de dar de alta (o llevas más de 2 años sin estarlo, 3 si ya disfrutaste de la tarifa plana antes), puedes pagar una cuota reducida fija de aproximadamente 80-90€/mes durante los primeros 12 meses, prorrogable un segundo año si tus rendimientos netos quedan por debajo del Salario Mínimo Interprofesional.</p>
+    <p>Para conocer tu tramo exacto y la cuota precisa, usa el <a href="https://www.seg-social.es" target="_blank" rel="noopener">simulador oficial de la Seguridad Social (Importass)</a>.</p>
+  </div>
+
+  <div class="disclaimer">
+    Esta calculadora ofrece una <strong>estimación orientativa y simplificada</strong>. No aplica la tabla exacta de 15 tramos oficiales (cuyas cifras concretas varían ligeramente entre fuentes y conviene verificar en el simulador oficial), sino una aproximación basada en el tipo general del 31,5% sobre tu rendimiento neto estimado. No sustituye el cálculo oficial de la Seguridad Social ni el asesoramiento de una gestoría.
+  </div>
+
+  <a class="volver" href="index.html">← Volver al inicio</a>
+</main>
+
+<script>
+(function () {
+  const form = document.getElementById('form-autonomos');
+  const resultadoDiv = document.getElementById('resultado');
+  const BASE_MINIMA = 653.59;
+  const BASE_MAXIMA = 4720.50;
+  const TIPO_TOTAL = 0.315;
+  const TARIFA_PLANA_MENSUAL = 85; // aproximado, con MEI incluido
+
+  function formatoEuro(numero) {
+    return numero.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const ingresos = parseFloat(document.getElementById('ingresos-anuales').value);
+    const gastos = parseFloat(document.getElementById('gastos-anuales').value) || 0;
+    const tipoAutonomo = document.getElementById('tipo-autonomo').value;
+    const tarifaPlana = document.getElementById('tarifa-plana').checked;
+
+    resultadoDiv.className = '';
+    resultadoDiv.style.display = 'block';
+
+    if (isNaN(ingresos) || ingresos <= 0) {
+      resultadoDiv.className = 'error';
+      resultadoDiv.innerHTML = '<h2>Revisa los ingresos</h2><p>Introduce unos ingresos anuales válidos.</p>';
+      return;
+    }
+
+    const rendimientoAnualBruto = Math.max(ingresos - gastos, 0);
+    const deduccionAdicional = tipoAutonomo === 'societario' ? 0.03 : 0.07;
+    const rendimientoAnualNeto = rendimientoAnualBruto * (1 - deduccionAdicional);
+    const rendimientoMensualNeto = rendimientoAnualNeto / 12;
+
+    const baseEstimada = Math.min(Math.max(rendimientoMensualNeto, BASE_MINIMA), BASE_MAXIMA);
+    const cuotaCalculada = baseEstimada * TIPO_TOTAL;
+
+    const cuotaFinal = tarifaPlana ? TARIFA_PLANA_MENSUAL : cuotaCalculada;
+
+    let filaTarifaPlana = '';
+    if (tarifaPlana) {
+      filaTarifaPlana = `<tr><td>Cuota sin tarifa plana (referencia)</td><td>${formatoEuro(cuotaCalculada)}/mes</td></tr>`;
+    }
+
+    resultadoDiv.innerHTML = `
+      <h2>Cuota mensual estimada</h2>
+      <div class="cifra">${formatoEuro(cuotaFinal)}/mes</div>
+      <table>
+        <tr><td>Rendimiento neto mensual estimado</td><td>${formatoEuro(rendimientoMensualNeto)}</td></tr>
+        <tr><td>Base de cotización estimada</td><td>${formatoEuro(baseEstimada)}</td></tr>
+        <tr><td>Cuota anual estimada</td><td>${formatoEuro(cuotaFinal * 12)}</td></tr>
+        ${filaTarifaPlana}
+      </table>
+    `;
+  });
+})();
+</script>
+
+</body>
+</html>
