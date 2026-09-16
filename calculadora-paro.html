@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora del Paro (Prestación por Desempleo) 2026 | CalculaLaboral</title>
+<meta name="description" content="Calcula gratis tu prestación por desempleo estimada: cuantía mensual, duración y topes según el IPREM 2026. Actualizado con la normativa vigente en España.">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
+<style>
+  :root{
+    --azul:#1a3a5c;
+    --verde:#1e7a4c;
+    --gris-fondo:#f7f8fa;
+    --gris-texto:#333;
+    --gris-borde:#e2e5e9;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--gris-texto);
+    background: var(--gris-fondo);
+    line-height:1.55;
+  }
+  header{ background: var(--azul); color:#fff; padding: 1rem 1.5rem; }
+  header .wrap{ max-width: 1100px; margin:0 auto; }
+  header a{ color:#fff; text-decoration:none; font-weight:700; }
+  main{ max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  h1{ color: var(--azul); font-size:1.6rem; margin-bottom:0.25rem; }
+  .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
+  .intro{ color:#555; margin-bottom:1.75rem; }
+  form{
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:12px;
+    padding:1.5rem;
+  }
+  fieldset{ border:none; padding:0; margin:0 0 1.25rem; }
+  legend{ font-weight:700; color:var(--azul); padding:0 0 0.5rem; font-size:1rem; }
+  label{ display:block; font-size:0.9rem; margin-bottom:0.35rem; font-weight:600; }
+  .hint{ font-size:0.78rem; color:#777; margin: -0.2rem 0 0.6rem; }
+  input[type="number"], select{
+    width:100%;
+    padding:0.6rem 0.7rem;
+    border:1px solid var(--gris-borde);
+    border-radius:8px;
+    font-size:0.95rem;
+    margin-bottom:1rem;
+  }
+  .row{ display:grid; grid-template-columns: 1fr 1fr; gap:1rem; }
+  @media (max-width:520px){ .row{ grid-template-columns: 1fr; } }
+  button{
+    background: var(--verde);
+    color:#fff;
+    border:none;
+    padding:0.85rem 1.5rem;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    width:100%;
+  }
+  button:hover{ background:#166b41; }
+  #resultado{
+    margin-top:1.5rem;
+    padding:1.25rem 1.5rem;
+    border-radius:10px;
+    background:#eef7f1;
+    border:1px solid #cfe8d8;
+    display:none;
+  }
+  #resultado.error{ background:#fbeceb; border-color:#f0c9c6; }
+  #resultado h2{ margin-top:0; color:var(--azul); font-size:1.15rem; }
+  #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde); margin: 0.25rem 0 0.75rem; }
+  #resultado .subcifra{ font-size:0.95rem; font-weight:600; color:#555; margin-bottom:0.75rem; }
+  #resultado table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
+  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
+  #resultado td:last-child{ text-align:right; font-weight:600; }
+  .legal-box{
+    margin-top:2rem;
+    padding:1.25rem 1.5rem;
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:10px;
+    font-size:0.88rem;
+    color:#555;
+  }
+  .legal-box h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .legal-box a{ color: var(--azul); font-weight:600; }
+  .disclaimer{
+    margin-top:1.5rem;
+    background:#fff8e6;
+    border:1px solid #f0e0a8;
+    border-radius:8px;
+    padding:1rem 1.25rem;
+    font-size:0.85rem;
+    color:#6b5a1e;
+  }
+  a.volver{ display:inline-block; margin-top:2rem; font-size:0.9rem; color: var(--azul); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap"><a href="index.html">CalculaLaboral</a></div>
+</header>
+
+<main>
+  <h1>Calculadora de la prestación por desempleo (paro)</h1>
+  <p class="updated">Actualizado: 2026 · Normativa: Real Decreto Legislativo 8/2015 (Ley General de la Seguridad Social) y Real Decreto-ley 2/2024 · IPREM 2026: 600€/mes</p>
+  <p class="intro">Estima cuánto podrías cobrar de prestación contributiva por desempleo y durante cuánto tiempo, según tus días cotizados en los últimos 6 años, tu salario y si tienes hijos a cargo.</p>
+
+  <form id="form-paro">
+    <fieldset>
+      <legend>1. Datos para el cálculo</legend>
+      <label for="salario-bruto">Salario bruto mensual de los últimos meses trabajados (aprox. tu base de cotización)</label>
+      <input type="number" id="salario-bruto" min="0" step="0.01" placeholder="Ej: 1800" required>
+      <p class="hint">Usamos tu salario bruto mensual como aproximación de la base reguladora (media de tu base de cotización de los últimos 180 días). Puede diferir ligeramente de la cifra exacta del SEPE.</p>
+
+      <div class="row">
+        <div>
+          <label for="dias-cotizados">Días cotizados en los últimos 6 años</label>
+          <input type="number" id="dias-cotizados" min="0" step="1" placeholder="Ej: 1000" required>
+        </div>
+        <div>
+          <label for="hijos-cargo">Hijos a cargo</label>
+          <select id="hijos-cargo">
+            <option value="0">Ninguno</option>
+            <option value="1">1 hijo</option>
+            <option value="2">2 o más</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit">Calcular prestación</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <div class="legal-box">
+    <h2>Cómo se calcula</h2>
+    <p><strong>Requisito mínimo:</strong> necesitas al menos 360 días cotizados en los últimos 6 años para tener derecho a la prestación contributiva. Con menos días, no accederías a esta prestación (aunque podrías tener derecho a un subsidio distinto, no cubierto por esta calculadora).</p>
+    <p><strong>Duración:</strong> se rige por una tabla oficial que relaciona días cotizados con días de prestación, con un máximo de 720 días (2 años) si has cotizado 2.160 días o más.</p>
+    <p><strong>Cuantía:</strong> el 70% de tu base reguladora durante los primeros 180 días (6 meses), y el 60% a partir del día 181 (este porcentaje del 60%, antes era del 50%, cambió con el Real Decreto-ley 2/2024).</p>
+    <p><strong>Topes:</strong> la cuantía nunca puede superar ni ser inferior a unos límites legales que dependen del IPREM y de si tienes hijos a cargo. Con el IPREM de 2026 (600€/mes), los topes mensuales aproximados son:</p>
+    <ul>
+      <li>Sin hijos: mínimo ~560€, máximo ~1.225€</li>
+      <li>Con 1 hijo: mínimo ~749€, máximo ~1.400€</li>
+      <li>Con 2 o más hijos: mínimo ~749€, máximo ~1.575€</li>
+    </ul>
+    <p>Durante el cobro, el SEPE descuenta de tu prestación un ~4,7% en concepto de cotización a la Seguridad Social (a tu cargo). El IRPF sobre la prestación es en la práctica voluntario y suele quedar en el 0% para importes de este nivel, aunque puede aplicarse en algunos casos.</p>
+    <p>Para el cálculo oficial y la solicitud, usa el <a href="https://www.sepe.es" target="_blank" rel="noopener">simulador y sede electrónica del SEPE</a>.</p>
+  </div>
+
+  <div class="disclaimer">
+    Esta calculadora ofrece una <strong>estimación orientativa</strong>. El cálculo real depende de tu base de cotización exacta de los últimos 180 días (no solo tu salario aproximado), y de otros factores particulares de tu expediente. No sustituye el cálculo oficial del SEPE.
+  </div>
+
+  <a class="volver" href="index.html">← Volver al inicio</a>
+</main>
+
+<script>
+(function () {
+  const form = document.getElementById('form-paro');
+  const resultadoDiv = document.getElementById('resultado');
+  const IPREM_MENSUAL = 600;
+  const IPREM_INCREMENTADO = IPREM_MENSUAL * (7 / 6); // IPREM mensual incrementado en una sexta parte
+
+  function formatoEuro(numero) {
+    return numero.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
+  }
+
+  function calcularDuracion(diasCotizados) {
+    const tabla = [
+      { min: 360, max: 539, dias: 120 },
+      { min: 540, max: 719, dias: 180 },
+      { min: 720, max: 899, dias: 240 },
+      { min: 900, max: 1079, dias: 300 },
+      { min: 1080, max: 1259, dias: 360 },
+      { min: 1260, max: 1439, dias: 420 },
+      { min: 1440, max: 1619, dias: 480 },
+      { min: 1620, max: 1799, dias: 540 },
+      { min: 1800, max: 1979, dias: 600 },
+      { min: 1980, max: 2159, dias: 660 },
+      { min: 2160, max: Infinity, dias: 720 }
+    ];
+    for (const tramo of tabla) {
+      if (diasCotizados >= tramo.min && diasCotizados <= tramo.max) {
+        return tramo.dias;
+      }
+    }
+    return 0;
+  }
+
+  function topesPorHijos(numHijos) {
+    if (numHijos === 0) {
+      return { min: 0.80 * IPREM_INCREMENTADO, max: 1.75 * IPREM_INCREMENTADO };
+    } else if (numHijos === 1) {
+      return { min: 1.07 * IPREM_INCREMENTADO, max: 2.00 * IPREM_INCREMENTADO };
+    } else {
+      return { min: 1.07 * IPREM_INCREMENTADO, max: 2.25 * IPREM_INCREMENTADO };
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const salarioBruto = parseFloat(document.getElementById('salario-bruto').value);
+    const diasCotizados = parseInt(document.getElementById('dias-cotizados').value, 10);
+    const numHijos = parseInt(document.getElementById('hijos-cargo').value, 10);
+
+    resultadoDiv.className = '';
+    resultadoDiv.style.display = 'block';
+
+    if (isNaN(salarioBruto) || salarioBruto <= 0) {
+      resultadoDiv.className = 'error';
+      resultadoDiv.innerHTML = '<h2>Revisa el salario</h2><p>Introduce un salario bruto mensual válido.</p>';
+      return;
+    }
+    if (isNaN(diasCotizados) || diasCotizados < 0) {
+      resultadoDiv.className = 'error';
+      resultadoDiv.innerHTML = '<h2>Revisa los días cotizados</h2><p>Introduce un número de días válido.</p>';
+      return;
+    }
+
+    const duracionTotal = calcularDuracion(diasCotizados);
+
+    if (duracionTotal === 0) {
+      resultadoDiv.className = 'error';
+      resultadoDiv.innerHTML = '<h2>No cumples el mínimo</h2><p>Necesitas al menos 360 días cotizados en los últimos 6 años para tener derecho a la prestación contributiva por desempleo. Podrías tener derecho a otro tipo de subsidio; consulta con el SEPE.</p>';
+      return;
+    }
+
+    const topes = topesPorHijos(numHijos);
+
+    const diasTramo1 = Math.min(180, duracionTotal);
+    const diasTramo2 = Math.max(duracionTotal - 180, 0);
+
+    let cuantiaTramo1 = salarioBruto * 0.70;
+    cuantiaTramo1 = Math.min(Math.max(cuantiaTramo1, topes.min), topes.max);
+
+    let cuantiaTramo2 = salarioBruto * 0.60;
+    cuantiaTramo2 = Math.min(Math.max(cuantiaTramo2, topes.min), topes.max);
+
+    // Descuento aproximado de cotización a cargo del beneficiario (SEPE la retiene)
+    const descuentoSS1 = salarioBruto * 0.047;
+    const descuentoSS2 = salarioBruto * 0.047;
+    const netoAproxTramo1 = Math.max(cuantiaTramo1 - descuentoSS1, 0);
+    const netoAproxTramo2 = Math.max(cuantiaTramo2 - descuentoSS2, 0);
+
+    const mesesTramo1 = diasTramo1 / 30;
+    const mesesTramo2 = diasTramo2 / 30;
+    const totalBruto = (cuantiaTramo1 * mesesTramo1) + (cuantiaTramo2 * mesesTramo2);
+
+    let filaTramo2 = '';
+    if (diasTramo2 > 0) {
+      filaTramo2 = `<tr><td>A partir del mes 7 (aprox. ${mesesTramo2.toFixed(1)} meses)</td><td>${formatoEuro(netoAproxTramo2)}/mes aprox.</td></tr>`;
+    }
+
+    resultadoDiv.innerHTML = `
+      <h2>Prestación estimada</h2>
+      <div class="cifra">${formatoEuro(netoAproxTramo1)}/mes (primeros 6 meses)</div>
+      <div class="subcifra">Duración total estimada: ${duracionTotal} días (${(duracionTotal/30).toFixed(1)} meses) · Total estimado del periodo: ${formatoEuro(totalBruto)} brutos</div>
+      <table>
+        <tr><td>Primeros 6 meses (aprox. ${mesesTramo1.toFixed(1)} meses) — 70% base, con topes</td><td>${formatoEuro(netoAproxTramo1)}/mes aprox.</td></tr>
+        ${filaTramo2}
+      </table>
+    `;
+  });
+})();
+</script>
+
+</body>
+</html>
