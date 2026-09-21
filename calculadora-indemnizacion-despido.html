@@ -98,6 +98,29 @@
     color:#6b5a1e;
   }
   a.volver{ display:inline-block; margin-top:2rem; font-size:0.9rem; color: var(--azul); }
+  .faq{ margin-top:2rem; }
+  .faq h2{ color: var(--azul); font-size:1.15rem; }
+  .faq details{
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:8px;
+    padding:0.9rem 1.1rem;
+    margin-bottom:0.6rem;
+  }
+  .faq summary{ font-weight:700; cursor:pointer; color:var(--azul); }
+  .faq details p{ margin:0.6rem 0 0; font-size:0.92rem; color:#444; }
+  .fuentes{
+    margin-top:2rem;
+    padding:1.25rem 1.5rem;
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:10px;
+    font-size:0.88rem;
+    color:#555;
+  }
+  .fuentes h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .fuentes ul{ margin:0.5rem 0 0; padding-left:1.25rem; }
+  .fuentes a{ color: var(--azul); }
 </style>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
@@ -173,8 +196,78 @@
     Esta calculadora ofrece una <strong>estimación orientativa</strong> basada en la normativa general. No tiene en cuenta cláusulas específicas de tu convenio colectivo, posibles mejoras contractuales, ni situaciones particulares (por ejemplo, altos directivos, contratos de duración determinada con indemnización distinta, o acuerdos de conciliación). Ante un despido real, consulta con un abogado laboralista o tu sindicato antes de firmar cualquier documento.
   </div>
 
+  <div class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿El finiquito incluye las vacaciones no disfrutadas?</summary>
+      <p>Sí. Si al terminar el contrato te quedan días de vacaciones generados y no disfrutados, tienes derecho a que se te abonen en dinero dentro del finiquito, de forma proporcional a los días trabajados en el año.</p>
+    </details>
+    <details>
+      <summary>¿Qué ocurre con las pagas extraordinarias?</summary>
+      <p>Si tus pagas extra no estaban prorrateadas mes a mes en tu nómina, la empresa debe pagarte la parte proporcional generada desde el último pago hasta la fecha de tu baja, dentro del propio finiquito.</p>
+    </details>
+    <details>
+      <summary>¿Tengo que firmar el finiquito?</summary>
+      <p>No estás obligado a firmarlo en el momento si no estás de acuerdo con el importe. Puedes firmar solo "recibí" (indicando que has recibido el documento, no que estás conforme con la cantidad) y reclamar después la diferencia, o pedir tiempo para revisarlo antes de firmar.</p>
+    </details>
+    <details>
+      <summary>¿Puedo negociar la indemnización con la empresa?</summary>
+      <p>Sí, especialmente en un despido improcedente, es habitual negociar un importe distinto al mínimo legal, sobre todo si ambas partes prefieren evitar un proceso judicial. La cifra que calcula esta herramienta es el mínimo legal de referencia, no un límite máximo.</p>
+    </details>
+  </div>
+
+  <div class="fuentes">
+    <h2>Fuentes oficiales</h2>
+    <p>Esta calculadora se basa en los siguientes textos legales:</p>
+    <ul>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">Estatuto de los Trabajadores (BOE) — artículos 53 y 56</a></li>
+      <li><a href="https://www.mites.gob.es" target="_blank" rel="noopener">Ministerio de Trabajo y Economía Social</a></li>
+    </ul>
+  </div>
+
   <a class="volver" href="index.html">← Volver al inicio</a>
 </main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El finiquito incluye las vacaciones no disfrutadas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Si al terminar el contrato te quedan días de vacaciones generados y no disfrutados, tienes derecho a que se te abonen en dinero dentro del finiquito, de forma proporcional a los días trabajados en el año."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué ocurre con las pagas extraordinarias?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si tus pagas extra no estaban prorrateadas mes a mes en tu nómina, la empresa debe pagarte la parte proporcional generada desde el último pago hasta la fecha de tu baja, dentro del propio finiquito."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tengo que firmar el finiquito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No estás obligado a firmarlo en el momento si no estás de acuerdo con el importe. Puedes firmar solo recibí y reclamar después la diferencia, o pedir tiempo para revisarlo antes de firmar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo negociar la indemnización con la empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, especialmente en un despido improcedente, es habitual negociar un importe distinto al mínimo legal. La cifra calculada es el mínimo legal de referencia, no un límite máximo."
+      }
+    }
+  ]
+}
+</script>
 
 <script>
 (function () {
