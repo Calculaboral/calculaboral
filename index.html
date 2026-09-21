@@ -93,6 +93,42 @@
     color:#6b5a1e;
     margin-top:2.5rem;
   }
+  .tabs-nav{
+    display:flex;
+    gap:0.5rem;
+    border-bottom: 2px solid var(--gris-borde);
+    margin-bottom: 1.75rem;
+  }
+  .tab-btn{
+    background:none;
+    border:none;
+    padding: 0.85rem 1.4rem;
+    font-size:1.05rem;
+    font-weight:700;
+    color:#888;
+    cursor:pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom:-2px;
+    transition: color 0.15s ease;
+  }
+  .tab-btn:hover{ color: var(--azul-claro); }
+  .tab-btn.active{
+    color: var(--azul);
+    border-bottom-color: var(--verde);
+  }
+  .tab-panel{ display:none; }
+  .tab-panel.active{ display:block; }
+  .tab-count{
+    display:inline-block;
+    background:#eef1f4;
+    color:#666;
+    font-size:0.75rem;
+    font-weight:700;
+    border-radius:999px;
+    padding:0.1rem 0.55rem;
+    margin-left:0.4rem;
+  }
+  .tab-btn.active .tab-count{ background:#e1f0e7; color: var(--verde); }
 </style>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
@@ -103,8 +139,8 @@
   <div class="wrap">
     <a class="logo" href="index.html">Calculadora Lista</a>
     <nav>
-      <a href="#calculadoras">Calculadoras</a>
-      <a href="#guias">Guías</a>
+      <a href="#" onclick="mostrarPestana('calculadoras'); return false;">Calculadoras</a>
+      <a href="#" onclick="mostrarPestana('guias'); return false;">Guías</a>
       <a href="legal/aviso-legal.html">Legal</a>
     </nav>
   </div>
@@ -116,8 +152,16 @@
     <p>Herramientas gratuitas, sin registro, para calcular indemnizaciones, finiquitos, nóminas y más. Resultados al instante, con la normativa aplicable indicada en cada página.</p>
   </section>
 
-  <section id="calculadoras">
-    <h2>Calculadoras disponibles</h2>
+  <div class="tabs-nav">
+    <button type="button" class="tab-btn active" id="tab-btn-calculadoras" onclick="mostrarPestana('calculadoras')">
+      🧮 Calculadoras <span class="tab-count">5</span>
+    </button>
+    <button type="button" class="tab-btn" id="tab-btn-guias" onclick="mostrarPestana('guias')">
+      📚 Guías <span class="tab-count">7</span>
+    </button>
+  </div>
+
+  <section id="calculadoras" class="tab-panel active">
     <div class="grid">
       <a class="card" href="calculadora-indemnizacion-despido.html">
         <span class="tag">Herramienta</span>
@@ -152,8 +196,7 @@
     </div>
   </section>
 
-  <section id="guias" style="margin-top:3rem;">
-    <h2>Guías</h2>
+  <section id="guias" class="tab-panel">
     <div class="grid">
       <a class="card" href="guias/despido-improcedente-vs-objetivo.html">
         <span class="tag">Guía</span>
@@ -206,6 +249,20 @@
   </div>
   <p>© 2026 Calculadora Lista. Contenido informativo, no constituye asesoramiento legal.</p>
 </footer>
+
+<script>
+  function mostrarPestana(nombre) {
+    document.querySelectorAll('.tab-panel').forEach(function (panel) {
+      panel.classList.remove('active');
+    });
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.classList.remove('active');
+    });
+    document.getElementById(nombre).classList.add('active');
+    document.getElementById('tab-btn-' + nombre).classList.add('active');
+    document.getElementById(nombre).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
 
 </body>
 </html>
