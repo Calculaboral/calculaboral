@@ -72,6 +72,11 @@
     display:block;
   }
   .card:hover{ box-shadow: 0 8px 22px rgba(18,42,69,0.10); transform: translateY(-3px); border-color: #cfd8e3; }
+  .card .card-icon{
+    display:inline-block;
+    font-size:1.6rem;
+    margin-bottom:0.35rem;
+  }
   .card .tag{
     display:inline-block;
     font-size:0.72rem;
@@ -80,6 +85,7 @@
     color: var(--verde);
     font-weight:700;
     margin-bottom:0.4rem;
+    margin-left:0.5rem;
   }
   .card h3{ margin:0 0 0.4rem; color:var(--azul); font-size:1.1rem; }
   .card p{ margin:0; font-size:0.92rem; color:#555; }
@@ -236,32 +242,32 @@
   <section id="calculadoras" class="tab-panel active">
     <div class="grid">
       <a class="card" href="calculadora-indemnizacion-despido.html">
-        <span class="tag">Herramienta</span>
+        <span class="card-icon">⚖️</span><span class="tag">Herramienta</span>
         <h3>Indemnización por despido y finiquito</h3>
         <p>Calcula la indemnización por despido improcedente, objetivo o procedente, y una estimación del finiquito.</p>
       </a>
       <a class="card" href="calculadora-finiquito.html">
-        <span class="tag">Herramienta</span>
+        <span class="card-icon">💼</span><span class="tag">Herramienta</span>
         <h3>Finiquito (cálculo detallado)</h3>
         <p>Calcula vacaciones no disfrutadas, parte proporcional de pagas extra y salario pendiente.</p>
       </a>
       <a class="card" href="calculadora-nomina-neta.html">
-        <span class="tag">Herramienta</span>
+        <span class="card-icon">💶</span><span class="tag">Herramienta</span>
         <h3>Nómina neta (bruto a neto)</h3>
         <p>Estima tu salario neto descontando Seguridad Social e IRPF orientativo.</p>
       </a>
       <a class="card" href="calculadora-paro.html">
-        <span class="tag">Herramienta</span>
+        <span class="card-icon">🏦</span><span class="tag">Herramienta</span>
         <h3>Prestación por desempleo (paro)</h3>
         <p>Cuantía mensual estimada y duración de tu prestación según días cotizados e hijos a cargo.</p>
       </a>
       <a class="card" href="calculadora-cuota-autonomos.html">
-        <span class="tag">Herramienta</span>
+        <span class="card-icon">🧾</span><span class="tag">Herramienta</span>
         <h3>Cuota de autónomos (RETA)</h3>
         <p>Estima tu cuota mensual según tus rendimientos netos, con opción de tarifa plana.</p>
       </a>
       <div class="card disabled">
-        <span class="tag">Próximamente</span>
+        <span class="card-icon">📊</span><span class="tag">Próximamente</span>
         <h3>IRPF para autónomos</h3>
         <p>Se publicará en las próximas semanas.</p>
       </div>
@@ -272,37 +278,37 @@
   <section id="guias" class="tab-panel">
     <div class="grid">
       <a class="card" href="guias/despido-improcedente-vs-objetivo.html">
-        <span class="tag">Guía</span>
+        <span class="card-icon">⚖️</span><span class="tag">Guía</span>
         <h3>Despido procedente, improcedente y objetivo: diferencias</h3>
         <p>Qué significa cada tipo de despido y cuánto te corresponde según cuál te apliquen.</p>
       </a>
       <a class="card" href="guias/plazos-prescripcion-reclamaciones-laborales.html">
-        <span class="tag">Guía</span>
+        <span class="card-icon">⏳</span><span class="tag">Guía</span>
         <h3>Plazos y prescripción en reclamaciones laborales</h3>
         <p>Tabla completa de plazos para reclamar despido, finiquito y otras cantidades adeudadas.</p>
       </a>
       <a class="card" href="guias/modelo-303-iva-trimestral-autonomos.html">
-        <span class="tag">Guía</span>
+        <span class="card-icon">🧾</span><span class="tag">Guía</span>
         <h3>Modelo 303: IVA trimestral para autónomos</h3>
         <p>Cómo se calcula, tipos de IVA, plazos trimestrales y quién está exento.</p>
       </a>
       <a class="card" href="guias/despido-colectivo-ere-vs-individual.html">
-        <span class="tag">Guía</span>
+        <span class="card-icon">🏭</span><span class="tag">Guía</span>
         <h3>Despido colectivo (ERE) vs despido individual</h3>
         <p>Diferencias, procedimiento de negociación, e indemnización aplicable en cada caso.</p>
       </a>
       <a class="card" href="guias/no-me-pagan-el-finiquito.html">
-        <span class="tag">Guía</span>
+        <span class="card-icon">💸</span><span class="tag">Guía</span>
         <h3>Qué hacer si no te pagan el finiquito</h3>
         <p>Pasos a seguir, plazos de reclamación e intereses por mora si la empresa no paga o se retrasa.</p>
       </a>
       <a class="card" href="guias/guia-autonomos-alta-cuotas-irpf.html">
-        <span class="tag">Guía</span>
+        <span class="card-icon">🪪</span><span class="tag">Guía</span>
         <h3>Guía de autónomos: alta, cuotas e IRPF</h3>
         <p>Cómo darte de alta, la tarifa plana, la cotización por ingresos reales y tus obligaciones fiscales básicas.</p>
       </a>
       <a class="card" href="guias/modelo-130-pagos-fraccionados-irpf-autonomos.html">
-        <span class="tag">Guía</span>
+        <span class="card-icon">📄</span><span class="tag">Guía</span>
         <h3>Modelo 130: pagos fraccionados de IRPF</h3>
         <p>Quién debe presentarlo, cómo se calcula el 20% y quién está exento.</p>
       </a>
