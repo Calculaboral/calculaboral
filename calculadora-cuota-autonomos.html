@@ -99,6 +99,29 @@
     color:#6b5a1e;
   }
   a.volver{ display:inline-block; margin-top:2rem; font-size:0.9rem; color: var(--azul); }
+  .faq{ margin-top:2rem; }
+  .faq h2{ color: var(--azul); font-size:1.15rem; }
+  .faq details{
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:8px;
+    padding:0.9rem 1.1rem;
+    margin-bottom:0.6rem;
+  }
+  .faq summary{ font-weight:700; cursor:pointer; color:var(--azul); }
+  .faq details p{ margin:0.6rem 0 0; font-size:0.92rem; color:#444; }
+  .fuentes{
+    margin-top:2rem;
+    padding:1.25rem 1.5rem;
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:10px;
+    font-size:0.88rem;
+    color:#555;
+  }
+  .fuentes h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .fuentes ul{ margin:0.5rem 0 0; padding-left:1.25rem; }
+  .fuentes a{ color: var(--azul); }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -155,6 +178,35 @@
 
   <div class="disclaimer">
     Esta calculadora ofrece una <strong>estimación orientativa y simplificada</strong>. No aplica la tabla exacta de 15 tramos oficiales (cuyas cifras concretas varían ligeramente entre fuentes y conviene verificar en el simulador oficial), sino una aproximación basada en el tipo general del 31,5% sobre tu rendimiento neto estimado. No sustituye el cálculo oficial de la Seguridad Social ni el asesoramiento de una gestoría.
+  </div>
+
+  <div class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Puedo cambiar de tramo de cotización durante el año?</summary>
+      <p>Sí, puedes solicitar el cambio de tramo hasta 6 veces al año a través de Importass, si tus ingresos previstos varían respecto a lo que estimaste inicialmente.</p>
+    </details>
+    <details>
+      <summary>¿Qué pasa si cotizo de menos y al final de año gané más de lo previsto?</summary>
+      <p>La Seguridad Social regulariza tu situación al finalizar el ejercicio: si cotizaste por debajo de lo que correspondía según tus ingresos reales, tendrás que abonar la diferencia; si cotizaste de más, te la devuelven.</p>
+    </details>
+    <details>
+      <summary>¿La tarifa plana incluye ya el Mecanismo de Equidad Intergeneracional (MEI)?</summary>
+      <p>Sí, la cuota reducida de la tarifa plana ya incorpora este concepto, por eso puede rondar los 85-90€/mes en vez de una cifra más redonda.</p>
+    </details>
+    <details>
+      <summary>¿Puedo deducirme más gastos aparte del 7% de gastos de difícil justificación?</summary>
+      <p>Sí, esa deducción del 7% (o 3% en autónomos societarios) se aplica además de los gastos reales que ya hayas deducido de tus ingresos (suministros, material, cuota de autónomos, etc.), no en su lugar.</p>
+    </details>
+  </div>
+
+  <div class="fuentes">
+    <h2>Fuentes oficiales</h2>
+    <p>Esta calculadora se basa en los siguientes textos y organismos:</p>
+    <ul>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409" target="_blank" rel="noopener">Ley 20/2007, del Estatuto del trabajo autónomo (BOE)</a></li>
+      <li><a href="https://www.seg-social.es" target="_blank" rel="noopener">Seguridad Social — Importass</a></li>
+    </ul>
   </div>
 
   <a class="volver" href="index.html">← Volver al inicio</a>
