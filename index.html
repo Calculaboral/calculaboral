@@ -129,6 +129,57 @@
     margin-left:0.4rem;
   }
   .tab-btn.active .tab-count{ background:#e1f0e7; color: var(--verde); }
+  .buscador{
+    max-width: 480px;
+    margin: 1.5rem auto 0;
+    position: relative;
+  }
+  .buscador input{
+    width:100%;
+    padding: 0.9rem 1.2rem 0.9rem 2.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--gris-borde);
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .buscador input:focus{ outline: 2px solid var(--verde); outline-offset: 1px; }
+  .buscador .icono-lupa{
+    position:absolute;
+    left: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    opacity:0.5;
+  }
+  .accesos-rapidos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:0.6rem;
+    margin-top: 1.5rem;
+  }
+  .acceso-rapido{
+    display:inline-flex;
+    align-items:center;
+    gap:0.4rem;
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.88rem;
+    font-weight:600;
+    color: var(--azul);
+    text-decoration:none;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .acceso-rapido:hover{ box-shadow: 0 3px 10px rgba(0,0,0,0.08); transform: translateY(-1px); }
+  .card.oculta{ display:none; }
+  .sin-resultados{
+    text-align:center;
+    color:#888;
+    padding: 2rem 1rem;
+    display:none;
+  }
 </style>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
@@ -148,8 +199,21 @@
 
 <main>
   <section class="hero">
-    <h1>Calculadoras laborales y fiscales para España, actualizadas a 2026</h1>
-    <p>Herramientas gratuitas, sin registro, para calcular indemnizaciones, finiquitos, nóminas y más. Resultados al instante, con la normativa aplicable indicada en cada página.</p>
+    <h1>Calcula lo que te corresponde</h1>
+    <p>Herramientas laborales y fiscales gratuitas para España, actualizadas a 2026. Sin registro, resultados al instante.</p>
+
+    <div class="buscador">
+      <span class="icono-lupa">🔎</span>
+      <input type="text" id="buscador-input" placeholder="¿Qué quieres calcular?" oninput="filtrarHerramientas(this.value)">
+    </div>
+
+    <div class="accesos-rapidos">
+      <a class="acceso-rapido" href="calculadora-finiquito.html">💼 Finiquito</a>
+      <a class="acceso-rapido" href="calculadora-indemnizacion-despido.html">⚖️ Indemnización</a>
+      <a class="acceso-rapido" href="calculadora-nomina-neta.html">💶 Nómina neta</a>
+      <a class="acceso-rapido" href="calculadora-paro.html">🏦 Paro</a>
+      <a class="acceso-rapido" href="calculadora-cuota-autonomos.html">🧾 Autónomos</a>
+    </div>
   </section>
 
   <div class="tabs-nav">
@@ -194,6 +258,7 @@
         <p>Se publicará en las próximas semanas.</p>
       </div>
     </div>
+    <p class="sin-resultados">No hemos encontrado ninguna calculadora para tu búsqueda.</p>
   </section>
 
   <section id="guias" class="tab-panel">
@@ -234,6 +299,7 @@
         <p>Quién debe presentarlo, cómo se calcula el 20% y quién está exento.</p>
       </a>
     </div>
+    <p class="sin-resultados">No hemos encontrado ninguna guía para tu búsqueda.</p>
   </section>
 
   <div class="disclaimer">
@@ -261,6 +327,42 @@
     document.getElementById(nombre).classList.add('active');
     document.getElementById('tab-btn-' + nombre).classList.add('active');
     document.getElementById(nombre).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function filtrarHerramientas(texto) {
+    const q = texto.trim().toLowerCase();
+    const paneles = ['calculadoras', 'guias'];
+    const visiblesPorPanel = {};
+
+    paneles.forEach(function (id) {
+      const panel = document.getElementById(id);
+      const cards = panel.querySelectorAll('.card');
+      let visibles = 0;
+      cards.forEach(function (card) {
+        const textoCard = card.textContent.toLowerCase();
+        if (q === '' || textoCard.includes(q)) {
+          card.classList.remove('oculta');
+          visibles++;
+        } else {
+          card.classList.add('oculta');
+        }
+      });
+      visiblesPorPanel[id] = visibles;
+      const sinResultados = panel.querySelector('.sin-resultados');
+      if (sinResultados) {
+        sinResultados.style.display = (visibles === 0 && q !== '') ? 'block' : 'none';
+      }
+    });
+
+    if (q !== '') {
+      const activo = document.querySelector('.tab-panel.active').id;
+      if (visiblesPorPanel[activo] === 0) {
+        const otro = activo === 'calculadoras' ? 'guias' : 'calculadoras';
+        if (visiblesPorPanel[otro] > 0) {
+          mostrarPestana(otro);
+        }
+      }
+    }
   }
 </script>
 
