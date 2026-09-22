@@ -164,12 +164,30 @@
           </select>
         </div>
         <div>
-          <label for="situacion-familiar">Situación familiar (para estimar el mínimo exento)</label>
+          <label for="situacion-familiar">Hijos a cargo (para el mínimo exento)</label>
           <select id="situacion-familiar">
             <option value="0">Sin hijos</option>
             <option value="1">Con 1 hijo</option>
             <option value="2">Con 2 hijos</option>
             <option value="3">Con 3 o más hijos</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="edad">Tu edad</label>
+          <select id="edad">
+            <option value="normal">Menos de 65 años</option>
+            <option value="65">Entre 65 y 75 años</option>
+            <option value="75">Más de 75 años</option>
+          </select>
+        </div>
+        <div>
+          <label for="discapacidad">Grado de discapacidad</label>
+          <select id="discapacidad">
+            <option value="0">Sin discapacidad</option>
+            <option value="33">Del 33% al 64%</option>
+            <option value="65">65% o superior</option>
           </select>
         </div>
       </div>
@@ -183,7 +201,7 @@
   <div class="legal-box">
     <h2>Cómo se calcula (y por qué es una estimación)</h2>
     <p><strong>Seguridad Social (aportación del trabajador):</strong> se aplica un porcentaje fijo sobre el salario bruto, que incluye contingencias comunes, desempleo, formación profesional y el Mecanismo de Equidad Intergeneracional (MEI). El porcentaje de desempleo varía ligeramente según si el contrato es indefinido o temporal. Este cálculo sí es preciso, salvo que tu salario supere la base máxima de cotización vigente, en cuyo caso la cuota se calcula solo hasta ese límite, no sobre el salario completo.</p>
-    <p><strong>IRPF:</strong> aquí está la parte que es solo una <strong>aproximación</strong>. La retención real de IRPF que aplica tu empresa no es un simple porcentaje según tu sueldo: sigue un procedimiento oficial (Reglamento del IRPF, Real Decreto 439/2007) que tiene en cuenta tu situación familiar completa, si tienes más de un pagador, discapacidad, pensión compensatoria, y otros factores, además de variar ligeramente según la comunidad autónoma. Esta calculadora estima la retención aplicando la escala general estatal del IRPF sobre tu base menos un mínimo personal y familiar aproximado, lo cual da una cifra orientativa razonable pero no idéntica a la que calculará tu empresa.</p>
+    <p><strong>IRPF:</strong> aquí está la parte que sigue siendo una <strong>aproximación</strong>, aunque ya tiene en cuenta hijos a cargo, edad y discapacidad. La retención real de IRPF que aplica tu empresa sigue un procedimiento oficial (Reglamento del IRPF, Real Decreto 439/2007) que además considera si tienes más de un pagador, pensión compensatoria, y varía ligeramente según la comunidad autónoma. Esta calculadora estima la retención aplicando la escala general estatal del IRPF sobre tu base menos tu mínimo personal y familiar (ya ajustado por hijos, edad y discapacidad), lo cual da una cifra orientativa bastante más ajustada que una aproximación genérica, pero no idéntica a la que calculará tu empresa.</p>
     <p>Para el cálculo exacto y oficial de tu retención, puedes usar el <a href="https://www2.agenciatributaria.gob.es/wlpl/wlpl-tools/servlet/S1?SISTEMA=SR" target="_blank" rel="noopener">simulador de retenciones de la Agencia Tributaria</a>.</p>
   </div>
 
@@ -195,7 +213,7 @@
     <h2>Preguntas frecuentes</h2>
     <details>
       <summary>¿Por qué mi nómina real no coincide exactamente con esta estimación?</summary>
-      <p>La parte de Seguridad Social es precisa, pero la retención de IRPF real depende de tu situación personal completa (más pagadores, discapacidad, pensiones compensatorias) y del procedimiento oficial de Hacienda, que esta calculadora aproxima pero no replica al 100%.</p>
+      <p>La parte de Seguridad Social es precisa, y la de IRPF ya tiene en cuenta hijos, edad y discapacidad. Aun así, la retención real depende también de otros factores (más de un pagador, pensiones compensatorias) y del procedimiento oficial de Hacienda, que esta calculadora aproxima pero no replica al 100%.</p>
     </details>
     <details>
       <summary>¿Qué pasa si tengo más de un pagador en el año?</summary>
@@ -287,15 +305,30 @@
     return impuesto;
   }
 
-  function minimoPersonalFamiliar(numHijos) {
-    let minimo = 5550; // mínimo personal general aproximado
-    const porHijo = [0, 2400, 2700, 4000]; // 1er, 2º, 3er hijo (aprox., el 4º+ es mayor)
+  function minimoPersonalFamiliar(numHijos, edad, discapacidad) {
+    let minimo = 5550; // mínimo personal general (Ley 35/2006 IRPF, art. 57)
+    const porHijo = [0, 2400, 2700, 4000]; // 1er, 2º, 3er hijo (el 4º+ es mayor)
     for (let i = 1; i <= numHijos && i < porHijo.length; i++) {
       minimo += porHijo[i];
     }
     if (numHijos >= porHijo.length) {
       minimo += (numHijos - (porHijo.length - 1)) * 4500;
     }
+
+    // Mínimo por edad (art. 57 y 58 Ley IRPF)
+    if (edad === '65') {
+      minimo += 1150;
+    } else if (edad === '75') {
+      minimo += 1150 + 1400; // +65 y +75 son acumulativos
+    }
+
+    // Mínimo por discapacidad (art. 60 Ley IRPF)
+    if (discapacidad === '33') {
+      minimo += 3000;
+    } else if (discapacidad === '65') {
+      minimo += 9000;
+    }
+
     return minimo;
   }
 
@@ -306,6 +339,8 @@
     const numPagas = parseInt(document.getElementById('num-pagas').value, 10);
     const tipoContrato = document.getElementById('tipo-contrato').value;
     const numHijos = parseInt(document.getElementById('situacion-familiar').value, 10);
+    const edad = document.getElementById('edad').value;
+    const discapacidad = document.getElementById('discapacidad').value;
 
     resultadoDiv.className = '';
     resultadoDiv.style.display = 'block';
@@ -325,7 +360,7 @@
     const cuotaSSAnual = salarioBrutoAnual * porcentajeSS;
 
     // IRPF estimado
-    const minimo = minimoPersonalFamiliar(numHijos);
+    const minimo = minimoPersonalFamiliar(numHijos, edad, discapacidad);
     const irpfAnual = calcularIRPFAnual(salarioBrutoAnual, minimo);
     const tipoEfectivoIRPF = (irpfAnual / salarioBrutoAnual) * 100;
 
