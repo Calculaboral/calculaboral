@@ -175,14 +175,14 @@
   <div class="legal-box">
     <h2>Cómo se calcula</h2>
     <p><strong>Rendimiento neto:</strong> se calcula restando a tus ingresos los gastos deducibles de la actividad, y aplicando después una deducción adicional del 7% (persona física) o 3% (autónomo societario) en concepto de gastos de difícil justificación.</p>
-    <p><strong>Tramo y base de cotización:</strong> según tu rendimiento neto mensual, te corresponde un tramo de cotización (hay 15 en total, agrupados en tabla reducida y tabla general), cada uno con una base mínima y máxima entre las que puedes elegir cotizar. <strong>Esta calculadora simplifica el cálculo</strong> tomando tu rendimiento neto mensual como base aproximada (ajustada a los límites globales del sistema, entre unos 653€ y unos 4.720€ mensuales), en vez de aplicar la tabla exacta de 15 tramos, para darte una estimación rápida sin arriesgarnos a mostrarte una cifra de tramo que pueda estar desactualizada.</p>
+    <p><strong>Tramo y base de cotización:</strong> según tu rendimiento neto mensual, te corresponde uno de los 15 tramos de cotización oficiales (3 en la tabla reducida, 12 en la tabla general), cada uno con una base mínima y máxima entre las que puedes elegir cotizar. Esta calculadora identifica automáticamente tu tramo exacto según la <strong>tabla oficial publicada en el BOE (Orden PJC/297/2026, artículo 18)</strong>, y estima tu base dentro del rango de ese tramo a partir de tu rendimiento neto.</p>
     <p><strong>Tipo de cotización total en 2026: 31,5%</strong> sobre la base elegida, que incluye contingencias comunes, contingencias profesionales, cese de actividad, formación profesional y el Mecanismo de Equidad Intergeneracional (MEI).</p>
     <p><strong>Tarifa plana:</strong> si te acabas de dar de alta (o llevas más de 2 años sin estarlo, 3 si ya disfrutaste de la tarifa plana antes), puedes pagar una cuota reducida fija de aproximadamente 80-90€/mes durante los primeros 12 meses, prorrogable un segundo año si tus rendimientos netos quedan por debajo del Salario Mínimo Interprofesional.</p>
     <p>Para conocer tu tramo exacto y la cuota precisa, usa el <a href="https://www.seg-social.es" target="_blank" rel="noopener">simulador oficial de la Seguridad Social (Importass)</a>.</p>
   </div>
 
   <div class="disclaimer">
-    Esta calculadora ofrece una <strong>estimación orientativa y simplificada</strong>. No aplica la tabla exacta de 15 tramos oficiales (cuyas cifras concretas varían ligeramente entre fuentes y conviene verificar en el simulador oficial), sino una aproximación basada en el tipo general del 31,5% sobre tu rendimiento neto estimado. No sustituye el cálculo oficial de la Seguridad Social ni el asesoramiento de una gestoría.
+    Esta calculadora aplica la tabla oficial de tramos vigente en 2026, pero sigue siendo una <strong>estimación orientativa</strong>: dentro de tu tramo, la base exacta por la que elijas cotizar es una decisión tuya (puedes elegir cualquier valor entre el mínimo y el máximo de tu tramo), y la regularización final de la Seguridad Social depende de tus rendimientos netos reales del ejercicio completo, no solo de la estimación mensual. No sustituye el cálculo oficial de la Seguridad Social ni el asesoramiento de una gestoría.
   </div>
 
   <div class="faq">
@@ -209,6 +209,7 @@
     <h2>Fuentes oficiales</h2>
     <p>Esta calculadora se basa en los siguientes textos y organismos:</p>
     <ul>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296" target="_blank" rel="noopener">Orden PJC/297/2026 — tabla de tramos y tipos de cotización 2026 (BOE)</a></li>
       <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409" target="_blank" rel="noopener">Ley 20/2007, del Estatuto del trabajo autónomo (BOE)</a></li>
       <li><a href="https://www.seg-social.es" target="_blank" rel="noopener">Seguridad Social — Importass</a></li>
     </ul>
@@ -221,10 +222,34 @@
 (function () {
   const form = document.getElementById('form-autonomos');
   const resultadoDiv = document.getElementById('resultado');
-  const BASE_MINIMA = 653.59;
-  const BASE_MAXIMA = 4720.50;
   const TIPO_TOTAL = 0.315;
   const TARIFA_PLANA_MENSUAL = 85; // aproximado, con MEI incluido
+
+  // Tabla oficial de 15 tramos (Orden PJC/297/2026, BOE, art. 18) — vigente 2026
+  const TRAMOS = [
+    { max: 670,     min: 653.59,  base: 718.94 },
+    { max: 900,     min: 718.95,  base: 900.00 },
+    { max: 1166.69, min: 849.67,  base: 1166.70 },
+    { max: 1300,    min: 950.98,  base: 1300.00 },
+    { max: 1500,    min: 960.78,  base: 1500.00 },
+    { max: 1700,    min: 960.78,  base: 1700.00 },
+    { max: 1850,    min: 1143.79, base: 1850.00 },
+    { max: 2030,    min: 1209.15, base: 2030.00 },
+    { max: 2330,    min: 1274.51, base: 2330.00 },
+    { max: 2760,    min: 1356.21, base: 2760.00 },
+    { max: 3190,    min: 1437.91, base: 3190.00 },
+    { max: 3620,    min: 1519.61, base: 3620.00 },
+    { max: 4050,    min: 1601.31, base: 4050.00 },
+    { max: 6000,    min: 1732.03, base: 5101.20 },
+    { max: Infinity, min: 1928.10, base: 5101.20 }
+  ];
+
+  function tramoPara(rendimientoNeto) {
+    for (const t of TRAMOS) {
+      if (rendimientoNeto <= t.max) return t;
+    }
+    return TRAMOS[TRAMOS.length - 1];
+  }
 
   function formatoEuro(numero) {
     return numero.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
@@ -252,8 +277,10 @@
     const rendimientoAnualNeto = rendimientoAnualBruto * (1 - deduccionAdicional);
     const rendimientoMensualNeto = rendimientoAnualNeto / 12;
 
-    const baseEstimada = Math.min(Math.max(rendimientoMensualNeto, BASE_MINIMA), BASE_MAXIMA);
+    const tramo = tramoPara(rendimientoMensualNeto);
+    const baseEstimada = Math.min(Math.max(rendimientoMensualNeto, tramo.min), tramo.base);
     const cuotaCalculada = baseEstimada * TIPO_TOTAL;
+    const numeroTramo = TRAMOS.indexOf(tramo) + 1;
 
     const cuotaFinal = tarifaPlana ? TARIFA_PLANA_MENSUAL : cuotaCalculada;
 
@@ -267,6 +294,7 @@
       <div class="cifra">${formatoEuro(cuotaFinal)}/mes</div>
       <table>
         <tr><td>Rendimiento neto mensual estimado</td><td>${formatoEuro(rendimientoMensualNeto)}</td></tr>
+        <tr><td>Tramo de cotización 2026</td><td>Tramo ${numeroTramo} de 15</td></tr>
         <tr><td>Base de cotización estimada</td><td>${formatoEuro(baseEstimada)}</td></tr>
         <tr><td>Cuota anual estimada</td><td>${formatoEuro(cuotaFinal * 12)}</td></tr>
         ${filaTarifaPlana}
