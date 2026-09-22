@@ -201,7 +201,7 @@
   <div class="legal-box">
     <h2>Cómo se calcula (y por qué es una estimación)</h2>
     <p><strong>Seguridad Social (aportación del trabajador):</strong> se aplica un porcentaje fijo sobre el salario bruto, que incluye contingencias comunes, desempleo, formación profesional y el Mecanismo de Equidad Intergeneracional (MEI). El porcentaje de desempleo varía ligeramente según si el contrato es indefinido o temporal. Este cálculo sí es preciso, salvo que tu salario supere la base máxima de cotización vigente, en cuyo caso la cuota se calcula solo hasta ese límite, no sobre el salario completo.</p>
-    <p><strong>IRPF:</strong> aquí está la parte que sigue siendo una <strong>aproximación</strong>, aunque ya tiene en cuenta hijos a cargo, edad y discapacidad. La retención real de IRPF que aplica tu empresa sigue un procedimiento oficial (Reglamento del IRPF, Real Decreto 439/2007) que además considera si tienes más de un pagador, pensión compensatoria, y varía ligeramente según la comunidad autónoma. Esta calculadora estima la retención aplicando la escala general estatal del IRPF sobre tu base menos tu mínimo personal y familiar (ya ajustado por hijos, edad y discapacidad), lo cual da una cifra orientativa bastante más ajustada que una aproximación genérica, pero no idéntica a la que calculará tu empresa.</p>
+    <p><strong>IRPF:</strong> aquí está la parte que sigue siendo una <strong>aproximación</strong>, aunque ya tiene en cuenta hijos a cargo, edad, discapacidad, y la reducción por obtención de rendimientos del trabajo (art. 20 LIRPF), que puede llegar a 7.302€ anuales para salarios bajos y explica, por ejemplo, por qué alguien que cobra el SMI apenas paga IRPF. La retención real de IRPF que aplica tu empresa sigue un procedimiento oficial (Reglamento del IRPF, Real Decreto 439/2007) que además considera si tienes más de un pagador o pensión compensatoria. Esta calculadora da una cifra orientativa bastante ajustada, pero no idéntica a la que calculará tu empresa.</p>
     <p>Para el cálculo exacto y oficial de tu retención, puedes usar el <a href="https://www2.agenciatributaria.gob.es/wlpl/wlpl-tools/servlet/S1?SISTEMA=SR" target="_blank" rel="noopener">simulador de retenciones de la Agencia Tributaria</a>.</p>
   </div>
 
@@ -305,6 +305,20 @@
     return impuesto;
   }
 
+  // Reducción por obtención de rendimientos del trabajo (art. 20 LIRPF, valores 2026)
+  function calcularReduccionArt20(rendimientoNetoTrabajo) {
+    if (rendimientoNetoTrabajo <= 14852) {
+      return 7302;
+    }
+    if (rendimientoNetoTrabajo <= 17673.52) {
+      return Math.max(7302 - 1.75 * (rendimientoNetoTrabajo - 14852), 0);
+    }
+    if (rendimientoNetoTrabajo < 19747.5) {
+      return Math.max(2364.34 - 1.14 * (rendimientoNetoTrabajo - 17673.52), 0);
+    }
+    return 0;
+  }
+
   function minimoPersonalFamiliar(numHijos, edad, discapacidad) {
     let minimo = 5550; // mínimo personal general (Ley 35/2006 IRPF, art. 57)
     const porHijo = [0, 2400, 2700, 4000]; // 1er, 2º, 3er hijo (el 4º+ es mayor)
@@ -359,9 +373,17 @@
     const porcentajeSS = contingenciasComunes + desempleo + formacionProfesional + mei;
     const cuotaSSAnual = salarioBrutoAnual * porcentajeSS;
 
+    // Rendimiento neto del trabajo (salario - SS - gasto genérico de 2.000€, art. 19.2.f LIRPF)
+    const gastoGenericoAnual = 2000;
+    const rendimientoNetoTrabajo = Math.max(salarioBrutoAnual - cuotaSSAnual - gastoGenericoAnual, 0);
+
+    // Reducción por obtención de rendimientos del trabajo (art. 20 LIRPF) — 2026
+    const reduccionTrabajo = calcularReduccionArt20(rendimientoNetoTrabajo);
+
     // IRPF estimado
     const minimo = minimoPersonalFamiliar(numHijos, edad, discapacidad);
-    const irpfAnual = calcularIRPFAnual(salarioBrutoAnual, minimo);
+    const baseParaIRPF = Math.max(rendimientoNetoTrabajo - reduccionTrabajo, 0);
+    const irpfAnual = calcularIRPFAnual(baseParaIRPF, minimo);
     const tipoEfectivoIRPF = (irpfAnual / salarioBrutoAnual) * 100;
 
     const netoAnual = salarioBrutoAnual - cuotaSSAnual - irpfAnual;
