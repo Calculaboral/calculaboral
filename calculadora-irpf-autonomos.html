@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de IRPF para Autónomos 2026 | Calculadora Lista</title>
+<meta name="description" content="Calcula gratis tu IRPF anual estimado como autónomo: rendimiento neto, reducciones aplicables, mínimo personal y familiar, y comparación con lo ya pagado en el modelo 130.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
+<style>
+  :root{
+    --azul:#122a45;
+    --verde:#1e8a54;
+    --verde-oscuro:#166b41;
+    --gris-fondo:#f5f7fa;
+    --gris-texto:#2b2e33;
+    --gris-borde:#e4e7ec;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--gris-texto);
+    background: var(--gris-fondo);
+    line-height:1.6;
+  }
+  header{ background: linear-gradient(135deg, var(--azul) 0%, #1c3d63 100%); color:#fff; padding: 1.1rem 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  header .wrap{ max-width: 1100px; margin:0 auto; }
+  header a{ color:#fff; text-decoration:none; font-weight:700; }
+  main{ max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  h1{ color: var(--azul); font-size:1.6rem; margin-bottom:0.25rem; }
+  .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
+  .intro{ color:#555; margin-bottom:1.75rem; }
+  form{
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:12px;
+    padding:1.5rem;
+  }
+  fieldset{ border:none; padding:0; margin:0 0 1.25rem; }
+  legend{ font-weight:700; color:var(--azul); padding:0 0 0.5rem; font-size:1rem; }
+  label{ display:block; font-size:0.9rem; margin-bottom:0.35rem; font-weight:600; }
+  .hint{ font-size:0.78rem; color:#777; margin: -0.2rem 0 0.6rem; }
+  input[type="number"], select{
+    width:100%;
+    padding:0.6rem 0.7rem;
+    border:1px solid var(--gris-borde);
+    border-radius:8px;
+    font-size:0.95rem;
+    margin-bottom:1rem;
+  }
+  .row{ display:grid; grid-template-columns: 1fr 1fr; gap:1rem; }
+  @media (max-width:520px){ .row{ grid-template-columns: 1fr; } }
+  .checkbox-row{
+    display:flex;
+    align-items:flex-start;
+    gap:0.6rem;
+    background:#f7f9fb;
+    border:1px solid var(--gris-borde);
+    border-radius:8px;
+    padding:0.85rem 1rem;
+    margin-bottom:1rem;
+  }
+  .checkbox-row input{ width:auto; margin:0.2rem 0 0; }
+  .checkbox-row label{ margin:0; font-weight:600; }
+  .checkbox-row .hint{ margin:0.2rem 0 0; }
+  button{
+    background: var(--verde);
+    color:#fff;
+    border:none;
+    padding:0.85rem 1.5rem;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    width:100%;
+  }
+  button:hover{ background:#166b41; }
+  #resultado{
+    margin-top:1.5rem;
+    padding:1.25rem 1.5rem;
+    border-radius:10px;
+    background:#eef7f1;
+    border:1px solid #cfe8d8;
+    display:none;
+  }
+  #resultado.error{ background:#fbeceb; border-color:#f0c9c6; }
+  #resultado h2{ margin-top:0; color:var(--azul); font-size:1.15rem; }
+  #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde); margin: 0.25rem 0 0.75rem; }
+  #resultado table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
+  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
+  #resultado td:last-child{ text-align:right; font-weight:600; }
+  .legal-box{
+    margin-top:2rem;
+    padding:1.25rem 1.5rem;
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:10px;
+    font-size:0.88rem;
+    color:#555;
+  }
+  .legal-box h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .legal-box a{ color: var(--azul); font-weight:600; }
+  .disclaimer{
+    margin-top:1.5rem;
+    background:#fff8e6;
+    border:1px solid #f0e0a8;
+    border-radius:8px;
+    padding:1rem 1.25rem;
+    font-size:0.85rem;
+    color:#6b5a1e;
+  }
+  a.volver{ display:inline-block; margin-top:2rem; font-size:0.9rem; color: var(--azul); }
+  .faq{ margin-top:2rem; }
+  .faq h2{ color: var(--azul); font-size:1.15rem; }
+  .faq details{
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:8px;
+    padding:0.9rem 1.1rem;
+    margin-bottom:0.6rem;
+  }
+  .faq summary{ font-weight:700; cursor:pointer; color:var(--azul); }
+  .faq details p{ margin:0.6rem 0 0; font-size:0.92rem; color:#444; }
+  .fuentes{
+    margin-top:2rem;
+    padding:1.25rem 1.5rem;
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:10px;
+    font-size:0.88rem;
+    color:#555;
+  }
+  .fuentes h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .fuentes ul{ margin:0.5rem 0 0; padding-left:1.25rem; }
+  .fuentes a{ color: var(--azul); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap"><a href="index.html">Calculadora Lista</a></div>
+</header>
+
+<main>
+  <h1>Calculadora de IRPF para autónomos</h1>
+  <p class="updated">Actualizado: 2026 · Normativa: Ley 35/2006 del IRPF, arts. 30 y 32</p>
+  <p class="intro">Estima tu IRPF anual como autónomo a partir de tus ingresos y gastos de la actividad. <strong>Importante:</strong> es una estimación orientativa, no sustituye la declaración oficial de la renta (te explicamos por qué más abajo).</p>
+
+  <form id="form-irpf">
+    <fieldset>
+      <legend>1. Rendimientos de tu actividad</legend>
+      <div class="row">
+        <div>
+          <label for="ingresos">Ingresos brutos anuales (€)</label>
+          <input type="number" id="ingresos" min="0" step="0.01" placeholder="Ej: 35000" required>
+        </div>
+        <div>
+          <label for="gastos">Gastos deducibles anuales (€)</label>
+          <input type="number" id="gastos" min="0" step="0.01" placeholder="Ej: 9000" required>
+        </div>
+      </div>
+      <label for="cuota-autonomos">Cuota de autónomos (RETA) pagada este año (€)</label>
+      <input type="number" id="cuota-autonomos" min="0" step="0.01" placeholder="Ej: 3800">
+      <p class="hint">Tu cuota de autónomos es un gasto deducible aparte. No la incluyas también en "gastos deducibles" para no restarla dos veces.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Tu situación personal</legend>
+      <div class="row">
+        <div>
+          <label for="hijos">Hijos a cargo</label>
+          <select id="hijos">
+            <option value="0">Sin hijos</option>
+            <option value="1">Con 1 hijo</option>
+            <option value="2">Con 2 hijos</option>
+            <option value="3">Con 3 o más hijos</option>
+          </select>
+        </div>
+        <div>
+          <label for="edad">Tu edad</label>
+          <select id="edad">
+            <option value="normal">Menos de 65 años</option>
+            <option value="65">Entre 65 y 75 años</option>
+            <option value="75">Más de 75 años</option>
+          </select>
+        </div>
+      </div>
+      <label for="discapacidad">Grado de discapacidad</label>
+      <select id="discapacidad">
+        <option value="0">Sin discapacidad</option>
+        <option value="33">Del 33% al 64%</option>
+        <option value="65">65% o superior</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Reducción especial (solo si aplica)</legend>
+      <div class="checkbox-row">
+        <input type="checkbox" id="trade">
+        <div>
+          <label for="trade">Soy autónomo económicamente dependiente (TRADE), o facturo la totalidad de mi actividad a un único cliente no vinculado</label>
+          <p class="hint">Solo marca esto si de verdad cumples esta condición. Si facturas a varios clientes, NO la marques: aplicarla sin cumplir el requisito daría un resultado incorrecto.</p>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Pagos ya realizados (opcional)</legend>
+      <label for="pagos-cuenta">Total pagado este año en el modelo 130 (€)</label>
+      <input type="number" id="pagos-cuenta" min="0" step="0.01" placeholder="Ej: 2400">
+      <p class="hint">Si lo indicas, te mostramos si te queda por pagar o si te correspondería devolución. Si lo dejas en blanco, solo verás el IRPF anual estimado.</p>
+    </fieldset>
+
+    <button type="submit">Calcular IRPF estimado</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <div class="legal-box">
+    <h2>Cómo se calcula (y por qué es una estimación)</h2>
+    <p><strong>Rendimiento neto:</strong> ingresos menos gastos deducibles de la actividad, menos la cuota de autónomos pagada (que es deducible como gasto).</p>
+    <p><strong>Reducción del art. 32.2.1º:</strong> solo si eres un trabajador autónomo económicamente dependiente (TRADE) o facturas la totalidad de tu actividad a un único cliente no vinculado, y tu rendimiento neto es inferior a 19.747,5€, puedes reducir tu base hasta en 6.498€. Esta reducción <strong>no aplica</strong> a la mayoría de autónomos con varios clientes, por lo que esta calculadora solo la incluye si marcas la casilla correspondiente.</p>
+    <p><strong>Mínimo personal y familiar:</strong> igual que en nuestra calculadora de nómina, se ajusta según tus hijos, edad y discapacidad.</p>
+    <p><strong>Escala general del IRPF:</strong> se aplica sobre la base resultante, de forma progresiva por tramos.</p>
+    <p>Esta calculadora <strong>no incluye</strong> otras reducciones posibles (por ejemplo, la de rentas no exentas inferiores a 12.000€ del art. 32.2.3º, aportaciones a planes de pensiones, u otras deducciones autonómicas), por lo que el resultado real de tu declaración puede diferir. Para el cálculo oficial, usa el <a href="https://www2.agenciatributaria.gob.es/wlpl/wlpl-tools/servlet/S1?SISTEMA=SR" target="_blank" rel="noopener">simulador de la Agencia Tributaria</a> o consulta con una gestoría.</p>
+  </div>
+
+  <div class="disclaimer">
+    Esta calculadora ofrece una <strong>estimación orientativa</strong> del IRPF anual. No sustituye la declaración oficial de la renta ni el asesoramiento de una gestoría o asesor fiscal.
+  </div>
+
+  <div class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Qué diferencia hay entre esta calculadora y la del modelo 130?</summary>
+      <p>El modelo 130 son los pagos trimestrales a cuenta (anticipos) que haces durante el año. Esta calculadora estima el IRPF anual real que te corresponde pagar en tu declaración de la renta; si has indicado tus pagos del modelo 130, te mostramos la diferencia entre ambos.</p>
+    </details>
+    <details>
+      <summary>¿Por qué no puedo aplicar la reducción de 6.498€ si tengo varios clientes?</summary>
+      <p>Esa reducción específica (art. 32.2.1º LIRPF) solo está pensada para autónomos con una dependencia económica fuerte de un único pagador, similar a un empleado pero sin serlo formalmente. Tener varios clientes es precisamente lo que excluye esta condición.</p>
+    </details>
+    <details>
+      <summary>¿Puedo deducirme otros gastos aparte de los que menciono?</summary>
+      <p>Sí, existen más gastos deducibles específicos (suministros si trabajas desde casa, dietas, vehículo si es exclusivo de la actividad, entre otros) que no están reflejados aquí de forma individual. Inclúyelos dentro de "gastos deducibles anuales" si ya los tienes calculados.</p>
+    </details>
+    <details>
+      <summary>¿Qué pasa si el resultado me sale "a devolver"?</summary>
+      <p>Significa que, según esta estimación, pagaste más en tus pagos fraccionados del modelo 130 de lo que finalmente te corresponde. En tu declaración de la renta anual, Hacienda te devolvería la diferencia, siempre que el cálculo oficial confirme esta estimación.</p>
+    </details>
+  </div>
+
+  <div class="fuentes">
+    <h2>Fuentes oficiales</h2>
+    <p>Esta calculadora se basa en los siguientes textos y organismos:</p>
+    <ul>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764" target="_blank" rel="noopener">Ley 35/2006 del IRPF, arts. 30 y 32 (BOE)</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es" target="_blank" rel="noopener">Agencia Tributaria</a></li>
+    </ul>
+  </div>
+
+  <a class="volver" href="index.html">← Volver al inicio</a>
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre esta calculadora y la del modelo 130?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El modelo 130 son los pagos trimestrales a cuenta. Esta calculadora estima el IRPF anual real de tu declaración de la renta, y si indicas tus pagos, muestra la diferencia." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué no puedo aplicar la reducción de 6.498€ si tengo varios clientes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Esa reducción solo aplica a autónomos económicamente dependientes de un único pagador. Tener varios clientes excluye esa condición." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo deducirme otros gastos aparte de los que menciona la calculadora?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, existen más gastos deducibles específicos que puedes incluir dentro del total de gastos deducibles anuales." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si el resultado me sale a devolver?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Significa que pagaste más en el modelo 130 de lo que finalmente corresponde; Hacienda devolvería la diferencia en la declaración anual." }
+    }
+  ]
+}
+</script>
+
+<script>
+(function () {
+  const form = document.getElementById('form-irpf');
+  const resultadoDiv = document.getElementById('resultado');
+
+  function formatoEuro(numero) {
+    return numero.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
+  }
+
+  function calcularIRPFAnual(baseAnual, minimoPersonalFamiliar) {
+    const baseImponible = Math.max(baseAnual - minimoPersonalFamiliar, 0);
+    const tramos = [
+      { hasta: 12450, tipo: 0.19 },
+      { hasta: 20200, tipo: 0.24 },
+      { hasta: 35200, tipo: 0.30 },
+      { hasta: 60000, tipo: 0.37 },
+      { hasta: 300000, tipo: 0.45 },
+      { hasta: Infinity, tipo: 0.47 }
+    ];
+    let impuesto = 0;
+    let anterior = 0;
+    for (const tramo of tramos) {
+      if (baseImponible > anterior) {
+        const enEsteTramo = Math.min(baseImponible, tramo.hasta) - anterior;
+        impuesto += enEsteTramo * tramo.tipo;
+        anterior = tramo.hasta;
+      } else {
+        break;
+      }
+    }
+    return impuesto;
+  }
+
+  // Reducción art. 32.2.1º LIRPF — SOLO para TRADE o cliente único (2026)
+  function calcularReduccionTrade(rendimientoNeto) {
+    if (rendimientoNeto <= 14047.5) {
+      return 6498;
+    }
+    if (rendimientoNeto < 19747.5) {
+      return Math.max(6498 - 1.14 * (rendimientoNeto - 14047.5), 0);
+    }
+    return 0;
+  }
+
+  function minimoPersonalFamiliar(numHijos, edad, discapacidad) {
+    let minimo = 5550;
+    const porHijo = [0, 2400, 2700, 4000];
+    for (let i = 1; i <= numHijos && i < porHijo.length; i++) {
+      minimo += porHijo[i];
+    }
+    if (numHijos >= porHijo.length) {
+      minimo += (numHijos - (porHijo.length - 1)) * 4500;
+    }
+    if (edad === '65') {
+      minimo += 1150;
+    } else if (edad === '75') {
+      minimo += 1150 + 1400;
+    }
+    if (discapacidad === '33') {
+      minimo += 3000;
+    } else if (discapacidad === '65') {
+      minimo += 9000;
+    }
+    return minimo;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const ingresos = parseFloat(document.getElementById('ingresos').value);
+    const gastos = parseFloat(document.getElementById('gastos').value);
+    const cuotaAutonomos = parseFloat(document.getElementById('cuota-autonomos').value) || 0;
+    const numHijos = parseInt(document.getElementById('hijos').value, 10);
+    const edad = document.getElementById('edad').value;
+    const discapacidad = document.getElementById('discapacidad').value;
+    const esTrade = document.getElementById('trade').checked;
+    const pagosCuentaInput = document.getElementById('pagos-cuenta').value;
+    const pagosCuenta = pagosCuentaInput === '' ? null : parseFloat(pagosCuentaInput);
+
+    resultadoDiv.className = '';
+    resultadoDiv.style.display = 'block';
+
+    if (isNaN(ingresos) || ingresos <= 0 || isNaN(gastos) || gastos < 0) {
+      resultadoDiv.className = 'error';
+      resultadoDiv.innerHTML = '<h2>Revisa los datos</h2><p>Introduce ingresos y gastos válidos.</p>';
+      return;
+    }
+
+    const rendimientoNeto = Math.max(ingresos - gastos - cuotaAutonomos, 0);
+    const reduccionTrade = esTrade ? calcularReduccionTrade(rendimientoNeto) : 0;
+    const baseParaIRPF = Math.max(rendimientoNeto - reduccionTrade, 0);
+    const minimo = minimoPersonalFamiliar(numHijos, edad, discapacidad);
+    const irpfAnual = calcularIRPFAnual(baseParaIRPF, minimo);
+    const tipoEfectivo = ingresos > 0 ? (irpfAnual / rendimientoNeto) * 100 : 0;
+
+    let filaComparacion = '';
+    if (pagosCuenta !== null && !isNaN(pagosCuenta)) {
+      const diferencia = irpfAnual - pagosCuenta;
+      if (diferencia > 0) {
+        filaComparacion = `<tr><td>Pagos ya realizados (modelo 130)</td><td>${formatoEuro(pagosCuenta)}</td></tr>
+        <tr><td><strong>Te quedaría por pagar</strong></td><td><strong>${formatoEuro(diferencia)}</strong></td></tr>`;
+      } else {
+        filaComparacion = `<tr><td>Pagos ya realizados (modelo 130)</td><td>${formatoEuro(pagosCuenta)}</td></tr>
+        <tr><td><strong>Te correspondería devolución de</strong></td><td><strong>${formatoEuro(Math.abs(diferencia))}</strong></td></tr>`;
+      }
+    }
+
+    resultadoDiv.innerHTML = `
+      <h2>IRPF anual estimado</h2>
+      <div class="cifra">${formatoEuro(irpfAnual)}</div>
+      <table>
+        <tr><td>Rendimiento neto de la actividad</td><td>${formatoEuro(rendimientoNeto)}</td></tr>
+        ${esTrade ? `<tr><td>Reducción TRADE / cliente único aplicada</td><td>-${formatoEuro(reduccionTrade)}</td></tr>` : ''}
+        <tr><td>Mínimo personal y familiar</td><td>-${formatoEuro(minimo)}</td></tr>
+        <tr><td>Tipo efectivo sobre rendimiento neto</td><td>${tipoEfectivo.toFixed(2)}%</td></tr>
+        ${filaComparacion}
+      </table>
+    `;
+  });
+})();
+</script>
+
+</body>
+</html>
