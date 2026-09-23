@@ -372,6 +372,15 @@
     document.getElementById(nombre).scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  // Si se llega con #calculadoras o #guias en la URL, abre esa pestaña directamente
+  window.addEventListener('DOMContentLoaded', function () {
+    if (window.location.hash === '#guias') {
+      mostrarPestana('guias');
+    } else if (window.location.hash === '#calculadoras') {
+      mostrarPestana('calculadoras');
+    }
+  });
+
   function filtrarHerramientas(texto) {
     const q = texto.trim().toLowerCase();
     const paneles = ['calculadoras', 'guias'];

@@ -125,6 +125,10 @@
   .fuentes h2{ font-size:1rem; color:var(--azul); margin-top:0; }
   .fuentes ul{ margin:0.5rem 0 0; padding-left:1.25rem; }
   .fuentes a{ color: var(--azul); }
+  .breadcrumb{ font-size:0.82rem; color:#888; margin-bottom:1.1rem; }
+  .breadcrumb a{ color: var(--azul); text-decoration:none; }
+  .breadcrumb a:hover{ text-decoration:underline; }
+  .breadcrumb .sep{ margin:0 0.35rem; color:#bbb; }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -135,6 +139,7 @@
 </header>
 
 <main>
+  <nav class="breadcrumb"><a href="index.html">Inicio</a><span class="sep">/</span><a href="index.html#calculadoras">Calculadoras</a><span class="sep">/</span><span>Paro</span></nav>
   <h1>Calculadora de la prestación por desempleo (paro)</h1>
   <p class="updated">Actualizado: 2026 · Normativa: Real Decreto Legislativo 8/2015 (Ley General de la Seguridad Social) y Real Decreto-ley 2/2024 · IPREM 2026: 600€/mes</p>
   <p class="intro">Estima cuánto podrías cobrar de prestación contributiva por desempleo y durante cuánto tiempo, según tus días cotizados en los últimos 6 años, tu salario y si tienes hijos a cargo.</p>
