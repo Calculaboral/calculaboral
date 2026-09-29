@@ -182,7 +182,9 @@
         <option value="improcedente">Improcedente</option>
         <option value="objetivo">Objetivo (causas económicas, técnicas, organizativas o de producción)</option>
         <option value="procedente">Procedente (disciplinario justificado)</option>
+        <option value="fin-temporal">Fin de contrato temporal (no renovación)</option>
       </select>
+      <p class="hint" id="hint-fin-temporal" style="display:none;">Esta opción no aplica a los contratos de interinidad (0 días) ni a los formativos (su indemnización puede variar). Consulta la <a href="guias/indemnizacion-fin-contrato-temporal.html" style="color:var(--azul); font-weight:600;">guía de fin de contrato temporal</a> para ver las excepciones.</p>
     </fieldset>
 
     <fieldset>
@@ -209,6 +211,7 @@
     <p><strong>Despido improcedente</strong> (art. 56 del Estatuto de los Trabajadores): 33 días de salario por año trabajado, con un máximo de 24 mensualidades, para el periodo trabajado desde el 12 de febrero de 2012. Si tu contrato empezó antes de esa fecha, el periodo anterior se indemniza a 45 días por año (máximo 42 mensualidades para ese tramo), y ambos tramos se suman con un tope conjunto de 720 días de salario (720 días si el cálculo del primer tramo no supera ya ese límite por sí solo).</p>
     <p><strong>Despido objetivo</strong> (art. 53 del Estatuto de los Trabajadores): 20 días de salario por año trabajado, con un máximo de 12 mensualidades, independientemente de la fecha de inicio del contrato.</p>
     <p><strong>Despido procedente:</strong> no genera derecho a indemnización por despido (solo finiquito por conceptos pendientes).</p>
+    <p><strong>Fin de contrato temporal</strong> (art. 49.1.c del Estatuto de los Trabajadores): cuando un contrato temporal (por ejemplo, uno de obra y servicio, o por circunstancias de la producción) termina por expiración del tiempo convenido y no se renueva, la indemnización general es de <strong>12 días de salario por año trabajado</strong>. Hay excepciones importantes: los contratos de interinidad no generan indemnización (0 días), y algunos contratos formativos o de prácticas pueden tener reglas distintas según el convenio colectivo aplicable.</p>
     <p>Los periodos de tiempo inferiores a un año se calculan de forma proporcional (por meses/días trabajados).</p>
   </div>
 
@@ -293,6 +296,12 @@
 (function () {
   const form = document.getElementById('form-calculadora');
   const resultadoDiv = document.getElementById('resultado');
+  const tipoDespidoSelect = document.getElementById('tipo-despido');
+  const hintFinTemporal = document.getElementById('hint-fin-temporal');
+
+  tipoDespidoSelect.addEventListener('change', function () {
+    hintFinTemporal.style.display = this.value === 'fin-temporal' ? 'block' : 'none';
+  });
 
   const FECHA_REFORMA_2012 = new Date('2012-02-12');
   const DIAS_ANIO = 365.25;
@@ -355,6 +364,16 @@
     };
   }
 
+  function calcularFinTemporal(fechaInicio, fechaFin, salarioDiario) {
+    const anios = diffEnAnios(fechaInicio, fechaFin);
+    const dias = anios * 12;
+    const importe = dias * salarioDiario;
+    return {
+      total: importe,
+      detalle: [{ concepto: `12 días/año x ${anios.toFixed(2)} años (fin de contrato temporal)`, valor: importe }]
+    };
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -386,6 +405,8 @@
       resultadoIndemnizacion = calcularImprocedente(fechaInicio, fechaFin, salarioDiario);
     } else if (tipoDespido === 'objetivo') {
       resultadoIndemnizacion = calcularObjetivo(fechaInicio, fechaFin, salarioDiario);
+    } else if (tipoDespido === 'fin-temporal') {
+      resultadoIndemnizacion = calcularFinTemporal(fechaInicio, fechaFin, salarioDiario);
     } else {
       resultadoIndemnizacion = { total: 0, detalle: [{ concepto: 'Despido procedente: sin derecho a indemnización', valor: 0 }] };
     }
