@@ -384,7 +384,7 @@
     const contingenciasComunes = 0.0470;
     const desempleo = tipoContrato === 'temporal' ? 0.0160 : 0.0155;
     const formacionProfesional = 0.0010;
-    const mei = 0.0013;
+    const mei = 0.0015; // MEI trabajador 2026: 0,9% total, 1/6 a cargo del trabajador
     const porcentajeSS = contingenciasComunes + desempleo + formacionProfesional + mei;
     const cuotaSSAnual = salarioBrutoAnual * porcentajeSS;
 
