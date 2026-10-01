@@ -92,4 +92,8 @@
     <loc>https://calculadoralista.es/guias/gastos-deducibles-autonomos-irpf.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://calculadoralista.es/guias/tabla-paro-dias-cotizados.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
