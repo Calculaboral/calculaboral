@@ -211,6 +211,28 @@
         <option value="33">Del 33% al 64%</option>
         <option value="65">65% o superior</option>
       </select>
+      <label for="ccaa">Comunidad autónoma de residencia (para el IRPF)</label>
+      <select id="ccaa">
+        <option value="media" selected>Prefiero no indicarla (media nacional aproximada)</option>
+        <option value="andalucia">Andalucía</option>
+        <option value="aragon">Aragón</option>
+        <option value="asturias">Asturias</option>
+        <option value="baleares">Illes Balears</option>
+        <option value="canarias">Canarias</option>
+        <option value="cantabria">Cantabria</option>
+        <option value="castillalamancha">Castilla-La Mancha</option>
+        <option value="castillayleon">Castilla y León</option>
+        <option value="cataluna">Cataluña</option>
+        <option value="extremadura">Extremadura</option>
+        <option value="galicia">Galicia</option>
+        <option value="madrid">Comunidad de Madrid</option>
+        <option value="murcia">Región de Murcia</option>
+        <option value="larioja">La Rioja</option>
+        <option value="valenciana">Comunitat Valenciana</option>
+        <option value="forales">País Vasco / Navarra (sistema foral)</option>
+        <option value="ceutamelilla">Ceuta / Melilla</option>
+      </select>
+      <p class="hint">El IRPF se calcula sumando la escala estatal (igual para todos) y la escala autonómica de tu comunidad, que sí varía bastante. Si no la indicas, usamos una aproximación basada en la media. País Vasco, Navarra, Ceuta y Melilla tienen regímenes fiscales especiales no cubiertos por esta calculadora.</p>
     </fieldset>
 
     <fieldset>
@@ -241,7 +263,7 @@
     <p><strong>Rendimiento neto:</strong> ingresos menos gastos deducibles de la actividad, menos la cuota de autónomos pagada (que es deducible como gasto).</p>
     <p><strong>Reducción del art. 32.2.1º:</strong> solo si eres un trabajador autónomo económicamente dependiente (TRADE) o facturas la totalidad de tu actividad a un único cliente no vinculado, y tu rendimiento neto es inferior a 19.747,5€, puedes reducir tu base hasta en 6.498€. Esta reducción <strong>no aplica</strong> a la mayoría de autónomos con varios clientes, por lo que esta calculadora solo la incluye si marcas la casilla correspondiente.</p>
     <p><strong>Mínimo personal y familiar:</strong> igual que en nuestra calculadora de nómina, se ajusta según tus hijos, edad y discapacidad.</p>
-    <p><strong>Escala general del IRPF:</strong> se aplica sobre la base resultante, de forma progresiva por tramos.</p>
+    <p><strong>Escala general del IRPF:</strong> se aplica sobre la base resultante sumando dos escalas progresivas: la <strong>estatal</strong> (igual en todo el territorio común) y la <strong>autonómica</strong> de tu comunidad de residencia, que varía bastante entre territorios (el tipo marginal máximo va del 45% en Madrid a cerca del 54% en la Comunidad Valenciana). Si indicas tu comunidad, se suman ambas escalas oficiales; si no, se usa una aproximación basada en la media.</p>
     <p>Esta calculadora <strong>no incluye</strong> otras reducciones posibles (por ejemplo, la de rentas no exentas inferiores a 12.000€ del art. 32.2.3º, aportaciones a planes de pensiones, u otras deducciones autonómicas), por lo que el resultado real de tu declaración puede diferir. Para el cálculo oficial, usa el <a href="https://www2.agenciatributaria.gob.es/wlpl/wlpl-tools/servlet/S1?SISTEMA=SR" target="_blank" rel="noopener">simulador de la Agencia Tributaria</a> o consulta con una gestoría.</p>
   </div>
 
@@ -260,6 +282,10 @@
       <p>Esa reducción específica (art. 32.2.1º LIRPF) solo está pensada para autónomos con una dependencia económica fuerte de un único pagador, similar a un empleado pero sin serlo formalmente. Tener varios clientes es precisamente lo que excluye esta condición.</p>
     </details>
     <details>
+      <summary>¿Por qué cambia tanto el resultado según la comunidad autónoma?</summary>
+      <p>Porque la mitad del IRPF (la escala autonómica) la fija cada comunidad, y hay diferencias reales entre territorios, sobre todo en tramos de renta elevados. Para rendimientos netos bajos o medios la diferencia suele ser más moderada.</p>
+    </details>
+    <details>
       <summary>¿Puedo deducirme otros gastos aparte de los que menciono?</summary>
       <p>Sí, existen más gastos deducibles específicos (suministros si trabajas desde casa, dietas, vehículo si es exclusivo de la actividad, entre otros) que no están reflejados aquí de forma individual. Inclúyelos dentro de "gastos deducibles anuales" si ya los tienes calculados.</p>
     </details>
@@ -275,6 +301,7 @@
     <ul>
       <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764" target="_blank" rel="noopener">Ley 35/2006 del IRPF, arts. 30 y 32 (BOE)</a></li>
       <li><a href="https://sede.agenciatributaria.gob.es" target="_blank" rel="noopener">Agencia Tributaria</a></li>
+      <li>Normativa autonómica propia de cada comunidad para la escala del IRPF (leyes de medidas fiscales y presupuestarias de cada comunidad autónoma, publicadas en sus respectivos boletines oficiales)</li>
     </ul>
   </div>
 
@@ -295,6 +322,11 @@
       "@type": "Question",
       "name": "¿Por qué no puedo aplicar la reducción de 6.498€ si tengo varios clientes?",
       "acceptedAnswer": { "@type": "Answer", "text": "Esa reducción solo aplica a autónomos económicamente dependientes de un único pagador. Tener varios clientes excluye esa condición." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué cambia tanto el resultado según la comunidad autónoma?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Porque la mitad del IRPF (la escala autonómica) la fija cada comunidad, y hay diferencias reales entre territorios, sobre todo en tramos de renta elevados." }
     },
     {
       "@type": "Question",
@@ -319,16 +351,46 @@
     return numero.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
   }
 
-  function calcularIRPFAnual(baseAnual, minimoPersonalFamiliar) {
-    const baseImponible = Math.max(baseAnual - minimoPersonalFamiliar, 0);
-    const tramos = [
-      { hasta: 12450, tipo: 0.19 },
-      { hasta: 20200, tipo: 0.24 },
-      { hasta: 35200, tipo: 0.30 },
-      { hasta: 60000, tipo: 0.37 },
-      { hasta: 300000, tipo: 0.45 },
-      { hasta: Infinity, tipo: 0.47 }
-    ];
+  // Escala general ESTATAL 2026 (igual para todo el territorio común)
+  const ESCALA_ESTATAL = [
+    { hasta: 12450, tipo: 0.095 },
+    { hasta: 20200, tipo: 0.12 },
+    { hasta: 35200, tipo: 0.15 },
+    { hasta: 60000, tipo: 0.185 },
+    { hasta: 300000, tipo: 0.225 },
+    { hasta: Infinity, tipo: 0.245 }
+  ];
+
+  // Aproximación combinada (estatal + media autonómica) cuando no se indica comunidad
+  const ESCALA_COMBINADA_MEDIA = [
+    { hasta: 12450, tipo: 0.19 },
+    { hasta: 20200, tipo: 0.24 },
+    { hasta: 35200, tipo: 0.30 },
+    { hasta: 60000, tipo: 0.37 },
+    { hasta: 300000, tipo: 0.45 },
+    { hasta: Infinity, tipo: 0.47 }
+  ];
+
+  // Escalas AUTONÓMICAS 2026 por comunidad (régimen común)
+  const ESCALAS_AUTONOMICAS = {
+    andalucia: [ {hasta:13000,tipo:0.095},{hasta:21100,tipo:0.12},{hasta:35200,tipo:0.15},{hasta:60000,tipo:0.185},{hasta:Infinity,tipo:0.225} ],
+    aragon: [ {hasta:13972.5,tipo:0.095},{hasta:21210,tipo:0.12},{hasta:36960,tipo:0.15},{hasta:52500,tipo:0.185},{hasta:60000,tipo:0.205},{hasta:80000,tipo:0.23},{hasta:90000,tipo:0.24},{hasta:130000,tipo:0.25},{hasta:Infinity,tipo:0.255} ],
+    asturias: [ {hasta:12450,tipo:0.10},{hasta:17707.2,tipo:0.12},{hasta:33007.2,tipo:0.14},{hasta:53407.2,tipo:0.185},{hasta:70000,tipo:0.215},{hasta:90000,tipo:0.225},{hasta:175000,tipo:0.25},{hasta:Infinity,tipo:0.255} ],
+    baleares: [ {hasta:10000,tipo:0.09},{hasta:18000,tipo:0.1125},{hasta:30000,tipo:0.1425},{hasta:48000,tipo:0.175},{hasta:70000,tipo:0.19},{hasta:90000,tipo:0.2175},{hasta:120000,tipo:0.2275},{hasta:175000,tipo:0.2375},{hasta:Infinity,tipo:0.2475} ],
+    canarias: [ {hasta:12450,tipo:0.09},{hasta:17707.2,tipo:0.115},{hasta:33007.2,tipo:0.14},{hasta:53407.2,tipo:0.185},{hasta:90000,tipo:0.235},{hasta:120000,tipo:0.25},{hasta:Infinity,tipo:0.26} ],
+    cantabria: [ {hasta:13000,tipo:0.085},{hasta:21000,tipo:0.11},{hasta:35200,tipo:0.145},{hasta:60000,tipo:0.18},{hasta:90000,tipo:0.225},{hasta:Infinity,tipo:0.245} ],
+    castillalamancha: [ {hasta:12450,tipo:0.095},{hasta:20200,tipo:0.12},{hasta:35200,tipo:0.15},{hasta:60000,tipo:0.185},{hasta:Infinity,tipo:0.225} ],
+    castillayleon: [ {hasta:12450,tipo:0.09},{hasta:20200,tipo:0.12},{hasta:35200,tipo:0.14},{hasta:53407.2,tipo:0.185},{hasta:Infinity,tipo:0.215} ],
+    cataluna: [ {hasta:12500,tipo:0.095},{hasta:22000,tipo:0.125},{hasta:33000,tipo:0.16},{hasta:53000,tipo:0.19},{hasta:90000,tipo:0.215},{hasta:120000,tipo:0.235},{hasta:175000,tipo:0.245},{hasta:Infinity,tipo:0.255} ],
+    extremadura: [ {hasta:12450,tipo:0.08},{hasta:20200,tipo:0.10},{hasta:24200,tipo:0.16},{hasta:35200,tipo:0.175},{hasta:60000,tipo:0.21},{hasta:80200,tipo:0.235},{hasta:99200,tipo:0.24},{hasta:120200,tipo:0.245},{hasta:Infinity,tipo:0.25} ],
+    galicia: [ {hasta:12985.35,tipo:0.09},{hasta:21068.6,tipo:0.1165},{hasta:35200,tipo:0.149},{hasta:60000,tipo:0.184},{hasta:Infinity,tipo:0.225} ],
+    madrid: [ {hasta:13362.22,tipo:0.085},{hasta:19004.63,tipo:0.107},{hasta:35425.68,tipo:0.128},{hasta:57320.4,tipo:0.174},{hasta:Infinity,tipo:0.205} ],
+    murcia: [ {hasta:12450,tipo:0.095},{hasta:20200,tipo:0.112},{hasta:34000,tipo:0.133},{hasta:60000,tipo:0.179},{hasta:Infinity,tipo:0.225} ],
+    larioja: [ {hasta:12450,tipo:0.08},{hasta:20200,tipo:0.106},{hasta:35200,tipo:0.136},{hasta:40000,tipo:0.178},{hasta:50000,tipo:0.185},{hasta:60000,tipo:0.19},{hasta:120000,tipo:0.245},{hasta:Infinity,tipo:0.27} ],
+    valenciana: [ {hasta:12000,tipo:0.09},{hasta:22000,tipo:0.12},{hasta:32000,tipo:0.15},{hasta:42000,tipo:0.175},{hasta:52000,tipo:0.20},{hasta:62000,tipo:0.225},{hasta:72000,tipo:0.25},{hasta:100000,tipo:0.265},{hasta:150000,tipo:0.275},{hasta:200000,tipo:0.285},{hasta:Infinity,tipo:0.295} ]
+  };
+
+  function aplicarEscala(baseImponible, tramos) {
     let impuesto = 0;
     let anterior = 0;
     for (const tramo of tramos) {
@@ -341,6 +403,16 @@
       }
     }
     return impuesto;
+  }
+
+  function calcularIRPFAnual(baseAnual, minimoPersonalFamiliar, ccaa) {
+    const baseImponible = Math.max(baseAnual - minimoPersonalFamiliar, 0);
+    if (ccaa && ESCALAS_AUTONOMICAS[ccaa]) {
+      const cuotaEstatal = aplicarEscala(baseImponible, ESCALA_ESTATAL);
+      const cuotaAutonomica = aplicarEscala(baseImponible, ESCALAS_AUTONOMICAS[ccaa]);
+      return cuotaEstatal + cuotaAutonomica;
+    }
+    return aplicarEscala(baseImponible, ESCALA_COMBINADA_MEDIA);
   }
 
   // Reducción art. 32.2.1º LIRPF — SOLO para TRADE o cliente único (2026)
@@ -388,6 +460,7 @@
     const esTrade = document.getElementById('trade').checked;
     const pagosCuentaInput = document.getElementById('pagos-cuenta').value;
     const pagosCuenta = pagosCuentaInput === '' ? null : parseFloat(pagosCuentaInput);
+    const ccaa = document.getElementById('ccaa').value;
 
     resultadoDiv.className = '';
     resultadoDiv.style.display = 'block';
@@ -398,12 +471,28 @@
       return;
     }
 
+    if (ccaa === 'forales' || ccaa === 'ceutamelilla') {
+      resultadoDiv.className = 'error';
+      const territorio = ccaa === 'forales' ? 'País Vasco y Navarra tienen un sistema fiscal foral propio (Concierto Económico / Convenio), con su propia normativa de IRPF para autónomos.' : 'Ceuta y Melilla no tienen escala autonómica propia; en su lugar aplican una deducción especial sobre la cuota que esta calculadora no reproduce.';
+      resultadoDiv.innerHTML = `<h2>No disponible para tu territorio</h2><p>${territorio} No podemos darte una estimación de IRPF fiable para tu caso. Consulta con tu Hacienda Foral o con un asesor fiscal local.</p>`;
+      return;
+    }
+
     const rendimientoNeto = Math.max(ingresos - gastos - cuotaAutonomos, 0);
     const reduccionTrade = esTrade ? calcularReduccionTrade(rendimientoNeto) : 0;
     const baseParaIRPF = Math.max(rendimientoNeto - reduccionTrade, 0);
     const minimo = minimoPersonalFamiliar(numHijos, edad, discapacidad);
-    const irpfAnual = calcularIRPFAnual(baseParaIRPF, minimo);
+    const irpfAnual = calcularIRPFAnual(baseParaIRPF, minimo, ccaa);
     const tipoEfectivo = ingresos > 0 ? (irpfAnual / rendimientoNeto) * 100 : 0;
+
+    const nombresCCAA = {
+      andalucia: 'Andalucía', aragon: 'Aragón', asturias: 'Asturias', baleares: 'Illes Balears',
+      canarias: 'Canarias', cantabria: 'Cantabria', castillalamancha: 'Castilla-La Mancha',
+      castillayleon: 'Castilla y León', cataluna: 'Cataluña', extremadura: 'Extremadura',
+      galicia: 'Galicia', madrid: 'Comunidad de Madrid', murcia: 'Región de Murcia',
+      larioja: 'La Rioja', valenciana: 'Comunitat Valenciana'
+    };
+    const escalaUsada = nombresCCAA[ccaa] ? `escala de ${nombresCCAA[ccaa]}` : 'media nacional aproximada';
 
     let filaComparacion = '';
     if (pagosCuenta !== null && !isNaN(pagosCuenta)) {
@@ -424,6 +513,7 @@
         <tr><td>Rendimiento neto de la actividad</td><td>${formatoEuro(rendimientoNeto)}</td></tr>
         ${esTrade ? `<tr><td>Reducción TRADE / cliente único aplicada</td><td>-${formatoEuro(reduccionTrade)}</td></tr>` : ''}
         <tr><td>Mínimo personal y familiar</td><td>-${formatoEuro(minimo)}</td></tr>
+        <tr><td>Escala de IRPF utilizada</td><td>${escalaUsada}</td></tr>
         <tr><td>Tipo efectivo sobre rendimiento neto</td><td>${tipoEfectivo.toFixed(2)}%</td></tr>
         ${filaComparacion}
       </table>
