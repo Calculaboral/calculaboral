@@ -195,7 +195,7 @@
     <p><strong>Rendimiento neto:</strong> se calcula restando a tus ingresos los gastos deducibles de la actividad, y aplicando después una deducción adicional del 7% (persona física) o 3% (autónomo societario) en concepto de gastos de difícil justificación.</p>
     <p><strong>Tramo y base de cotización:</strong> según tu rendimiento neto mensual, te corresponde uno de los 15 tramos de cotización oficiales (3 en la tabla reducida, 12 en la tabla general), cada uno con una base mínima y máxima entre las que puedes elegir cotizar. Esta calculadora identifica automáticamente tu tramo exacto según la <strong>tabla oficial publicada en el BOE (Orden PJC/297/2026, artículo 18)</strong>, y estima tu base dentro del rango de ese tramo a partir de tu rendimiento neto.</p>
     <p><strong>Tipo de cotización total en 2026: 31,5%</strong> sobre la base elegida, que incluye contingencias comunes, contingencias profesionales, cese de actividad, formación profesional y el Mecanismo de Equidad Intergeneracional (MEI).</p>
-    <p><strong>Tarifa plana:</strong> si te acabas de dar de alta (o llevas más de 2 años sin estarlo, 3 si ya disfrutaste de la tarifa plana antes), puedes pagar una cuota reducida fija de aproximadamente 80-90€/mes durante los primeros 12 meses, prorrogable un segundo año si tus rendimientos netos quedan por debajo del Salario Mínimo Interprofesional.</p>
+    <p><strong>Tarifa plana:</strong> si te acabas de dar de alta (o llevas más de 2 años sin estarlo, 3 si ya disfrutaste de la tarifa plana antes), puedes pagar una cuota reducida fija de 88,64€/mes (80€ base + Mecanismo de Equidad Intergeneracional) durante los primeros 12 meses, prorrogable un segundo año si tus rendimientos netos quedan por debajo del Salario Mínimo Interprofesional.</p>
     <p>Para conocer tu tramo exacto y la cuota precisa, usa el <a href="https://www.seg-social.es" target="_blank" rel="noopener">simulador oficial de la Seguridad Social (Importass)</a>.</p>
   </div>
 
@@ -215,7 +215,7 @@
     </details>
     <details>
       <summary>¿La tarifa plana incluye ya el Mecanismo de Equidad Intergeneracional (MEI)?</summary>
-      <p>Sí, la cuota reducida de la tarifa plana ya incorpora este concepto, por eso puede rondar los 85-90€/mes en vez de una cifra más redonda.</p>
+      <p>Sí, la cuota reducida de la tarifa plana ya incorpora este concepto, por eso son 88,64€/mes en vez de una cifra más redonda de 80€.</p>
     </details>
     <details>
       <summary>¿Puedo deducirme más gastos aparte del 7% de gastos de difícil justificación?</summary>
@@ -241,7 +241,7 @@
   const form = document.getElementById('form-autonomos');
   const resultadoDiv = document.getElementById('resultado');
   const TIPO_TOTAL = 0.315;
-  const TARIFA_PLANA_MENSUAL = 85; // aproximado, con MEI incluido
+  const TARIFA_PLANA_MENSUAL = 88.64; // 80€ base + MEI 2026, cuota fija oficial
 
   // Tabla oficial de 15 tramos (Orden PJC/297/2026, BOE, art. 18) — vigente 2026
   const TRAMOS = [

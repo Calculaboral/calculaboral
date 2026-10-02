@@ -264,7 +264,7 @@
   <div class="legal-box">
     <h2>Cómo se calcula (y por qué es una estimación)</h2>
     <p><strong>Rendimiento neto:</strong> ingresos menos gastos deducibles de la actividad, menos la cuota de autónomos pagada (que es deducible como gasto).</p>
-    <p><strong>Reducción del art. 32.2.1º:</strong> solo si eres un trabajador autónomo económicamente dependiente (TRADE) o facturas la totalidad de tu actividad a un único cliente no vinculado, y tu rendimiento neto es inferior a 19.747,5€, puedes reducir tu base hasta en 6.498€. Esta reducción <strong>no aplica</strong> a la mayoría de autónomos con varios clientes, por lo que esta calculadora solo la incluye si marcas la casilla correspondiente.</p>
+    <p><strong>Reducción del art. 32.2.1º:</strong> solo si eres un trabajador autónomo económicamente dependiente (TRADE) o facturas la totalidad de tu actividad a un único cliente no vinculado, y tu rendimiento neto es inferior a 19.747,5€, puedes reducir tu base hasta en 7.302€. Esta reducción <strong>no aplica</strong> a la mayoría de autónomos con varios clientes, por lo que esta calculadora solo la incluye si marcas la casilla correspondiente.</p>
     <p><strong>Mínimo personal y familiar:</strong> igual que en nuestra calculadora de nómina, se ajusta según tus hijos, edad y discapacidad.</p>
     <p><strong>Escala general del IRPF:</strong> se aplica sobre la base resultante sumando dos escalas progresivas: la <strong>estatal</strong> (igual en todo el territorio común) y la <strong>autonómica</strong> de tu comunidad de residencia, que varía bastante entre territorios (el tipo marginal máximo va del 45% en Madrid a cerca del 54% en la Comunidad Valenciana). Si indicas tu comunidad, se suman ambas escalas oficiales; si no, se usa una aproximación basada en la media.</p>
     <p>Esta calculadora <strong>no incluye</strong> otras reducciones posibles (por ejemplo, la de rentas no exentas inferiores a 12.000€ del art. 32.2.3º, aportaciones a planes de pensiones, u otras deducciones autonómicas), por lo que el resultado real de tu declaración puede diferir. Para el cálculo oficial, usa el <a href="https://www2.agenciatributaria.gob.es/wlpl/wlpl-tools/servlet/S1?SISTEMA=SR" target="_blank" rel="noopener">simulador de la Agencia Tributaria</a> o consulta con una gestoría.</p>
@@ -281,7 +281,7 @@
       <p>El modelo 130 son los pagos trimestrales a cuenta (anticipos) que haces durante el año. Esta calculadora estima el IRPF anual real que te corresponde pagar en tu declaración de la renta; si has indicado tus pagos del modelo 130, te mostramos la diferencia entre ambos.</p>
     </details>
     <details>
-      <summary>¿Por qué no puedo aplicar la reducción de 6.498€ si tengo varios clientes?</summary>
+      <summary>¿Por qué no puedo aplicar la reducción de 7.302€ si tengo varios clientes?</summary>
       <p>Esa reducción específica (art. 32.2.1º LIRPF) solo está pensada para autónomos con una dependencia económica fuerte de un único pagador, similar a un empleado pero sin serlo formalmente. Tener varios clientes es precisamente lo que excluye esta condición.</p>
     </details>
     <details>
@@ -323,7 +323,7 @@
     },
     {
       "@type": "Question",
-      "name": "¿Por qué no puedo aplicar la reducción de 6.498€ si tengo varios clientes?",
+      "name": "¿Por qué no puedo aplicar la reducción de 7.302€ si tengo varios clientes?",
       "acceptedAnswer": { "@type": "Answer", "text": "Esa reducción solo aplica a autónomos económicamente dependientes de un único pagador. Tener varios clientes excluye esa condición." }
     },
     {
@@ -390,7 +390,7 @@
     madrid: [ {hasta:13362.22,tipo:0.085},{hasta:19004.63,tipo:0.107},{hasta:35425.68,tipo:0.128},{hasta:57320.4,tipo:0.174},{hasta:Infinity,tipo:0.205} ],
     murcia: [ {hasta:12450,tipo:0.095},{hasta:20200,tipo:0.112},{hasta:34000,tipo:0.133},{hasta:60000,tipo:0.179},{hasta:Infinity,tipo:0.225} ],
     larioja: [ {hasta:12450,tipo:0.08},{hasta:20200,tipo:0.106},{hasta:35200,tipo:0.136},{hasta:40000,tipo:0.178},{hasta:50000,tipo:0.185},{hasta:60000,tipo:0.19},{hasta:120000,tipo:0.245},{hasta:Infinity,tipo:0.27} ],
-    valenciana: [ {hasta:12000,tipo:0.09},{hasta:22000,tipo:0.12},{hasta:32000,tipo:0.15},{hasta:42000,tipo:0.175},{hasta:52000,tipo:0.20},{hasta:62000,tipo:0.225},{hasta:72000,tipo:0.25},{hasta:100000,tipo:0.265},{hasta:150000,tipo:0.275},{hasta:200000,tipo:0.285},{hasta:Infinity,tipo:0.295} ]
+    valenciana: [ {hasta:12000,tipo:0.088},{hasta:22000,tipo:0.117},{hasta:32000,tipo:0.146},{hasta:42000,tipo:0.17},{hasta:52000,tipo:0.194},{hasta:62000,tipo:0.219},{hasta:72000,tipo:0.244},{hasta:100000,tipo:0.261},{hasta:150000,tipo:0.2735},{hasta:200000,tipo:0.2835},{hasta:Infinity,tipo:0.2935} ]
   };
 
   function aplicarEscala(baseImponible, tramos) {
@@ -408,23 +408,30 @@
     return impuesto;
   }
 
+  // Método oficial (art. 56 LIRPF / manual práctico AEAT): la cuota NO se obtiene
+  // aplicando la escala a (base - mínimo); se aplica la escala completa a la base
+  // y, por separado, al mínimo personal y familiar, y se resta: cuota = escala(base) - escala(mínimo).
   function calcularIRPFAnual(baseAnual, minimoPersonalFamiliar, ccaa) {
-    const baseImponible = Math.max(baseAnual - minimoPersonalFamiliar, 0);
+    const base = Math.max(baseAnual, 0);
+    const minimo = Math.max(minimoPersonalFamiliar, 0);
     if (ccaa && ESCALAS_AUTONOMICAS[ccaa]) {
-      const cuotaEstatal = aplicarEscala(baseImponible, ESCALA_ESTATAL);
-      const cuotaAutonomica = aplicarEscala(baseImponible, ESCALAS_AUTONOMICAS[ccaa]);
-      return cuotaEstatal + cuotaAutonomica;
+      const cuotaEstatal = aplicarEscala(base, ESCALA_ESTATAL) - aplicarEscala(minimo, ESCALA_ESTATAL);
+      const cuotaAutonomica = aplicarEscala(base, ESCALAS_AUTONOMICAS[ccaa]) - aplicarEscala(minimo, ESCALAS_AUTONOMICAS[ccaa]);
+      return Math.max(cuotaEstatal, 0) + Math.max(cuotaAutonomica, 0);
     }
-    return aplicarEscala(baseImponible, ESCALA_COMBINADA_MEDIA);
+    return Math.max(aplicarEscala(base, ESCALA_COMBINADA_MEDIA) - aplicarEscala(minimo, ESCALA_COMBINADA_MEDIA), 0);
   }
 
-  // Reducción art. 32.2.1º LIRPF — SOLO para TRADE o cliente único (2026)
+  // Reducción art. 32.2.1º LIRPF — SOLO para TRADE o cliente único (valores vigentes desde 2024, mantenidos en 2026)
   function calcularReduccionTrade(rendimientoNeto) {
-    if (rendimientoNeto <= 14047.5) {
-      return 6498;
+    if (rendimientoNeto <= 14852) {
+      return 7302;
+    }
+    if (rendimientoNeto <= 17673.52) {
+      return Math.max(7302 - 1.75 * (rendimientoNeto - 14852), 0);
     }
     if (rendimientoNeto < 19747.5) {
-      return Math.max(6498 - 1.14 * (rendimientoNeto - 14047.5), 0);
+      return Math.max(7302 - 1.75 * (17673.52 - 14852) - 1.14 * (rendimientoNeto - 17673.52), 0);
     }
     return 0;
   }

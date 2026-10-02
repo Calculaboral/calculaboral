@@ -211,7 +211,7 @@
 
   <div class="legal-box">
     <h2>Base legal y cómo se calcula</h2>
-    <p><strong>Despido improcedente</strong> (art. 56 del Estatuto de los Trabajadores): 33 días de salario por año trabajado, con un máximo de 24 mensualidades, para el periodo trabajado desde el 12 de febrero de 2012. Si tu contrato empezó antes de esa fecha, el periodo anterior se indemniza a 45 días por año (máximo 42 mensualidades para ese tramo), y ambos tramos se suman con un tope conjunto de 720 días de salario (720 días si el cálculo del primer tramo no supera ya ese límite por sí solo).</p>
+    <p><strong>Despido improcedente</strong> (art. 56 del Estatuto de los Trabajadores): 33 días de salario por año trabajado, con un máximo de 24 mensualidades, para el periodo trabajado desde el 12 de febrero de 2012. Si tu contrato empezó antes de esa fecha, el periodo anterior se indemniza a 45 días por año (máximo 42 mensualidades para ese tramo) y se suma al tramo posterior, con un tope conjunto de 720 días de salario — <strong>salvo que el tramo anterior a 2012 por sí solo ya alcance ese tope</strong>, en cuyo caso la indemnización total es únicamente el importe de ese tramo (hasta un máximo de 42 mensualidades), sin sumar el tramo posterior a 2012 (Disposición Transitoria 11ª del Estatuto de los Trabajadores).</p>
     <p><strong>Despido objetivo</strong> (art. 53 del Estatuto de los Trabajadores): 20 días de salario por año trabajado, con un máximo de 12 mensualidades, independientemente de la fecha de inicio del contrato.</p>
     <p><strong>Despido procedente:</strong> no genera derecho a indemnización por despido (solo finiquito por conceptos pendientes).</p>
     <p><strong>Fin de contrato temporal</strong> (art. 49.1.c del Estatuto de los Trabajadores): cuando un contrato temporal (por ejemplo, uno de obra y servicio, o por circunstancias de la producción) termina por expiración del tiempo convenido y no se renueva, la indemnización general es de <strong>12 días de salario por año trabajado</strong>. Hay excepciones importantes: los contratos de interinidad no generan indemnización (0 días), y algunos contratos formativos o de prácticas pueden tener reglas distintas según el convenio colectivo aplicable.</p>
@@ -319,17 +319,18 @@
   }
 
   function calcularImprocedente(fechaInicio, fechaFin, salarioDiario) {
-    // Si todo el periodo es posterior a la reforma de 2012: 33 días/año, tope 24 mensualidades
-    // Si el contrato empezó antes de 2012: se divide en dos tramos (45 días/año hasta 12/02/2012, 33 días/año después)
-    const topeGeneral = salarioDiario * 24 * 30; // 24 mensualidades en días de salario (aprox 30 días/mes)
+    // Si todo el periodo es posterior a la reforma de 2012: 33 días/año, tope 24 mensualidades (720 días)
+    // Si el contrato empezó antes de 2012: se divide en dos tramos (45 días/año hasta 12/02/2012, 33 días/año después),
+    // según la Disposición Transitoria 11ª del Estatuto de los Trabajadores.
     let indemnizacion = 0;
     let detalle = [];
 
     if (fechaInicio >= FECHA_REFORMA_2012) {
       const anios = diffEnAnios(fechaInicio, fechaFin);
       const dias = anios * 33;
-      indemnizacion = dias * salarioDiario;
-      detalle.push({ concepto: `Periodo único (33 días/año x ${anios.toFixed(2)} años)`, valor: dias * salarioDiario });
+      const topeGeneral = salarioDiario * 24 * 30; // 24 mensualidades
+      indemnizacion = Math.min(dias * salarioDiario, topeGeneral);
+      detalle.push({ concepto: `Periodo único (33 días/año x ${anios.toFixed(2)} años)`, valor: indemnizacion });
     } else {
       const aniosTramo1 = diffEnAnios(fechaInicio, FECHA_REFORMA_2012);
       const aniosTramo2 = diffEnAnios(FECHA_REFORMA_2012, fechaFin);
@@ -341,16 +342,23 @@
       const diasTramo2 = aniosTramo2 * 33;
       const importeTramo2 = diasTramo2 * salarioDiario;
 
-      indemnizacion = importeTramo1 + importeTramo2;
-      detalle.push({ concepto: `Tramo anterior a 12/02/2012 (45 días/año x ${aniosTramo1.toFixed(2)} años, tope 42 mensualidades)`, valor: importeTramo1 });
-      detalle.push({ concepto: `Tramo posterior a 12/02/2012 (33 días/año x ${aniosTramo2.toFixed(2)} años)`, valor: importeTramo2 });
-    }
+      const topeConjunto = salarioDiario * 720; // 24 mensualidades, tope general de la indemnización total
 
-    // Tope conjunto de 720 días de salario (salvo que el tramo 1 por sí solo ya lo superase, caso raro con antigüedad muy alta)
-    const topeConjunto = salarioDiario * 720;
-    if (indemnizacion > topeConjunto && indemnizacion > topeGeneral) {
-      indemnizacion = Math.max(topeConjunto, topeGeneral);
-      detalle.push({ concepto: 'Ajuste aplicado por tope legal de indemnización', valor: 0 });
+      // Regla especial (DT 11ª ET, confirmada por jurisprudencia del TS): si el importe del
+      // tramo anterior a 2012 por sí solo ya alcanza o supera el tope conjunto de 720 días,
+      // la indemnización total es ÚNICAMENTE ese tramo 1 (no se suma el tramo 2).
+      if (importeTramo1 >= topeConjunto) {
+        indemnizacion = importeTramo1;
+        detalle.push({ concepto: `Tramo anterior a 12/02/2012 (45 días/año x ${aniosTramo1.toFixed(2)} años, tope 42 mensualidades)`, valor: importeTramo1 });
+        detalle.push({ concepto: 'El tramo anterior a 2012 ya alcanza el tope legal de 720 días: no se suma el tramo posterior', valor: 0 });
+      } else {
+        indemnizacion = Math.min(importeTramo1 + importeTramo2, topeConjunto);
+        detalle.push({ concepto: `Tramo anterior a 12/02/2012 (45 días/año x ${aniosTramo1.toFixed(2)} años, tope 42 mensualidades)`, valor: importeTramo1 });
+        detalle.push({ concepto: `Tramo posterior a 12/02/2012 (33 días/año x ${aniosTramo2.toFixed(2)} años)`, valor: importeTramo2 });
+        if (importeTramo1 + importeTramo2 > topeConjunto) {
+          detalle.push({ concepto: 'Ajuste aplicado por tope legal conjunto de 720 días', valor: 0 });
+        }
+      }
     }
 
     return { total: indemnizacion, detalle };

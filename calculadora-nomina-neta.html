@@ -367,7 +367,7 @@
     madrid: [ {hasta:13362.22,tipo:0.085},{hasta:19004.63,tipo:0.107},{hasta:35425.68,tipo:0.128},{hasta:57320.4,tipo:0.174},{hasta:Infinity,tipo:0.205} ],
     murcia: [ {hasta:12450,tipo:0.095},{hasta:20200,tipo:0.112},{hasta:34000,tipo:0.133},{hasta:60000,tipo:0.179},{hasta:Infinity,tipo:0.225} ],
     larioja: [ {hasta:12450,tipo:0.08},{hasta:20200,tipo:0.106},{hasta:35200,tipo:0.136},{hasta:40000,tipo:0.178},{hasta:50000,tipo:0.185},{hasta:60000,tipo:0.19},{hasta:120000,tipo:0.245},{hasta:Infinity,tipo:0.27} ],
-    valenciana: [ {hasta:12000,tipo:0.09},{hasta:22000,tipo:0.12},{hasta:32000,tipo:0.15},{hasta:42000,tipo:0.175},{hasta:52000,tipo:0.20},{hasta:62000,tipo:0.225},{hasta:72000,tipo:0.25},{hasta:100000,tipo:0.265},{hasta:150000,tipo:0.275},{hasta:200000,tipo:0.285},{hasta:Infinity,tipo:0.295} ]
+    valenciana: [ {hasta:12000,tipo:0.088},{hasta:22000,tipo:0.117},{hasta:32000,tipo:0.146},{hasta:42000,tipo:0.17},{hasta:52000,tipo:0.194},{hasta:62000,tipo:0.219},{hasta:72000,tipo:0.244},{hasta:100000,tipo:0.261},{hasta:150000,tipo:0.2735},{hasta:200000,tipo:0.2835},{hasta:Infinity,tipo:0.2935} ]
   };
 
   function aplicarEscala(baseImponible, tramos) {
@@ -385,14 +385,18 @@
     return impuesto;
   }
 
+  // Método oficial (art. 56 LIRPF / manual práctico AEAT): la cuota NO se obtiene
+  // aplicando la escala a (base - mínimo); se aplica la escala completa a la base
+  // y, por separado, al mínimo personal y familiar, y se resta: cuota = escala(base) - escala(mínimo).
   function calcularIRPFAnual(baseAnual, minimoPersonalFamiliar, ccaa) {
-    const baseImponible = Math.max(baseAnual - minimoPersonalFamiliar, 0);
+    const base = Math.max(baseAnual, 0);
+    const minimo = Math.max(minimoPersonalFamiliar, 0);
     if (ccaa && ESCALAS_AUTONOMICAS[ccaa]) {
-      const cuotaEstatal = aplicarEscala(baseImponible, ESCALA_ESTATAL);
-      const cuotaAutonomica = aplicarEscala(baseImponible, ESCALAS_AUTONOMICAS[ccaa]);
-      return cuotaEstatal + cuotaAutonomica;
+      const cuotaEstatal = aplicarEscala(base, ESCALA_ESTATAL) - aplicarEscala(minimo, ESCALA_ESTATAL);
+      const cuotaAutonomica = aplicarEscala(base, ESCALAS_AUTONOMICAS[ccaa]) - aplicarEscala(minimo, ESCALAS_AUTONOMICAS[ccaa]);
+      return Math.max(cuotaEstatal, 0) + Math.max(cuotaAutonomica, 0);
     }
-    return aplicarEscala(baseImponible, ESCALA_COMBINADA_MEDIA);
+    return Math.max(aplicarEscala(base, ESCALA_COMBINADA_MEDIA) - aplicarEscala(minimo, ESCALA_COMBINADA_MEDIA), 0);
   }
 
   // Reducción por obtención de rendimientos del trabajo (art. 20 LIRPF, valores 2026)
