@@ -14,20 +14,20 @@
 <meta name="twitter:description" content="Calcula gratis tu IRPF anual estimado como autónomo: rendimiento neto, reducciones aplicables, mínimo personal y familiar, y comparación con lo ya pagado en el modelo 130.">
 <title>Calculadora de IRPF para Autónomos 2026 | Calculadora Lista</title>
 <meta name="description" content="Calcula gratis tu IRPF anual estimado como autónomo: rendimiento neto, reducciones aplicables, mínimo personal y familiar, y comparación con lo ya pagado en el modelo 130.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%232a211c'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='%23f2ded3' font-family='Georgia,serif'>C</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%232a211c'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='%23f2ded3' font-family='Arial,sans-serif'>C</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
 <style>
   :root{
-    --azul:#2a211c;
-    --verde:#b5502e;
-    --verde-oscuro:#8f3d21;
-    --gris-fondo:#faf7f2;
-    --gris-texto:#2b2620;
-    --gris-borde:#e8e1d6;
+    --azul:#16231b;
+    --verde:#2f7a4f;
+    --verde-oscuro:#1f5c3a;
+    --gris-fondo:#fbfaf6;
+    --gris-texto:#263029;
+    --gris-borde:#e4e1d4; --verde-tinte:#e4f3e8; --radius:16px;
   }
   * { box-sizing: border-box; }
   body{
@@ -37,10 +37,10 @@
     background: var(--gris-fondo);
     line-height:1.6;
   }
-  h1, h2, h3{ font-family: 'Fraunces', Georgia, serif; letter-spacing: -0.01em; }
-  header{ background: linear-gradient(135deg, var(--azul) 0%, #40312a 100%); color:#fff; padding: 1.1rem 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  h1, h2, h3{ font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -0.01em; font-weight:800; }
+  header{ background: var(--gris-fondo); color:var(--azul); padding: 1rem 1.5rem; border-bottom:1px solid var(--gris-borde); }
   header .wrap{ max-width: 1100px; margin:0 auto; }
-  header a{ color:#fff; text-decoration:none; font-weight:700; }
+  header a{ color:var(--azul); text-decoration:none; font-weight:800; font-family:'Plus Jakarta Sans',system-ui,sans-serif; letter-spacing:-0.01em; }
   main{ max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
   h1{ color: var(--azul); font-size:1.6rem; margin-bottom:0.25rem; }
   .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
@@ -48,7 +48,7 @@
   form{
     background:#fff;
     border:1px solid var(--gris-borde);
-    border-radius:12px;
+    border-radius:16px;
     padding:1.5rem;
   }
   fieldset{ border:none; padding:0; margin:0 0 1.25rem; }
@@ -59,7 +59,7 @@
     width:100%;
     padding:0.6rem 0.7rem;
     border:1px solid var(--gris-borde);
-    border-radius:8px;
+    border-radius:12px;
     font-size:0.95rem;
     margin-bottom:1rem;
   }
@@ -71,7 +71,7 @@
     gap:0.6rem;
     background:#f7f9fb;
     border:1px solid var(--gris-borde);
-    border-radius:8px;
+    border-radius:12px;
     padding:0.85rem 1rem;
     margin-bottom:1rem;
   }
@@ -83,24 +83,26 @@
     color:#fff;
     border:none;
     padding:0.85rem 1.5rem;
-    border-radius:8px;
+    border-radius:100px;
     font-size:1rem;
-    font-weight:700;
+    font-weight:800;
     cursor:pointer;
     width:100%;
+    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+    letter-spacing:-0.01em;
   }
-  button:hover{ background:#166b41; }
+  button:hover{ background: var(--verde-oscuro); }
   #resultado{
     margin-top:1.5rem;
     padding:1.25rem 1.5rem;
-    border-radius:10px;
-    background:#eef7f1;
-    border:1px solid #cfe8d8;
+    border-radius:16px;
+    background:#e4f3e8;
+    border:1px solid #c9e4d2;
     display:none;
   }
   #resultado.error{ background:#fbeceb; border-color:#f0c9c6; }
   #resultado h2{ margin-top:0; color:var(--azul); font-size:1.15rem; }
-  #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde); margin: 0.25rem 0 0.75rem; }
+  #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde-oscuro); margin: 0.25rem 0 0.75rem; font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; }
   #resultado table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
   #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
   #resultado td:last-child{ text-align:right; font-weight:600; }
@@ -109,7 +111,7 @@
     padding:1.25rem 1.5rem;
     background:#fff;
     border:1px solid var(--gris-borde);
-    border-radius:10px;
+    border-radius:16px;
     font-size:0.88rem;
     color:#555;
   }
@@ -119,7 +121,7 @@
     margin-top:1.5rem;
     background:#fff8e6;
     border:1px solid #f0e0a8;
-    border-radius:8px;
+    border-radius:12px;
     padding:1rem 1.25rem;
     font-size:0.85rem;
     color:#6b5a1e;
@@ -130,7 +132,7 @@
   .faq details{
     background:#fff;
     border:1px solid var(--gris-borde);
-    border-radius:8px;
+    border-radius:12px;
     padding:0.9rem 1.1rem;
     margin-bottom:0.6rem;
   }
@@ -141,7 +143,7 @@
     padding:1.25rem 1.5rem;
     background:#fff;
     border:1px solid var(--gris-borde);
-    border-radius:10px;
+    border-radius:16px;
     font-size:0.88rem;
     color:#555;
   }
@@ -157,7 +159,7 @@
 <body>
 
 <header>
-  <div class="wrap"><a href="index.html">Calculadora Lista</a></div>
+  <div class="wrap"><a href="index.html" style="display:inline-flex;align-items:center;gap:8px;"><span style="width:28px;height:28px;border-radius:12px;background:var(--verde);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:800;font-size:.8rem;">CL</span>Calculadora Lista</a></div>
 </header>
 
 <main>

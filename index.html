@@ -14,19 +14,25 @@
 <meta name="twitter:description" content="Calculadoras gratuitas y actualizadas de indemnización por despido, finiquito, nómina neta, paro e IRPF para autónomos en España. Sin registro, resultados al instante.">
 <title>Calculadoras Laborales y Fiscales España 2026 | Indemnización, Finiquito, Nómina</title>
 <meta name="description" content="Calculadoras gratuitas y actualizadas de indemnización por despido, finiquito, nómina neta, paro e IRPF para autónomos en España. Sin registro, resultados al instante.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%232a211c'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='%23f2ded3' font-family='Georgia,serif'>C</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2316231b'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='%23e4f3e8' font-family='Arial,sans-serif'>C</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --azul:#2a211c;
-    --azul-claro:#4a352a;
-    --verde:#b5502e;
-    --verde-oscuro:#8f3d21;
-    --gris-fondo:#faf7f2;
-    --gris-texto:#2b2620;
-    --gris-borde:#e8e1d6;
+    --azul:#16231b;
+    --verde:#2f7a4f;
+    --verde-oscuro:#1f5c3a;
+    --verde-tinte:#e4f3e8;
+    --gris-fondo:#fbfaf6;
+    --gris-texto:#263029;
+    --gris-borde:#e4e1d4;
+    --superficie-hundida:#f1efe6;
+    --azul-tinte:#e8eefd; --azul-acc:#2f6fed;
+    --naranja-tinte:#fcebdc; --naranja-acc:#e2772e;
+    --purpura-tinte:#eee9fc; --purpura-acc:#7a5ae0;
+    --radius:16px;
+    --sombra: 0 1px 2px rgba(22,35,27,.04), 0 16px 32px -18px rgba(22,35,27,.22);
   }
   * { box-sizing: border-box; }
   body{
@@ -37,128 +43,48 @@
     line-height:1.55;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, .logo{ font-family: 'Fraunces', Georgia, serif; letter-spacing: -0.01em; }
-  header{
-    background: linear-gradient(135deg, var(--azul) 0%, #40312a 100%);
-    color:#fff;
-    padding: 1.1rem 1.5rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-  }
+  h1, h2, h3, .logo{ font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -0.01em; font-weight:800; }
+  .num{ font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; }
+  header{ background: var(--gris-fondo); border-bottom:1px solid var(--gris-borde); position:sticky; top:0; z-index:5; }
   header .wrap{
-    max-width: 1100px;
+    max-width: 1140px;
     margin:0 auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
     gap:0.5rem;
+    padding: 0.9rem 1.5rem;
   }
-  header a{ color:#fff; text-decoration:none; }
-  header .logo{ font-weight:700; font-size:1.25rem; }
-  nav a{ margin-left:1.25rem; font-size:0.95rem; opacity:0.9; }
-  nav a:hover{ opacity:1; text-decoration:underline; }
-  main{ max-width: 1100px; margin: 0 auto; padding: 0.5rem 1.5rem 1.1rem; }
-  .hero{
-    text-align:center;
-    padding: 1.1rem 1rem 1.1rem;
-    border-top: 3px solid var(--verde);
-    margin-top: 0.5rem;
-  }
-  .hero h1{ font-size:2.4rem; font-weight:800; color:var(--azul); margin-bottom:0.6rem; }
-  .hero p{ font-size:1.08rem; max-width: 650px; margin: 0 auto; color:#5c6470; }
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 0.9rem;
-  }
-  .card{
-    background:#fff;
-    border:1px solid var(--gris-borde);
-    border-radius:14px;
-    padding:1.15rem 1.25rem;
-    text-decoration:none;
-    color: inherit;
-    transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
-    display:block;
-  }
-  .card:hover{ box-shadow: 0 8px 22px rgba(18,42,69,0.10); transform: translateY(-3px); border-color: #cfd8e3; }
-  .card .card-icon{
-    display:inline-block;
-    color: var(--verde);
-    margin-bottom:0.35rem;
-  }
-  .card .card-icon svg{ display:block; }
-  .card .tag{
-    display:inline-block;
-    font-size:0.72rem;
-    text-transform:uppercase;
-    letter-spacing:0.04em;
-    color: var(--verde);
-    font-weight:700;
-    margin-bottom:0.4rem;
-    margin-left:0.5rem;
-  }
-  .card h3{ margin:0 0 0.4rem; color:var(--azul); font-size:1.1rem; }
-  .card p{ margin:0; font-size:0.92rem; color:#555; }
-  .disabled{ opacity:0.55; pointer-events:none; }
-  .disabled .tag{ color:#999; }
-  footer{
-    text-align:center;
-    padding: 1.1rem 1rem 1.5rem;
-    font-size:0.85rem;
-    color:#777;
-  }
-  footer a{ color:#777; margin: 0 0.5rem; }
-  .disclaimer{
-    background:#fff8e6;
-    border:1px solid #f0e0a8;
-    border-radius:8px;
-    padding:1rem 1.25rem;
-    font-size:0.88rem;
-    color:#6b5a1e;
-    margin-top:1.1rem;
-  }
-  .tabs-nav{
-    display:flex;
-    gap:0.5rem;
-    border-bottom: 2px solid var(--gris-borde);
-    margin: 1.1rem 0 1rem;
-  }
-  .tab-btn{
-    background:none;
-    border:none;
-    padding: 0.85rem 1.4rem;
-    font-size:1.05rem;
-    font-weight:700;
-    color:#888;
-    cursor:pointer;
-    border-bottom: 3px solid transparent;
-    margin-bottom:-2px;
-    transition: color 0.15s ease;
-  }
-  .tab-btn:hover{ color: var(--azul-claro); }
-  .tab-btn.active{
-    color: var(--azul);
-    border-bottom-color: var(--verde);
-  }
-  .tab-panel{ display:none; }
-  .tab-panel.active{ display:block; }
-  .tab-count{
-    display:inline-block;
-    background:#eef1f4;
-    color:#666;
-    font-size:0.75rem;
-    font-weight:700;
-    border-radius:999px;
-    padding:0.1rem 0.55rem;
-    margin-left:0.4rem;
-  }
-  .tab-btn.active .tab-count{ background:#e1f0e7; color: var(--verde); }
-  .buscador{
-    max-width: 480px;
-    margin: 0.85rem auto 0;
-    position: relative;
-  }
+  header a{ color:var(--azul); text-decoration:none; }
+  header .logo{ font-weight:800; font-size:1.1rem; display:inline-flex; align-items:center; gap:9px; }
+  .brand-mark{ width:30px; height:30px; border-radius:9px; background:var(--verde); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:800; font-size:.92rem; font-family:'Plus Jakarta Sans',sans-serif; }
+  nav a{ margin-left:1.4rem; font-size:0.92rem; font-weight:600; color:#5b665f; }
+  nav a:hover{ color:var(--azul); }
+  main{ max-width: 1140px; margin: 0 auto; padding: 0.5rem 1.5rem 1.1rem; }
+
+  .hero{ text-align:center; padding: 2.6rem 1rem 0.5rem; }
+  .hero h1{ font-size:2.6rem; font-weight:800; color:var(--azul); margin-bottom:0.6rem; max-width:18ch; margin-inline:auto; }
+  @media (max-width:600px){ .hero h1{ font-size:2rem; } }
+  .hero p{ font-size:1.1rem; max-width: 640px; margin: 0 auto; color:#5b665f; }
+
+  /* interactive calc card */
+  .playcard{ background:#fff; border-radius:24px; box-shadow:var(--sombra); max-width:620px; margin:2rem auto 0; padding:26px 24px 28px; text-align:left; }
+  .playcard-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:8px; }
+  .playcard-title{ font-weight:700; font-family:'Plus Jakarta Sans',sans-serif; }
+  .playcard-badge{ font-size:.76rem; font-weight:700; color:var(--verde-oscuro); background:var(--verde-tinte); padding:5px 10px; border-radius:100px; }
+  .slide-row{ margin-bottom:18px; }
+  .slide-label{ display:flex; justify-content:space-between; font-size:.9rem; font-weight:600; color:#5b665f; margin-bottom:9px; }
+  .slide-label .val{ color:var(--azul); font-weight:700; }
+  input[type=range]{ width:100%; -webkit-appearance:none; height:6px; border-radius:100px; background:var(--superficie-hundida); outline:none; }
+  input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:22px; height:22px; border-radius:50%; background:var(--verde); border:3px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,.25); cursor:pointer; }
+  input[type=range]::-moz-range-thumb{ width:22px; height:22px; border-radius:50%; background:var(--verde); border:3px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,.25); cursor:pointer; }
+  .result-box{ margin-top:20px; background:var(--verde-tinte); border-radius:16px; padding:18px 20px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+  .result-box .label{ font-size:.85rem; font-weight:700; color:var(--verde-oscuro); }
+  .result-box .value{ font-size:1.85rem; font-weight:800; color:var(--verde-oscuro); }
+  .result-foot{ font-size:.78rem; color:#8b958e; margin-top:10px; }
+
+  .buscador{ max-width: 480px; margin: 2rem auto 0; position: relative; }
   .buscador input{
     width:100%;
     padding: 0.9rem 1.2rem 0.9rem 2.8rem;
@@ -166,56 +92,58 @@
     border: 1px solid var(--gris-borde);
     font-size: 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    font-family:inherit;
   }
   .buscador input:focus{ outline: 2px solid var(--verde); outline-offset: 1px; }
-  .buscador .icono-lupa{
-    position:absolute;
-    left: 1.1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.1rem;
-    opacity:0.5;
-  }
-  .accesos-rapidos{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:0.5rem;
-    margin-top: 0.75rem;
-  }
+  .buscador .icono-lupa{ position:absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; opacity:0.5; }
+
+  .confianza{ display:flex; flex-wrap:wrap; justify-content:center; gap:0.4rem 1.1rem; margin-top: 1.2rem; font-size:0.84rem; color:#6b7268; font-weight:600; }
+  .confianza span{ display:inline-flex; align-items:center; gap:0.3rem; color: var(--verde-oscuro); }
+
+  .tabs-nav{ display:flex; gap:4px; background:var(--superficie-hundida); border-radius:12px; padding:4px; margin: 2.4rem auto 1.4rem; width:fit-content; }
+  .tab-btn{ background:none; border:none; padding: 0.65rem 1.3rem; font-size:0.92rem; font-weight:700; color:#5b665f; cursor:pointer; border-radius:9px; font-family:inherit; }
+  .tab-btn.active{ color: var(--azul); background:#fff; box-shadow:0 1px 2px rgba(22,35,27,.08); }
+  .tab-panel{ display:none; }
+  .tab-panel.active{ display:block; }
+  .tab-count{ display:inline-block; background:rgba(0,0,0,.06); color:#666; font-size:0.72rem; font-weight:700; border-radius:999px; padding:0.1rem 0.5rem; margin-left:0.3rem; }
+  .tab-btn.active .tab-count{ background:var(--verde-tinte); color: var(--verde-oscuro); }
+
+  .accesos-rapidos{ display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem; margin-top: 1.3rem; }
   .acceso-rapido{
-    display:inline-flex;
-    align-items:center;
-    gap:0.4rem;
-    background:#fff;
-    border:1px solid var(--gris-borde);
-    border-radius:999px;
-    padding: 0.5rem 1rem;
-    font-size: 0.88rem;
-    font-weight:600;
-    color: var(--azul);
-    text-decoration:none;
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    display:inline-flex; align-items:center; gap:0.4rem;
+    background:#fff; border:1px solid var(--gris-borde); border-radius:999px;
+    padding: 0.5rem 1rem; font-size: 0.86rem; font-weight:600; color: var(--azul);
+    text-decoration:none; transition: box-shadow 0.15s ease, transform 0.15s ease;
   }
   .acceso-rapido:hover{ box-shadow: 0 3px 10px rgba(0,0,0,0.08); transform: translateY(-1px); }
-  .confianza{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:0.4rem 1.1rem;
-    margin-top: 1rem;
-    font-size:0.82rem;
-    color:#6b7280;
-    font-weight:600;
+
+  .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.9rem; }
+  .card{
+    background:#fff; border:1px solid var(--gris-borde); border-radius:var(--radius);
+    padding:1.2rem 1.3rem; text-decoration:none; color: inherit;
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+    display:block;
   }
-  .confianza span{ display:inline-flex; align-items:center; gap:0.3rem; color: var(--verde); }
+  .card:hover{ box-shadow: var(--sombra); transform: translateY(-3px); }
+  .card .card-icon{ width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; }
+  .card .card-icon svg{ display:block; }
+  .card.c0 .card-icon{ background:var(--verde-tinte); color:var(--verde-oscuro); }
+  .card.c1 .card-icon{ background:var(--azul-tinte); color:var(--azul-acc); }
+  .card.c2 .card-icon{ background:var(--naranja-tinte); color:var(--naranja-acc); }
+  .card.c3 .card-icon{ background:var(--purpura-tinte); color:var(--purpura-acc); }
+  .card .tag{ display:none; }
+  .card h3{ margin:0 0 0.4rem; color:var(--azul); font-size:1.05rem; }
+  .card p{ margin:0; font-size:0.9rem; color:#5b665f; }
   .card.oculta{ display:none; }
-  .sin-resultados{
-    text-align:center;
-    color:#888;
-    padding: 2rem 1rem;
-    display:none;
+  .sin-resultados{ text-align:center; color:#888; padding: 2rem 1rem; display:none; }
+
+  .disclaimer{
+    background:#fdf6e3; border:1px solid #f0e0a8; border-radius:var(--radius);
+    padding:1rem 1.25rem; font-size:0.88rem; color:#6b5a1e; margin-top:2rem;
   }
+
+  footer{ text-align:center; padding: 2rem 1rem 2.5rem; font-size:0.85rem; color:#777; border-top:1px solid var(--gris-borde); margin-top:1.5rem; }
+  footer a{ color:#777; margin: 0 0.5rem; }
 </style>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
@@ -224,7 +152,7 @@
 
 <header>
   <div class="wrap">
-    <a class="logo" href="index.html">Calculadora Lista</a>
+    <a class="logo" href="index.html"><span class="brand-mark">CL</span>Calculadora Lista</a>
     <nav>
       <a href="#" onclick="mostrarPestana('calculadoras'); return false;">Calculadoras</a>
       <a href="#" onclick="mostrarPestana('guias'); return false;">Guías</a>
@@ -235,8 +163,28 @@
 
 <main>
   <section class="hero">
-    <h1>Calcula lo que te corresponde</h1>
+    <h1>Mueve el cursor y descubre lo que te corresponde</h1>
     <p>Herramientas laborales y fiscales gratuitas para España, actualizadas a 2026. Sin registro, resultados al instante.</p>
+
+    <div class="playcard">
+      <div class="playcard-head">
+        <span class="playcard-title">Indemnización por despido</span>
+        <span class="playcard-badge">improcedente</span>
+      </div>
+      <div class="slide-row">
+        <div class="slide-label"><span>Salario bruto mensual</span><span class="val num" id="salVal">1.800 €</span></div>
+        <input type="range" id="salSlider" min="900" max="4000" step="50" value="1800">
+      </div>
+      <div class="slide-row">
+        <div class="slide-label"><span>Años trabajados</span><span class="val num" id="yrVal">5 años</span></div>
+        <input type="range" id="yrSlider" min="0" max="25" step="1" value="5">
+      </div>
+      <div class="result-box">
+        <span class="label">Indemnización estimada</span>
+        <span class="value num" id="resultVal">4.950,00 €</span>
+      </div>
+      <div class="result-foot">33 días de salario por año trabajado · Estatuto de los Trabajadores, art. 56. <a href="calculadora-indemnizacion-despido.html" style="color:var(--verde-oscuro); font-weight:700;">Calculadora completa →</a></div>
+    </div>
 
     <div class="buscador">
       <span class="icono-lupa"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
@@ -261,49 +209,47 @@
     </div>
   </section>
 
-  <div class="tabs-nav">
-    <button type="button" class="tab-btn active" id="tab-btn-calculadoras" onclick="mostrarPestana('calculadoras')">
-      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px; margin-right:0.3rem;"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/></svg>Calculadoras <span class="tab-count">7</span>
-    </button>
-    <button type="button" class="tab-btn" id="tab-btn-guias" onclick="mostrarPestana('guias')">
-      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px; margin-right:0.3rem;"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22.5v-18Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg>Guías <span class="tab-count">17</span>
-    </button>
+  <div style="text-align:center;">
+    <div class="tabs-nav">
+      <button type="button" class="tab-btn active" id="tab-btn-calculadoras" onclick="mostrarPestana('calculadoras')">Calculadoras <span class="tab-count">7</span></button>
+      <button type="button" class="tab-btn" id="tab-btn-guias" onclick="mostrarPestana('guias')">Guías <span class="tab-count">17</span></button>
+    </div>
   </div>
 
   <section id="calculadoras" class="tab-panel active">
     <div class="grid">
-      <a class="card" href="calculadora-indemnizacion-despido.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg></span><span class="tag">Herramienta</span>
+      <a class="card c1" href="calculadora-indemnizacion-despido.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg></span>
         <h3>Indemnización por despido y finiquito</h3>
         <p>Calcula la indemnización por despido improcedente, objetivo o procedente, y una estimación del finiquito.</p>
       </a>
-      <a class="card" href="calculadora-finiquito.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="2" y1="13" x2="22" y2="13"/></svg></span><span class="tag">Herramienta</span>
+      <a class="card c2" href="calculadora-finiquito.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="2" y1="13" x2="22" y2="13"/></svg></span>
         <h3>Finiquito (cálculo detallado)</h3>
         <p>Calcula vacaciones no disfrutadas, parte proporcional de pagas extra y salario pendiente.</p>
       </a>
-      <a class="card" href="calculadora-nomina-neta.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/></svg></span><span class="tag">Herramienta</span>
+      <a class="card c0" href="calculadora-nomina-neta.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/></svg></span>
         <h3>Nómina neta (bruto a neto)</h3>
-        <p>Estima tu salario neto descontando Seguridad Social e IRPF orientativo.</p>
+        <p>Estima tu salario neto descontando Seguridad Social e IRPF orientativo, por comunidad autónoma.</p>
       </a>
-      <a class="card" href="calculadora-paro.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span><span class="tag">Herramienta</span>
+      <a class="card c2" href="calculadora-paro.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span>
         <h3>Prestación por desempleo (paro)</h3>
         <p>Cuantía mensual estimada y duración de tu prestación según días cotizados e hijos a cargo.</p>
       </a>
-      <a class="card" href="calculadora-cuota-autonomos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="18" x2="15" y2="12"/></svg></span><span class="tag">Herramienta</span>
+      <a class="card c3" href="calculadora-cuota-autonomos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="18" x2="15" y2="12"/></svg></span>
         <h3>Cuota de autónomos (RETA)</h3>
         <p>Estima tu cuota mensual según tus rendimientos netos, con opción de tarifa plana.</p>
       </a>
-      <a class="card" href="calculadora-irpf-autonomos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="12" width="3" height="8"/><rect x="11" y="8" width="3" height="12"/><rect x="16" y="4" width="3" height="16"/></svg></span><span class="tag">Herramienta</span>
+      <a class="card c3" href="calculadora-irpf-autonomos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="12" width="3" height="8"/><rect x="11" y="8" width="3" height="12"/><rect x="16" y="4" width="3" height="16"/></svg></span>
         <h3>IRPF para autónomos</h3>
-        <p>Estima tu IRPF anual: rendimiento neto, reducciones y comparación con el modelo 130.</p>
+        <p>Estima tu IRPF anual por comunidad autónoma: rendimiento neto, reducciones y modelo 130.</p>
       </a>
-      <a class="card" href="calculadora-modelo-303-iva.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span><span class="tag">Herramienta</span>
+      <a class="card c1" href="calculadora-modelo-303-iva.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
         <h3>Modelo 303: IVA trimestral</h3>
         <p>Calcula el resultado de tu declaración de IVA: repercutido menos soportado, por tipos, con compensación de trimestres anteriores.</p>
       </a>
@@ -313,88 +259,88 @@
 
   <section id="guias" class="tab-panel">
     <div class="grid">
-      <a class="card" href="guias/despido-improcedente-vs-objetivo.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg></span><span class="tag">Guía</span>
+      <a class="card c1" href="guias/despido-improcedente-vs-objetivo.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg></span>
         <h3>Despido procedente, improcedente y objetivo: diferencias</h3>
         <p>Qué significa cada tipo de despido y cuánto te corresponde según cuál te apliquen.</p>
       </a>
-      <a class="card" href="guias/plazos-prescripcion-reclamaciones-laborales.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v4l-6 6-6-6V2Z"/><path d="M6 22h12v-4l-6-6-6 6v4Z"/></svg></span><span class="tag">Guía</span>
+      <a class="card c3" href="guias/plazos-prescripcion-reclamaciones-laborales.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v4l-6 6-6-6V2Z"/><path d="M6 22h12v-4l-6-6-6 6v4Z"/></svg></span>
         <h3>Plazos y prescripción en reclamaciones laborales</h3>
         <p>Tabla completa de plazos para reclamar despido, finiquito y otras cantidades adeudadas.</p>
       </a>
-      <a class="card" href="guias/modelo-303-iva-trimestral-autonomos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="18" x2="15" y2="12"/></svg></span><span class="tag">Guía</span>
+      <a class="card c1" href="guias/modelo-303-iva-trimestral-autonomos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="18" x2="15" y2="12"/></svg></span>
         <h3>Modelo 303: IVA trimestral para autónomos</h3>
         <p>Cómo se calcula, tipos de IVA, plazos trimestrales y quién está exento.</p>
       </a>
-      <a class="card" href="guias/despido-colectivo-ere-vs-individual.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span><span class="tag">Guía</span>
+      <a class="card c2" href="guias/despido-colectivo-ere-vs-individual.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span>
         <h3>Despido colectivo (ERE) vs despido individual</h3>
         <p>Diferencias, procedimiento de negociación, e indemnización aplicable en cada caso.</p>
       </a>
-      <a class="card" href="guias/no-me-pagan-el-finiquito.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/><line x1="4.5" y1="4.5" x2="19.5" y2="19.5"/></svg></span><span class="tag">Guía</span>
+      <a class="card c0" href="guias/no-me-pagan-el-finiquito.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/><line x1="4.5" y1="4.5" x2="19.5" y2="19.5"/></svg></span>
         <h3>Qué hacer si no te pagan el finiquito</h3>
         <p>Pasos a seguir, plazos de reclamación e intereses por mora si la empresa no paga o se retrasa.</p>
       </a>
-      <a class="card" href="guias/guia-autonomos-alta-cuotas-irpf.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><line x1="13" y1="10" x2="18" y2="10"/><line x1="13" y1="14" x2="18" y2="14"/></svg></span><span class="tag">Guía</span>
+      <a class="card c3" href="guias/guia-autonomos-alta-cuotas-irpf.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><line x1="13" y1="10" x2="18" y2="10"/><line x1="13" y1="14" x2="18" y2="14"/></svg></span>
         <h3>Guía de autónomos: alta, cuotas e IRPF</h3>
         <p>Cómo darte de alta, la tarifa plana, la cotización por ingresos reales y tus obligaciones fiscales básicas.</p>
       </a>
-      <a class="card" href="guias/modelo-130-pagos-fraccionados-irpf-autonomos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span><span class="tag">Guía</span>
+      <a class="card c1" href="guias/modelo-130-pagos-fraccionados-irpf-autonomos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
         <h3>Modelo 130: pagos fraccionados de IRPF</h3>
         <p>Quién debe presentarlo, cómo se calcula el 20% y quién está exento.</p>
       </a>
-      <a class="card" href="guias/como-solicitar-paro-tramites.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span><span class="tag">Guía</span>
+      <a class="card c2" href="guias/como-solicitar-paro-tramites.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span>
         <h3>Cómo solicitar el paro: trámites paso a paso</h3>
         <p>Requisitos, documentación, plazo de 15 días hábiles y cómo hacerlo online.</p>
       </a>
-      <a class="card" href="guias/que-incluye-tu-nomina-conceptos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/></svg></span><span class="tag">Guía</span>
+      <a class="card c0" href="guias/que-incluye-tu-nomina-conceptos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/></svg></span>
         <h3>Qué incluye tu nómina: guía de conceptos</h3>
         <p>Salario base, complementos, percepciones no salariales y deducciones explicados.</p>
       </a>
-      <a class="card" href="guias/finiquito-baja-voluntaria.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span class="tag">Guía</span>
+      <a class="card c1" href="guias/finiquito-baja-voluntaria.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span>
         <h3>¿Tengo derecho a finiquito si me voy voluntariamente?</h3>
         <p>Qué cobras (y qué no) si presentas la baja voluntaria en tu empresa.</p>
       </a>
-      <a class="card" href="guias/no-cumplir-preaviso-15-dias.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span><span class="tag">Guía</span>
+      <a class="card c2" href="guias/no-cumplir-preaviso-15-dias.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
         <h3>Qué pasa si no cumplo el preaviso de 15 días</h3>
         <p>El descuento que puede aplicarte la empresa en el finiquito si no avisas a tiempo.</p>
       </a>
-      <a class="card" href="guias/despido-periodo-prueba.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="tag">Guía</span>
+      <a class="card c0" href="guias/despido-periodo-prueba.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
         <h3>Despido en periodo de prueba: ¿cobro algo?</h3>
         <p>Sin indemnización ni preaviso, pero sí finiquito. Te explicamos qué sí cobras.</p>
       </a>
-      <a class="card" href="guias/indemnizacion-fin-contrato-temporal.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><span class="tag">Guía</span>
+      <a class="card c3" href="guias/indemnizacion-fin-contrato-temporal.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
         <h3>Indemnización por fin de contrato temporal</h3>
         <p>12 días de salario por año cuando tu contrato temporal no se renueva, y sus excepciones.</p>
       </a>
-      <a class="card" href="guias/capitalizar-paro-autonomos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg></span><span class="tag">Guía</span>
+      <a class="card c1" href="guias/capitalizar-paro-autonomos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg></span>
         <h3>Capitalizar el paro para hacerse autónomo</h3>
         <p>Cómo cobrar tu prestación en un pago único para invertirla en tu negocio.</p>
       </a>
-      <a class="card" href="guias/smi-2026-neto.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7" x2="12" y2="17"/><path d="M9.5 9.5a2.5 2.5 0 0 1 2.5-1.5c1.4 0 2.5 1 2.5 2s-1 1.5-2.5 2-2.5 1-2.5 2 1.1 2 2.5 2a2.5 2.5 0 0 0 2.5-1.5"/></svg></span><span class="tag">Guía</span>
+      <a class="card c2" href="guias/smi-2026-neto.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7" x2="12" y2="17"/><path d="M9.5 9.5a2.5 2.5 0 0 1 2.5-1.5c1.4 0 2.5 1 2.5 2s-1 1.5-2.5 2-2.5 1-2.5 2 1.1 2 2.5 2a2.5 2.5 0 0 0 2.5-1.5"/></svg></span>
         <h3>El SMI de 2026 en neto: cuánto cobras al mes</h3>
         <p>1.221€/mes en 14 pagas: te explicamos cuánto es en neto y por qué apenas se paga IRPF.</p>
       </a>
-      <a class="card" href="guias/gastos-deducibles-autonomos-irpf.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></span><span class="tag">Guía</span>
+      <a class="card c3" href="guias/gastos-deducibles-autonomos-irpf.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></span>
         <h3>Gastos deducibles para autónomos en el IRPF</h3>
         <p>Qué puedes desgravar: suministros, dietas, vehículo, cuota de autónomos y más.</p>
       </a>
-      <a class="card" href="guias/tabla-paro-dias-cotizados.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="20"/></svg></span><span class="tag">Guía</span>
+      <a class="card c0" href="guias/tabla-paro-dias-cotizados.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="20"/></svg></span>
         <h3>Tabla del paro: meses según días cotizados</h3>
         <p>De 4 meses a 2 años: la tabla oficial que relaciona días cotizados con duración del paro.</p>
       </a>
@@ -429,7 +375,6 @@
     document.getElementById(nombre).scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // Si se llega con #calculadoras o #guias en la URL, abre esa pestaña directamente
   window.addEventListener('DOMContentLoaded', function () {
     if (window.location.hash === '#guias') {
       mostrarPestana('guias');
@@ -473,6 +418,28 @@
       }
     }
   }
+
+  // Calculadora interactiva del hero
+  (function(){
+    const salSlider = document.getElementById('salSlider');
+    const yrSlider = document.getElementById('yrSlider');
+    const salVal = document.getElementById('salVal');
+    const yrVal = document.getElementById('yrVal');
+    const resultVal = document.getElementById('resultVal');
+    function fmt(n){ return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+    function update(){
+      const sal = parseInt(salSlider.value,10);
+      const yr = parseInt(yrSlider.value,10);
+      salVal.textContent = sal.toLocaleString('es-ES') + ' €';
+      yrVal.textContent = yr + (yr===1 ? ' año' : ' años');
+      const diario = (sal*12/365);
+      const indemnizacion = Math.min(diario*33*yr, sal*24);
+      resultVal.textContent = fmt(indemnizacion) + ' €';
+    }
+    salSlider.addEventListener('input', update);
+    yrSlider.addEventListener('input', update);
+    update();
+  })();
 </script>
 
 </body>
