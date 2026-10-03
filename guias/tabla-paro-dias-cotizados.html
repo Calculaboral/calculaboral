@@ -36,7 +36,9 @@
   .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
   .intro{ color:#555; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   td:last-child, th:last-child{ text-align:right; }
   ul, ol{ padding-left: 1.25rem; }
@@ -73,6 +75,7 @@
     <p class="intro">La duración de la prestación por desempleo (el "paro") depende de cuántos días has cotizado en los últimos 6 años. Necesitas un mínimo de 360 días cotizados y, como máximo, puedes cobrar 2 años. Aquí tienes la tabla completa y cómo usarla.</p>
 
     <h2>Tabla de duración del paro</h2>
+    <div class="table-scroll">
     <table>
       <thead>
         <tr><th>Días cotizados en los últimos 6 años</th><th>Días de paro</th><th>Equivale a</th></tr>
@@ -92,6 +95,7 @@
         <tr><td>Desde 2.160</td><td>720</td><td>24 meses (máximo)</td></tr>
       </tbody>
     </table>
+    </div>
     <p>Ejemplo: si has trabajado 3 años seguidos a jornada completa (unos 1.095 días cotizados), te corresponden 360 días de paro, es decir, 12 meses.</p>
 
     <h2>Cómo contar tus días cotizados</h2>

@@ -96,7 +96,9 @@
   #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde-oscuro); margin: 0.25rem 0 0.75rem; font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; }
   #resultado.compensar .cifra{ color:#3a7d5c; }
   #resultado table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
-  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
+
+  #resultado .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  #resultado .table-scroll table{ min-width:320px; }  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
   #resultado td:last-child{ text-align:right; font-weight:600; }
   .legal-box{
     margin-top:2rem;
@@ -365,12 +367,12 @@
       <h2>${tituloResultado}</h2>
       <div class="cifra">${formatoEuro(Math.abs(resultadoFinal))}</div>
       <p style="margin:0 0 0.75rem; font-size:0.9rem; color:#555;">${explicacion}</p>
-      <table>
+      <div class="table-scroll"><table>
         <tr><td>IVA repercutido total (21% + 10% + 4%)</td><td>${formatoEuro(totalRepercutido)}</td></tr>
         <tr><td>IVA soportado total (21% + 10% + 4%)</td><td>-${formatoEuro(totalSoportado)}</td></tr>
         ${compensarAnterior > 0 ? `<tr><td>Compensación de trimestres anteriores</td><td>-${formatoEuro(compensarAnterior)}</td></tr>` : ''}
         <tr><td><strong>Resultado de la liquidación</strong></td><td><strong>${formatoEuro(resultadoFinal)}</strong></td></tr>
-      </table>
+      </table></div>
     `;
   });
 })();

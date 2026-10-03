@@ -50,7 +50,9 @@
   .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
   .intro{ color:#555; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.65rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.65rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   ul{ padding-left: 1.25rem; }
   li{ margin-bottom:0.5rem; }
@@ -103,6 +105,7 @@
     <p class="intro">Uno de los errores más costosos en el ámbito laboral es dejar pasar el plazo para reclamar. A diferencia de otras materias, muchos plazos laborales son muy cortos (semanas, no años), y una vez vencidos, se pierde el derecho a reclamar por vía judicial, sin excepciones fáciles. Aquí tienes los plazos más habituales, reunidos en un solo lugar.</p>
 
     <h2>Tabla de plazos principales</h2>
+    <div class="table-scroll">
     <table>
       <tr>
         <th>Reclamación</th>
@@ -135,6 +138,7 @@
         <td>Desde la fecha de baja en la empresa (para no perder días de prestación)</td>
       </tr>
     </table>
+    </div>
 
     <h2>¿Qué significa "días hábiles"?</h2>
     <p>Los plazos cortos (como los 20 días para impugnar un despido) se cuentan en días hábiles, lo que excluye sábados, domingos y festivos. Es un matiz importante: 20 días hábiles suelen ser unas 4 semanas de calendario, no 20 días naturales seguidos.</p>

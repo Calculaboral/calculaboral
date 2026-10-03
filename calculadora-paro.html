@@ -92,7 +92,9 @@
   #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde-oscuro); margin: 0.25rem 0 0.75rem; font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; }
   #resultado .subcifra{ font-size:0.95rem; font-weight:600; color:#555; margin-bottom:0.75rem; }
   #resultado table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
-  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
+
+  #resultado .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  #resultado .table-scroll table{ min-width:320px; }  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
   #resultado td:last-child{ text-align:right; font-weight:600; }
   .legal-box{
     margin-top:2rem;
@@ -338,10 +340,10 @@
       <h2>Prestación estimada</h2>
       <div class="cifra">${formatoEuro(netoAproxTramo1)}/mes (primeros 6 meses)</div>
       <div class="subcifra">Duración total estimada: ${duracionTotal} días (${(duracionTotal/30).toFixed(1)} meses) · Total estimado del periodo: ${formatoEuro(totalBruto)} brutos</div>
-      <table>
+      <div class="table-scroll"><table>
         <tr><td>Primeros 6 meses (aprox. ${mesesTramo1.toFixed(1)} meses) — 70% base, con topes</td><td>${formatoEuro(netoAproxTramo1)}/mes aprox.</td></tr>
         ${filaTramo2}
-      </table>
+      </table></div>
     `;
   });
 })();

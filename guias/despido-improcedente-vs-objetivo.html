@@ -50,7 +50,9 @@
   .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
   .intro{ color:#555; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   .cta{
     margin-top:2rem;
@@ -102,6 +104,7 @@
     <p class="intro">Si te acaban de despedir o crees que puede pasar pronto, lo primero que necesitas saber es qué tipo de despido te han comunicado, porque de eso depende directamente cuánto dinero te corresponde. Aquí tienes las tres categorías explicadas de forma clara, sin rodeos.</p>
 
     <h2>Resumen rápido</h2>
+    <div class="table-scroll">
     <table>
       <tr>
         <th>Tipo de despido</th>
@@ -124,6 +127,7 @@
         <td>20 días de salario por año trabajado, máximo 12 mensualidades</td>
       </tr>
     </table>
+    </div>
 
     <h2>Despido procedente</h2>
     <p>Es procedente cuando la empresa consigue acreditar, con pruebas, el motivo del despido. Dentro de esta categoría hay dos variantes muy distintas en sus consecuencias económicas:</p>

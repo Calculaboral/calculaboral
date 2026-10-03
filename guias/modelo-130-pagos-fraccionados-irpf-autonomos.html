@@ -52,7 +52,9 @@
   ul{ padding-left: 1.25rem; }
   li{ margin-bottom:0.5rem; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   .cta{
     margin-top:2rem;
@@ -110,6 +112,7 @@
 
     <h2>¿Cómo se calcula?</h2>
     <p>La fórmula general es:</p>
+    <div class="table-scroll">
     <table>
       <tr><th>Concepto</th><th>Cálculo</th></tr>
       <tr><td>Rendimiento neto acumulado del año</td><td>Ingresos − gastos deducibles, desde el 1 de enero hasta el final del trimestre</td></tr>
@@ -117,6 +120,7 @@
       <tr><td>Menos: pagos fraccionados ya ingresados en trimestres anteriores del mismo año</td><td>Se restan para no pagar dos veces por el mismo beneficio</td></tr>
       <tr><td>Menos: retenciones ya soportadas (si facturas a empresas con retención)</td><td>Se restan igualmente</td></tr>
     </table>
+    </div>
     <p>El resultado es lo que debes ingresar ese trimestre. Si tus gastos superan a tus ingresos en el acumulado del año, el pago fraccionado puede salir a cero (no hay devolución en el modelo 130 si sale negativo, simplemente no pagas ese trimestre).</p>
 
     <h2>¿Quién está exento de presentarlo?</h2>

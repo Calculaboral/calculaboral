@@ -50,7 +50,9 @@
   .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
   .intro{ color:#555; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   ul{ padding-left: 1.25rem; }
   li{ margin-bottom:0.5rem; }
@@ -126,12 +128,14 @@
     <p>Lo relevante es la fecha de inicio del primer contrato y la fecha de fin del último, si ha habido continuidad en la prestación de servicios (encadenamiento de contratos temporales con la misma empresa y en el mismo puesto). En estos casos conviene revisar bien la antigüedad real acumulada, porque puede ser mayor de lo que parece a simple vista.</p>
 
     <h2>Diferencia con el despido objetivo o improcedente</h2>
+    <div class="table-scroll">
     <table>
       <tr><th>Situación</th><th>Indemnización</th></tr>
       <tr><td>Fin de contrato temporal (no renovación)</td><td>12 días de salario por año</td></tr>
       <tr><td>Despido objetivo</td><td>20 días de salario por año (máx. 12 mensualidades)</td></tr>
       <tr><td>Despido improcedente</td><td>33 días de salario por año (máx. 24 mensualidades)</td></tr>
     </table>
+    </div>
     <p>Si tu empresa te dice que el contrato "termina" pero en realidad sigues siendo necesario para el puesto y se cubre con otra contratación fraudulenta o encadenada de forma irregular, podrías estar ante un despido encubierto con derecho a una indemnización mayor. Ante la duda, consulta con un graduado social o abogado laboralista.</p>
 
     <div class="cta">

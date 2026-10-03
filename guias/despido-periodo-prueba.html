@@ -36,7 +36,9 @@
   .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
   .intro{ color:#555; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   ul{ padding-left: 1.25rem; }
   li{ margin-bottom:0.5rem; }
@@ -72,6 +74,7 @@
 
     <h2>¿Cuánto dura el periodo de prueba?</h2>
     <p>La duración máxima la fija el convenio colectivo aplicable. En su defecto, el Estatuto de los Trabajadores establece como límites generales:</p>
+    <div class="table-scroll">
     <table>
       <tr><th>Tipo de trabajador/contrato</th><th>Duración máxima (sin convenio)</th></tr>
       <tr><td>Técnicos titulados</td><td>6 meses</td></tr>
@@ -79,6 +82,7 @@
       <tr><td>Resto de trabajadores (empresas de menos de 25 trabajadores)</td><td>3 meses</td></tr>
       <tr><td>Contratos temporales de duración determinada no superior a 6 meses</td><td>1 mes (salvo que el convenio diga otra cosa)</td></tr>
     </table>
+    </div>
     <p>Siempre debe estar pactado por escrito en el contrato; si no figura por escrito, se entiende que no existe periodo de prueba.</p>
 
     <h2>¿Qué cobras si te despiden en periodo de prueba?</h2>

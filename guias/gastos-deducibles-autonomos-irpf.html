@@ -36,7 +36,9 @@
   .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
   .intro{ color:#555; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   ul{ padding-left: 1.25rem; }
   li{ margin-bottom:0.5rem; }
@@ -76,6 +78,7 @@
     </ul>
 
     <h2>Gastos deducibles más habituales</h2>
+    <div class="table-scroll">
     <table>
       <tr><th>Gasto</th><th>Condición</th></tr>
       <tr><td>Cuota de autónomos (RETA)</td><td>100% deducible</td></tr>
@@ -92,6 +95,7 @@
       <tr><td>Publicidad y marketing (web, anuncios, diseño)</td><td>100% deducible</td></tr>
       <tr><td>Amortización de equipos (ordenador, maquinaria, mobiliario)</td><td>Según tablas oficiales de amortización</td></tr>
     </table>
+    </div>
 
     <h2>El caso especial de trabajar desde casa</h2>
     <p>Si desarrollas tu actividad en tu propia vivienda, puedes deducir un porcentaje de los gastos de suministros (luz, agua, gas, internet) proporcional a los metros cuadrados que hayas declarado afectos a la actividad en el modelo censal. La Agencia Tributaria establece, salvo prueba de un porcentaje superior, un <strong>30% de la proporción de metros afectados</strong> como referencia para suministros.</p>

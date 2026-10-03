@@ -94,7 +94,9 @@
   #resultado h2{ margin-top:0; color:var(--azul); font-size:1.15rem; }
   #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde-oscuro); margin: 0.25rem 0 0.75rem; font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; }
   #resultado table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
-  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
+
+  #resultado .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  #resultado .table-scroll table{ min-width:320px; }  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
   #resultado td:last-child{ text-align:right; font-weight:600; }
   .legal-box{
     margin-top:2rem;
@@ -436,7 +438,7 @@
     resultadoDiv.innerHTML = `
       <h2>Resultado estimado</h2>
       <div class="cifra">${formatoEuro(totalGeneral)}</div>
-      <table>${filasHtml}</table>
+      <div class="table-scroll"><table>${filasHtml}</table></div>
     `;
   });
 })();

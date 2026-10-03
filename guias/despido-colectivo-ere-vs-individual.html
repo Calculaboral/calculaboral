@@ -52,7 +52,9 @@
   ul{ padding-left: 1.25rem; }
   li{ margin-bottom:0.5rem; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   .cta{
     margin-top:2rem;
@@ -108,6 +110,7 @@
     <p>La ley establece unos umbrales mínimos de trabajadores afectados (en relación con la plantilla total de la empresa) para que un conjunto de despidos se considere colectivo en vez de una serie de despidos individuales. Si no se alcanzan esos umbrales, aunque afecte a varios trabajadores a la vez, legalmente se tramita como despidos objetivos individuales, no como ERE.</p>
 
     <h2>Principales diferencias con el despido individual</h2>
+    <div class="table-scroll">
     <table>
       <tr><th>Aspecto</th><th>Despido individual (objetivo)</th><th>ERE (despido colectivo)</th></tr>
       <tr><td>Procedimiento</td><td>Comunicación directa al trabajador, con preaviso de 15 días</td><td>Periodo de consultas con los representantes de los trabajadores antes de decidir</td></tr>
@@ -115,6 +118,7 @@
       <tr><td>Indemnización mínima legal</td><td>20 días por año trabajado, máximo 12 mensualidades</td><td>20 días por año trabajado, máximo 12 mensualidades (mismo mínimo legal)</td></tr>
       <tr><td>Posibilidad de mejora</td><td>Poco habitual</td><td>Es frecuente que, tras la negociación, se acuerden indemnizaciones superiores al mínimo legal</td></tr>
     </table>
+    </div>
     <p>Un matiz importante: la indemnización <strong>mínima legal</strong> es la misma en ambos casos (20 días por año, tope 12 mensualidades), pero en los ERE es mucho más habitual que, como resultado de la negociación con los representantes de los trabajadores, se pacten indemnizaciones mejoradas por encima de ese mínimo.</p>
 
     <h2>¿Qué derechos tienes si te incluyen en un ERE?</h2>

@@ -36,7 +36,9 @@
   .updated{ font-size:0.82rem; color:#777; margin-bottom:1.5rem; }
   .intro{ color:#555; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   td:last-child, th:last-child{ text-align:right; }
   ul{ padding-left: 1.25rem; }
@@ -73,6 +75,7 @@
     <p class="intro">El Salario Mínimo Interprofesional (SMI) para 2026 se fijó en <strong>1.221 € al mes en 14 pagas</strong> (1.424,50 €/mes si se prorratea en 12 pagas), lo que equivale a <strong>17.094 € al año</strong>. Aquí te explicamos cuánto es realmente en neto, es decir, lo que llega a tu cuenta.</p>
 
     <h2>SMI 2026: cifras oficiales</h2>
+    <div class="table-scroll">
     <table>
       <tr><th>Concepto</th><th>Importe</th></tr>
       <tr><td>SMI diario</td><td>40,70 €</td></tr>
@@ -80,6 +83,7 @@
       <tr><td>SMI mensual prorrateado (12 pagas)</td><td>1.424,50 €</td></tr>
       <tr><td>SMI anual</td><td>17.094,00 €</td></tr>
     </table>
+    </div>
 
     <h2>¿Cuánto es en neto?</h2>
     <p>A un salario de SMI se le descuenta la cotización a la Seguridad Social (contingencias comunes, desempleo, formación profesional y el Mecanismo de Equidad Intergeneracional), que ronda el <strong>6,4-6,5%</strong> según el tipo de contrato. Sobre el IRPF, la buena noticia es que a este nivel de ingresos <strong>la retención suele ser 0% o muy cercana a cero</strong>, gracias al mínimo personal exento y a la reducción por obtención de rendimientos del trabajo (art. 20 LIRPF), que en 2026 puede llegar a 7.302 € anuales para las rentas más bajas.</p>

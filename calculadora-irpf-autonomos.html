@@ -105,7 +105,9 @@
   #resultado h2{ margin-top:0; color:var(--azul); font-size:1.15rem; }
   #resultado .cifra{ font-size:1.9rem; font-weight:800; color: var(--verde-oscuro); margin: 0.25rem 0 0.75rem; font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; }
   #resultado table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin-top:0.5rem; }
-  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
+
+  #resultado .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  #resultado .table-scroll table{ min-width:320px; }  #resultado td{ padding:0.35rem 0; border-bottom:1px dashed #cfe0d3; }
   #resultado td:last-child{ text-align:right; font-weight:600; }
   .legal-box{
     margin-top:2rem;
@@ -519,14 +521,14 @@
     resultadoDiv.innerHTML = `
       <h2>IRPF anual estimado</h2>
       <div class="cifra">${formatoEuro(irpfAnual)}</div>
-      <table>
+      <div class="table-scroll"><table>
         <tr><td>Rendimiento neto de la actividad</td><td>${formatoEuro(rendimientoNeto)}</td></tr>
         ${esTrade ? `<tr><td>Reducción TRADE / cliente único aplicada</td><td>-${formatoEuro(reduccionTrade)}</td></tr>` : ''}
         <tr><td>Mínimo personal y familiar</td><td>-${formatoEuro(minimo)}</td></tr>
         <tr><td>Escala de IRPF utilizada</td><td>${escalaUsada}</td></tr>
         <tr><td>Tipo efectivo sobre rendimiento neto</td><td>${tipoEfectivo.toFixed(2)}%</td></tr>
         ${filaComparacion}
-      </table>
+      </table></div>
     `;
   });
 })();

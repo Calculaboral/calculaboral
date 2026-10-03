@@ -51,7 +51,9 @@
   ul{ padding-left: 1.25rem; }
   li{ margin-bottom:0.5rem; }
   table{ width:100%; border-collapse:collapse; margin-top:0.75rem; font-size:0.92rem; }
-  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
+
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }  th, td{ text-align:left; padding:0.6rem; border-bottom:1px solid var(--gris-borde); vertical-align:top; }
   th{ background:#f2f4f7; }
   .cta{
     margin-top:2rem;
@@ -126,6 +128,7 @@
     <h2>1. Devengos: lo que ganas</h2>
     <p>Se dividen en dos grandes grupos:</p>
 
+    <div class="table-scroll">
     <table>
       <tr><th>Percepciones salariales</th><th>Qué son</th></tr>
       <tr><td>Salario base</td><td>La cantidad fija que marca tu convenio colectivo o tu contrato, según tu categoría profesional.</td></tr>
@@ -133,6 +136,7 @@
       <tr><td>Horas extraordinarias</td><td>Remuneración por horas trabajadas por encima de tu jornada pactada.</td></tr>
       <tr><td>Pagas extraordinarias</td><td>Los pagos adicionales (normalmente 2 al año, en verano y Navidad), salvo que estén prorrateados dentro de las 12 mensualidades.</td></tr>
     </table>
+    </div>
 
     <table style="margin-top:1.25rem;">
       <tr><th>Percepciones no salariales</th><th>Qué son</th></tr>
