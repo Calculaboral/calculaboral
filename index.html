@@ -17,7 +17,9 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2316231b'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='%23e4f3e8' font-family='Arial,sans-serif'>C</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
   :root{
     --azul:#16231b;
@@ -136,7 +138,7 @@
   .card h3{ margin:0 0 0.4rem; color:var(--azul); font-size:1.05rem; }
   .card p{ margin:0; font-size:0.9rem; color:#5b665f; }
   .card.oculta{ display:none; }
-  .sin-resultados{ text-align:center; color:#888; padding: 2rem 1rem; display:none; }
+  .sin-resultados{ text-align:center; color:#6e6e6e; padding: 2rem 1rem; display:none; }
 
   .disclaimer{
     background:#fdf6e3; border:1px solid #f0e0a8; border-radius:var(--radius);
@@ -147,7 +149,7 @@
   footer a{ color:#777; margin: 0 0.5rem; }
 </style>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d382a94b9a914d739a323db977eb15c4"}'></script><!-- End Cloudflare Web Analytics -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
+<!-- AdSense: se reactivará cuando haya unidades de anuncio colocadas en la página -->
 </head>
 <body>
 
@@ -174,11 +176,11 @@
       </div>
       <div class="slide-row">
         <div class="slide-label"><span>Salario bruto mensual</span><span class="val num" id="salVal">1.800 €</span></div>
-        <input type="range" id="salSlider" min="900" max="4000" step="50" value="1800">
+        <input type="range" id="salSlider" min="900" max="4000" step="50" value="1800" aria-label="Salario bruto mensual en euros">
       </div>
       <div class="slide-row">
         <div class="slide-label"><span>Años trabajados</span><span class="val num" id="yrVal">5 años</span></div>
-        <input type="range" id="yrSlider" min="0" max="25" step="1" value="5">
+        <input type="range" id="yrSlider" min="0" max="25" step="1" value="5" aria-label="Años trabajados">
       </div>
       <div class="result-box">
         <span class="label">Indemnización estimada</span>
@@ -189,7 +191,7 @@
 
     <div class="buscador">
       <span class="icono-lupa"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-      <input type="text" id="buscador-input" placeholder="¿Qué quieres calcular?" oninput="filtrarHerramientas(this.value)">
+      <input type="text" id="buscador-input" placeholder="¿Qué quieres calcular?" aria-label="Buscar calculadora o guía" oninput="filtrarHerramientas(this.value)">
     </div>
 
     <div class="accesos-rapidos">
@@ -211,13 +213,13 @@
   </section>
 
   <div style="text-align:center;">
-    <div class="tabs-nav">
-      <button type="button" class="tab-btn active" id="tab-btn-calculadoras" onclick="mostrarPestana('calculadoras')">Calculadoras <span class="tab-count">7</span></button>
-      <button type="button" class="tab-btn" id="tab-btn-guias" onclick="mostrarPestana('guias')">Guías <span class="tab-count">17</span></button>
+    <div class="tabs-nav" role="tablist" aria-label="Tipo de herramienta">
+      <button type="button" class="tab-btn active" id="tab-btn-calculadoras" role="tab" aria-selected="true" aria-controls="calculadoras" onclick="mostrarPestana('calculadoras')">Calculadoras <span class="tab-count">7</span></button>
+      <button type="button" class="tab-btn" id="tab-btn-guias" role="tab" aria-selected="false" aria-controls="guias" onclick="mostrarPestana('guias')">Guías <span class="tab-count">17</span></button>
     </div>
   </div>
 
-  <section id="calculadoras" class="tab-panel active">
+  <section id="calculadoras" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-calculadoras">
     <div class="grid">
       <a class="card c1" href="calculadora-indemnizacion-despido.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg></span>
@@ -258,7 +260,7 @@
     <p class="sin-resultados">No hemos encontrado ninguna calculadora para tu búsqueda.</p>
   </section>
 
-  <section id="guias" class="tab-panel">
+  <section id="guias" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-guias">
     <div class="grid">
       <a class="card c1" href="guias/despido-improcedente-vs-objetivo.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg></span>
@@ -370,9 +372,11 @@
     });
     document.querySelectorAll('.tab-btn').forEach(function (btn) {
       btn.classList.remove('active');
+      btn.setAttribute('aria-selected', 'false');
     });
     document.getElementById(nombre).classList.add('active');
     document.getElementById('tab-btn-' + nombre).classList.add('active');
+    document.getElementById('tab-btn-' + nombre).setAttribute('aria-selected', 'true');
     document.getElementById(nombre).scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
