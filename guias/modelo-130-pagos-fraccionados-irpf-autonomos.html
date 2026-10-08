@@ -95,6 +95,10 @@
   .breadcrumb a:hover{ text-decoration:underline; }
   .breadcrumb .sep{ margin:0 0.35rem; color:#bbb; }
 
+  .fuentes{ margin-top:2rem; padding:1.25rem 1.5rem; background:#fff; border:1px solid var(--gris-borde); border-radius:16px; font-size:0.88rem; color:#555; }
+  .fuentes h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .fuentes ul{ margin:0.5rem 0 0; padding-left:1.25rem; }
+  .fuentes a{ color: var(--azul); }
   .relacionado{ margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--gris-borde); }
   .relacionado h2{ margin-top:0; font-size:1.05rem; }
   .relacionado ul{ list-style:none; padding:0; margin:0.5rem 0 0; }
@@ -114,30 +118,56 @@
   <nav class="breadcrumb"><a href="/">Inicio</a><span class="sep">/</span><a href="/#guias">Guías</a><span class="sep">/</span><span>Modelo 130</span></nav>
   <div class="doc">
     <h1>Modelo 130: pagos fraccionados de IRPF para autónomos</h1>
-    <p class="updated">Actualizado: 2026 · Normativa: Ley 35/2006 del IRPF y Reglamento del IRPF (Real Decreto 439/2007)</p>
-    <p class="intro">Si eres autónomo en estimación directa, el modelo 130 es una de las declaraciones trimestrales que probablemente tengas que presentar. Aquí te explicamos qué es, cómo se calcula, y quién no tiene que presentarlo.</p>
+    <p class="updated">Actualizado: octubre de 2026 · Normativa: Ley 35/2006 del IRPF, Reglamento del IRPF (Real Decreto 439/2007) y Orden EHA/672/2007</p>
+    <p class="intro">Si eres autónomo en estimación directa, el modelo 130 es una de las declaraciones trimestrales que probablemente tengas que presentar. Aquí te explicamos qué es, cómo se rellena casilla a casilla con un ejemplo resuelto, quién no tiene que presentarlo y qué ocurre cuando el resultado sale a cero o negativo.</p>
 
     <h2>¿Qué es el modelo 130?</h2>
-    <p>Es un pago a cuenta trimestral de tu futura declaración de la renta (IRPF). En lugar de pagar todo el impuesto de golpe en junio del año siguiente, Hacienda te pide ir adelantando una parte cada trimestre, calculada sobre tus beneficios reales de esos meses.</p>
+    <p>Es un pago a cuenta trimestral de tu futura declaración de la renta (IRPF). En lugar de pagar todo el impuesto de golpe en junio del año siguiente, Hacienda te pide ir adelantando una parte cada trimestre, calculada sobre tus beneficios reales de esos meses. Lo que ingresas por el modelo 130 se descuenta después en la declaración anual.</p>
 
     <h2>¿Quién debe presentarlo?</h2>
-    <p>Autónomos en <strong>estimación directa</strong> (normal o simplificada) que ejerzan actividades empresariales o profesionales. No aplica, con carácter general, a quienes tributan en estimación objetiva (módulos), que tienen su propio sistema de pagos fraccionados (modelo 131).</p>
+    <p>Las personas físicas con actividades económicas en <strong>estimación directa</strong> (normal o simplificada). Las actividades que no son agrícolas, ganaderas, forestales ni pesqueras se declaran en el apartado I, con el 20 %; las agrícolas, ganaderas, forestales y pesqueras van en el apartado II, con el 2 % de los ingresos. Quienes tributan en estimación objetiva (módulos) presentan el modelo 131. Para actividades en Ceuta y Melilla, el porcentaje general es del 8 % en lugar del 20 %.</p>
 
     <h2>¿Cómo se calcula?</h2>
-    <p>La fórmula general es:</p>
+    <p>Los importes son siempre <strong>acumulados desde el 1 de enero</strong> hasta el último día del trimestre, no solo del trimestre que declaras. Estas son las casillas principales del apartado I:</p>
     <div class="table-scroll">
     <table>
-      <tr><th>Concepto</th><th>Cálculo</th></tr>
-      <tr><td>Rendimiento neto acumulado del año</td><td>Ingresos − gastos deducibles, desde el 1 de enero hasta el final del trimestre</td></tr>
-      <tr><td>Pago fraccionado</td><td>20% del rendimiento neto acumulado</td></tr>
-      <tr><td>Menos: pagos fraccionados ya ingresados en trimestres anteriores del mismo año</td><td>Se restan para no pagar dos veces por el mismo beneficio</td></tr>
-      <tr><td>Menos: retenciones ya soportadas (si facturas a empresas con retención)</td><td>Se restan igualmente</td></tr>
+      <tr><th>Casilla</th><th>Concepto</th></tr>
+      <tr><td>01</td><td>Ingresos íntegros computables acumulados</td></tr>
+      <tr><td>02</td><td>Gastos deducibles acumulados (incluye amortizaciones y, en estimación directa simplificada, los gastos de difícil justificación)</td></tr>
+      <tr><td>03</td><td>Rendimiento neto: casilla 01 − casilla 02</td></tr>
+      <tr><td>04</td><td>20 % de la casilla 03, si es positiva; si no, cero</td></tr>
+      <tr><td>05</td><td>Pagos fraccionados ya calculados en trimestres anteriores del mismo año (suma de sus casillas 07 positivas, menos sus casillas 16)</td></tr>
+      <tr><td>06</td><td>Retenciones e ingresos a cuenta soportados en el periodo acumulado</td></tr>
+      <tr><td>07</td><td>Casilla 04 − casilla 05 − casilla 06</td></tr>
     </table>
     </div>
-    <p>El resultado es lo que debes ingresar ese trimestre. Si tus gastos superan a tus ingresos en el acumulado del año, el pago fraccionado puede salir a cero (no hay devolución en el modelo 130 si sale negativo, simplemente no pagas ese trimestre).</p>
+    <p>Después, la casilla 13 permite una pequeña minoración si tu rendimiento neto del año anterior fue de 12.000 € o menos: 100 € hasta 9.000 €, 75 € entre 9.000,01 y 10.000 €, 50 € entre 10.000,01 y 11.000 € y 25 € entre 11.000,01 y 12.000 €. La casilla 16 recoge, solo para determinados préstamos de vivienda habitual que cumplan la disposición transitoria decimoctava de la Ley del IRPF, una deducción del 2 % con un máximo de 660,14 € al año. La casilla 19 es el resultado final.</p>
+    <p>Las retenciones que cuentan son las que te practican tus clientes en las facturas. El tipo general para profesionales es el 15 %, y el 7 % para profesionales de nuevo inicio (en el año de alta y los dos siguientes), según el cuadro de retenciones de la Agencia Tributaria para 2026.</p>
+
+    <h2>Ejemplo resuelto: un profesional durante tres trimestres</h2>
+    <p>Ana es diseñadora autónoma en estimación directa. Parte de estos datos acumulados (las retenciones corresponden a facturas a empresas con retención del 15 %). Su rendimiento del año anterior superó los 12.000 €, así que no aplica la minoración de la casilla 13.</p>
+    <div class="table-scroll">
+    <table>
+      <tr><th>Casilla</th><th>1T (a 31 marzo)</th><th>2T (a 30 junio)</th><th>3T (a 30 septiembre)</th></tr>
+      <tr><td>01 Ingresos acumulados</td><td>9.000 €</td><td>19.000 €</td><td>24.000 €</td></tr>
+      <tr><td>02 Gastos acumulados</td><td>2.500 €</td><td>6.000 €</td><td>11.500 €</td></tr>
+      <tr><td>03 Rendimiento neto</td><td>6.500 €</td><td>13.000 €</td><td>12.500 €</td></tr>
+      <tr><td>04 20 %</td><td>1.300 €</td><td>2.600 €</td><td>2.500 €</td></tr>
+      <tr><td>05 Pagos de trimestres anteriores</td><td>0 €</td><td>850 €</td><td>1.550 €</td></tr>
+      <tr><td>06 Retenciones acumuladas</td><td>450 €</td><td>1.050 €</td><td>1.350 €</td></tr>
+      <tr><td><strong>07 Resultado</strong></td><td><strong>850 €</strong></td><td><strong>700 €</strong></td><td><strong>−400 € (se queda en 0)</strong></td></tr>
+    </table>
+    </div>
+    <ol>
+      <li><strong>1T:</strong> 9.000 − 2.500 = 6.500; 20 % = 1.300; menos retenciones de 450 € (15 % de 3.000 € facturados con retención) = <strong>850 € a ingresar</strong>.</li>
+      <li><strong>2T:</strong> 19.000 − 6.000 = 13.000; 20 % = 2.600; menos 850 € ya calculados y 1.050 € de retenciones acumuladas (15 % de 7.000 €) = <strong>700 € a ingresar</strong>.</li>
+      <li><strong>3T:</strong> 24.000 − 11.500 = 12.500; 20 % = 2.500; menos 1.550 € (850 + 700) y 1.350 € de retenciones (15 % de 9.000 €) = −400 €. Como el resultado es negativo, la casilla 12 se consigna a cero y <strong>no hay nada que ingresar</strong>.</li>
+    </ol>
+    <p>Los −400 € del tercer trimestre no se devuelven en el modelo 130 ni se arrastran a trimestres posteriores: las casillas 07 negativas no se computan. Hasta septiembre Ana ha ingresado 1.550 € y ha soportado 1.350 € de retenciones (2.900 € en total), frente al 20 % de 12.500 € (2.500 €); ese exceso se regulariza al presentar la declaración anual de la Renta.</p>
 
     <h2>¿Quién está exento de presentarlo?</h2>
-    <p>No tienes que presentar el modelo 130 (aunque sí debes presentar el modelo censal indicándolo) si, en el año anterior, más del 70% de tus ingresos ya soportaron retención de IRPF (por ejemplo, si facturas casi exclusivamente a empresas o profesionales que te retienen en factura, como es habitual en muchas actividades profesionales).</p>
+    <p>Los <strong>profesionales</strong> no tienen que presentar ni ingresar el pago fraccionado si, en el año natural anterior, al menos el 70 % de los ingresos de su actividad se sometieron a retención o ingreso a cuenta. Si acabas de empezar, se mira el porcentaje de ingresos con retención del propio periodo del pago fraccionado. La exención se aplica a actividades profesionales (y a las agrícolas, ganaderas y forestales con su propia regla), no a otras actividades empresariales.</p>
+    <p><strong>Ejemplo.</strong> El año pasado facturaste 30.000 €. De ellos, 22.500 € llevaban retención: 22.500 / 30.000 = 75 %, así que este año no presentas el modelo 130. Si solo 20.000 € hubieran llevado retención (66,7 %), sí tendrías que presentarlo.</p>
 
     <h2>Plazos de presentación</h2>
     <ul>
@@ -146,15 +176,56 @@
       <li><strong>3er trimestre:</strong> 1 al 20 de octubre</li>
       <li><strong>4º trimestre:</strong> 1 al 30 de enero del año siguiente</li>
     </ul>
+    <p>Si el vencimiento cae en sábado o en día inhábil, se traslada al siguiente día hábil. Puedes presentarlo online en la sede electrónica de la Agencia Tributaria. Si el resultado es a ingresar, puedes pagar mediante domiciliación, cargo en cuenta, tarjeta o Bizum.</p>
+
+    <h2>¿Qué hago si el resultado es negativo o cero?</h2>
+    <p>Depende de la casilla 19. Si es positiva, es una declaración de ingreso. Si es negativa en los trimestres 1º a 3º (por ejemplo, por la minoración de la casilla 13), se marca "a deducir" y se compensa en pagos posteriores del mismo año. Si es cero, o negativa en el 4º trimestre, se marca "negativa". No pagar nada no te exime de presentarlo, salvo que estés exento por la regla del 70 %.</p>
 
     <h2>¿Qué pasa si no lo presento a tiempo?</h2>
-    <p>Hacienda puede aplicar recargos por presentación fuera de plazo (que aumentan cuanto más tiempo pase) y, en los casos de declaraciones a pagar, también intereses de demora. Si el resultado te sale a cero, sigue siendo obligatorio presentarlo (no pagar nada no te exime de declarar).</p>
+    <p>Si presentas fuera de plazo por tu cuenta, sin requerimiento previo de Hacienda, se aplica un recargo del 1 % más un 1 % adicional por cada mes completo de retraso. Pasados 12 meses el recargo es del 15 % y se suman intereses de demora desde el día siguiente al fin de esos 12 meses; en ambos casos el recargo excluye sanciones y puede reducirse un 25 % en los supuestos del artículo 27.5 de la Ley General Tributaria. Si Hacienda te requiere antes, la situación es distinta y pueden aplicarse sanciones.</p>
+    <p>Si descubres un error, la declaración complementaria solo procede cuando el importe a ingresar debe ser mayor que el de la autoliquidación anterior; para cualquier otra corrección se pide una rectificación.</p>
+
+    <h2>Errores frecuentes</h2>
+    <ul>
+      <li>Calcular solo con los ingresos y gastos del trimestre en vez de los acumulados del año.</li>
+      <li>Olvidar restar los pagos de trimestres anteriores o las retenciones soportadas.</li>
+      <li>Creer que un resultado negativo genera una devolución: en el modelo 130 no se devuelve nada.</li>
+      <li>No presentarlo por salir a cero cuando no estás en la exención del 70 %.</li>
+      <li>Presentar una complementaria cuando lo correcto era una rectificación.</li>
+    </ul>
 
     <div class="cta">
       <strong>¿Aún no tienes claro cuánto pagarías de cuota de autónomos?</strong>
       <p style="margin:0.4rem 0 0;">Estímalo según tus ingresos y gastos previstos.</p>
       <a href="../calculadora-cuota-autonomos.html">Ir a la calculadora de cuota de autónomos →</a>
     </div>
+
+    <div class="faq">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Tengo que presentar el modelo 130 si todas mis facturas llevan retención?</summary>
+        <p>Si eres profesional y en el año natural anterior al menos el 70 % de los ingresos de tu actividad se sometieron a retención o ingreso a cuenta, no tienes que presentar ni ingresar el pago fraccionado. Si acabas de empezar, se mira el porcentaje de ingresos con retención del propio periodo del pago fraccionado.</p>
+      </details>
+      <details>
+        <summary>¿Se devuelve algo si el modelo 130 sale negativo?</summary>
+        <p>No. Si el cálculo de un trimestre sale negativo no ingresas nada, y las casillas 07 negativas no se computan en trimestres posteriores. Lo que hayas pagado de más a lo largo del año se regulariza en la declaración anual de la Renta.</p>
+      </details>
+      <details>
+        <summary>¿El porcentaje del modelo 130 es siempre el 20 %?</summary>
+        <p>Es el 20 % del rendimiento neto acumulado en el caso general (apartado I). En las actividades agrícolas, ganaderas, forestales y pesqueras se aplica el 2 % de los ingresos, y en Ceuta y Melilla el 8 % en lugar del 20 %.</p>
+      </details>
+    </div>
+
+    <div class="fuentes"><h2>Fuentes oficiales</h2><ul>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764" target="_blank" rel="noopener">Ley 35/2006 del IRPF (BOE)</a></li>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820" target="_blank" rel="noopener">Real Decreto 439/2007, Reglamento del IRPF (BOE)</a></li>
+      <li><a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2007-6032" target="_blank" rel="noopener">Orden EHA/672/2007, por la que se aprueban los modelos 130 y 131 (BOE)</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/impuestos-tasas/impuesto-sobre-renta-personas-fisicas/modelo-130-irpf______esionales-estimacion-directa-fraccionado_/instrucciones.html" target="_blank" rel="noopener">Agencia Tributaria: instrucciones del modelo 130</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/irpf/retenciones-ingresos-cuenta-pagos-fraccionados/pagos-fraccionados.html" target="_blank" rel="noopener">Agencia Tributaria: cuándo tienes que realizar pagos fraccionados</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/static_files/Sede/Programas_ayuda/Retenciones/2026/CUADRO_TIPOS_RETENCION_IRPF_2026.pdf" target="_blank" rel="noopener">Agencia Tributaria: cuadro de tipos de retención del IRPF en 2026</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c18-cuota-liquida-resultante-autoliquidacion/regularizacion-situaciones-tributarias/recargos-aplicables.html" target="_blank" rel="noopener">Agencia Tributaria: recargos aplicables a las declaraciones extemporáneas</a></li>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186" target="_blank" rel="noopener">Ley 58/2003 General Tributaria, artículo 27 (BOE)</a></li>
+    </ul></div>
 
         <section class="relacionado">
       <h2>Te puede interesar</h2>
@@ -176,5 +247,37 @@
   <a class="volver" href="/">← Volver al inicio</a>
 </main>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Tengo que presentar el modelo 130 si todas mis facturas llevan retención?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si eres profesional y en el año natural anterior al menos el 70 % de los ingresos de tu actividad se sometieron a retención o ingreso a cuenta, no tienes que presentar ni ingresar el pago fraccionado. Si acabas de empezar, se mira el porcentaje de ingresos con retención del propio periodo del pago fraccionado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se devuelve algo si el modelo 130 sale negativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Si el cálculo de un trimestre sale negativo no ingresas nada, y las casillas 07 negativas no se computan en trimestres posteriores. Lo que hayas pagado de más a lo largo del año se regulariza en la declaración anual de la Renta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El porcentaje del modelo 130 es siempre el 20 %?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es el 20 % del rendimiento neto acumulado en el caso general (apartado I). En las actividades agrícolas, ganaderas, forestales y pesqueras se aplica el 2 % de los ingresos, y en Ceuta y Melilla el 8 % en lugar del 20 %."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>

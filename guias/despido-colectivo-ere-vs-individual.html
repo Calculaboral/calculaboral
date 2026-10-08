@@ -95,6 +95,22 @@
   .breadcrumb a:hover{ text-decoration:underline; }
   .breadcrumb .sep{ margin:0 0.35rem; color:#bbb; }
 
+  .faq details{ background:#f9f6f1; border:1px solid var(--gris-borde); border-radius:12px; padding:0.9rem 1.1rem; margin-bottom:0.6rem; }
+  .faq summary{ font-weight:700; cursor:pointer; color:var(--azul); }
+  .faq details p{ margin:0.6rem 0 0; font-size:0.92rem; color:#444; }
+  .fuentes{
+    margin-top:2rem;
+    padding:1.25rem 1.5rem;
+    background:#fff;
+    border:1px solid var(--gris-borde);
+    border-radius:16px;
+    font-size:0.88rem;
+    color:#555;
+  }
+  .fuentes h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .fuentes ul{ margin:0.5rem 0 0; padding-left:1.25rem; }
+  .fuentes a{ color: var(--azul); }
+
   .relacionado{ margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--gris-borde); }
   .relacionado h2{ margin-top:0; font-size:1.05rem; }
   .relacionado ul{ list-style:none; padding:0; margin:0.5rem 0 0; }
@@ -114,42 +130,99 @@
   <div class="doc">
     <h1>Despido colectivo (ERE) vs despido individual</h1>
     <p class="updated">Actualizado: 2026 · Normativa: Estatuto de los Trabajadores, artículos 51 y 52</p>
-    <p class="intro">Cuando una empresa anuncia un ERE, muchos trabajadores no tienen claro en qué se diferencia de un despido individual y si eso cambia sus derechos. Aquí te lo explicamos con claridad.</p>
+    <p class="intro">Cuando una empresa anuncia un ERE, muchos trabajadores no tienen claro en qué se diferencia de un despido individual y si eso cambia sus derechos. Aquí te lo explicamos con claridad: cuándo hay ERE, cómo es el procedimiento, cuánto te corresponde como mínimo y cómo puedes reclamar.</p>
 
     <h2>¿Qué es un ERE?</h2>
-    <p>ERE son las siglas de Expediente de Regulación de Empleo, aunque el término legal correcto es "despido colectivo". Se produce cuando una empresa extingue los contratos de un número significativo de trabajadores por causas económicas, técnicas, organizativas o de producción, dentro de un periodo de 90 días.</p>
+    <p>ERE son las siglas de Expediente de Regulación de Empleo, aunque el término legal correcto es "despido colectivo". Se produce cuando una empresa extingue los contratos de un número significativo de trabajadores por causas económicas, técnicas, organizativas o de producción, dentro de un periodo de 90 días. Está regulado en el artículo 51 del Estatuto de los Trabajadores y en el Real Decreto 1483/2012, que desarrolla el procedimiento.</p>
 
     <h2>¿Cuándo se considera "colectivo"?</h2>
-    <p>La ley establece unos umbrales mínimos de trabajadores afectados (en relación con la plantilla total de la empresa) para que un conjunto de despidos se considere colectivo en vez de una serie de despidos individuales. Si no se alcanzan esos umbrales, aunque afecte a varios trabajadores a la vez, legalmente se tramita como despidos objetivos individuales, no como ERE.</p>
+    <p>Depende del tamaño de la plantilla. Hay despido colectivo cuando, en un periodo de 90 días, las extinciones afectan al menos a:</p>
+    <div class="table-scroll">
+    <table>
+      <tr><th>Plantilla de la empresa</th><th>Extinciones en 90 días que lo convierten en colectivo</th></tr>
+      <tr><td>Menos de 100 trabajadores</td><td>10 trabajadores</td></tr>
+      <tr><td>Entre 100 y 300 trabajadores</td><td>El 10 % de la plantilla</td></tr>
+      <tr><td>Más de 300 trabajadores</td><td>30 trabajadores</td></tr>
+    </table>
+    </div>
+    <p>Además, se considera colectivo el cese total de la actividad de la empresa cuando afecta a más de cinco trabajadores. Para llegar al umbral se suman también otras extinciones por iniciativa de la empresa por motivos no inherentes a la persona del trabajador, siempre que sean al menos cinco; no cuentan las que se deben al fin de un contrato temporal (art. 49.1.c). La ley impide trocear los despidos para esquivar el umbral: si la empresa hace extinciones sucesivas en periodos de 90 días, sin causas nuevas, para no alcanzar las cifras, se consideran en fraude de ley y son nulas.</p>
+    <p>Si no se alcanzan los umbrales, aunque haya varios afectados a la vez, legalmente se tramitan como despidos objetivos individuales (art. 52.c), no como ERE.</p>
+    <p>Ejemplos: en una empresa de 80 trabajadores, 9 despidos en 90 días son despidos objetivos individuales y con 10 es un ERE; en una de 250, el umbral es el 10 %, es decir, 25 despidos; en una de 400, son 30.</p>
 
     <h2>Principales diferencias con el despido individual</h2>
     <div class="table-scroll">
     <table>
       <tr><th>Aspecto</th><th>Despido individual (objetivo)</th><th>ERE (despido colectivo)</th></tr>
-      <tr><td>Procedimiento</td><td>Comunicación directa al trabajador, con preaviso de 15 días</td><td>Periodo de consultas con los representantes de los trabajadores antes de decidir</td></tr>
-      <tr><td>Negociación</td><td>No existe negociación colectiva, es una decisión unilateral de la empresa</td><td>La empresa debe negociar con el comité de empresa o representantes sindicales</td></tr>
+      <tr><td>Procedimiento</td><td>Carta al trabajador con la causa, indemnización a su disposición y preaviso de 15 días</td><td>Comunicación a los representantes y a la autoridad laboral, periodo de consultas y, después, cartas individuales</td></tr>
+      <tr><td>Negociación</td><td>No existe negociación, es una decisión de la empresa</td><td>La empresa debe negociar de buena fe con la representación de los trabajadores, como mínimo sobre cómo evitar o reducir los despidos y atenuar sus consecuencias</td></tr>
+      <tr><td>Duración</td><td>El preaviso es de 15 días</td><td>El periodo de consultas dura como máximo 30 días naturales (15 en empresas de menos de 50 trabajadores) y entre la apertura y la fecha de efectos deben pasar al menos 30 días</td></tr>
       <tr><td>Indemnización mínima legal</td><td>20 días por año trabajado, máximo 12 mensualidades</td><td>20 días por año trabajado, máximo 12 mensualidades (mismo mínimo legal)</td></tr>
       <tr><td>Posibilidad de mejora</td><td>Poco habitual</td><td>Es frecuente que, tras la negociación, se acuerden indemnizaciones superiores al mínimo legal</td></tr>
+      <tr><td>Cómo se impugna</td><td>Demanda individual del trabajador</td><td>Proceso colectivo de los representantes, o demanda individual del trabajador</td></tr>
     </table>
     </div>
-    <p>Un matiz importante: la indemnización <strong>mínima legal</strong> es la misma en ambos casos (20 días por año, tope 12 mensualidades), pero en los ERE es mucho más habitual que, como resultado de la negociación con los representantes de los trabajadores, se pacten indemnizaciones mejoradas por encima de ese mínimo.</p>
+    <p>Un matiz importante: la indemnización <strong>mínima legal</strong> es la misma en ambos casos, pero en los ERE es mucho más habitual que, como resultado de la negociación, se pacten cuantías mejoradas. Un pacto individual o colectivo puede fijar una indemnización superior a la legal.</p>
+
+    <h2>Cómo es el procedimiento paso a paso</h2>
+    <ul>
+      <li><strong>Apertura:</strong> la empresa comunica por escrito el inicio del periodo de consultas a los representantes de los trabajadores y a la autoridad laboral, con una memoria explicativa de las causas y la documentación exigida por el Real Decreto 1483/2012.</li>
+      <li><strong>Consultas:</strong> se negocia en una comisión de hasta 13 miembros por cada parte. Un acuerdo requiere la conformidad de la mayoría de los representantes.</li>
+      <li><strong>Decisión final:</strong> si la empresa no comunica su decisión final en los 15 días siguientes a la última reunión, se produce la caducidad del procedimiento.</li>
+      <li><strong>Cartas individuales:</strong> cada trabajador afectado recibe su comunicación, con la indemnización a su disposición y el preaviso que exige el art. 53 del Estatuto.</li>
+    </ul>
+
+    <h2>Cuánto cobras: ejemplos</h2>
+    <p>Marta cobra 1.600 euros brutos al mes en 14 pagas (22.400 euros al año) y lleva 9 años y 3 meses en la empresa (9,25 años). Su salario diario es 22.400 / 365 = 61,37 euros.</p>
+    <ul>
+      <li>Mínimo legal: 20 días x 9,25 años = 185 días x 61,37 = <strong>11.353,45 euros</strong>.</li>
+      <li>Si el acuerdo del ERE mejora la cuantía a 30 días por año: 30 x 9,25 = 277,5 días x 61,37 = <strong>17.030,18 euros</strong>.</li>
+    </ul>
+    <p>El tope legal de 12 mensualidades equivale a 360 días de salario. Con ese mismo sueldo, un trabajador con 25 años de antigüedad tendría 20 x 25 = 500 días, que superan el tope; la indemnización mínima quedaría en 360 x 61,37 = <strong>22.093,20 euros</strong>. El tope se alcanza a partir de 18 años de antigüedad (360 / 20). Son importes brutos y, si el acuerdo fija una cuantía superior a la legal, el tope legal no impide cobrarla.</p>
+    <p>En los despidos colectivos, la indemnización está exenta del IRPF hasta los límites establecidos para el despido improcedente (art. 7.e de la Ley del IRPF).</p>
 
     <h2>¿Qué derechos tienes si te incluyen en un ERE?</h2>
     <ul>
-      <li>Derecho a recibir la indemnización correspondiente en el momento de la extinción del contrato.</li>
-      <li>Derecho a la prestación por desempleo, en las mismas condiciones generales que cualquier despido.</li>
-      <li>Derecho a que la empresa haya seguido el procedimiento legal correcto (periodo de consultas, comunicación a la autoridad laboral); si no lo hizo, el despido puede ser impugnado.</li>
-      <li>En algunos ERE se negocian medidas adicionales, como planes de recolocación externa, que la empresa está obligada a ofrecer de acuerdo con determinados requisitos de tamaño de la empresa y del ERE.</li>
+      <li>Derecho a recibir la indemnización correspondiente en el momento de comunicarte el despido.</li>
+      <li>Derecho a la prestación por desempleo, si cumples el periodo mínimo de cotización: el despido, incluido el colectivo, es situación legal de desempleo. La solicitud debe presentarse en los 15 días hábiles siguientes al cese.</li>
+      <li>Derecho a que la empresa haya seguido el procedimiento legal correcto (periodo de consultas, comunicación a la autoridad laboral, documentación); si no lo hizo, el despido puede ser impugnado.</li>
+      <li>Plan de recolocación externa: si el ERE afecta a más de 50 trabajadores, la empresa debe ofrecer un plan de al menos seis meses a través de empresas de recolocación autorizadas, sin coste para los trabajadores.</li>
+      <li>Prioridad de permanencia de los representantes legales de los trabajadores; el convenio o el acuerdo pueden extenderla a otros colectivos, como personas con cargas familiares, mayores o con discapacidad.</li>
     </ul>
 
     <h2>¿Puedo impugnar mi inclusión en un ERE?</h2>
-    <p>Sí, si consideras que los criterios de selección de trabajadores afectados fueron discriminatorios, arbitrarios o no se ajustaron a lo pactado en el periodo de consultas, puedes impugnarlo. Los plazos para hacerlo son los mismos que para cualquier despido: 20 días hábiles desde la comunicación.</p>
+    <p>Sí. Hay dos vías. Los representantes de los trabajadores pueden impugnar el despido colectivo ante la Sala de lo Social competente (el plazo es de 20 días hábiles desde el acuerdo o la notificación y no se exige conciliación previa), y la sentencia puede declararlo ajustado a derecho, no ajustado o nulo. Como trabajador, puedes además impugnar tu extinción individualmente ante el Juzgado de lo Social (art. 124 de la Ley reguladora de la jurisdicción social). El plazo individual también es de 20 días hábiles, pero su inicio depende de si se ha impugnado o no el despido colectivo: si hay proceso colectivo, las demandas individuales se suspenden hasta que se resuelva. Por eso conviene asesorarse pronto.</p>
+    <p>Los criterios de selección también se discuten en el proceso individual: si crees que te eligieron de forma discriminatoria o saltándose las reglas de prioridad de permanencia, tu demanda individual es el lugar para plantearlo.</p>
+
+    <h2>Errores frecuentes</h2>
+    <ul>
+      <li>Pensar que el ERE da siempre más indemnización: el mínimo legal es el mismo que en un despido objetivo; lo que mejora es lo que se pacta.</li>
+      <li>No pedir copia del acuerdo final del periodo de consultas ni de los criterios de selección.</li>
+      <li>Dar por hecho el plazo de reclamación sin comprobar si se ha impugnado el despido colectivo.</li>
+    </ul>
 
     <div class="cta">
       <strong>¿Quieres saber cuánto te correspondería como mínimo?</strong>
       <p style="margin:0.4rem 0 0;">Calcula tu indemnización estimada según tu antigüedad y salario.</p>
       <a href="../calculadora-indemnizacion-despido.html">Ir a la calculadora de indemnización →</a>
     </div>
+
+    <div class="faq">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Cuántos despidos tiene que haber para que sea un ERE?</summary>
+        <p>Depende de la plantilla: 10 trabajadores en empresas de menos de 100, el 10 % de la plantilla en empresas de 100 a 300 y 30 trabajadores en empresas de más de 300, dentro de un periodo de 90 días. Si no se alcanzan, se tramitan como despidos objetivos individuales.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto dura el periodo de consultas de un ERE?</summary>
+        <p>Como máximo 30 días naturales, o 15 días naturales en empresas de menos de 50 trabajadores. Entre la comunicación de apertura y la fecha de efectos del despido deben transcurrir al menos 30 días.</p>
+      </details>
+      <details>
+        <summary>¿Puedo cobrar más de 20 días por año en un ERE?</summary>
+        <p>Sí. Los 20 días por año con tope de 12 mensualidades son el mínimo legal, pero un pacto colectivo o individual puede fijar una cuantía superior, y es habitual que se mejore en la negociación.</p>
+      </details>
+    </div>
+
+    <div class="fuentes"><h2>Fuentes oficiales</h2><ul><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">Estatuto de los Trabajadores, texto refundido (Real Decreto Legislativo 2/2015) - BOE</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2012-13419" target="_blank" rel="noopener">Real Decreto 1483/2012, reglamento de los procedimientos de despido colectivo - BOE</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2011-15936" target="_blank" rel="noopener">Ley 36/2011, reguladora de la jurisdicción social - BOE</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724" target="_blank" rel="noopener">Ley General de la Seguridad Social (Real Decreto Legislativo 8/2015) - BOE</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764" target="_blank" rel="noopener">Ley 35/2006 del IRPF - BOE</a></li><li><a href="https://www.mites.gob.es/es/guia/texto/guia_7/contenidos/guia_7_18_2.htm" target="_blank" rel="noopener">Ministerio de Trabajo y Economía Social: Guía Laboral, modificación, suspensión y extinción del contrato de trabajo</a></li><li><a href="https://www.sepe.es" target="_blank" rel="noopener">SEPE - Servicio Público de Empleo Estatal</a></li></ul></div>
 
         <section class="relacionado">
       <h2>Te puede interesar</h2>
@@ -169,6 +242,40 @@
 
   <a class="volver" href="/">← Volver al inicio</a>
 </main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuántos despidos tiene que haber para que sea un ERE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la plantilla: 10 trabajadores en empresas de menos de 100, el 10 % de la plantilla en empresas de 100 a 300 y 30 trabajadores en empresas de más de 300, dentro de un periodo de 90 días. Si no se alcanzan, se tramitan como despidos objetivos individuales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura el periodo de consultas de un ERE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Como máximo 30 días naturales, o 15 días naturales en empresas de menos de 50 trabajadores. Entre la comunicación de apertura y la fecha de efectos del despido deben transcurrir al menos 30 días."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo cobrar más de 20 días por año en un ERE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Los 20 días por año con tope de 12 mensualidades son el mínimo legal, pero un pacto colectivo o individual puede fijar una cuantía superior, y es habitual que se mejore en la negociación."
+      }
+    }
+  ]
+}
+</script>
+
 
 </body>
 </html>

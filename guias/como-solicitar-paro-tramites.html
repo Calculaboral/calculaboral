@@ -136,6 +136,9 @@
   .breadcrumb a:hover{ text-decoration:underline; }
   .breadcrumb .sep{ margin:0 0.35rem; color:#bbb; }
 
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:0.75rem; }
+  .table-scroll table{ margin-top:0; min-width:460px; }
+  h3{ color: var(--verde-oscuro); font-size:1rem; margin-top:1.5rem; }
   .relacionado{ margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--gris-borde); }
   .relacionado h2{ margin-top:0; font-size:1.05rem; }
   .relacionado ul{ list-style:none; padding:0; margin:0.5rem 0 0; }
@@ -154,32 +157,90 @@
   <nav class="breadcrumb"><a href="/">Inicio</a><span class="sep">/</span><a href="/#guias">Guías</a><span class="sep">/</span><span>Cómo solicitar el paro</span></nav>
   <div class="doc">
     <h1>Cómo solicitar la prestación por desempleo: trámites paso a paso</h1>
-    <p class="updated">Actualizado: 2026 · Normativa: Texto Refundido de la Ley General de la Seguridad Social, art. 268</p>
+    <p class="updated">Actualizado: 2026 · Normativa: Texto Refundido de la Ley General de la Seguridad Social, arts. 266 a 271</p>
     <p class="intro">Si te has quedado en desempleo, el tiempo corre en tu contra: tienes solo 15 días hábiles para solicitar la prestación sin perder días de cobro. Aquí tienes el proceso completo, paso a paso.</p>
 
     <h2>Requisitos previos</h2>
+    <p>El artículo 266 de la Ley General de la Seguridad Social (LGSS) exige cumplir a la vez todos estos requisitos:</p>
     <ul>
-      <li>Haber cotizado por desempleo <strong>al menos 360 días (12 meses)</strong> dentro de los 6 años anteriores a quedar en desempleo.</li>
-      <li>Encontrarte en <strong>situación legal de desempleo</strong> (despido, fin de contrato temporal, y otras causas reconocidas legalmente).</li>
-      <li>No haber alcanzado la edad ordinaria de jubilación.</li>
-      <li>Estar dispuesto a suscribir el <strong>compromiso de actividad</strong> (comprometerte a buscar empleo activamente y aceptar ofertas adecuadas).</li>
+      <li>Estar afiliado a la Seguridad Social y en <strong>situación de alta</strong> (o asimilada) al quedarte sin empleo.</li>
+      <li>Haber cotizado por desempleo <strong>al menos 360 días (12 meses)</strong> dentro de los 6 años anteriores a la situación legal de desempleo.</li>
+      <li>Encontrarte en <strong>situación legal de desempleo</strong> y acreditar que estás disponible para buscar empleo y aceptar una colocación adecuada, para lo cual firmas el <strong>acuerdo de actividad</strong> (el antiguo "compromiso de actividad", ahora regulado en el artículo 3 de la Ley 3/2023 de Empleo).</li>
+      <li>Estar inscrito como <strong>demandante de empleo</strong> en el servicio público de empleo competente.</li>
+      <li>No haber alcanzado la edad ordinaria de jubilación (con excepciones, como no reunir la cotización necesaria para la pensión).</li>
     </ul>
     <p>Cuantos más días hayas cotizado, más meses de prestación te corresponden: consulta la <a href="tabla-paro-dias-cotizados.html">tabla completa de duración del paro según días cotizados</a>.</p>
 
+    <h2>¿Qué cuenta como situación legal de desempleo?</h2>
+    <p>No basta con haber dejado de trabajar: la causa tiene que estar entre las que recoge el artículo 267 de la LGSS. Las más habituales son:</p>
+    <ul>
+      <li>El <strong>despido</strong> (individual, colectivo o por causas objetivas).</li>
+      <li>La <strong>finalización de un contrato temporal</strong>, de formación o de interinidad, siempre que no se deba a una causa imputable a ti.</li>
+      <li>La extinción por decisión de la empresa durante el <strong>periodo de prueba</strong>, con las condiciones que fija la ley.</li>
+      <li>Los <strong>ERTE</strong> y los periodos de inactividad de los fijos discontinuos.</li>
+      <li>La <strong>baja voluntaria</strong> solo cuenta en los supuestos tasados de los artículos 40, 41.3, 49.1.m) y 50 del Estatuto de los Trabajadores (traslados, modificaciones sustanciales, violencia de género e incumplimientos graves de la empresa). Una dimisión "normal" no da derecho a paro.</li>
+    </ul>
+
     <h2>El proceso, paso a paso</h2>
     <ol class="pasos">
-      <li><strong>Inscríbete como demandante de empleo.</strong> Es un paso obligatorio y previo a solicitar la prestación, a través del servicio de empleo de tu comunidad autónoma (SOC en Cataluña, SAE en Andalucía, LANBIDE en el País Vasco, etc., o el SEPE directamente si resides en Ceuta o Melilla).</li>
-      <li><strong>Reúne la documentación</strong>: DNI o NIE, número de cuenta bancaria, y el certificado de empresa (que la propia empresa debe enviar telemáticamente al SEPE, no tienes que entregarlo tú).</li>
-      <li><strong>Presenta la solicitud</strong> en la sede electrónica del SEPE (sede.sepe.gob.es), usando certificado digital, DNIe, o Cl@ve. Si no dispones de ninguno de estos medios de identificación, existe la opción de pedir cita previa presencial en una oficina del SEPE.</li>
-      <li><strong>Espera la resolución.</strong> El SEPE dispone de un plazo máximo de 3 meses para resolver, aunque en la práctica suele ser bastante más rápido.</li>
-      <li><strong>Renueva la demanda de empleo periódicamente</strong> (habitualmente cada 3 meses) mientras cobres la prestación, para no perder el derecho al cobro.</li>
+      <li><strong>Inscríbete como demandante de empleo.</strong> La solicitud de la prestación exige estar inscrito y haber firmado el acuerdo de actividad (art. 268.1 LGSS), así que hazlo antes o, como muy tarde, en el mismo momento de solicitar. Se tramita en el servicio de empleo de tu comunidad autónoma (SOC en Cataluña, SAE en Andalucía, LANBIDE en el País Vasco, etc., o el SEPE directamente si resides en Ceuta o Melilla).</li>
+      <li><strong>Reúne la documentación</strong>: DNI o NIE, número de cuenta bancaria donde cobrar, el certificado de empresa y un documento que acredite tu situación legal de desempleo (por ejemplo, la carta de despido). La empresa está obligada a facilitar el certificado en un plazo de 10 días desde que te quedas en desempleo (art. 27 del Real Decreto 625/1985).</li>
+      <li><strong>Presenta la solicitud</strong> en la sede electrónica del SEPE (sede.sepe.gob.es), usando certificado digital, DNIe o Cl@ve. Si no dispones de ninguno de estos medios de identificación, existe la opción de pedir cita previa presencial en una oficina del SEPE.</li>
+      <li><strong>Espera la resolución.</strong> El artículo 296.1 de la LGSS obliga a la entidad gestora a resolver de forma motivada, reconociendo o denegando el derecho, en 15 días desde que presentas la solicitud en tiempo y forma. Si te requiere documentación, contéstale en el plazo indicado: incumplirlo puede suspender el cobro (art. 271.1.h).</li>
+      <li><strong>Mantén tus obligaciones mientras cobras</strong> (art. 299 LGSS): conservar activa la inscripción como demandante, cumplir el acuerdo de actividad, buscar empleo activamente, comparecer cuando te citen y comunicar cualquier cambio que afecte a la prestación.</li>
     </ol>
 
     <h2>El plazo: 15 días hábiles, sin excepciones fáciles</h2>
-    <p>Dispones de <strong>15 días hábiles</strong> desde el día siguiente a la situación legal de desempleo para presentar la solicitud. Si te retrasas, no pierdes el derecho a la prestación, pero sí <strong>pierdes tantos días de cobro como días te hayas retrasado</strong>. Por ejemplo: si tu último día trabajado fue el 1 de marzo y presentas la solicitud con 5 días hábiles de retraso, perderás esos 5 días de prestación.</p>
+    <p>El artículo 268.1 de la LGSS establece que el derecho nace el día siguiente a la situación legal de desempleo si presentas la solicitud en los <strong>15 días siguientes</strong>. Como la norma no dice otra cosa, esos días se cuentan como hábiles (sin sábados, domingos ni festivos), según la regla general del artículo 30 de la Ley 39/2015 de Procedimiento Administrativo Común. Si te retrasas, no pierdes el derecho a la prestación, pero esta solo se reconoce desde la fecha de solicitud y <strong>pierdes los días que transcurren entre el final del plazo y el día en que presentas la solicitud</strong> (art. 268.2).</p>
+
+    <h3>Ejemplo resuelto 1: calcular tu fecha límite</h3>
+    <p>Tu contrato termina y tu último día de trabajo es el <strong>jueves 1 de octubre de 2026</strong>.</p>
+    <ol>
+      <li>El plazo empieza a contar el viernes 2 de octubre y se descartan sábados, domingos y el lunes 12 de octubre (Fiesta Nacional).</li>
+      <li>Los 15 días hábiles son: 2, 5, 6, 7, 8 y 9 de octubre (6 días), 13, 14, 15 y 16 (10 en total) y 19, 20, 21, 22 y 23 (15 en total).</li>
+      <li>Tu fecha límite es el <strong>viernes 23 de octubre de 2026</strong>, salvo que en tu localidad haya algún festivo adicional, que alargaría el plazo.</li>
+    </ol>
+    <p>Si la presentas el 28 de octubre, el derecho se reconoce desde esa fecha y se descuentan los días de retraso. Lo prudente es solicitarla en los primeros días.</p>
+
+    <h2>Casos especiales con otros plazos</h2>
+    <ul>
+      <li><strong>Vacaciones no disfrutadas:</strong> si la empresa te las abona en el finiquito, la situación legal de desempleo y el nacimiento del derecho se producen cuando termina el periodo de vacaciones que te corresponde, y los 15 días se cuentan desde entonces. Ese periodo debe constar en el certificado de empresa (art. 268.3).</li>
+      <li><strong>Despido que vas a recurrir:</strong> la decisión de la empresa de extinguir el contrato ya es situación legal de desempleo, sin necesidad de que la impugnes, y demandar no te impide cobrar la prestación (art. 268.4).</li>
+    </ul>
 
     <h2>¿Y si la empresa no me da el certificado de empresa?</h2>
-    <p>No hace falta que esperes a recibirlo. Desde la entrada en vigor del sistema Certific@2, las empresas están obligadas a enviar este certificado de forma telemática directamente al SEPE, en un plazo de 10 días. Presenta tu solicitud igualmente dentro de tu plazo de 15 días; si no aparece, puedes reclamárselo a la empresa por escrito.</p>
+    <p>No esperes a recibirlo: presenta la solicitud dentro de tu plazo de 15 días y, si el certificado no aparece, reclámalo a la empresa por escrito.</p>
+
+    <h2>¿Cuánto vas a cobrar? Límites de 2026 y ejemplo resuelto</h2>
+    <p>La prestación se calcula sobre tu base reguladora, que es la media de tus bases de cotización por desempleo de los últimos 180 días (sin contar las horas extraordinarias). Durante los primeros 180 días cobras el <strong>70%</strong> de esa base (art. 270.2 LGSS). El resultado nunca puede ser inferior al mínimo ni superior al máximo, que se calculan con el IPREM mensual incrementado en una sexta parte. Con un IPREM de 600 euros mensuales, la referencia es 700 euros, y los límites son:</p>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Hijos a cargo</th><th>Mínimo mensual</th><th>Máximo mensual</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ninguno</td><td>560 € (80% de 700)</td><td>1.225 € (175% de 700)</td></tr>
+        <tr><td>Uno</td><td>749 € (107% de 700)</td><td>1.400 € (200% de 700)</td></tr>
+        <tr><td>Dos o más</td><td>749 € (107% de 700)</td><td>1.575 € (225% de 700)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3>Ejemplo resuelto 2: dos trabajadores con el mismo salario</h3>
+    <p>Carlos y Marta tienen una base reguladora de <strong>1.900 euros al mes</strong>. Carlos no tiene hijos a cargo; Marta tiene uno.</p>
+    <ol>
+      <li>Se aplica el 70% de la base: 1.900 × 0,70 = <strong>1.330 euros</strong>.</li>
+      <li>Carlos: el máximo sin hijos es 1.225 euros y 1.330 lo supera, así que cobra <strong>1.225 euros al mes</strong>.</li>
+      <li>Marta: el máximo con un hijo es 1.400 euros y 1.330 no lo alcanza, así que cobra <strong>1.330 euros al mes</strong>.</li>
+    </ol>
+    <p>A partir del día 181 el porcentaje baja; para saber cuánto y qué cobrarías en total, usa la calculadora que enlazamos más abajo. Son importes brutos, antes de la retención de IRPF.</p>
+
+    <h2>Errores frecuentes al solicitar el paro</h2>
+    <ul>
+      <li><strong>Esperar al certificado de empresa</strong> y dejar pasar el plazo de 15 días.</li>
+      <li><strong>No inscribirse como demandante</strong> o no firmar el acuerdo de actividad: sin ello la solicitud no se puede tramitar.</li>
+      <li><strong>Irte al extranjero sin avisar:</strong> la estancia fuera de España de hasta 90 días naturales al año requiere comunicación previa y autorización de la entidad gestora; si no, el cobro se suspende (art. 271.1.g).</li>
+      <li><strong>Dejar caer la inscripción como demandante:</strong> mientras no figures inscrito, el cobro queda suspendido hasta que te vuelvas a inscribir (art. 271.1.i y 271.3.d).</li>
+    </ul>
 
     <div class="cta">
       <strong>¿Ya sabes cuánto te correspondería cobrar?</strong>
@@ -191,7 +252,7 @@
       <h2>Preguntas frecuentes</h2>
       <details>
         <summary>¿Puedo solicitar el paro completamente online?</summary>
-        <p>Sí, si dispones de certificado digital, DNIe o Cl@ve. El SEPE ha centralizado este trámite en el "Área Personal" de su sede electrónica. Si no tienes ninguno de estos medios, puedes pedir cita presencial en una oficina.</p>
+        <p>Sí, si dispones de certificado digital, DNIe o Cl@ve, a través de la sede electrónica del SEPE. Si no tienes ninguno de estos medios, puedes pedir cita presencial en una oficina.</p>
       </details>
       <details>
         <summary>¿Qué pasa si no cumplo los 360 días cotizados?</summary>
@@ -199,11 +260,23 @@
       </details>
       <details>
         <summary>¿Tengo que inscribirme como demandante de empleo antes o después de solicitar la prestación?</summary>
-        <p>Antes. Es un paso obligatorio y previo: sin la inscripción como demandante de empleo, no puedes tramitar la solicitud de la prestación.</p>
+        <p>Antes o, como muy tarde, en el mismo momento. Estar inscrito como demandante y haber firmado el acuerdo de actividad es un requisito para tramitar la solicitud, y la inscripción debe mantenerse activa mientras cobres.</p>
       </details>
       <details>
         <summary>¿Qué es la tarjeta DARDE y por qué es importante?</summary>
-        <p>Es el Documento de Alta y Renovación de la Demanda de Empleo que recibes al inscribirte. Debes renovarla periódicamente (normalmente cada 3 meses, la llamada "sellada del paro") mientras cobres la prestación, o podrías perder el derecho al cobro.</p>
+        <p>Es el Documento de Alta y Renovación de la Demanda de Empleo que recibes al inscribirte. La ley exige mantener activa la inscripción mientras cobras la prestación; las fechas de renovación dependen del servicio de empleo de tu comunidad y figuran en el propio documento. Si la inscripción no está activa, el cobro se suspende hasta que te vuelvas a inscribir.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si presento la solicitud fuera de plazo?</summary>
+        <p>No pierdes el derecho, pero la prestación se reconoce desde la fecha en que presentas la solicitud y se reduce su duración en los días que transcurren entre el final del plazo de 15 días y esa fecha.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tarda el SEPE en resolver mi solicitud?</summary>
+        <p>La LGSS fija un plazo de 15 días desde que presentas la solicitud en tiempo y forma para que la entidad gestora dicte resolución motivada, reconociendo o denegando la prestación.</p>
+      </details>
+      <details>
+        <summary>Si recurro el despido, ¿pierdo el derecho al paro?</summary>
+        <p>No. La decisión de la empresa de extinguir el contrato ya constituye situación legal de desempleo sin necesidad de impugnarla, y presentar una demanda no te impide solicitar y cobrar la prestación.</p>
       </details>
     </div>
 
@@ -211,8 +284,13 @@
       <h2>Fuentes oficiales</h2>
       <p>Esta guía se basa en los siguientes textos y organismos:</p>
       <ul>
-        <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724" target="_blank" rel="noopener">Ley General de la Seguridad Social, art. 268 (BOE)</a></li>
+        <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724" target="_blank" rel="noopener">Ley General de la Seguridad Social, arts. 266 a 271, 296 y 299 (BOE)</a></li>
+        <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1985-8124" target="_blank" rel="noopener">Real Decreto 625/1985, de desarrollo de la Ley de Protección por Desempleo, arts. 21 y 27 (BOE)</a></li>
+        <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565" target="_blank" rel="noopener">Ley 39/2015, de Procedimiento Administrativo Común, art. 30 (BOE)</a></li>
+        <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">Estatuto de los Trabajadores, arts. 40, 41, 49 y 50 (BOE)</a></li>
+        <li><a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2022-22128" target="_blank" rel="noopener">Ley 31/2022 de Presupuestos Generales del Estado para 2023: IPREM de 600 euros mensuales (BOE)</a></li>
         <li><a href="https://www.sepe.es" target="_blank" rel="noopener">SEPE — Servicio Público de Empleo Estatal</a></li>
+        <li><a href="https://sede.sepe.gob.es" target="_blank" rel="noopener">Sede electrónica del SEPE</a></li>
       </ul>
     </div>
 
@@ -241,22 +319,58 @@
     {
       "@type": "Question",
       "name": "¿Puedo solicitar el paro completamente online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, si dispones de certificado digital, DNIe o Cl@ve, a través del Área Personal de la sede electrónica del SEPE. Sin ninguno de estos medios, puedes pedir cita presencial." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, si dispones de certificado digital, DNIe o Cl@ve, a través de la sede electrónica del SEPE. Si no tienes ninguno de estos medios, puedes pedir cita presencial en una oficina."
+      }
     },
     {
       "@type": "Question",
       "name": "¿Qué pasa si no cumplo los 360 días cotizados?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No tendrías derecho a la prestación contributiva, pero podrías tener derecho a algún subsidio por desempleo si cumples otros requisitos." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No tendrías derecho a la prestación contributiva, pero podrías tener derecho a algún subsidio por desempleo si cumples otros requisitos (cargas familiares, mayor de 45 años, entre otros). Consulta directamente con el SEPE tu caso concreto."
+      }
     },
     {
       "@type": "Question",
       "name": "¿Tengo que inscribirme como demandante de empleo antes o después de solicitar la prestación?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Antes. Es un paso obligatorio y previo a la solicitud de la prestación." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Antes o, como muy tarde, en el mismo momento. Estar inscrito como demandante y haber firmado el acuerdo de actividad es un requisito para tramitar la solicitud, y la inscripción debe mantenerse activa mientras cobres."
+      }
     },
     {
       "@type": "Question",
       "name": "¿Qué es la tarjeta DARDE y por qué es importante?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Es el Documento de Alta y Renovación de la Demanda de Empleo, que debes renovar periódicamente mientras cobres la prestación." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es el Documento de Alta y Renovación de la Demanda de Empleo que recibes al inscribirte. La ley exige mantener activa la inscripción mientras cobras la prestación; las fechas de renovación dependen del servicio de empleo de tu comunidad y figuran en el propio documento. Si la inscripción no está activa, el cobro se suspende hasta que te vuelvas a inscribir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si presento la solicitud fuera de plazo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No pierdes el derecho, pero la prestación se reconoce desde la fecha en que presentas la solicitud y se reduce su duración en los días que transcurren entre el final del plazo de 15 días y esa fecha."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda el SEPE en resolver mi solicitud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La LGSS fija un plazo de 15 días desde que presentas la solicitud en tiempo y forma para que la entidad gestora dicte resolución motivada, reconociendo o denegando la prestación."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Si recurro el despido, ¿pierdo el derecho al paro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La decisión de la empresa de extinguir el contrato ya constituye situación legal de desempleo sin necesidad de impugnarla, y presentar una demanda no te impide solicitar y cobrar la prestación."
+      }
     }
   ]
 }

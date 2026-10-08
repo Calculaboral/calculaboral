@@ -96,6 +96,15 @@
   .breadcrumb a:hover{ text-decoration:underline; }
   .breadcrumb .sep{ margin:0 0.35rem; color:#bbb; }
 
+  .fuentes{ margin-top:2rem; padding:1.25rem 1.5rem; background:#fff; border:1px solid var(--gris-borde); border-radius:16px; font-size:0.88rem; color:#555; }
+  .fuentes h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .fuentes ul{ margin:0.5rem 0 0; padding-left:1.25rem; }
+  .fuentes a{ color: var(--azul); }
+
+  .faq details{ background:#f9f6f1; border:1px solid var(--gris-borde); border-radius:12px; padding:0.9rem 1.1rem; margin-bottom:0.6rem; }
+  .faq summary{ font-weight:700; cursor:pointer; color:var(--azul); }
+  .faq details p{ margin:0.6rem 0 0; font-size:0.92rem; color:#444; }
+
   .relacionado{ margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--gris-borde); }
   .relacionado h2{ margin-top:0; font-size:1.05rem; }
   .relacionado ul{ list-style:none; padding:0; margin:0.5rem 0 0; }
@@ -114,8 +123,8 @@
   <nav class="breadcrumb"><a href="/">Inicio</a><span class="sep">/</span><a href="/#guias">Guías</a><span class="sep">/</span><span>Plazos y prescripción</span></nav>
   <div class="doc">
     <h1>Plazos y prescripción en reclamaciones laborales</h1>
-    <p class="updated">Actualizado: 2026 · Normativa: Estatuto de los Trabajadores y Ley Reguladora de la Jurisdicción Social</p>
-    <p class="intro">Uno de los errores más costosos en el ámbito laboral es dejar pasar el plazo para reclamar. A diferencia de otras materias, muchos plazos laborales son muy cortos (semanas, no años), y una vez vencidos, se pierde el derecho a reclamar por vía judicial, sin excepciones fáciles. Aquí tienes los plazos más habituales, reunidos en un solo lugar.</p>
+    <p class="updated">Actualizado: octubre de 2026 · Normativa: Estatuto de los Trabajadores y Ley Reguladora de la Jurisdicción Social</p>
+    <p class="intro">Uno de los errores más costosos en el ámbito laboral es dejar pasar el plazo para reclamar. A diferencia de otras materias, muchos plazos laborales son muy cortos (semanas, no años), y una vez vencidos, se pierde el derecho a reclamar por vía judicial, sin excepciones fáciles. Aquí tienes los plazos más habituales, reunidos en un solo lugar, con ejemplos de cómputo con fechas.</p>
 
     <h2>Tabla de plazos principales</h2>
     <div class="table-scroll">
@@ -126,41 +135,80 @@
         <th>Desde cuándo cuenta</th>
       </tr>
       <tr>
-        <td>Impugnar un despido (procedente, improcedente, nulo)</td>
-        <td><strong>20 días hábiles</strong></td>
-        <td>Desde la fecha efectiva del despido</td>
+        <td>Impugnar un despido (procedente, improcedente, nulo) o la resolución de un contrato temporal</td>
+        <td><strong>20 días hábiles</strong> (caducidad)</td>
+        <td>Desde el día siguiente a aquel en que se produce el despido (arts. 59.3 ET y 103 LJS)</td>
+      </tr>
+      <tr>
+        <td>Impugnar una modificación sustancial de condiciones de trabajo o una movilidad geográfica</td>
+        <td><strong>20 días hábiles</strong> (caducidad)</td>
+        <td>Desde el día siguiente a la notificación de la decisión, tras el periodo de consultas si lo hubiera (art. 59.4 ET)</td>
       </tr>
       <tr>
         <td>Reclamar cantidades (finiquito, salarios impagados, horas extra)</td>
-        <td><strong>1 año</strong></td>
-        <td>Desde que la cantidad debió pagarse, o desde el fin del contrato</td>
+        <td><strong>1 año</strong> (prescripción)</td>
+        <td>Desde que la acción pudo ejercitarse (art. 59.2 ET). En el finiquito, lo prudente es contar desde el último día de contrato</td>
       </tr>
       <tr>
-        <td>Reclamar por modificación sustancial de condiciones de trabajo</td>
-        <td><strong>20 días hábiles</strong></td>
-        <td>Desde que se comunica o se aplica la modificación</td>
-      </tr>
-      <tr>
-        <td>Reclamar por vacaciones no disfrutadas</td>
-        <td><strong>1 año</strong> (dentro de la reclamación de cantidad)</td>
-        <td>Desde el fin de la relación laboral</td>
+        <td>Otras acciones derivadas del contrato sin plazo especial</td>
+        <td><strong>1 año</strong> (prescripción)</td>
+        <td>Desde la terminación del contrato (art. 59.1 ET)</td>
       </tr>
       <tr>
         <td>Solicitar la prestación por desempleo</td>
         <td><strong>15 días hábiles</strong></td>
-        <td>Desde la fecha de baja en la empresa (para no perder días de prestación)</td>
+        <td>Desde el cese; si te retrasas, pierdes tantos días de prestación como medien hasta la solicitud (art. 268 LGSS)</td>
       </tr>
     </table>
     </div>
+    <p>Sobre las vacaciones no disfrutadas: el art. 59 ET no prevé para ellas un plazo especial, así que al reclamarlas como cantidad se aplica la regla general de un año, y el momento de inicio puede depender del caso. Ante la duda, cuenta desde el último día de contrato.</p>
+
+    <h2>Prescripción y caducidad: no son lo mismo</h2>
+    <p>La <strong>prescripción</strong> (un año, por ejemplo, para reclamar cantidades) puede <em>interrumpirse</em>: según el art. 1973 del Código Civil, se interrumpe por el ejercicio de la acción ante los tribunales, por la reclamación extrajudicial del acreedor y por el reconocimiento de la deuda por el deudor. Un burofax a la empresa, por tanto, cuenta. La <strong>caducidad</strong> (los 20 días hábiles del despido) es más rígida: el art. 103 LJS dispone que el plazo de despido es de caducidad a todos los efectos, y lo que la suspende es la solicitud de conciliación, no una carta o un burofax.</p>
 
     <h2>¿Qué significa "días hábiles"?</h2>
-    <p>Los plazos cortos (como los 20 días para impugnar un despido) se cuentan en días hábiles, lo que excluye sábados, domingos y festivos. Es un matiz importante: 20 días hábiles suelen ser unas 4 semanas de calendario, no 20 días naturales seguidos.</p>
+    <p>Los plazos cortos (como los 20 días para impugnar un despido) se cuentan en días hábiles: según el art. 103.1 LJS, no se computan sábados, domingos ni festivos en la sede del órgano judicial. Es un matiz importante: 20 días hábiles suelen ser unas 4 semanas de calendario, no 20 días naturales seguidos. Además, el art. 43.4 LJS declara inhábiles agosto y el periodo del 24 de diciembre al 6 de enero, pero no para modalidades como el despido, la extinción del contrato de trabajo o la movilidad geográfica: en esos plazos agosto y las fiestas de Navidad sí cuentan. Los plazos por años, en cambio, se computan de fecha a fecha (art. 5 del Código Civil).</p>
+
+    <h3>Ejemplo 1: plazo de despido</h3>
+    <p>Te despiden con efectos el jueves 5 de noviembre de 2026 (supuesto: sin festivos locales ni autonómicos en el periodo). El primer día es el viernes 6 de noviembre.</p>
+    <ul>
+      <li>6 de noviembre: día 1. Del 9 al 13 de noviembre: días 2 a 6. Del 16 al 20: días 7 a 11. Del 23 al 27: días 12 a 16.</li>
+      <li>30 de noviembre, 1, 2 y 3 de diciembre: días 17 a 20.</li>
+      <li><strong>Último día para presentar la papeleta o la demanda: jueves 3 de diciembre de 2026.</strong></li>
+    </ul>
+
+    <h3>Ejemplo 2: el plazo se suspende con la papeleta</h3>
+    <p>Con el mismo despido, presentas la papeleta de conciliación el viernes 20 de noviembre, con 10 días hábiles ya consumidos (del 6 al 19). Desde la presentación el plazo queda suspendido. El acto de conciliación se celebra el miércoles 2 de diciembre sin avenencia y el cómputo se reanuda el 3 de diciembre (art. 65.1 LJS). Te quedan 10 días hábiles: 3, 4, 7, 9, 10, 11, 14, 15, 16 y 17 de diciembre (el 8 es festivo nacional).</p>
+    <ul>
+      <li><strong>Último día de la demanda: jueves 17 de diciembre de 2026.</strong></li>
+      <li>Por prudencia, no cuentes con ese margen: calcula como si el día de la presentación ya estuviera consumido, y presenta la demanda a más tardar el 16 de diciembre.</li>
+    </ul>
+
+    <h3>Ejemplo 3: reclamar el finiquito</h3>
+    <p>Tu contrato terminó el 15 de octubre de 2026 y no te han pagado. Contado de fecha a fecha, el año vence el 15 de octubre de 2027. Si envías un burofax o presentas la papeleta antes, la prescripción se interrumpe, pero no conviene esperar a esa fecha. Los pasos concretos están en la <a href="/guias/no-me-pagan-el-finiquito.html">guía de finiquito impagado</a>.</p>
 
     <h2>El paso previo casi siempre obligatorio: la conciliación</h2>
-    <p>Antes de presentar una demanda ante el Juzgado de lo Social, en la mayoría de reclamaciones laborales es obligatorio intentar primero una conciliación (papeleta de conciliación ante el SMAC, o mediante el sistema que corresponda en tu comunidad autónoma). Presentar esta papeleta <strong>suspende el plazo</strong> mientras se tramita, lo que da un margen adicional si te acercas al límite.</p>
+    <p>Antes de presentar una demanda ante el Juzgado de lo Social, en la mayoría de reclamaciones laborales es obligatorio intentar primero una conciliación o mediación (art. 63 LJS), ante el servicio administrativo que corresponda a tu comunidad autónoma, que en muchos casos es el SMAC. Presentar la solicitud <strong>interrumpe la prescripción y suspende la caducidad</strong> desde la fecha de presentación (art. 65.1 LJS). Si el acto no se celebra en quince días hábiles, el cómputo se reanuda; y si pasan treinta días hábiles sin celebrarse, se tiene por cumplido el trámite (art. 65.2 LJS).</p>
+    <p>Hay excepciones (art. 64 LJS): no hace falta, entre otros, en los procesos de Seguridad Social, de disfrute de vacaciones, de movilidad geográfica o modificación sustancial de condiciones de trabajo, o de tutela de derechos fundamentales. Por eso, en la modificación sustancial cuentan solo los 20 días hábiles desde la notificación, sin papeleta previa que los suspenda.</p>
 
     <h2>¿Qué pasa si se me pasa el plazo?</h2>
     <p>Una vez prescrito o caducado el plazo, en general se pierde el derecho a reclamar esa cantidad o impugnar esa decisión por vía judicial, salvo excepciones muy limitadas (por ejemplo, algunas causas de interrupción de la prescripción). Por eso, ante la duda, es preferible presentar la papeleta de conciliación cuanto antes, incluso si aún estás decidiendo si seguir adelante con una demanda completa.</p>
+
+    <h2>Cómo organizarte</h2>
+    <ol>
+      <li>Apunta la fecha exacta de cada hecho: despido efectivo, notificación de la modificación, último día de contrato.</li>
+      <li>Calcula el último día con calendario en mano, restando sábados, domingos y festivos de tu localidad.</li>
+      <li>Guarda justificantes de todo lo que envíes y recibas.</li>
+      <li>Presenta la papeleta en cuanto puedas; no esperes al último día.</li>
+    </ol>
+
+    <h2>Errores frecuentes</h2>
+    <ul>
+      <li>Contar los 20 días como naturales, o contar desde la fecha de la carta en vez del efecto del despido.</li>
+      <li>Creer que un burofax frena el plazo de impugnación del despido: interrumpe la prescripción, no suspende la caducidad.</li>
+      <li>Negociar con la empresa y dejar pasar los días hábiles mientras tanto.</li>
+      <li>Olvidar los festivos locales y autonómicos al calcular.</li>
+    </ul>
 
     <div class="cta">
       <strong>Herramientas relacionadas</strong>
@@ -168,6 +216,24 @@
       <a href="../calculadora-indemnizacion-despido.html">Calculadora de despido →</a>
       <a href="../calculadora-finiquito.html">Calculadora de finiquito →</a>
     </div>
+
+    <div class="faq">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Los 20 días para impugnar un despido son naturales o hábiles?</summary>
+        <p>Son hábiles: el art. 103 de la Ley Reguladora de la Jurisdicción Social fija veinte días hábiles y no se computan sábados, domingos ni festivos. Además, es un plazo de caducidad a todos los efectos.</p>
+      </details>
+      <details>
+        <summary>¿Un burofax detiene el plazo de 20 días del despido?</summary>
+        <p>No. El art. 1973 del Código Civil habla de interrumpir la prescripción por la reclamación extrajudicial, pero el plazo de despido es de caducidad. Lo que lo suspende es la solicitud de conciliación (art. 65.1 LJS), así que no esperes a la respuesta de la empresa.</p>
+      </details>
+      <details>
+        <summary>¿Qué diferencia hay entre prescripción y caducidad?</summary>
+        <p>La prescripción, como el año para reclamar cantidades, se interrumpe con la reclamación extrajudicial, la papeleta de conciliación o la demanda. La caducidad, como los 20 días hábiles del despido, solo se suspende con la conciliación y no se interrumpe por otras vías.</p>
+      </details>
+    </div>
+
+    <div class="fuentes"><h2>Fuentes oficiales</h2><ul><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">Estatuto de los Trabajadores (BOE-A-2015-11430): art. 59</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2011-15936" target="_blank" rel="noopener">Ley 36/2011, reguladora de la jurisdicción social (BOE-A-2011-15936): arts. 43, 63 a 65 y 103</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724" target="_blank" rel="noopener">Ley General de la Seguridad Social (BOE-A-2015-11724): art. 268</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763" target="_blank" rel="noopener">Código Civil (BOE-A-1889-4763): arts. 5 y 1973</a></li></ul></div>
 
         <section class="relacionado">
       <h2>Te puede interesar</h2>
@@ -188,6 +254,39 @@
 
   <a class="volver" href="/">← Volver al inicio</a>
 </main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Los 20 días para impugnar un despido son naturales o hábiles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Son hábiles: el art. 103 de la Ley Reguladora de la Jurisdicción Social fija veinte días hábiles y no se computan sábados, domingos ni festivos. Además, es un plazo de caducidad a todos los efectos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Un burofax detiene el plazo de 20 días del despido?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El art. 1973 del Código Civil habla de interrumpir la prescripción por la reclamación extrajudicial, pero el plazo de despido es de caducidad. Lo que lo suspende es la solicitud de conciliación (art. 65.1 LJS), así que no esperes a la respuesta de la empresa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre prescripción y caducidad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La prescripción, como el año para reclamar cantidades, se interrumpe con la reclamación extrajudicial, la papeleta de conciliación o la demanda. La caducidad, como los 20 días hábiles del despido, solo se suspende con la conciliación y no se interrumpe por otras vías."
+      }
+    }
+  ]
+}
+</script>
 
 </body>
 </html>

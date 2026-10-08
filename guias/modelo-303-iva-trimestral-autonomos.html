@@ -95,6 +95,10 @@
   .breadcrumb a:hover{ text-decoration:underline; }
   .breadcrumb .sep{ margin:0 0.35rem; color:#bbb; }
 
+  .fuentes{ margin-top:2rem; padding:1.25rem 1.5rem; background:#fff; border:1px solid var(--gris-borde); border-radius:16px; font-size:0.88rem; color:#555; }
+  .fuentes h2{ font-size:1rem; color:var(--azul); margin-top:0; }
+  .fuentes ul{ margin:0.5rem 0 0; padding-left:1.25rem; }
+  .fuentes a{ color: var(--azul); }
   .relacionado{ margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--gris-borde); }
   .relacionado h2{ margin-top:0; font-size:1.05rem; }
   .relacionado ul{ list-style:none; padding:0; margin:0.5rem 0 0; }
@@ -113,50 +117,92 @@
   <nav class="breadcrumb"><a href="/">Inicio</a><span class="sep">/</span><a href="/#guias">Guías</a><span class="sep">/</span><span>Modelo 303</span></nav>
   <div class="doc">
     <h1>Modelo 303: IVA trimestral para autónomos</h1>
-    <p class="updated">Actualizado: 2026 · Normativa: Ley 37/1992 del IVA</p>
-    <p class="intro">Si eres autónomo y tu actividad está sujeta a IVA, el modelo 303 es la declaración trimestral que probablemente tengas que presentar. Aquí tienes lo esencial: cómo funciona, cómo se calcula, y quién queda exento.</p>
+    <p class="updated">Actualizado: octubre de 2026 · Normativa: Ley 37/1992 del IVA, Reglamento de facturación (Real Decreto 1619/2012) y Orden EHA/3786/2008</p>
+    <p class="intro">Si eres autónomo y tu actividad está sujeta a IVA, el modelo 303 es la declaración trimestral que probablemente tengas que presentar. Aquí tienes lo esencial: cómo funciona, qué IVA puedes deducir, cómo se calcula con dos ejemplos resueltos, cuáles son los plazos y quién queda exento.</p>
 
     <h2>¿Qué es el modelo 303?</h2>
-    <p>Es la autoliquidación trimestral del IVA. A lo largo del trimestre, cobras IVA a tus clientes en tus facturas (IVA repercutido) y pagas IVA en tus compras y gastos de la actividad (IVA soportado). El modelo 303 calcula la diferencia entre ambos, y ese resultado es lo que ingresas a Hacienda (o lo que queda a tu favor).</p>
+    <p>Es la autoliquidación trimestral del IVA. A lo largo del trimestre, cobras IVA a tus clientes en tus facturas (IVA repercutido) y pagas IVA en tus compras y gastos de la actividad (IVA soportado). El modelo 303 calcula la diferencia entre ambos, y ese resultado es lo que ingresas a Hacienda (o lo que queda a tu favor). Hay que presentarlo incluso en los trimestres sin cuotas devengadas: si no has facturado ni soportado IVA, se marca la casilla "sin actividad".</p>
 
     <h2>Cómo se calcula</h2>
     <div class="table-scroll">
     <table>
       <tr><th>Concepto</th><th>Qué es</th></tr>
-      <tr><td>IVA repercutido</td><td>El IVA que has cobrado a tus clientes en tus facturas emitidas durante el trimestre</td></tr>
-      <tr><td>IVA soportado</td><td>El IVA que has pagado en tus compras y gastos deducibles de la actividad durante el trimestre</td></tr>
-      <tr><td>Resultado</td><td>IVA repercutido − IVA soportado. Si es positivo, lo ingresas; si es negativo, se compensa en el trimestre siguiente o se solicita la devolución en el cuarto trimestre</td></tr>
+      <tr><td>IVA repercutido</td><td>El IVA devengado en las facturas que emites durante el trimestre. Se recoge en las casillas 01 a 09, separado por tipos: 4 % (01-03), 10 % (04-06) y 21 % (07-09)</td></tr>
+      <tr><td>IVA soportado deducible</td><td>El IVA que has pagado en tus compras y gastos deducibles de la actividad, casillas 28 a 39 (operaciones corrientes y bienes de inversión)</td></tr>
+      <tr><td>Resultado</td><td>IVA repercutido − IVA soportado. Si es positivo, lo ingresas; si es negativo, se compensa en trimestres siguientes o se solicita la devolución en el último periodo del año</td></tr>
     </table>
     </div>
+    <p>En el régimen general, el IVA se declara en el trimestre en que se devenga la operación, es decir, cuando entregas el bien o prestas el servicio, y no necesariamente cuando cobras (salvo que estés en el régimen especial del criterio de caja).</p>
+
+    <h2>Qué IVA soportado puedes deducir</h2>
+    <ul>
+      <li>Debe corresponder a bienes y servicios afectos a tu actividad y estar respaldado por una factura que cumpla los requisitos (a tu nombre y con tu NIF). Las facturas simplificadas solo dan derecho a deducir si consignan tu NIF y dirección y la cuota de IVA desglosada.</li>
+      <li>Los bienes de uso corriente deben usarse de forma exclusiva en la actividad; un móvil o un ordenador de uso mixto no permiten deducir el IVA.</li>
+      <li>En los turismos y motocicletas, la Agencia Tributaria presume una afectación del 50 %, así que deduces la mitad del IVA; el 100 % solo en usos como el transporte de viajeros, la enseñanza de conducción o la vigilancia, o si lo pruebas.</li>
+      <li>No es deducible el IVA de joyas, alimentos, bebidas y tabaco, espectáculos y servicios recreativos, ni de bienes o servicios destinados a atenciones a clientes, entre otros. Los viajes, alojamiento y restauración solo son deducibles si el gasto lo es en el IRPF.</li>
+    </ul>
 
     <h2>Tipos de IVA</h2>
     <ul>
       <li><strong>General (21%):</strong> se aplica a la mayoría de productos y servicios.</li>
-      <li><strong>Reducido (10%):</strong> alimentos, transporte de viajeros, hostelería, entre otros.</li>
-      <li><strong>Superreducido (4%):</strong> productos de primera necesidad como pan, leche, libros, medicamentos.</li>
+      <li><strong>Reducido (10%):</strong> la mayoría de alimentos, el transporte de viajeros, los servicios de restauración y hostelería y las entradas a espectáculos como teatro, cine o conciertos, entre otros.</li>
+      <li><strong>Superreducido (4%):</strong> productos de primera necesidad como pan, harinas panificables, determinados tipos de leche, queso, huevos, frutas, verduras, libros, periódicos y medicamentos de uso humano.</li>
     </ul>
+    <p>La relación completa y los cambios temporales (por ejemplo, el tipo aplicable a la electricidad y los combustibles en 2026) están en la tabla oficial de tipos de la Agencia Tributaria.</p>
 
-    <h2>¿Quién no tiene que presentarlo?</h2>
-    <p>Algunas actividades están exentas de IVA, entre ellas:</p>
+    <h2>Ejemplo 1: un trimestre a ingresar</h2>
+    <p>Marta es consultora y en el 3T de 2026 emite facturas por 14.000 € de base, todas al 21 %. En el trimestre soporta estos gastos con factura completa:</p>
+    <div class="table-scroll">
+    <table>
+      <tr><th>Concepto</th><th>Base</th><th>IVA 21 %</th><th>IVA deducible</th></tr>
+      <tr><td>Alquiler de coworking</td><td>1.350,00 €</td><td>283,50 €</td><td>283,50 €</td></tr>
+      <tr><td>Software y suscripciones</td><td>480,00 €</td><td>100,80 €</td><td>100,80 €</td></tr>
+      <tr><td>Asesoría fiscal</td><td>360,00 €</td><td>75,60 €</td><td>75,60 €</td></tr>
+      <tr><td>Material de oficina</td><td>275,00 €</td><td>57,75 €</td><td>57,75 €</td></tr>
+      <tr><td>Renting de turismo (uso mixto, presunción del 50 %)</td><td>400,00 €</td><td>84,00 €</td><td>42,00 €</td></tr>
+      <tr><td><strong>Total</strong></td><td></td><td></td><td><strong>559,65 €</strong></td></tr>
+    </table>
+    </div>
+    <ol>
+      <li><strong>IVA repercutido:</strong> 14.000 × 21 % = 2.940,00 €.</li>
+      <li><strong>IVA soportado deducible:</strong> 283,50 + 100,80 + 75,60 + 57,75 + 42,00 = 559,65 €.</li>
+      <li><strong>Resultado:</strong> 2.940,00 − 559,65 = <strong>2.380,35 € a ingresar</strong>.</li>
+    </ol>
+
+    <h2>Ejemplo 2: resultado negativo y compensación</h2>
+    <p>Un autónomo emite en el 2T facturas por 4.000 € de base al 21 % (IVA repercutido: 840 €) y compra una maquinaria de 6.000 € de base, con 1.260 € de IVA soportado. Resultado: 840 − 1.260 = −420 €. Si no pide devolución, la declaración sale "a compensar" y los 420 € se aplican en los trimestres siguientes. En el 3T repercute 2.100 € y soporta 600 €: 2.100 − 600 = 1.500 €; compensa los 420 € del 2T y paga <strong>1.080 €</strong>. La devolución, en cambio, solo se puede solicitar en el último periodo del año (4T), salvo que estés inscrito en el registro de devolución mensual.</p>
+
+    <h2>Tipos de operaciones exentas</h2>
+    <p>Algunas actividades están exentas de IVA conforme al artículo 20 de la Ley del IVA. Según la Agencia Tributaria, entre ellas están:</p>
     <ul>
-      <li>Servicios sanitarios prestados por profesionales médicos y sanitarios</li>
-      <li>Educación reglada y determinadas actividades formativas</li>
-      <li>Servicios financieros y de seguros</li>
-      <li>Alquiler de vivienda habitual (no así el alquiler de locales para negocio, que sí lleva IVA)</li>
+      <li>Asistencia sanitaria (con los requisitos que fija la ley)</li>
+      <li>Educación y actividades educativas</li>
+      <li>Asistencia social, actividades culturales y práctica del deporte, en los términos de la norma</li>
+      <li>Operaciones financieras y de seguros</li>
+      <li>Arrendamiento de viviendas (con excepciones; el alquiler de locales para negocio, en general, sí lleva IVA)</li>
     </ul>
-    <p>Si tu actividad está exenta, no repercutes IVA en tus facturas ni presentas el modelo 303, aunque en general tampoco puedes deducirte el IVA de tus compras.</p>
+    <p>Si tu actividad está exenta, no repercutes IVA en tus facturas y las operaciones exentas del artículo 20 no dan derecho a deducir el IVA de tus compras. Comprueba con la Agencia Tributaria qué obligaciones periódicas te corresponden. Distinto es el caso de las exportaciones y entregas intracomunitarias: están exentas pero sí permiten deducir el IVA soportado.</p>
 
     <h2>Plazos de presentación</h2>
     <ul>
       <li><strong>1er trimestre:</strong> 1 al 20 de abril</li>
       <li><strong>2º trimestre:</strong> 1 al 20 de julio</li>
       <li><strong>3er trimestre:</strong> 1 al 20 de octubre</li>
-      <li><strong>4º trimestre:</strong> 1 al 30 de enero del año siguiente (junto con el resumen anual, modelo 390)</li>
+      <li><strong>4º trimestre:</strong> 1 al 30 de enero del año siguiente (junto con el resumen anual, modelo 390, para quienes deban presentarlo)</li>
     </ul>
-    <p>Estos son los mismos plazos que el modelo 130 de IRPF, por lo que muchos autónomos presentan ambos modelos a la vez cada trimestre.</p>
+    <p>Si domicilias el pago, el plazo se acorta: en 2026 la domiciliación del 1T, 2T y 3T cierra el día 15 de abril, julio y octubre, y la del 4T de 2025 llegó hasta el 27 de enero. Estos son los mismos plazos de presentación que el modelo 130 de IRPF, por lo que muchos autónomos presentan ambos modelos a la vez cada trimestre. La presentación del 303 es siempre electrónica, con certificado electrónico o Cl@ve.</p>
 
     <h2>¿Qué pasa si no lo presento a tiempo?</h2>
-    <p>Igual que con el modelo 130, Hacienda puede aplicar recargos por presentación fuera de plazo, que aumentan cuanto más tiempo pase, además de posibles intereses de demora si el resultado es a ingresar. Es obligatorio presentarlo incluso si el resultado es cero o a tu favor.</p>
+    <p>Igual que con el modelo 130, si presentas fuera de plazo sin requerimiento previo se aplica un recargo del 1 % más un 1 % adicional por cada mes completo de retraso; pasados 12 meses, el recargo es del 15 % y se suman intereses de demora. Es obligatorio presentarlo incluso si el resultado es cero o a tu favor.</p>
+
+    <h2>Errores frecuentes</h2>
+    <ul>
+      <li>Deducir el 100 % del IVA de un vehículo o de un gasto de uso mixto.</li>
+      <li>Aceptar un ticket sin tus datos y después intentar deducir el IVA.</li>
+      <li>No declarar una factura emitida en el trimestre por no haberla cobrado todavía.</li>
+      <li>No presentar el modelo en un trimestre sin facturación: hay que presentarlo como "sin actividad".</li>
+      <li>Olvidar que los programas de facturación deberán adaptarse al Reglamento de sistemas informáticos de facturación (Verifactu): para autónomos personas físicas, la Agencia Tributaria indica que los sistemas deben estar operativos antes del 1 de julio de 2027 (disposición final cuarta del Real Decreto 1007/2023, modificada por el Real Decreto-ley 15/2025).</li>
+    </ul>
 
     <div class="cta">
       <strong>¿Quieres calcular el resultado de tu trimestre?</strong>
@@ -169,6 +215,38 @@
       <p style="margin:0.4rem 0 0;">Estímalo según tus ingresos y gastos previstos.</p>
       <a href="../calculadora-cuota-autonomos.html">Ir a la calculadora de cuota de autónomos →</a>
     </div>
+
+    <div class="faq">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Qué hago si el resultado del modelo 303 es negativo?</summary>
+        <p>Puedes compensarlo en las autoliquidaciones de los trimestres siguientes o, si es el último periodo del año (cuarto trimestre), solicitar la devolución. Solo los inscritos en el registro de devolución mensual pueden pedirla en otros trimestres.</p>
+      </details>
+      <details>
+        <summary>¿Tengo que presentar el modelo 303 si no he facturado nada?</summary>
+        <p>Sí. La presentación se realiza incluso en los periodos en los que no existan cuotas devengadas. Si no se devengaron ni soportaron cuotas se marca la casilla "sin actividad".</p>
+      </details>
+      <details>
+        <summary>¿Cuánto IVA puedo deducir del coche?</summary>
+        <p>Para turismos y motocicletas la Agencia Tributaria presume un uso profesional del 50 %, así que puedes deducir la mitad del IVA. Se admite el 100 % en usos como el transporte de viajeros, la enseñanza de conductores o la vigilancia, o si pruebas un uso profesional mayor.</p>
+      </details>
+    </div>
+
+    <div class="fuentes"><h2>Fuentes oficiales</h2><ul>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740" target="_blank" rel="noopener">Ley 37/1992 del Impuesto sobre el Valor Añadido (BOE)</a></li>
+      <li><a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2008-20953" target="_blank" rel="noopener">Orden EHA/3786/2008, por la que se aprueba el modelo 303 (BOE)</a></li>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2012-14696" target="_blank" rel="noopener">Real Decreto 1619/2012, Reglamento de facturación (BOE)</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/iva/modelo-303-iva-autoliquidacion_/instrucciones-2026/instrucciones-02-12-2t-4t-2026.html" target="_blank" rel="noopener">Agencia Tributaria: instrucciones del modelo 303 (2T a 4T de 2026)</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/ayuda/contenidos-lectura-facil/calendario-contribuyente-2026-simplificado-personas-fisicas/plazos-presentacion-autoliquidaciones-domiciliacion-bancaria.html" target="_blank" rel="noopener">Agencia Tributaria: plazos de domiciliación bancaria en 2026</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/static_files/Sede/Tema/IVA/IVA_reperc/Tipos_IVA_2026_26_02_2026.pdf" target="_blank" rel="noopener">Agencia Tributaria: tipos impositivos del IVA en 2026</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/iva/que-iva-soportado-puedo-deducir/que-puedo-deducir.html" target="_blank" rel="noopener">Agencia Tributaria: qué IVA soportado puedo deducir</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/iva/que-iva-soportado-puedo-deducir/que-actividades-derecho-deduccion.html" target="_blank" rel="noopener">Agencia Tributaria: qué actividades dan derecho a la deducción</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/iva/calculo-iva-repercutido-clientes/que-casos-no-tengo-que-iva/operaciones-exentas.html" target="_blank" rel="noopener">Agencia Tributaria: operaciones exentas de IVA</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/iva/facturacion-registro/facturacion-iva/tipos-factura.html" target="_blank" rel="noopener">Agencia Tributaria: tipos de factura (completa y simplificada)</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-iva-2025/capitulo-08-gestion-iva/autoliquidaciones-iva.html" target="_blank" rel="noopener">Agencia Tributaria: las autoliquidaciones del IVA</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/preguntas-frecuentes/cuestiones-generales-ambitos-aplicacion.html" target="_blank" rel="noopener">Agencia Tributaria: sistemas informáticos de facturación (Verifactu), preguntas frecuentes</a></li>
+      <li><a href="https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c18-cuota-liquida-resultante-autoliquidacion/regularizacion-situaciones-tributarias/recargos-aplicables.html" target="_blank" rel="noopener">Agencia Tributaria: recargos aplicables a las declaraciones extemporáneas</a></li>
+    </ul></div>
 
         <section class="relacionado">
       <h2>Te puede interesar</h2>
@@ -190,5 +268,37 @@
   <a class="volver" href="/">← Volver al inicio</a>
 </main>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué hago si el resultado del modelo 303 es negativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puedes compensarlo en las autoliquidaciones de los trimestres siguientes o, si es el último periodo del año (cuarto trimestre), solicitar la devolución. Solo los inscritos en el registro de devolución mensual pueden pedirla en otros trimestres."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tengo que presentar el modelo 303 si no he facturado nada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La presentación se realiza incluso en los periodos en los que no existan cuotas devengadas. Si no se devengaron ni soportaron cuotas se marca la casilla \"sin actividad\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto IVA puedo deducir del coche?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para turismos y motocicletas la Agencia Tributaria presume un uso profesional del 50 %, así que puedes deducir la mitad del IVA. Se admite el 100 % en usos como el transporte de viajeros, la enseñanza de conductores o la vigilancia, o si pruebas un uso profesional mayor."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>
