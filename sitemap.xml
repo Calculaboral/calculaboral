@@ -104,4 +104,12 @@
     <loc>https://calculadoralista.es/guias/cifras-clave-2026.html</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://calculadoralista.es/sobre-nosotros.html</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://calculadoralista.es/contacto.html</loc>
+    <priority>0.4</priority>
+  </url>
 </urlset>
