@@ -127,6 +127,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -142,12 +157,27 @@
     <h1>Indemnización por fin de contrato temporal: 12 días por año</h1>
     <p class="updated">Actualizado: 2026 · Normativa: Estatuto de los Trabajadores (Real Decreto Legislativo 2/2015), art. 49.1.c</p>
     <p class="intro">Si tu contrato temporal (por circunstancias de la producción, por ejemplo) llega a su fecha de fin y la empresa no te lo renueva, tienes derecho a una indemnización, aunque bastante más pequeña que en un despido. Aquí te explicamos cuánto es, cómo se calcula con ejemplos y, sobre todo, cuándo <strong>no</strong> aplica.</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>Al terminar un contrato temporal por expiración del tiempo convenido tienes derecho a una indemnización de 12 días de salario por año de servicio, en proporción al tiempo trabajado.</li>
+        <li>La fórmula es 12 días × años de servicio × salario diario, con el salario diario calculado dividiendo el bruto anual (con pagas extra) entre 365.</li>
+        <li>No generan esta indemnización los contratos de sustitución (interinidad) ni los formativos.</li>
+        <li>El contrato por circunstancias de la producción dura como máximo 6 meses, ampliable hasta 1 año por convenio colectivo sectorial.</li>
+        <li>La terminación del contrato por expiración es situación legal de desempleo: el paro se solicita en los 15 días hábiles siguientes.</li>
+        <li>Si crees que la extinción fue irregular, el plazo para impugnarla caduca a los 20 días hábiles.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#cuanto-se-cobra">¿Cuánto se cobra?</a></li><li><a href="#ejemplos-resueltos">Ejemplos resueltos</a></li><li><a href="#contratos-temporales-que-existen-hoy">Contratos temporales que existen hoy</a></li><li><a href="#excepciones-importantes">Excepciones importantes</a></li><li><a href="#y-si-la-empresa-me-renueva-y-luego-no-me">¿Y si la empresa me renueva y luego no me renueva otra vez?</a></li><li><a href="#diferencia-con-el-despido-objetivo-o-imp">Diferencia con el despido objetivo o improcedente</a></li><li><a href="#preaviso-paro-y-papeleo">Preaviso, paro y papeleo</a></li><li><a href="#errores-frecuentes">Errores frecuentes</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>¿Cuánto se cobra?</h2>
+    <h2 id="cuanto-se-cobra">¿Cuánto se cobra?</h2>
     <p>Al terminar el contrato por expiración del tiempo convenido, la ley reconoce una indemnización equivalente a la parte proporcional de la cantidad que resultaría de abonar <strong>12 días de salario por cada año de servicio</strong>. Dicho de otro modo: 12 días multiplicados por los años (y fracciones de año) que has trabajado. No hay tope legal específico de mensualidades para este caso (a diferencia del despido objetivo o improcedente), simplemente se aplica la proporción a todo el periodo trabajado.</p>
     <p>La fórmula es: <strong>12 días x años de servicio x salario diario</strong>. El salario diario se obtiene dividiendo el salario bruto anual (con la parte proporcional de pagas extra) entre 365.</p>
 
-    <h2>Ejemplos resueltos</h2>
+    <h2 id="ejemplos-resueltos">Ejemplos resueltos</h2>
     <p>Marcos cobra 1.500 euros brutos al mes con las pagas extra prorrateadas: 18.000 euros al año, es decir, 18.000 / 365 = 49,32 euros al día.</p>
     <ul>
       <li><strong>Contrato de 6 meses</strong> (medio año): 12 x 0,5 = 6 días. 6 x 49,32 = <strong>295,92 euros</strong>.</li>
@@ -155,7 +185,7 @@
     </ul>
     <p>Para comparar: si ese mismo contrato de 6 meses terminara con un despido improcedente, la indemnización sería de 33 x 0,5 = 16,5 días, es decir, 16,5 x 49,32 = 813,78 euros. Son importes brutos. Nuestra calculadora mide la antigüedad en años de 365,25 días, por lo que su resultado puede diferir en pocos euros del cálculo manual por meses.</p>
 
-    <h2>Contratos temporales que existen hoy</h2>
+    <h2 id="contratos-temporales-que-existen-hoy">Contratos temporales que existen hoy</h2>
     <p>Desde la reforma laboral de 2021 (Real Decreto-ley 32/2021) el contrato se presume indefinido y solo se puede firmar un contrato de duración determinada por circunstancias de la producción o por sustitución de otra persona. Ya no existe el contrato de obra o servicio determinado como modalidad nueva.</p>
     <div class="table-scroll">
     <table>
@@ -166,7 +196,7 @@
     </table>
     </div>
 
-    <h2>Excepciones importantes</h2>
+    <h2 id="excepciones-importantes">Excepciones importantes</h2>
     <p>No todos los contratos temporales generan esta indemnización al terminar:</p>
     <ul>
       <li><strong>Contratos de sustitución (interinidad):</strong> no generan derecho a esta indemnización (0 días), porque su función es cubrir temporalmente a otro trabajador con derecho a reserva de puesto (por ejemplo, durante una baja o excedencia), completar la jornada reducida de otra persona o cubrir un puesto mientras se selecciona a su titular.</li>
@@ -175,11 +205,11 @@
       <li><strong>Normativa específica:</strong> el propio art. 49.1.c añade que la cuantía puede ser la establecida en la normativa específica que sea de aplicación, así que conviene comprobar si tu sector tiene una regulación propia.</li>
     </ul>
 
-    <h2>¿Y si la empresa me renueva y luego no me renueva otra vez?</h2>
+    <h2 id="y-si-la-empresa-me-renueva-y-luego-no-me">¿Y si la empresa me renueva y luego no me renueva otra vez?</h2>
     <p>Lo relevante es la fecha de inicio del primer contrato y la fecha de fin del último, si ha habido continuidad en la prestación de servicios (encadenamiento de contratos temporales con la misma empresa, en el mismo o en distinto puesto, art. 15.5 ET). En estos casos conviene revisar bien la antigüedad real acumulada, porque puede ser mayor de lo que parece a simple vista.</p>
     <p>Además, el Estatuto (art. 15.5) establece que quien, en un periodo de 24 meses, haya estado contratado más de 18 meses, con o sin interrupciones, en la misma empresa o grupo de empresas, mediante dos o más contratos por circunstancias de la producción, adquiere la condición de persona trabajadora fija. Por ejemplo, un contrato de 9 meses seguido de otro de 10 meses suman 19 meses dentro de una ventana de 24: superan el límite de 18.</p>
 
-    <h2>Diferencia con el despido objetivo o improcedente</h2>
+    <h2 id="diferencia-con-el-despido-objetivo-o-imp">Diferencia con el despido objetivo o improcedente</h2>
     <div class="table-scroll">
     <table>
       <tr><th>Situación</th><th>Indemnización</th></tr>
@@ -190,7 +220,7 @@
     </div>
     <p>Si tu empresa te dice que el contrato "termina" pero en realidad sigues siendo necesario para el puesto y se cubre con otra contratación fraudulenta o encadenada de forma irregular, podrías estar ante un despido encubierto con derecho a una indemnización mayor. Ante la duda, consulta con un graduado social o abogado laboralista.</p>
 
-    <h2>Preaviso, paro y papeleo</h2>
+    <h2 id="preaviso-paro-y-papeleo">Preaviso, paro y papeleo</h2>
     <ul>
       <li><strong>Preaviso:</strong> si el contrato de duración determinada es superior a un año, la parte que quiere darlo por terminado debe avisar a la otra con una antelación mínima de 15 días (art. 49.1.c).</li>
       <li><strong>Finiquito:</strong> la indemnización se abona junto con el finiquito (salario pendiente, vacaciones no disfrutadas y pagas extra). Revisa que figure como concepto separado.</li>
@@ -198,7 +228,7 @@
       <li><strong>Plazos para reclamar:</strong> las acciones derivadas del contrato que no tengan plazo especial prescriben al año de su terminación (art. 59.1 del Estatuto), de modo que un año es el margen general para reclamar una indemnización impagada. Distinto es impugnar la propia extinción del contrato temporal, que caduca a los 20 días hábiles (art. 59.3). Más en la <a href="/guias/plazos-prescripcion-reclamaciones-laborales.html">guía de plazos de reclamaciones laborales</a>.</li>
     </ul>
 
-    <h2>Errores frecuentes</h2>
+    <h2 id="errores-frecuentes">Errores frecuentes</h2>
     <ul>
       <li>Aceptar el finiquito sin comprobar que incluye los 12 días por año; si falta, se puede reclamar.</li>
       <li>Calcular solo con el último contrato cuando hubo contratos encadenados con la misma empresa.</li>
@@ -213,7 +243,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿Tengo que reclamar la indemnización o me la paga la empresa automáticamente?</summary>
         <p>La empresa debe abonarla junto con el finiquito al finalizar el contrato, sin que tengas que reclamarla expresamente. Si no te la incluyen, puedes reclamarla (primero de forma amistosa y, si no hay acuerdo, por la vía de conciliación/demanda).</p>

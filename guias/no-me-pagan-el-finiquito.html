@@ -129,6 +129,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -144,12 +159,27 @@
     <h1>Qué hacer si no te pagan el finiquito</h1>
     <p class="updated">Actualizado: octubre de 2026 · Normativa: Estatuto de los Trabajadores y Ley Reguladora de la Jurisdicción Social (Ley 36/2011)</p>
     <p class="intro">Que la empresa no pague el finiquito, o lo haga con retraso, es más habitual de lo que debería, y no siempre es un impago intencionado: a veces es un problema de tesorería, otras un descuido administrativo, y otras sí es una negativa directa. Sea cual sea el motivo, tienes herramientas legales concretas para reclamarlo. Aquí van los pasos, en orden, con los plazos y un ejemplo con fechas.</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>Los pasos son, por orden: reclamar por escrito a la empresa (burofax o correo con acuse), presentar la papeleta de conciliación y, si no hay acuerdo, demandar ante el Juzgado de lo Social.</li>
+        <li>El Estatuto no fija una fecha concreta para pagar el finiquito: rige la regla general de pagar el salario puntualmente según lo convenido o los usos y costumbres. Mira tu convenio y tu contrato.</li>
+        <li>El plazo general para reclamar es de un año (art. 59 del Estatuto); lo prudente es contarlo desde el último día de contrato.</li>
+        <li>La reclamación escrita y la papeleta de conciliación interrumpen la prescripción, pero no conviene apurar el plazo.</li>
+        <li>No es obligatorio tener abogado para presentar la papeleta de conciliación, aunque es recomendable si el importe es alto.</li>
+        <li>Si la empresa es insolvente, el FOGASA puede abonar los salarios pendientes con un límite: el doble del SMI diario y un máximo de 120 días.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#antes-de-nada-revisa-que-te-deben-exacta">Antes de nada: revisa qué te deben exactamente</a></li><li><a href="#paso-a-paso-si-no-te-pagan">Paso a paso si no te pagan</a></li><li><a href="#plazos-que-debes-tener-en-cuenta">Plazos que debes tener en cuenta</a></li><li><a href="#ejemplo-con-fechas-e-intereses">Ejemplo con fechas e intereses</a></li><li><a href="#si-ya-firmaste-el-finiquito-sin-revisar">Si ya firmaste el finiquito sin revisar bien</a></li><li><a href="#errores-frecuentes">Errores frecuentes</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>Antes de nada: revisa qué te deben exactamente</h2>
+    <h2 id="antes-de-nada-revisa-que-te-deben-exacta">Antes de nada: revisa qué te deben exactamente</h2>
     <p>Antes de reclamar, asegúrate de tener claro cuánto te corresponde. Si aún no lo has hecho, puedes usar nuestra <a href="/calculadora-finiquito.html">calculadora de finiquito</a> para estimar el importe (vacaciones no disfrutadas, parte proporcional de pagas extra, salario pendiente), y compararlo con lo que la empresa te ha ofrecido o pagado. Reúne también el contrato, las últimas nóminas, la carta o comunicación de baja, la propuesta de liquidación si te la dieron (el art. 49.2 ET prevé que la empresa la acompañe al extinguir el contrato) y el convenio colectivo aplicable.</p>
     <p>El Estatuto de los Trabajadores no fija una fecha específica para el finiquito: rige la regla general del art. 29.1, que exige liquidar y pagar el salario puntualmente en la fecha y lugar convenidos o conforme a los usos y costumbres. Mira, por tanto, qué dicen tu convenio y tu contrato.</p>
 
-    <h2>Paso a paso si no te pagan</h2>
+    <h2 id="paso-a-paso-si-no-te-pagan">Paso a paso si no te pagan</h2>
 
     <div class="paso">
       <span class="num">1</span><strong>Reclama por escrito a la empresa</strong>
@@ -171,14 +201,14 @@
       <p style="margin:0.5rem 0 0;">Una sentencia o un acuerdo en conciliación se pueden ejecutar. Si la empresa es insolvente o está en concurso, el Fondo de Garantía Salarial (FOGASA) abona, conforme al art. 33.1 ET, los salarios pendientes de pago, incluidos los reconocidos en conciliación o sentencia, con un límite: el doble del salario mínimo interprofesional diario (con las pagas extra prorrateadas) y un máximo de 120 días. Consulta en su web los requisitos y plazos para solicitarlo.</p>
     </div>
 
-    <h2>Plazos que debes tener en cuenta</h2>
+    <h2 id="plazos-que-debes-tener-en-cuenta">Plazos que debes tener en cuenta</h2>
     <ul>
       <li><strong>Plazo de prescripción:</strong> el art. 59 ET establece que las acciones derivadas del contrato sin plazo especial prescriben al año de su terminación, y que, si se reclaman percepciones económicas, el año se cuenta desde que la acción pudo ejercitarse. Para el finiquito, lo prudente es contar el año desde el último día de contrato. Pasado ese plazo, pierdes el derecho a reclamar por vía judicial.</li>
       <li><strong>La papeleta de conciliación interrumpe la prescripción</strong> desde su presentación (art. 65.1 LJS). Si el acto no llega a celebrarse en quince días hábiles, el cómputo se reanuda, y a los treinta días hábiles sin celebrarse se tiene por cumplido el trámite (art. 65.2). Presentarla a tiempo es importante si te acercas al límite del año.</li>
     </ul>
     <p>Los plazos cortos de caducidad (por ejemplo, 20 días hábiles para impugnar un despido) son otra cosa; los reunimos en la <a href="/guias/plazos-prescripcion-reclamaciones-laborales.html">guía de plazos y prescripción</a>.</p>
 
-    <h2>Ejemplo con fechas e intereses</h2>
+    <h2 id="ejemplo-con-fechas-e-intereses">Ejemplo con fechas e intereses</h2>
     <p>Tu último día de trabajo es el 15 de octubre de 2026 y el finiquito, que asciende a 2.766,94 € brutos, no se paga con la nómina de octubre.</p>
     <ol>
       <li><strong>3 de noviembre de 2026:</strong> envías un burofax reclamando los 2.766,94 € desglosados. Interrumpe la prescripción (art. 1973 CC).</li>
@@ -187,10 +217,10 @@
       <li><strong>Intereses:</strong> el art. 29.3 ET fija el interés por mora en el pago del salario en el diez por ciento de lo adeudado. Si la parte salarial pendiente fueran los 900 € de los días trabajados y la deuda se prolongara seis meses, serían unos 900 × 10 % × 6/12 = 45 €. Cálculo orientativo: la jurisprudencia lo entiende como porcentaje anual sobre las deudas salariales; en otras deudas se aplica el interés legal del dinero (art. 1108 CC), y si las vacaciones o pagas extra entran o no en el 10 % puede discutirse.</li>
     </ol>
 
-    <h2>Si ya firmaste el finiquito sin revisar bien</h2>
+    <h2 id="si-ya-firmaste-el-finiquito-sin-revisar">Si ya firmaste el finiquito sin revisar bien</h2>
     <p>Firmar el documento de finiquito no siempre cierra la puerta a reclamar después: si firmaste "de conformidad" pero el importe era incorrecto o incompleto, puede ser posible impugnarlo, especialmente si la firma no fue realmente libre y voluntaria (por ejemplo, si te presionaron para firmar sin darte tiempo a revisarlo) o si hay conceptos que directamente no se incluyeron. El art. 3.5 ET dispone que los trabajadores no pueden disponer válidamente de los derechos reconocidos por disposiciones legales de derecho necesario. Este es un terreno donde el asesoramiento de un profesional marca una diferencia real, porque depende mucho de los detalles concretos de cada firma.</p>
 
-    <h2>Errores frecuentes</h2>
+    <h2 id="errores-frecuentes">Errores frecuentes</h2>
     <ul>
       <li>Reclamar solo de palabra o por mensajes informales, sin prueba de fecha ni de recepción.</li>
       <li>Esperar a que "se arregle solo" y llegar con el año casi agotado.</li>
@@ -206,7 +236,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿Cuánto tiempo tengo para reclamar el finiquito?</summary>
         <p>Por regla general, un año (art. 59 ET). Lo prudente es contarlo desde el último día de contrato. La reclamación escrita a la empresa y la papeleta de conciliación interrumpen la prescripción, pero no conviene apurar el plazo.</p>

@@ -149,6 +149,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 </head>
 <body>
@@ -163,8 +178,22 @@
     <h1>Cómo solicitar la prestación por desempleo: trámites paso a paso</h1>
     <p class="updated">Actualizado: 2026 · Normativa: Texto Refundido de la Ley General de la Seguridad Social, arts. 266 a 271</p>
     <p class="intro">Si te has quedado en desempleo, el tiempo corre en tu contra: tienes solo 15 días hábiles para solicitar la prestación sin perder días de cobro. Aquí tienes el proceso completo, paso a paso.</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>Tienes 15 días hábiles desde la situación legal de desempleo para solicitar el paro sin perder días de cobro.</li>
+        <li>Hacen falta a la vez: estar en alta, al menos 360 días cotizados en los 6 años anteriores, situación legal de desempleo, estar inscrito como demandante de empleo y firmar el acuerdo de actividad.</li>
+        <li>Se solicita en la sede electrónica del SEPE con certificado digital, DNIe o Cl@ve, o con cita presencial en una oficina.</li>
+        <li>Los primeros 180 días cobras el 70 % de la base reguladora, entre un mínimo y un máximo que dependen de los hijos a cargo (de 560 a 1.575 € con el IPREM de 600 €); desde el día 181 baja al 60 %.</li>
+        <li>Si te retrasas no pierdes el derecho, pero pierdes los días que pasan entre el fin del plazo y tu solicitud. No esperes al certificado de empresa para presentarla.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#requisitos-previos">Requisitos previos</a></li><li><a href="#que-cuenta-como-situacion-legal-de-desem">¿Qué cuenta como situación legal de desempleo?</a></li><li><a href="#el-proceso-paso-a-paso">El proceso, paso a paso</a></li><li><a href="#el-plazo-15-dias-habiles-sin-excepciones">El plazo: 15 días hábiles, sin excepciones fáciles</a></li><li><a href="#casos-especiales-con-otros-plazos">Casos especiales con otros plazos</a></li><li><a href="#y-si-la-empresa-no-me-da-el-certificado">¿Y si la empresa no me da el certificado de empresa?</a></li><li><a href="#cuanto-vas-a-cobrar-limites-de-2026-y-ej">¿Cuánto vas a cobrar? Límites de 2026 y ejemplo resuelto</a></li><li><a href="#errores-frecuentes-al-solicitar-el-paro">Errores frecuentes al solicitar el paro</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>Requisitos previos</h2>
+    <h2 id="requisitos-previos">Requisitos previos</h2>
     <p>El artículo 266 de la Ley General de la Seguridad Social (LGSS) exige cumplir a la vez todos estos requisitos:</p>
     <ul>
       <li>Estar afiliado a la Seguridad Social y en <strong>situación de alta</strong> (o asimilada) al quedarte sin empleo.</li>
@@ -175,7 +204,7 @@
     </ul>
     <p>Cuantos más días hayas cotizado, más meses de prestación te corresponden: consulta la <a href="tabla-paro-dias-cotizados.html">tabla completa de duración del paro según días cotizados</a>.</p>
 
-    <h2>¿Qué cuenta como situación legal de desempleo?</h2>
+    <h2 id="que-cuenta-como-situacion-legal-de-desem">¿Qué cuenta como situación legal de desempleo?</h2>
     <p>No basta con haber dejado de trabajar: la causa tiene que estar entre las que recoge el artículo 267 de la LGSS. Las más habituales son:</p>
     <ul>
       <li>El <strong>despido</strong> (individual, colectivo o por causas objetivas).</li>
@@ -185,7 +214,7 @@
       <li>La <strong>baja voluntaria</strong> solo cuenta en los supuestos tasados de los artículos 40, 41.3, 49.1.m) y 50 del Estatuto de los Trabajadores (traslados, modificaciones sustanciales, violencia de género e incumplimientos graves de la empresa). Una dimisión "normal" no da derecho a paro.</li>
     </ul>
 
-    <h2>El proceso, paso a paso</h2>
+    <h2 id="el-proceso-paso-a-paso">El proceso, paso a paso</h2>
     <ol class="pasos">
       <li><strong>Inscríbete como demandante de empleo.</strong> La solicitud de la prestación exige estar inscrito y haber firmado el acuerdo de actividad (art. 268.1 LGSS), así que hazlo antes o, como muy tarde, en el mismo momento de solicitar. Se tramita en el servicio de empleo de tu comunidad autónoma (SOC en Cataluña, SAE en Andalucía, LANBIDE en el País Vasco, etc., o el SEPE directamente si resides en Ceuta o Melilla).</li>
       <li><strong>Reúne la documentación</strong>: DNI o NIE, número de cuenta bancaria donde cobrar, el certificado de empresa y un documento que acredite tu situación legal de desempleo (por ejemplo, la carta de despido). La empresa está obligada a facilitar el certificado en un plazo de 10 días desde que te quedas en desempleo (art. 27 del Real Decreto 625/1985).</li>
@@ -194,7 +223,7 @@
       <li><strong>Mantén tus obligaciones mientras cobras</strong> (art. 299 LGSS): conservar activa la inscripción como demandante, cumplir el acuerdo de actividad, buscar empleo activamente, comparecer cuando te citen y comunicar cualquier cambio que afecte a la prestación.</li>
     </ol>
 
-    <h2>El plazo: 15 días hábiles, sin excepciones fáciles</h2>
+    <h2 id="el-plazo-15-dias-habiles-sin-excepciones">El plazo: 15 días hábiles, sin excepciones fáciles</h2>
     <p>El artículo 268.1 de la LGSS establece que el derecho nace el día siguiente a la situación legal de desempleo si presentas la solicitud en los <strong>15 días siguientes</strong>. Como la norma no dice otra cosa, esos días se cuentan como hábiles (sin sábados, domingos ni festivos), según la regla general del artículo 30 de la Ley 39/2015 de Procedimiento Administrativo Común. Si te retrasas, no pierdes el derecho a la prestación, pero esta solo se reconoce desde la fecha de solicitud y <strong>pierdes los días que transcurren entre el final del plazo y el día en que presentas la solicitud</strong> (art. 268.2).</p>
 
     <h3>Ejemplo resuelto 1: calcular tu fecha límite</h3>
@@ -206,16 +235,16 @@
     </ol>
     <p>Si la presentas el 28 de octubre, el derecho se reconoce desde esa fecha y se descuentan los días de retraso. Lo prudente es solicitarla en los primeros días.</p>
 
-    <h2>Casos especiales con otros plazos</h2>
+    <h2 id="casos-especiales-con-otros-plazos">Casos especiales con otros plazos</h2>
     <ul>
       <li><strong>Vacaciones no disfrutadas:</strong> si la empresa te las abona en el finiquito, la situación legal de desempleo y el nacimiento del derecho se producen cuando termina el periodo de vacaciones que te corresponde, y los 15 días se cuentan desde entonces. Ese periodo debe constar en el certificado de empresa (art. 268.3).</li>
       <li><strong>Despido que vas a recurrir:</strong> la decisión de la empresa de extinguir el contrato ya es situación legal de desempleo, sin necesidad de que la impugnes, y demandar no te impide cobrar la prestación (art. 268.4).</li>
     </ul>
 
-    <h2>¿Y si la empresa no me da el certificado de empresa?</h2>
+    <h2 id="y-si-la-empresa-no-me-da-el-certificado">¿Y si la empresa no me da el certificado de empresa?</h2>
     <p>No esperes a recibirlo: presenta la solicitud dentro de tu plazo de 15 días y, si el certificado no aparece, reclámalo a la empresa por escrito.</p>
 
-    <h2>¿Cuánto vas a cobrar? Límites de 2026 y ejemplo resuelto</h2>
+    <h2 id="cuanto-vas-a-cobrar-limites-de-2026-y-ej">¿Cuánto vas a cobrar? Límites de 2026 y ejemplo resuelto</h2>
     <p>La prestación se calcula sobre tu base reguladora, que es la media de tus bases de cotización por desempleo de los últimos 180 días (sin contar las horas extraordinarias). Durante los primeros 180 días cobras el <strong>70%</strong> de esa base (art. 270.2 LGSS). El resultado nunca puede ser inferior al mínimo ni superior al máximo, que se calculan con el IPREM mensual incrementado en una sexta parte. Con un IPREM de 600 euros mensuales, la referencia es 700 euros, y los límites son:</p>
     <div class="table-scroll">
     <table>
@@ -223,9 +252,9 @@
         <tr><th>Hijos a cargo</th><th>Mínimo mensual</th><th>Máximo mensual</th></tr>
       </thead>
       <tbody>
-        <tr><td>Ninguno</td><td>560 € (80% de 700)</td><td>1.225 € (175% de 700)</td></tr>
-        <tr><td>Uno</td><td>749 € (107% de 700)</td><td>1.400 € (200% de 700)</td></tr>
-        <tr><td>Dos o más</td><td>749 € (107% de 700)</td><td>1.575 € (225% de 700)</td></tr>
+        <tr><td>Ninguno</td><td>560&nbsp;€ (80% de 700)</td><td>1.225&nbsp;€ (175% de 700)</td></tr>
+        <tr><td>Uno</td><td>749&nbsp;€ (107% de 700)</td><td>1.400&nbsp;€ (200% de 700)</td></tr>
+        <tr><td>Dos o más</td><td>749&nbsp;€ (107% de 700)</td><td>1.575&nbsp;€ (225% de 700)</td></tr>
       </tbody>
     </table>
     </div>
@@ -238,7 +267,7 @@
     </ol>
     <p>A partir del día 181 el porcentaje baja del 70 % al 60 % de la base reguladora (hoja informativa del SEPE); para saber cuánto y qué cobrarías en total, usa la calculadora que enlazamos más abajo. Son importes brutos, antes de la retención de IRPF.</p>
 
-    <h2>Errores frecuentes al solicitar el paro</h2>
+    <h2 id="errores-frecuentes-al-solicitar-el-paro">Errores frecuentes al solicitar el paro</h2>
     <ul>
       <li><strong>Esperar al certificado de empresa</strong> y dejar pasar el plazo de 15 días.</li>
       <li><strong>No inscribirse como demandante</strong> o no firmar el acuerdo de actividad: sin ello la solicitud no se puede tramitar.</li>
@@ -253,7 +282,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿Puedo solicitar el paro completamente online?</summary>
         <p>Sí, si dispones de certificado digital, DNIe o Cl@ve, a través de la sede electrónica del SEPE. Si no tienes ninguno de estos medios, puedes pedir cita presencial en una oficina.</p>

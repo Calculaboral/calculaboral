@@ -120,6 +120,10 @@
   .toc a{ color:var(--verde-oscuro); text-decoration:none; }
   .toc a:hover{ text-decoration:underline; }
   .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -165,7 +169,7 @@
       <tr><td>01</td><td>Ingresos íntegros computables acumulados</td></tr>
       <tr><td>02</td><td>Gastos deducibles acumulados (incluye amortizaciones y, en estimación directa simplificada, los gastos de difícil justificación)</td></tr>
       <tr><td>03</td><td>Rendimiento neto: casilla 01 − casilla 02</td></tr>
-      <tr><td>04</td><td>20 % de la casilla 03, si es positiva; si no, cero</td></tr>
+      <tr><td>04</td><td>20&nbsp;% de la casilla 03, si es positiva; si no, cero</td></tr>
       <tr><td>05</td><td>Pagos fraccionados ya calculados en trimestres anteriores del mismo año (suma de sus casillas 07 positivas, menos sus casillas 16)</td></tr>
       <tr><td>06</td><td>Retenciones e ingresos a cuenta soportados en el periodo acumulado</td></tr>
       <tr><td>07</td><td>Casilla 04 − casilla 05 − casilla 06</td></tr>
@@ -179,13 +183,13 @@
     <div class="table-scroll">
     <table>
       <tr><th>Casilla</th><th>1T (a 31 marzo)</th><th>2T (a 30 junio)</th><th>3T (a 30 septiembre)</th></tr>
-      <tr><td>01 Ingresos acumulados</td><td>9.000 €</td><td>19.000 €</td><td>24.000 €</td></tr>
-      <tr><td>02 Gastos acumulados</td><td>2.500 €</td><td>6.000 €</td><td>11.500 €</td></tr>
-      <tr><td>03 Rendimiento neto</td><td>6.500 €</td><td>13.000 €</td><td>12.500 €</td></tr>
-      <tr><td>04 20 %</td><td>1.300 €</td><td>2.600 €</td><td>2.500 €</td></tr>
-      <tr><td>05 Pagos de trimestres anteriores</td><td>0 €</td><td>850 €</td><td>1.550 €</td></tr>
-      <tr><td>06 Retenciones acumuladas</td><td>450 €</td><td>1.050 €</td><td>1.350 €</td></tr>
-      <tr><td><strong>07 Resultado</strong></td><td><strong>850 €</strong></td><td><strong>700 €</strong></td><td><strong>−400 € (se queda en 0)</strong></td></tr>
+      <tr><td>01 Ingresos acumulados</td><td>9.000&nbsp;€</td><td>19.000&nbsp;€</td><td>24.000&nbsp;€</td></tr>
+      <tr><td>02 Gastos acumulados</td><td>2.500&nbsp;€</td><td>6.000&nbsp;€</td><td>11.500&nbsp;€</td></tr>
+      <tr><td>03 Rendimiento neto</td><td>6.500&nbsp;€</td><td>13.000&nbsp;€</td><td>12.500&nbsp;€</td></tr>
+      <tr><td>04 20&nbsp;%</td><td>1.300&nbsp;€</td><td>2.600&nbsp;€</td><td>2.500&nbsp;€</td></tr>
+      <tr><td>05 Pagos de trimestres anteriores</td><td>0&nbsp;€</td><td>850&nbsp;€</td><td>1.550&nbsp;€</td></tr>
+      <tr><td>06 Retenciones acumuladas</td><td>450&nbsp;€</td><td>1.050&nbsp;€</td><td>1.350&nbsp;€</td></tr>
+      <tr><td><strong>07 Resultado</strong></td><td><strong>850&nbsp;€</strong></td><td><strong>700&nbsp;€</strong></td><td><strong>−400&nbsp;€ (se queda en 0)</strong></td></tr>
     </table>
     </div>
     <ol>

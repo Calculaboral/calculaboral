@@ -120,6 +120,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -135,8 +150,12 @@
     <h1>Despido procedente, improcedente y objetivo: diferencias</h1>
     <p class="updated">Actualizado: 2026 · Normativa: Estatuto de los Trabajadores (Real Decreto Legislativo 2/2015)</p>
     <p class="intro">Si te acaban de despedir o crees que puede pasar pronto, lo primero que necesitas saber es qué tipo de despido te han comunicado, porque de eso depende directamente cuánto dinero te corresponde. Aquí tienes las categorías explicadas de forma clara, con ejemplos de cálculo y los pasos concretos que conviene dar.</p>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#resumen-rapido">Resumen rápido</a></li><li><a href="#despido-procedente">Despido procedente</a></li><li><a href="#despido-improcedente">Despido improcedente</a></li><li><a href="#despido-objetivo">Despido objetivo</a></li><li><a href="#despido-nulo">Despido nulo</a></li><li><a href="#ejemplos-resueltos">Ejemplos resueltos</a></li><li><a href="#como-se-cual-es-mi-caso">¿Cómo sé cuál es mi caso?</a></li><li><a href="#que-hacer-al-recibir-la-carta-de-despido">Qué hacer al recibir la carta de despido</a></li><li><a href="#errores-frecuentes">Errores frecuentes</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>Resumen rápido</h2>
+    <h2 id="resumen-rapido">Resumen rápido</h2>
     <div class="table-scroll">
     <table>
       <tr>
@@ -167,16 +186,16 @@
     </table>
     </div>
 
-    <h2>Despido procedente</h2>
+    <h2 id="despido-procedente">Despido procedente</h2>
     <p>Es procedente cuando la empresa acredita el motivo que alega. El despido disciplinario se basa en un incumplimiento grave y culpable del trabajador; el art. 54.2 del Estatuto cita, entre otros, las faltas repetidas e injustificadas de asistencia o puntualidad, la indisciplina o desobediencia, las ofensas, la transgresión de la buena fe contractual y la disminución continuada y voluntaria del rendimiento.</p>
     <p>La empresa debe notificarlo por escrito, con los hechos que lo motivan y la fecha de efectos (art. 55.1); si eres representante de los trabajadores o delegado sindical, además debe abrirte un expediente contradictorio. Si se declara procedente, la extinción queda convalidada: <strong>sin indemnización ni salarios de tramitación</strong>, solo el finiquito (salario pendiente, vacaciones no disfrutadas y parte proporcional de pagas extra).</p>
 
-    <h2>Despido improcedente</h2>
+    <h2 id="despido-improcedente">Despido improcedente</h2>
     <p>Se declara improcedente cuando la empresa no logra acreditar el incumplimiento que alegó, o cuando la carta no se ajusta a lo exigido por la ley (por ejemplo, no recoge los hechos concretos ni la fecha de efectos).</p>
     <p>Una vez notificada la sentencia, la empresa tiene <strong>cinco días</strong> para elegir entre readmitirte o pagarte la indemnización. Si no elige, se entiende que opta por la readmisión. Si te readmite, tienes derecho a los salarios de tramitación (los que dejaste de cobrar desde el despido hasta la sentencia); si paga la indemnización, el contrato se extingue en la fecha del cese efectivo.</p>
     <p>La cuantía es de <strong>33 días de salario por año trabajado, con un máximo de 24 mensualidades</strong>; los periodos inferiores a un año se prorratean por meses. Como 24 mensualidades equivalen a 720 días de salario, el tope se alcanza a partir de unos 21 años y 10 meses de antigüedad (720 / 33 = 21,8). Si tu contrato empezó antes del 12 de febrero de 2012, el cálculo se divide en dos tramos: 45 días por año hasta esa fecha (con tope de 42 mensualidades) y 33 días por año desde entonces, con un máximo combinado de 720 días, salvo que el tramo anterior ya alcance o supere esa cifra (disposición transitoria undécima del Estatuto).</p>
 
-    <h2>Despido objetivo</h2>
+    <h2 id="despido-objetivo">Despido objetivo</h2>
     <p>Se basa en causas ajenas a una conducta culpable del trabajador. Entre las que recoge el art. 52 del Estatuto están la ineptitud sobrevenida, la falta de adaptación a modificaciones técnicas del puesto (tras ofrecer un curso de adaptación) y las causas económicas, técnicas, organizativas o de producción cuando afectan a menos trabajadores que los umbrales del despido colectivo (lo explicamos en <a href="/guias/despido-colectivo-ere-vs-individual.html">la guía de ERE frente a despido individual</a>).</p>
     <p>Para que sea válido, la empresa debe cumplir tres requisitos a la vez (art. 53.1):</p>
     <ul>
@@ -186,10 +205,10 @@
     </ul>
     <p>Un matiz importante: <strong>la falta de preaviso, o un error excusable en el cálculo de la indemnización, no hacen improcedente el despido</strong> (art. 53.4); la empresa debe pagar los días de preaviso no concedidos o la diferencia. En cambio, no poner a tu disposición la indemnización, no entregar la carta o no acreditar la causa sí conducen a la improcedencia, con 33 días por año. Como 12 mensualidades son 360 días, el tope del despido objetivo se alcanza con 18 años de antigüedad (360 / 20).</p>
 
-    <h2>Despido nulo</h2>
+    <h2 id="despido-nulo">Despido nulo</h2>
     <p>Es nulo el despido que tiene por móvil una causa de discriminación prohibida o que vulnera derechos fundamentales, y el que afecta a personas con protección reforzada, como las trabajadoras embarazadas (salvo que la empresa pruebe motivos no relacionados). Su efecto es la readmisión inmediata con abono de los salarios dejados de percibir (art. 55.6); no se sustituye por una indemnización.</p>
 
-    <h2>Ejemplos resueltos</h2>
+    <h2 id="ejemplos-resueltos">Ejemplos resueltos</h2>
     <h3>Ejemplo 1: mismo trabajador, despido improcedente y objetivo</h3>
     <p>Ana cobra 1.800 euros brutos al mes en 14 pagas (25.200 euros al año) y trabaja desde el 1 de marzo de 2019. La despiden con efectos el 31 de agosto de 2026: son 7 años y 6 meses (7,5 años).</p>
     <ul>
@@ -207,10 +226,10 @@
     </ul>
     <p>Importes brutos, sobre el salario completo. Nuestra calculadora mide la antigüedad en años de 365,25 días, por lo que su resultado puede diferir en unos euros.</p>
 
-    <h2>¿Cómo sé cuál es mi caso?</h2>
+    <h2 id="como-se-cual-es-mi-caso">¿Cómo sé cuál es mi caso?</h2>
     <p>La carta que te entregue la empresa debe indicar el tipo de despido y la causa alegada. Pero que la empresa lo llame de una forma no significa que un juez esté de acuerdo: si no estás conforme con la calificación, puedes impugnarlo.</p>
 
-    <h2>Qué hacer al recibir la carta de despido</h2>
+    <h2 id="que-hacer-al-recibir-la-carta-de-despido">Qué hacer al recibir la carta de despido</h2>
     <ul>
       <li><strong>Guarda una copia.</strong> Si firmas el recibí, que sea solo para acreditar la entrega y la fecha; si discrepas, añade "no conforme".</li>
       <li><strong>Comprueba la carta:</strong> tipo de despido, causa y fecha de efectos. En un despido objetivo, verifica que te han puesto a disposición la indemnización y cuándo termina el preaviso.</li>
@@ -220,7 +239,7 @@
       <li><strong>Pide el paro:</strong> la solicitud debe presentarse en los 15 días hábiles siguientes al cese; si te retrasas, pierdes los días de prestación que medien hasta la solicitud (art. 268 de la Ley General de la Seguridad Social). Puedes ver los pasos en la <a href="/guias/como-solicitar-paro-tramites.html">guía para solicitar el paro</a>.</li>
     </ul>
 
-    <h2>Errores frecuentes</h2>
+    <h2 id="errores-frecuentes">Errores frecuentes</h2>
     <ul>
       <li>Dejar pasar el plazo de 20 días hábiles pensando que "ya se verá" o esperando a negociar de palabra.</li>
       <li>Dar por bueno el cálculo de la empresa sin comprobar la antigüedad, el salario incluido ni el régimen de antes de 2012.</li>
@@ -234,7 +253,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿La indemnización por despido tributa en el IRPF?</summary>
         <p>Está exenta la parte que corresponde a la cuantía obligatoria fijada por el Estatuto de los Trabajadores, con un límite de 180.000 euros (art. 7.e de la Ley del IRPF). Si te pagan más por pacto o convenio, el exceso sí tributa como rendimiento del trabajo.</p>

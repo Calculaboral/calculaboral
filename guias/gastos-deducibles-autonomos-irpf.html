@@ -74,6 +74,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -89,8 +104,24 @@
     <h1>Gastos deducibles para autónomos en el IRPF</h1>
     <p class="updated">Actualizado: octubre de 2026 · Normativa: Ley 35/2006 del IRPF, Reglamento del IRPF (Real Decreto 439/2007) y criterio de la Agencia Tributaria</p>
     <p class="intro">Cuanto mayor sea el gasto deducible que puedas justificar, menor será tu rendimiento neto y, por tanto, menos IRPF pagarás en estimación directa; y como la cuota de autónomos también se calcula a partir de tus rendimientos netos, esos gastos influyen igualmente en tu tramo de cotización. Aquí tienes los gastos más habituales que un autónomo puede desgravar, las condiciones que exige Hacienda, los límites que conviene conocer y varios ejemplos con números.</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>Para que un gasto sea deducible tiene que estar vinculado a la actividad, justificado con factura completa a tu nombre y registrado en los libros de la actividad.</li>
+        <li>Los más habituales son la cuota de autónomos, el alquiler del local, la gestoría, los seguros de responsabilidad civil, la formación, el software y la publicidad; el seguro de salud tiene un tope de 500 € por persona y año.</li>
+        <li>Si trabajas desde casa, puedes deducir el 30 % de la parte de los suministros proporcional a los metros afectos, salvo que pruebes otro porcentaje.</li>
+        <li>En el IRPF, el turismo solo se considera afecto a la actividad en los supuestos del artículo 22.4 del Reglamento; fuera de ellos la deducción es muy limitada.</li>
+        <li>Las comidas del propio autónomo tienen límites diarios y deben pagarse por medio electrónico en restauración y hostelería.</li>
+        <li>En estimación directa simplificada puedes aplicar un 5 % de gastos de difícil justificación, con un máximo de 2.000 € al año.</li>
+        <li>Multas, sanciones, donativos como gasto y gastos personales sin relación con la actividad no son deducibles.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#requisitos-generales-para-que-un-gasto-s">Requisitos generales para que un gasto sea deducible</a></li><li><a href="#gastos-deducibles-mas-habituales">Gastos deducibles más habituales</a></li><li><a href="#vehiculos-cuando-si-y-cuando-no">Vehículos: cuándo sí y cuándo no</a></li><li><a href="#dietas-y-manutencion-importes-maximos">Dietas y manutención: importes máximos</a></li><li><a href="#el-caso-especial-de-trabajar-desde-casa">El caso especial de trabajar desde casa</a></li><li><a href="#gastos-de-dificil-justificacion-y-amorti">Gastos de difícil justificación y amortizaciones en la simplificada</a></li><li><a href="#gastos-que-no-son-deducibles-o-muy-limit">Gastos que NO son deducibles (o muy limitados)</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>Requisitos generales para que un gasto sea deducible</h2>
+    <h2 id="requisitos-generales-para-que-un-gasto-s">Requisitos generales para que un gasto sea deducible</h2>
     <p>Con carácter general, Hacienda exige que un gasto cumpla estas condiciones para poder deducirlo:</p>
     <ul>
       <li><strong>Estar vinculado a la actividad económica</strong> (que exista una relación directa con tu negocio).</li>
@@ -99,7 +130,7 @@
     </ul>
     <p>Un detalle práctico: para deducir el IVA soportado con una factura simplificada, esta debe consignar el NIF y la dirección del destinatario y la cuota de IVA por separado. Si no, pide siempre factura completa.</p>
 
-    <h2>Gastos deducibles más habituales</h2>
+    <h2 id="gastos-deducibles-mas-habituales">Gastos deducibles más habituales</h2>
     <div class="table-scroll">
     <table>
       <tr><th>Gasto</th><th>Condición</th></tr>
@@ -109,7 +140,7 @@
       <tr><td>Material de oficina y consumibles</td><td>100% deducible</td></tr>
       <tr><td>Gestoría / asesoría fiscal</td><td>100% deducible</td></tr>
       <tr><td>Seguro de responsabilidad civil profesional</td><td>100% deducible</td></tr>
-      <tr><td>Seguro de salud del autónomo, cónyuge e hijos menores de 25 años que convivan</td><td>Hasta 500 € por persona al año (1.500 € si tiene discapacidad)</td></tr>
+      <tr><td>Seguro de salud del autónomo, cónyuge e hijos menores de 25 años que convivan</td><td>Hasta 500&nbsp;€ por persona al año (1.500&nbsp;€ si tiene discapacidad)</td></tr>
       <tr><td>Vehículo (turismo)</td><td>Solo se considera afecto en los supuestos del artículo 22.4 del Reglamento del IRPF (ver más abajo)</td></tr>
       <tr><td>Combustible, mantenimiento y seguro del vehículo</td><td>Mismas condiciones que el vehículo</td></tr>
       <tr><td>Dietas y manutención (comidas por la actividad)</td><td>Con los límites diarios de abajo, en restauración y hostelería y pagadas por medio electrónico</td></tr>
@@ -120,23 +151,23 @@
     </table>
     </div>
 
-    <h2>Vehículos: cuándo sí y cuándo no</h2>
+    <h2 id="vehiculos-cuando-si-y-cuando-no">Vehículos: cuándo sí y cuándo no</h2>
     <p>El artículo 22.4 del Reglamento del IRPF establece que los turismos, ciclomotores y motocicletas no se consideran utilizados exclusivamente en la actividad, salvo en estos casos: vehículos mixtos destinados al transporte de mercancías, transporte de viajeros mediante contraprestación (taxis, por ejemplo), enseñanza de conductores o pilotos, desplazamientos profesionales de representantes o agentes comerciales, y vehículos cedidos en uso con habitualidad y onerosidad. Si tu actividad no es una de ellas, la deducción del vehículo en el IRPF es muy limitada. En el IVA, en cambio, la Agencia Tributaria presume un uso profesional del 50 % para los turismos que acredites usar en la actividad, y del 100 % en los supuestos anteriores.</p>
 
-    <h2>Dietas y manutención: importes máximos</h2>
+    <h2 id="dietas-y-manutencion-importes-maximos">Dietas y manutención: importes máximos</h2>
     <p>Los gastos de manutención del propio autónomo solo se deducen si se producen en establecimientos de restauración y hostelería y se pagan con tarjeta u otro medio electrónico. El exceso sobre los límites diarios no es deducible:</p>
     <div class="table-scroll">
     <table>
       <tr><th>Destino</th><th>Sin pernocta</th><th>Con pernocta</th></tr>
-      <tr><td>España</td><td>26,67 € al día</td><td>53,34 € al día</td></tr>
-      <tr><td>Extranjero</td><td>48,08 € al día</td><td>91,35 € al día</td></tr>
+      <tr><td>España</td><td>26,67&nbsp;€ al día</td><td>53,34&nbsp;€ al día</td></tr>
+      <tr><td>Extranjero</td><td>48,08&nbsp;€ al día</td><td>91,35&nbsp;€ al día</td></tr>
     </table>
     </div>
 
-    <h2>El caso especial de trabajar desde casa</h2>
+    <h2 id="el-caso-especial-de-trabajar-desde-casa">El caso especial de trabajar desde casa</h2>
     <p>Si desarrollas tu actividad en tu propia vivienda, puedes deducir un porcentaje de los gastos de suministros (luz, agua, gas, telefonía e internet) proporcional a los metros cuadrados afectos a la actividad. La norma fija un <strong>30% de la proporción de metros afectados</strong>, salvo que pruebes un porcentaje superior o inferior. Ejemplo: tu vivienda mide 80 m² y dedicas 12 m² a un despacho exclusivo. Proporción afecta: 12 / 80 = 15 %. Si en el año pagas 1.580 € en suministros, el gasto deducible es 1.580 × 15 % × 30 % = 1.580 × 4,5 % = <strong>71,10 €</strong>. Además, solo puedes deducir el IVA de esos suministros en la parte afecta.</p>
 
-    <h2>Gastos de difícil justificación y amortizaciones en la simplificada</h2>
+    <h2 id="gastos-de-dificil-justificacion-y-amorti">Gastos de difícil justificación y amortizaciones en la simplificada</h2>
     <p>Si tributas en estimación directa <strong>simplificada</strong> (requisitos: que ninguna actividad esté en la modalidad normal, que tu cifra de negocios del año anterior no supere 600.000 € y que no hayas renunciado), puedes aplicar un 5 % sobre el rendimiento neto positivo (antes de este concepto) en concepto de provisiones y gastos de difícil justificación, con un máximo de 2.000 € al año. No se aplica si optas por la reducción prevista en el artículo 26.1 del Reglamento del IRPF.</p>
     <p><strong>Ejemplo 1.</strong> Lucía ingresa 48.000 € y tiene 14.000 € de gastos justificados. Rendimiento neto previo: 48.000 − 14.000 = 34.000 €. Difícil justificación: 34.000 × 5 % = 1.700 € (menos de 2.000 €). Rendimiento neto final: 34.000 − 1.700 = <strong>32.300 €</strong>.</p>
     <p><strong>Ejemplo 2.</strong> Un profesional ingresa 90.000 € y tiene 20.000 € de gastos. Rendimiento neto previo: 70.000 €. El 5 % serían 3.500 €, pero el tope es 2.000 €, así que el rendimiento final es 70.000 − 2.000 = <strong>68.000 €</strong>.</p>
@@ -144,17 +175,17 @@
     <div class="table-scroll">
     <table>
       <tr><th>Elemento</th><th>Coeficiente lineal máximo</th><th>Periodo máximo</th></tr>
-      <tr><td>Equipos informáticos y software</td><td>26 %</td><td>10 años</td></tr>
-      <tr><td>Instalaciones, mobiliario y enseres</td><td>10 %</td><td>20 años</td></tr>
-      <tr><td>Maquinaria</td><td>12 %</td><td>18 años</td></tr>
-      <tr><td>Elementos de transporte</td><td>16 %</td><td>14 años</td></tr>
-      <tr><td>Utillaje</td><td>30 %</td><td>8 años</td></tr>
-      <tr><td>Edificios y otras construcciones</td><td>3 %</td><td>68 años</td></tr>
+      <tr><td>Equipos informáticos y software</td><td>26&nbsp;%</td><td>10 años</td></tr>
+      <tr><td>Instalaciones, mobiliario y enseres</td><td>10&nbsp;%</td><td>20 años</td></tr>
+      <tr><td>Maquinaria</td><td>12&nbsp;%</td><td>18 años</td></tr>
+      <tr><td>Elementos de transporte</td><td>16&nbsp;%</td><td>14 años</td></tr>
+      <tr><td>Utillaje</td><td>30&nbsp;%</td><td>8 años</td></tr>
+      <tr><td>Edificios y otras construcciones</td><td>3&nbsp;%</td><td>68 años</td></tr>
     </table>
     </div>
     <p><strong>Ejemplo 3.</strong> Compras un ordenador de 1.800 € para tu actividad. Con el coeficiente máximo del 26 %, la amortización deducible es 1.800 × 26 % = <strong>468 € al año</strong>.</p>
 
-    <h2>Gastos que NO son deducibles (o muy limitados)</h2>
+    <h2 id="gastos-que-no-son-deducibles-o-muy-limit">Gastos que NO son deducibles (o muy limitados)</h2>
     <ul>
       <li>Multas y sanciones.</li>
       <li>Donativos (salvo que tengan otro tratamiento fiscal específico, como deducción en cuota, no como gasto).</li>
@@ -170,7 +201,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿Puedo deducir las comidas de trabajo con clientes?</summary>
         <p>Sí, siempre que estén justificadas, sean razonables en importe y guarden relación directa con la actividad, aunque Hacienda vigila especialmente este tipo de gastos por su uso indebido habitual. Ten en cuenta que el IVA de las atenciones a clientes no es deducible, según la Agencia Tributaria.</p>

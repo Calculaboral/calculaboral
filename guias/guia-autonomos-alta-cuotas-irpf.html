@@ -131,6 +131,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -146,8 +161,23 @@
     <h1>Guía de autónomos: alta, cuotas e IRPF</h1>
     <p class="updated">Actualizado: octubre de 2026 · Normativa: Ley 20/2007 del Estatuto del trabajo autónomo, Ley General de la Seguridad Social y Orden PJC/297/2026</p>
     <p class="intro">Si estás pensando en darte de alta como autónomo, o ya lo eres y quieres tener claro cómo funciona el sistema actual, aquí tienes lo esencial: qué trámites hacer y en qué orden, qué es la tarifa plana, cómo se calcula la cuota según tus ingresos reales (con la tabla oficial de 2026 y un ejemplo resuelto), y qué obligaciones fiscales tendrás a partir de ese momento.</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>Para darte de alta, primero se hace el alta censal en Hacienda (modelo 036) y después el alta en el RETA en Importass, antes de empezar a facturar.</li>
+        <li>La tarifa plana es una cuota reducida de 80 € al mes durante los primeros 12 meses (24 si tus rendimientos netos anuales están por debajo del SMI); conviene confirmar el importe exacto al tramitar el alta, porque en el recibo puede aparecer algún concepto adicional.</li>
+        <li>Desde 2023 la cuota depende de tus rendimientos netos reales: hay 15 tramos, y dentro de tu tramo eliges la base entre el mínimo y el máximo.</li>
+        <li>En 2026 los tipos suman un 31,5 % sobre la base elegida cuando cotizas con todas las coberturas.</li>
+        <li>Puedes cambiar de tramo hasta 6 veces al año, y la Seguridad Social regulariza tu cotización al terminar el año con los rendimientos reales.</li>
+        <li>La tarifa plana no reduce tus obligaciones fiscales: el modelo 130, el 303 y la declaración de la renta se presentan igual.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#como-darte-de-alta-como-autonomo">Cómo darte de alta como autónomo</a></li><li><a href="#la-tarifa-plana">La tarifa plana</a></li><li><a href="#como-funciona-la-cotizacion-por-ingresos">Cómo funciona la cotización por ingresos reales</a></li><li><a href="#ejemplo-resuelto-cuota-de-un-disenador-a">Ejemplo resuelto: cuota de un diseñador autónomo en 2026</a></li><li><a href="#cambios-de-tramo-y-regularizacion-anual">Cambios de tramo y regularización anual</a></li><li><a href="#tus-obligaciones-fiscales-basicas">Tus obligaciones fiscales básicas</a></li><li><a href="#errores-frecuentes-al-empezar">Errores frecuentes al empezar</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>Cómo darte de alta como autónomo</h2>
+    <h2 id="como-darte-de-alta-como-autonomo">Cómo darte de alta como autónomo</h2>
     <div class="paso">
       <span class="num">1</span><strong>Alta censal en Hacienda (modelo 036)</strong>
       <p style="margin:0.5rem 0 0;">La declaración censal de alta debe presentarse en la Agencia Tributaria <strong>antes de iniciar la actividad</strong>. Aquí indicas tu actividad (epígrafe del IAE) y los datos fiscales de tu negocio. Ojo con un cambio reciente: el antiguo modelo 037 (declaración censal simplificada) ya no existe, porque la Orden HAC/1526/2024 lo suprimió y su versión simplificada se integró en el modelo 036 para las presentaciones desde el 3 de febrero de 2025. Puedes tramitarlo online con certificado digital o Cl@ve.</p>
@@ -161,34 +191,34 @@
       <p style="margin:0.5rem 0 0;">La solicitud de alta en el RETA debe presentarse antes de iniciar la actividad y, como máximo, con 60 días de antelación; la obligación de cotizar nace el día en que empiezas a trabajar. La Seguridad Social admite tramitarla fuera de plazo, pero eso conlleva sanciones administrativas. Si no hay resolución expresa en 45 días, se aplica el silencio positivo.</p>
     </div>
 
-    <h2>La tarifa plana</h2>
+    <h2 id="la-tarifa-plana">La tarifa plana</h2>
     <p>Si es tu primera alta como autónomo, o llevas al menos 2 años sin estar de alta (3 años si ya disfrutaste antes de la cuota reducida), puedes acogerte a una cuota reducida durante los primeros 12 meses, en lugar de la cuota que te correspondería por tramos. La Seguridad Social la sitúa en <strong>80 euros al mes</strong> (artículo 38 ter de la Ley 20/2007), y en el recibo real puede aparecer algún concepto adicional como el MEI, por lo que conviene confirmar el importe exacto al tramitar el alta. El periodo se amplía a 24 meses si tus rendimientos netos anuales se mantienen por debajo del Salario Mínimo Interprofesional. Con una discapacidad igual o superior al 33 %, o siendo víctima de violencia de género o del terrorismo, la ficha oficial prevé 80 euros durante 24 meses y 160 euros del mes 25 al 36 si los rendimientos están por debajo del SMI.</p>
 
-    <h2>Cómo funciona la cotización por ingresos reales</h2>
+    <h2 id="como-funciona-la-cotizacion-por-ingresos">Cómo funciona la cotización por ingresos reales</h2>
     <p>Desde 2023 ya no eliges libremente tu base de cotización: se determina según tus rendimientos netos reales. Estos se calculan restando de tus ingresos los gastos necesarios para obtenerlos, y sobre el resultado se aplica una deducción por gastos genéricos del <strong>7 %</strong> (del 3 % si eres autónomo societario). Por regla de la Seguridad Social, a estos efectos se suman las cuotas que pagas al propio sistema, es decir, tu cuota de autónomos no se descuenta como gasto. El sistema tiene <strong>15 tramos</strong> (3 de la tabla reducida y 12 de la general) y, dentro de tu tramo, puedes elegir cualquier base entre el mínimo y el máximo.</p>
     <div class="table-scroll">
     <table>
       <tr><th>Tramo</th><th>Rendimientos netos mensuales</th><th>Base mínima</th><th>Base máxima</th></tr>
-      <tr><td>Reducida 1</td><td>Hasta 670 €</td><td>653,59 €</td><td>718,94 €</td></tr>
-      <tr><td>Reducida 2</td><td>670 a 900 €</td><td>718,95 €</td><td>900,00 €</td></tr>
-      <tr><td>Reducida 3</td><td>900 a 1.166,70 €</td><td>849,67 €</td><td>1.166,70 €</td></tr>
-      <tr><td>General 1</td><td>1.166,70 a 1.300 €</td><td>950,98 €</td><td>1.300,00 €</td></tr>
-      <tr><td>General 2</td><td>1.300 a 1.500 €</td><td>960,78 €</td><td>1.500,00 €</td></tr>
-      <tr><td>General 3</td><td>1.500 a 1.700 €</td><td>960,78 €</td><td>1.700,00 €</td></tr>
-      <tr><td>General 4</td><td>1.700 a 1.850 €</td><td>1.143,79 €</td><td>1.850,00 €</td></tr>
-      <tr><td>General 5</td><td>1.850 a 2.030 €</td><td>1.209,15 €</td><td>2.030,00 €</td></tr>
-      <tr><td>General 6</td><td>2.030 a 2.330 €</td><td>1.274,51 €</td><td>2.330,00 €</td></tr>
-      <tr><td>General 7</td><td>2.330 a 2.760 €</td><td>1.356,21 €</td><td>2.760,00 €</td></tr>
-      <tr><td>General 8</td><td>2.760 a 3.190 €</td><td>1.437,91 €</td><td>3.190,00 €</td></tr>
-      <tr><td>General 9</td><td>3.190 a 3.620 €</td><td>1.519,61 €</td><td>3.620,00 €</td></tr>
-      <tr><td>General 10</td><td>3.620 a 4.050 €</td><td>1.601,31 €</td><td>4.050,00 €</td></tr>
-      <tr><td>General 11</td><td>4.050 a 6.000 €</td><td>1.732,03 €</td><td>5.101,20 €</td></tr>
-      <tr><td>General 12</td><td>Más de 6.000 €</td><td>1.928,10 €</td><td>5.101,20 €</td></tr>
+      <tr><td>Reducida 1</td><td>Hasta 670&nbsp;€</td><td>653,59&nbsp;€</td><td>718,94&nbsp;€</td></tr>
+      <tr><td>Reducida 2</td><td>670 a 900&nbsp;€</td><td>718,95&nbsp;€</td><td>900,00&nbsp;€</td></tr>
+      <tr><td>Reducida 3</td><td>900 a 1.166,70&nbsp;€</td><td>849,67&nbsp;€</td><td>1.166,70&nbsp;€</td></tr>
+      <tr><td>General 1</td><td>1.166,70 a 1.300&nbsp;€</td><td>950,98&nbsp;€</td><td>1.300,00&nbsp;€</td></tr>
+      <tr><td>General 2</td><td>1.300 a 1.500&nbsp;€</td><td>960,78&nbsp;€</td><td>1.500,00&nbsp;€</td></tr>
+      <tr><td>General 3</td><td>1.500 a 1.700&nbsp;€</td><td>960,78&nbsp;€</td><td>1.700,00&nbsp;€</td></tr>
+      <tr><td>General 4</td><td>1.700 a 1.850&nbsp;€</td><td>1.143,79&nbsp;€</td><td>1.850,00&nbsp;€</td></tr>
+      <tr><td>General 5</td><td>1.850 a 2.030&nbsp;€</td><td>1.209,15&nbsp;€</td><td>2.030,00&nbsp;€</td></tr>
+      <tr><td>General 6</td><td>2.030 a 2.330&nbsp;€</td><td>1.274,51&nbsp;€</td><td>2.330,00&nbsp;€</td></tr>
+      <tr><td>General 7</td><td>2.330 a 2.760&nbsp;€</td><td>1.356,21&nbsp;€</td><td>2.760,00&nbsp;€</td></tr>
+      <tr><td>General 8</td><td>2.760 a 3.190&nbsp;€</td><td>1.437,91&nbsp;€</td><td>3.190,00&nbsp;€</td></tr>
+      <tr><td>General 9</td><td>3.190 a 3.620&nbsp;€</td><td>1.519,61&nbsp;€</td><td>3.620,00&nbsp;€</td></tr>
+      <tr><td>General 10</td><td>3.620 a 4.050&nbsp;€</td><td>1.601,31&nbsp;€</td><td>4.050,00&nbsp;€</td></tr>
+      <tr><td>General 11</td><td>4.050 a 6.000&nbsp;€</td><td>1.732,03&nbsp;€</td><td>5.101,20&nbsp;€</td></tr>
+      <tr><td>General 12</td><td>Más de 6.000&nbsp;€</td><td>1.928,10&nbsp;€</td><td>5.101,20&nbsp;€</td></tr>
     </table>
     </div>
     <p>Tabla de la Orden PJC/297/2026 (artículo 18) para 2026. Los tipos de cotización de ese año son: contingencias comunes 28,30 %, contingencias profesionales 1,30 %, cese de actividad 0,90 %, formación profesional 0,10 % y Mecanismo de Equidad Intergeneracional (MEI) 0,90 %, lo que suma un <strong>31,5 %</strong> sobre la base elegida cuando cotizas con todas las coberturas.</p>
 
-    <h2>Ejemplo resuelto: cuota de un diseñador autónomo en 2026</h2>
+    <h2 id="ejemplo-resuelto-cuota-de-un-disenador-a">Ejemplo resuelto: cuota de un diseñador autónomo en 2026</h2>
     <p>Carlos es diseñador, persona física, ya fuera de la tarifa plana. Prevé facturar 42.000 € en el año y tener 9.000 € de gastos deducibles de la actividad (sin contar su cuota de autónomos).</p>
     <ol>
       <li><strong>Rendimiento neto antes de la deducción:</strong> 42.000 − 9.000 = 33.000 € al año.</li>
@@ -199,10 +229,10 @@
     </ol>
     <p>La base que elijas dentro del tramo cambia la cuota y también tus prestaciones futuras (paro por cese de actividad, incapacidad temporal, jubilación). Puedes simular tu caso con la <a href="/calculadora-cuota-autonomos.html">calculadora de cuota de autónomos</a>.</p>
 
-    <h2>Cambios de tramo y regularización anual</h2>
+    <h2 id="cambios-de-tramo-y-regularizacion-anual">Cambios de tramo y regularización anual</h2>
     <p>Como tus ingresos pueden variar, la Seguridad Social permite cambiar de tramo hasta <strong>6 veces al año</strong> (cada dos meses) a través de Importass o del sistema RED, en función de tu previsión de rendimientos netos. Al terminar el año, la cotización se regulariza con los rendimientos reales que comunica la Agencia Tributaria (artículo 308.1.c de la Ley General de la Seguridad Social): si cotizaste por debajo de lo que te correspondía, pagas la diferencia; si cotizaste de más, te la devuelven.</p>
 
-    <h2>Tus obligaciones fiscales básicas</h2>
+    <h2 id="tus-obligaciones-fiscales-basicas">Tus obligaciones fiscales básicas</h2>
     <ul>
       <li><strong>IRPF trimestral (modelo 130 o 131):</strong> pagos fraccionados a cuenta de tu declaración de la renta anual. El 130 es para estimación directa y el 131 para estimación objetiva (módulos). Los profesionales que el año anterior tuvieron retención en al menos el 70 % de sus ingresos quedan exentos del pago fraccionado.</li>
       <li><strong>IVA trimestral (modelo 303):</strong> si tu actividad no está exenta, declaras el IVA repercutido en tus facturas menos el soportado en tus gastos.</li>
@@ -218,7 +248,7 @@
     </div>
     <p>Si el último día cae en sábado o festivo, el plazo pasa al siguiente día hábil. Los plazos pueden variar según tu actividad y régimen fiscal; en caso de duda, conviene una gestoría al menos al principio. Más detalle en las guías del <a href="/guias/modelo-130-pagos-fraccionados-irpf-autonomos.html">modelo 130</a>, del <a href="/guias/modelo-303-iva-trimestral-autonomos.html">modelo 303</a> y de los <a href="/guias/gastos-deducibles-autonomos-irpf.html">gastos deducibles</a>.</p>
 
-    <h2>Errores frecuentes al empezar</h2>
+    <h2 id="errores-frecuentes-al-empezar">Errores frecuentes al empezar</h2>
     <ul>
       <li>Facturar antes de completar el alta censal y la del RETA.</li>
       <li>Elegir una base de cotización sin calcular antes los rendimientos netos y olvidar que se aplica el 7 % de deducción, no el gasto real de cuota.</li>
@@ -233,7 +263,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿Puedo darme de alta como autónomo después de haber empezado a trabajar?</summary>
         <p>La Seguridad Social admite tramitar el alta fuera de plazo, pero eso conlleva sanciones administrativas. Lo correcto es presentar la solicitud antes de iniciar la actividad, con un máximo de 60 días de antelación, y haber hecho antes el alta censal en Hacienda.</p>

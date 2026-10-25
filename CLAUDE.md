@@ -18,7 +18,7 @@ Web estática en español con calculadoras y guías laborales y fiscales de Espa
 - CSS y JS van dentro de cada página (no hay archivos externos). Fuentes de Google con carga diferida.
 
 ## Plantilla de una guía
-Cabecera con el badge €, migas de pan, `.doc` con h2, tablas dentro de `.table-scroll`, bloque `.cta`, `.faq` con `<details>`, `.fuentes`, `.relacionado` y `.disclaimer`. Más un JSON-LD `FAQPage` que debe coincidir con las preguntas visibles. Copia siempre una guía existente (por ejemplo `guias/modelo-130-pagos-fraccionados-irpf-autonomos.html`) en vez de escribirla de cero.
+Cabecera con el badge €, migas de pan, `.doc` con h2 (con `id`), recuadro `.resumen` ("En resumen", 4-7 puntos sacados solo del texto de la guía) e índice `<details class="toc">` justo después de la introducción (el validador no cuenta el índice como FAQ), tablas dentro de `.table-scroll` (con el bloque `@media (max-width:520px)` final que las ajusta al ancho del móvil; usar `&nbsp;` entre cifra y € o %), bloque `.cta`, `.faq` con `<details>`, `.fuentes`, `.relacionado` y `.disclaimer`. Más un JSON-LD `FAQPage` que debe coincidir con las preguntas visibles. Copia siempre una guía existente (por ejemplo `guias/modelo-130-pagos-fraccionados-irpf-autonomos.html`) en vez de escribirla de cero.
 
 ## SEO
 - `<title>` de hasta unos 60 caracteres y meta description de hasta 160, sin sufijo de marca en las guías.

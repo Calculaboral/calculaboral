@@ -83,6 +83,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -98,8 +113,22 @@
     <h1>¿Tengo derecho a finiquito si me voy voluntariamente?</h1>
     <p class="updated">Actualizado: octubre de 2026 · Normativa: Estatuto de los Trabajadores (Real Decreto Legislativo 2/2015) y Ley General de la Seguridad Social</p>
     <p class="intro">Sí, tienes derecho a finiquito aunque seas tú quien decide dejar la empresa. Lo que <strong>no</strong> tienes es derecho a indemnización, que solo corresponde en despidos (y en algunos casos de fin de contrato temporal). Son dos conceptos distintos y aquí te explicamos la diferencia, cómo se calcula cada partida con un ejemplo resuelto y qué pasos seguir el último día.</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>Tienes derecho a finiquito aunque te vayas voluntariamente, pero no a indemnización: esa solo corresponde en despidos y en algunos fines de contrato temporal.</li>
+        <li>El finiquito incluye el salario pendiente, las vacaciones generadas y no disfrutadas y la parte proporcional de pagas extra si no estaban prorrateadas.</li>
+        <li>Debes dar el preaviso que fije tu convenio o la costumbre del lugar; si no lo cumples, la empresa puede pretender descontarte los días no avisados.</li>
+        <li>Si no estás de acuerdo con las cantidades, puedes firmar indicando tu disconformidad o pedir tiempo para revisarlas.</li>
+        <li>Con carácter general, una baja voluntaria no da derecho a paro, salvo los supuestos que recoge la ley, como la extinción por incumplimiento grave de la empresa.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#que-es-exactamente-el-finiquito">¿Qué es exactamente el finiquito?</a></li><li><a href="#como-se-calcula-cada-partida">Cómo se calcula cada partida</a></li><li><a href="#que-no-cobras-si-te-vas-voluntariamente">¿Qué NO cobras si te vas voluntariamente?</a></li><li><a href="#ojo-con-el-preaviso">Ojo con el preaviso</a></li><li><a href="#y-si-dejo-la-empresa-por-un-incumplimien">¿Y si dejo la empresa por un incumplimiento grave de esta (art. 50 ET)?</a></li><li><a href="#que-hacer-el-ultimo-dia-pasos-practicos">Qué hacer el último día: pasos prácticos</a></li><li><a href="#errores-frecuentes">Errores frecuentes</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>¿Qué es exactamente el finiquito?</h2>
+    <h2 id="que-es-exactamente-el-finiquito">¿Qué es exactamente el finiquito?</h2>
     <p>El finiquito es la liquidación de las cantidades que la empresa te debe en el momento de dejar el puesto, con independencia de por qué se termina la relación laboral. Se compone, con carácter general, de:</p>
     <ul>
       <li><strong>Salario de los días trabajados</strong> en el mes en curso que aún no se te haya pagado.</li>
@@ -110,7 +139,7 @@
     <p>Todo esto te corresponde <strong>siempre</strong>, ya sea que te despidan, que termines un contrato temporal, o que te vayas tú por decisión propia (baja voluntaria).</p>
     <p>El art. 49.2 del Estatuto de los Trabajadores (ET) prevé que, con ocasión de la extinción del contrato, la empresa acompañe una propuesta de documento de liquidación de las cantidades adeudadas. En una baja voluntaria lo más prudente es pedirla por escrito y con desglose. Además, al firmar el recibo del finiquito puedes solicitar que esté presente un representante legal de los trabajadores; el recibo debe reflejar si lo hiciste o no, y si la empresa impide esa presencia puedes dejarlo anotado en el propio recibo.</p>
 
-    <h2>Cómo se calcula cada partida</h2>
+    <h2 id="como-se-calcula-cada-partida">Cómo se calcula cada partida</h2>
     <ul>
       <li><strong>Días trabajados:</strong> con un salario mensual y pagas extra no prorrateadas, el criterio habitual es dividir el salario mensual entre 30 y multiplicar por los días trabajados del mes. Tu convenio o la práctica de tu nómina puede usar otro criterio.</li>
       <li><strong>Vacaciones:</strong> el art. 38.1 ET fija que la duración nunca es inferior a 30 días naturales al año (el convenio o el contrato pueden mejorarla). Se devengan en proporción al tiempo trabajado en el año; se pagan los días devengados menos los que ya hayas disfrutado.</li>
@@ -122,25 +151,25 @@
     <div class="table-scroll">
     <table>
       <tr><th>Concepto</th><th>Cálculo</th><th>Importe bruto</th></tr>
-      <tr><td>Salario del 1 al 15 de octubre</td><td>1.800 ÷ 30 = 60 € al día × 15 días</td><td>900,00 €</td></tr>
-      <tr><td>Paga de Navidad devengada</td><td>1.800 × 107 días (1 jul-15 oct) ÷ 184 días (1 jul-31 dic)</td><td>1.046,74 €</td></tr>
-      <tr><td>Vacaciones pendientes</td><td>30 × 288 ÷ 365 = 23,67 días devengados (1 ene-15 oct); 23,67 − 10 disfrutados = 13,67 días × 60 €</td><td>820,20 €</td></tr>
-      <tr><td><strong>Total finiquito</strong></td><td>900,00 + 1.046,74 + 820,20</td><td><strong>2.766,94 €</strong></td></tr>
+      <tr><td>Salario del 1 al 15 de octubre</td><td>1.800 ÷ 30 = 60&nbsp;€ al día × 15 días</td><td>900,00&nbsp;€</td></tr>
+      <tr><td>Paga de Navidad devengada</td><td>1.800 × 107 días (1 jul-15 oct) ÷ 184 días (1 jul-31 dic)</td><td>1.046,74&nbsp;€</td></tr>
+      <tr><td>Vacaciones pendientes</td><td>30 × 288 ÷ 365 = 23,67 días devengados (1 ene-15 oct); 23,67 − 10 disfrutados = 13,67 días × 60&nbsp;€</td><td>820,20&nbsp;€</td></tr>
+      <tr><td><strong>Total finiquito</strong></td><td>900,00 + 1.046,74 + 820,20</td><td><strong>2.766,94&nbsp;€</strong></td></tr>
     </table>
     </div>
     <p>Son importes brutos: sobre ellos la empresa practicará las retenciones y cotizaciones que correspondan, así que lo que ingreses será menos. Los céntimos pueden variar según cómo redondee tu empresa los días de vacaciones o si calcula por meses en lugar de por días.</p>
     <p>Si además tu convenio exigiera 15 días de preaviso y solo hubieras avisado con 5, la empresa podría descontar 10 días. Con un salario diario de 25.200 ÷ 365 = 69,04 €, el descuento sería de 690,40 € y el finiquito quedaría en 2.076,54 € brutos. Este cálculo es orientativo: cómo se valora el día lo decide el convenio.</p>
 
-    <h2>¿Qué NO cobras si te vas voluntariamente?</h2>
+    <h2 id="que-no-cobras-si-te-vas-voluntariamente">¿Qué NO cobras si te vas voluntariamente?</h2>
     <p>La indemnización por despido (33 días de salario por año de servicio en el improcedente, con máximo de 24 mensualidades, art. 56.1 ET; 20 días por año con máximo de 12 mensualidades en el objetivo, art. 53.1.b ET) solo se genera cuando es la empresa quien termina la relación laboral. Si eres tú quien presenta la baja voluntaria, no tienes derecho a ninguna indemnización, por mucha antigüedad que tengas. La indemnización de 12 días por año que prevé el art. 49.1.c ET es para contratos de duración determinada que terminan por expiración del tiempo pactado, no para quien dimite antes.</p>
 
-    <h2>Ojo con el preaviso</h2>
+    <h2 id="ojo-con-el-preaviso">Ojo con el preaviso</h2>
     <p>El art. 49.1.d ET dice que la dimisión debe ir precedida del preaviso que señalen los convenios colectivos o la costumbre del lugar. Si tu convenio o contrato exige preaviso y no lo cumples, la empresa puede pretender descontarte de tu finiquito el salario de los días no avisados. Ese derecho no nace del propio artículo, sino de la jurisprudencia (daños y perjuicios, art. 1101 del Código Civil) y, en muchos casos, de una cláusula del convenio. Lo explicamos en detalle en la <a href="/guias/no-cumplir-preaviso-15-dias.html">guía sobre el preaviso</a>.</p>
 
-    <h2>¿Y si dejo la empresa por un incumplimiento grave de esta (art. 50 ET)?</h2>
+    <h2 id="y-si-dejo-la-empresa-por-un-incumplimien">¿Y si dejo la empresa por un incumplimiento grave de esta (art. 50 ET)?</h2>
     <p>Ese es un caso distinto. El art. 50.1 ET recoge como causas justas, entre otras, las modificaciones sustanciales de condiciones de trabajo hechas sin respetar el art. 41 y que menoscaben tu dignidad, la falta de pago o los retrasos continuados en el salario, y cualquier otro incumplimiento grave de la empresa. En esos casos, el art. 50.2 reconoce las indemnizaciones del despido improcedente. Pero tienes que solicitar la extinción ante el juzgado; no basta con irte y reclamarlo después de manera informal. Consulta con un profesional antes de dejar de acudir al trabajo.</p>
 
-    <h2>Qué hacer el último día: pasos prácticos</h2>
+    <h2 id="que-hacer-el-ultimo-dia-pasos-practicos">Qué hacer el último día: pasos prácticos</h2>
     <ol>
       <li>Comunica la baja por escrito (carta o correo con acuse) indicando la fecha del último día de trabajo.</li>
       <li>Pide la propuesta de liquidación con el desglose de cada concepto y los días o periodos usados.</li>
@@ -149,7 +178,7 @@
       <li>Si no cobras en el plazo previsto, sigue los pasos de la <a href="/guias/no-me-pagan-el-finiquito.html">guía de finiquito impagado</a>.</li>
     </ol>
 
-    <h2>Errores frecuentes</h2>
+    <h2 id="errores-frecuentes">Errores frecuentes</h2>
     <ul>
       <li>Firmar sin comprobar que figuran las vacaciones pendientes y la parte de pagas extra.</li>
       <li>Dar por hecho que son 15 días de preaviso sin leer el convenio aplicable.</li>
@@ -165,7 +194,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿Cuántos días de preaviso tengo que dar si me voy voluntariamente?</summary>
         <p>Depende de tu convenio colectivo o, en su defecto, de la costumbre del lugar (art. 49.1.d ET). Algunos convenios fijan 15 días, otros plazos distintos. Revisa tu convenio y tu contrato para confirmarlo.</p>

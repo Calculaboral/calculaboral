@@ -110,9 +110,20 @@
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
   @media (max-width:520px){
-    .table-scroll table{ min-width:0; font-size:0.84rem; }
-    th, td{ padding:0.5rem 0.4rem; }
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
   }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -128,12 +139,26 @@
     <h1>Retención de IRPF en la factura de un autónomo</h1>
     <p class="updated">Actualizado: octubre de 2026 · Normativa: Ley 35/2006 del IRPF (art. 101.5) y Reglamento del IRPF (Real Decreto 439/2007, art. 95)</p>
     <p class="intro">Si eres autónomo y facturas a empresas, es habitual que tus clientes te resten un porcentaje de la factura y lo ingresen en Hacienda. Esa es la retención de IRPF. Aquí te explicamos qué tipos hay (15 % y 7 %), cómo se calcula con un ejemplo, cómo pedir el 7 % si acabas de empezar y cómo afecta al modelo 130.</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>La retención es un adelanto de tu IRPF: tu cliente retiene un porcentaje de la base imponible y lo ingresa en Hacienda a tu nombre; no lo ingresas tú.</li>
+        <li>El tipo general para actividades profesionales es el 15 %. El 7 % se aplica en el año de inicio y los dos siguientes, si no has ejercido actividad profesional el año anterior y se lo comunicas al pagador.</li>
+        <li>Se calcula sobre la base imponible, sin incluir el IVA.</li>
+        <li>Las retenciones que te practican van a la casilla 06 del modelo 130: con menos retención, el modelo 130 te sale más alto.</li>
+        <li>Una retención menor no significa pagar menos impuestos, solo adelantas menos.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#que-es-la-retencion-en-la-factura">¿Qué es la retención en la factura?</a></li><li><a href="#tipos-de-retencion">Tipos de retención</a></li><li><a href="#como-se-calcula-ejemplo">Cómo se calcula: ejemplo</a></li><li><a href="#cuando-se-aplica-la-retencion">Cuándo se aplica la retención</a></li><li><a href="#como-pedir-el-7-si-acabas-de-empezar">Cómo pedir el 7 % si acabas de empezar</a></li><li><a href="#como-afecta-al-modelo-130-y-a-la-renta">Cómo afecta al modelo 130 y a la Renta</a></li><li><a href="#errores-frecuentes">Errores frecuentes</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>¿Qué es la retención en la factura?</h2>
+    <h2 id="que-es-la-retencion-en-la-factura">¿Qué es la retención en la factura?</h2>
     <p>Es un adelanto de tu declaración de la Renta. Cuando tu cliente te paga, no te entrega el importe completo: retiene un porcentaje de la base imponible y lo ingresa en la Agencia Tributaria a tu nombre. Tú cobras menos, pero ese dinero queda como pago a cuenta de tu IRPF.</p>
     <p>El que ingresa la retención es el cliente, no tú. Lo hace en su declaración trimestral (modelo 111, del 1 al 20 de abril, julio, octubre y enero) y la resume en la declaración anual (modelo 190, del 1 al 31 de enero del año siguiente), según la Agencia Tributaria.</p>
 
-    <h2>Tipos de retención</h2>
+    <h2 id="tipos-de-retencion">Tipos de retención</h2>
     <p>Según el cuadro de retenciones de la Agencia Tributaria, estos son los tipos que afectan a autónomos:</p>
     <div class="table-scroll">
     <table>
@@ -148,20 +173,20 @@
     </div>
     <p>Los tipos de actividades profesionales se reducen un 60 % cuando el perceptor tiene derecho a la deducción por rendimientos obtenidos en Ceuta o Melilla. Para el resto de actividades empresariales (comercio, hostelería, etc.), el cuadro de la Agencia Tributaria no recoge un tipo de retención.</p>
 
-    <h2>Cómo se calcula: ejemplo</h2>
+    <h2 id="como-se-calcula-ejemplo">Cómo se calcula: ejemplo</h2>
     <p>Marta es traductora autónoma y emite una factura de 1.000 € de base imponible a una empresa. El IVA general es el 21 %. La retención se aplica solo a la base imponible.</p>
     <div class="table-scroll">
     <table>
-      <tr><th>Concepto</th><th>Con retención del 15 %</th><th>Con retención del 7 %</th></tr>
-      <tr><td>Base imponible</td><td>1.000,00 €</td><td>1.000,00 €</td></tr>
-      <tr><td>IVA (21 %)</td><td>+ 210,00 €</td><td>+ 210,00 €</td></tr>
-      <tr><td>Retención de IRPF</td><td>− 150,00 €</td><td>− 70,00 €</td></tr>
-      <tr><td><strong>Total que cobra Marta</strong></td><td><strong>1.060,00 €</strong></td><td><strong>1.140,00 €</strong></td></tr>
+      <tr><th>Concepto</th><th>Con retención del 15&nbsp;%</th><th>Con retención del 7&nbsp;%</th></tr>
+      <tr><td>Base imponible</td><td>1.000,00&nbsp;€</td><td>1.000,00&nbsp;€</td></tr>
+      <tr><td>IVA (21&nbsp;%)</td><td>+ 210,00&nbsp;€</td><td>+ 210,00&nbsp;€</td></tr>
+      <tr><td>Retención de IRPF</td><td>− 150,00&nbsp;€</td><td>− 70,00&nbsp;€</td></tr>
+      <tr><td><strong>Total que cobra Marta</strong></td><td><strong>1.060,00&nbsp;€</strong></td><td><strong>1.140,00&nbsp;€</strong></td></tr>
     </table>
     </div>
     <p>Los 150 € (o 70 €) los ingresa su cliente en Hacienda. Los 210 € de IVA los ingresa Marta en su modelo 303.</p>
 
-    <h2>Cuándo se aplica la retención</h2>
+    <h2 id="cuando-se-aplica-la-retencion">Cuándo se aplica la retención</h2>
     <ul>
       <li>Se aplica sobre los ingresos de <strong>actividades profesionales</strong> (por ejemplo, un diseñador, un traductor o un abogado) cuando quien paga está obligado a retener.</li>
       <li>En general, retienen las empresas y los profesionales que contratan tus servicios. Un cliente particular que te paga como consumidor final no suele retener.</li>
@@ -169,7 +194,7 @@
     </ul>
     <p>Si tienes dudas sobre si tu cliente debe retenerte, la Agencia Tributaria dispone de un informador de renta de actividades económicas en su sede electrónica.</p>
 
-    <h2>Cómo pedir el 7 % si acabas de empezar</h2>
+    <h2 id="como-pedir-el-7-si-acabas-de-empezar">Cómo pedir el 7 % si acabas de empezar</h2>
     <p>El artículo 95 del Reglamento del IRPF fija estas condiciones para el tipo reducido de nuevo inicio:</p>
     <ul>
       <li>El tipo del 7 % vale para el periodo en que empiezas la actividad y para los dos siguientes.</li>
@@ -178,11 +203,11 @@
     </ul>
     <p>Si no se lo comunicas, tu cliente no tiene por qué aplicarte el 7 %. Pasado ese plazo de tres periodos, se aplica el 15 % general.</p>
 
-    <h2>Cómo afecta al modelo 130 y a la Renta</h2>
+    <h2 id="como-afecta-al-modelo-130-y-a-la-renta">Cómo afecta al modelo 130 y a la Renta</h2>
     <p>Las retenciones que te practican van a la <strong>casilla 06</strong> del modelo 130, acumuladas desde el 1 de enero. Cuantas más retenciones, menos pagas en el modelo 130. Con una retención del 7 % te retienen menos y, por tanto, el modelo 130 te saldrá más alto. Puedes comprobarlo con la <a href="/calculadora-modelo-130.html">calculadora del modelo 130</a>.</p>
     <p>Además, si eres profesional y en el año natural anterior al menos el 70 % de tus ingresos llevó retención, no tienes que presentar el modelo 130. Lo explicamos en la <a href="/guias/modelo-130-pagos-fraccionados-irpf-autonomos.html">guía del modelo 130</a>. Al hacer la declaración de la Renta, todas las retenciones del año se restan de tu cuota final.</p>
 
-    <h2>Errores frecuentes</h2>
+    <h2 id="errores-frecuentes">Errores frecuentes</h2>
     <ul>
       <li>Calcular la retención sobre el total de la factura con IVA en vez de sobre la base imponible.</li>
       <li>Aplicar el 7 % sin cumplir las condiciones o sin haberlo comunicado al cliente.</li>
@@ -198,7 +223,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿La retención se calcula sobre el total de la factura con IVA?</summary>
         <p>No. La retención se calcula sobre la base imponible, es decir, el importe de la factura sin IVA. El IVA se suma aparte y la retención se resta del total que cobras.</p>

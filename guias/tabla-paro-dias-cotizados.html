@@ -75,6 +75,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -90,8 +105,22 @@
     <h1>Tabla del paro: cuántos meses de prestación te corresponden según lo cotizado</h1>
     <p class="updated">Actualizado: 2026 · Normativa: Ley General de la Seguridad Social (Real Decreto Legislativo 8/2015), arts. 269 y 270</p>
     <p class="intro">La duración de la prestación por desempleo (el "paro") depende de cuántos días has cotizado en los últimos 6 años. Necesitas un mínimo de 360 días cotizados y, como máximo, puedes cobrar 2 años. Aquí tienes la tabla completa y cómo usarla.</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>La duración del paro depende de los días cotizados en los últimos 6 años: hace falta un mínimo de 360 días y el máximo son 720 días de paro (24 meses), a partir de 2.160 días cotizados.</li>
+        <li>Cada tramo de 180 días cotizados añade 60 días de paro. Por ejemplo, con 539 días cotizados te corresponden 120 días de paro y con 540, 180 días.</li>
+        <li>Durante los primeros 180 días cobras el 70 % de la base reguladora, con un mínimo y un máximo según los hijos a cargo (de 560 a 1.575 € con el IPREM de 600 € más una sexta parte); desde el día 181 el porcentaje baja.</li>
+        <li>La solicitud se presenta en los 15 días hábiles siguientes a la situación legal de desempleo; si te retrasas, pierdes los días de retraso.</li>
+        <li>Si encuentras un empleo de menos de 12 meses, el paro se suspende y puedes reanudarlo con los días que te quedaban.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#tabla-de-duracion-del-paro">Tabla de duración del paro</a></li><li><a href="#como-contar-tus-dias-cotizados">Cómo contar tus días cotizados</a></li><li><a href="#requisitos-para-cobrar-el-paro">Requisitos para cobrar el paro</a></li><li><a href="#y-cuanto-voy-a-cobrar-al-mes">¿Y cuánto voy a cobrar al mes?</a></li><li><a href="#trabajar-antes-de-agotar-el-paro-que-pas">Trabajar antes de agotar el paro: qué pasa con los días que te quedan</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>Tabla de duración del paro</h2>
+    <h2 id="tabla-de-duracion-del-paro">Tabla de duración del paro</h2>
     <div class="table-scroll">
     <table>
       <thead>
@@ -115,7 +144,7 @@
     </div>
     <p>Es la escala del artículo 269.1 de la Ley General de la Seguridad Social (LGSS). Cada tramo de 180 días cotizados añade 60 días de paro. Ejemplo rápido: si has trabajado 3 años seguidos a jornada completa (unos 1.095 días cotizados), te corresponden 360 días de paro, es decir, 12 meses.</p>
 
-    <h2>Cómo contar tus días cotizados</h2>
+    <h2 id="como-contar-tus-dias-cotizados">Cómo contar tus días cotizados</h2>
     <ul>
       <li>Se cuentan los días cotizados <strong>en los 6 años anteriores</strong> a la situación legal de desempleo (o a la fecha en que cesó la obligación de cotizar).</li>
       <li><strong>No cuentan</strong> las cotizaciones que ya usaste para reconocer una prestación o un subsidio anterior: cada día cotizado solo sirve para generar un derecho. Tampoco cuentan las cotizaciones que se hacen mientras cobras una prestación.</li>
@@ -138,7 +167,7 @@
     <h3>Ejemplo resuelto 2: un día puede valer dos meses</h3>
     <p>Con <strong>539 días</strong> cotizados te corresponden 120 días de paro (4 meses); con <strong>540 días</strong>, 180 días (6 meses). Un solo día de diferencia supone 60 días más de prestación. Antes de dar por cerrado un contrato, merece la pena comprobar en la vida laboral si estás justo en el borde de un tramo.</p>
 
-    <h2>Requisitos para cobrar el paro</h2>
+    <h2 id="requisitos-para-cobrar-el-paro">Requisitos para cobrar el paro</h2>
     <ol>
       <li>Haber cotizado <strong>al menos 360 días</strong> en los últimos 6 años, estando en alta o en situación asimilada.</li>
       <li>Estar en <strong>situación legal de desempleo</strong> (art. 267 LGSS): despido, fin de contrato temporal, ERE, ERTE, extinción en periodo de prueba por decisión de la empresa (con las condiciones que fija la ley)… La baja voluntaria, en general, no cuenta; solo en los supuestos tasados de los artículos 40, 41.3, 49.1.m) y 50 del Estatuto de los Trabajadores.</li>
@@ -147,7 +176,7 @@
     </ol>
     <p>Tienes el paso a paso en nuestra guía <a href="como-solicitar-paro-tramites.html">cómo solicitar el paro</a>.</p>
 
-    <h2>¿Y cuánto voy a cobrar al mes?</h2>
+    <h2 id="y-cuanto-voy-a-cobrar-al-mes">¿Y cuánto voy a cobrar al mes?</h2>
     <p>La cuantía se calcula sobre tu <strong>base reguladora</strong>: la media de tus bases de cotización por desempleo de los últimos 180 días, sin contar las horas extraordinarias (art. 270.1). Durante los primeros 180 días cobras el <strong>70%</strong> de esa base; a partir del día 181 el porcentaje es menor. Además hay una cuantía mínima y una máxima que dependen del IPREM y de los hijos a cargo. Con el IPREM de 600 euros mensuales (que se incrementa en una sexta parte, hasta 700), los límites de 2026 son:</p>
     <div class="table-scroll">
     <table>
@@ -155,9 +184,9 @@
         <tr><th>Hijos a cargo</th><th>Mínimo mensual</th><th>Máximo mensual</th></tr>
       </thead>
       <tbody>
-        <tr><td>Ninguno</td><td>560 € (80% de 700)</td><td>1.225 € (175% de 700)</td></tr>
-        <tr><td>Uno</td><td>749 € (107% de 700)</td><td>1.400 € (200% de 700)</td></tr>
-        <tr><td>Dos o más</td><td>749 € (107% de 700)</td><td>1.575 € (225% de 700)</td></tr>
+        <tr><td>Ninguno</td><td>560&nbsp;€ (80% de 700)</td><td>1.225&nbsp;€ (175% de 700)</td></tr>
+        <tr><td>Uno</td><td>749&nbsp;€ (107% de 700)</td><td>1.400&nbsp;€ (200% de 700)</td></tr>
+        <tr><td>Dos o más</td><td>749&nbsp;€ (107% de 700)</td><td>1.575&nbsp;€ (225% de 700)</td></tr>
       </tbody>
     </table>
     </div>
@@ -172,7 +201,7 @@
     </ol>
     <p>Si Ana tuviera un hijo a cargo, el máximo sería 1.400 euros y cobraría los 1.260 completos. Como intervienen varios factores, lo más fácil es calcularlo con la calculadora de paro: te da la cuantía mensual estimada y la duración según tus días cotizados e hijos a cargo.</p>
 
-    <h2>Trabajar antes de agotar el paro: qué pasa con los días que te quedan</h2>
+    <h2 id="trabajar-antes-de-agotar-el-paro-que-pas">Trabajar antes de agotar el paro: qué pasa con los días que te quedan</h2>
     <ul>
       <li>Si encuentras un empleo por cuenta ajena de <strong>menos de 12 meses</strong>, el paro se <strong>suspende</strong> (art. 271.1.d): no se pierden los días que te quedan. Cuando termina el contrato puedes solicitar la reanudación en los 15 días siguientes, estando inscrito como demandante y reactivando el acuerdo de actividad.</li>
       <li>Si trabajas <strong>12 meses o más</strong> (de forma acumulada y sin reanudar el paro), este se extingue y, si luego generas un nuevo derecho, el artículo 269.3 te permite elegir entre reabrir el anterior por el tiempo que te quedaba, con sus bases y porcentajes originales, o cobrar el generado por las nuevas cotizaciones. Si eliges el anterior, las cotizaciones del derecho que no elijas no podrán contarse para ningún derecho posterior.</li>
@@ -187,7 +216,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿Puedo guardar el paro para más adelante?</summary>
         <p>Depende de cuánto trabajes. Si el nuevo empleo dura menos de 12 meses, el paro se suspende y puedes reanudarlo después con los días que te quedaban. Si trabajas 12 meses o más de forma acumulada, puedes elegir entre reabrir el derecho anterior por el tiempo restante o cobrar el que generan las nuevas cotizaciones; si eliges el anterior, las cotizaciones del otro derecho no podrán usarse en el futuro.</p>

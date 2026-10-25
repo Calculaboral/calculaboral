@@ -74,6 +74,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -89,12 +104,26 @@
     <h1>Capitalizar el paro para hacerse autónomo</h1>
     <p class="updated">Actualizado: 2026 · Normativa: Estatuto del trabajo autónomo (Ley 20/2007, art. 34), Ley General de la Seguridad Social y Real Decreto 1044/1985</p>
     <p class="intro">Si tienes derecho a la prestación por desempleo y quieres emprender como autónomo, puedes solicitar que te paguen todo o parte de esa prestación de golpe, en un único pago, en lugar de recibirla mes a mes. Es lo que se conoce como <strong>capitalización del paro</strong> o "pago único".</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>Capitalizar el paro es cobrar de golpe, antes de darte de alta, todo o parte de la prestación que te queda para iniciar una actividad como autónomo o aportar capital a una sociedad.</li>
+        <li>Puedes pedir hasta el 100 % del valor actual de la prestación pendiente; hasta un 15 % de lo capitalizado puede ir a asesoramiento, formación o información.</li>
+        <li>Requisitos clave: al menos tres mensualidades pendientes, no haber cobrado el pago único en los 4 años anteriores y solicitarlo antes de iniciar la actividad.</li>
+        <li>Si ya estás de alta como autónomo, esta vía se cierra: lo que queda es compatibilizar la prestación con la actividad, pidiéndolo en los 15 días siguientes al inicio.</li>
+        <li>No hay que devolver el dinero al SEPE si lo destinas a la actividad, pero para conservar la exención de IRPF hay que mantenerla, con carácter general, 5 años.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#en-que-consiste">¿En qué consiste?</a></li><li><a href="#cuanto-puedo-capitalizar-y-en-que-se-pue">¿Cuánto puedo capitalizar y en qué se puede gastar?</a></li><li><a href="#requisitos-principales">Requisitos principales</a></li><li><a href="#como-se-solicita">¿Cómo se solicita?</a></li><li><a href="#errores-frecuentes">Errores frecuentes</a></li><li><a href="#ventajas-e-inconvenientes">Ventajas e inconvenientes</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>¿En qué consiste?</h2>
+    <h2 id="en-que-consiste">¿En qué consiste?</h2>
     <p>En vez de cobrar tu prestación contributiva por desempleo mensualmente, el SEPE te adelanta el importe (total o parcial) para que lo destines a iniciar una actividad como trabajador autónomo o a aportar capital a una sociedad mercantil en la que vas a trabajar. La base legal para los autónomos es el artículo 34 del Estatuto del trabajo autónomo (Ley 20/2007, en la redacción dada por la Ley 31/2015), que se apoya en el artículo 296.3 de la LGSS y en el Real Decreto 1044/1985, que sigue aplicándose en lo que no contradiga a esa ley.</p>
     <p>El importe que te abonan es el <strong>valor actual</strong> de la prestación que te queda por cobrar: se calcula en días completos y se le descuenta el interés legal del dinero, por lo que siempre será algo menor que la suma de las mensualidades pendientes.</p>
 
-    <h2>¿Cuánto puedo capitalizar y en qué se puede gastar?</h2>
+    <h2 id="cuanto-puedo-capitalizar-y-en-que-se-pue">¿Cuánto puedo capitalizar y en qué se puede gastar?</h2>
     <p>Puedes pedir hasta el <strong>100% del valor actual</strong> de la prestación pendiente. El dinero puede destinarse a:</p>
     <ul>
       <li>La inversión necesaria para iniciar la actividad, los gastos de constitución y puesta en marcha, y las tasas y tributos para empezar.</li>
@@ -115,7 +144,7 @@
     </table>
     </div>
 
-    <h2>Requisitos principales</h2>
+    <h2 id="requisitos-principales">Requisitos principales</h2>
     <ul>
       <li>Ser beneficiario de una prestación contributiva por desempleo, con <strong>al menos tres mensualidades pendientes</strong> de cobro al solicitar (art. 2 del Real Decreto 1044/1985).</li>
       <li>No haber percibido el pago único en los <strong>4 años anteriores</strong> (mismo artículo).</li>
@@ -125,7 +154,7 @@
       <li>Mantener la actividad, con carácter general, un mínimo de 5 años: no es un requisito del SEPE para conservar el pago único (que no hay que devolver si lo has destinado a la actividad), sino una condición de Hacienda para conservar la <strong>exención de IRPF</strong> sobre esa cantidad. Según el artículo 7.n) de la Ley 35/2006 del IRPF, la exención queda condicionada a mantener la actividad durante 5 años si eres autónomo, o la acción o participación si te integras en una sociedad. Si cesas antes, no devuelves el dinero al SEPE, pero pierdes la exención; consulta con la Agencia Tributaria cómo regularizarlo.</li>
     </ul>
 
-    <h2>¿Cómo se solicita?</h2>
+    <h2 id="como-se-solicita">¿Cómo se solicita?</h2>
     <ol style="padding-left:1.25rem;">
       <li>Solicita el pago único <strong>antes de darte de alta como autónomo</strong>: el orden importa porque la fecha de alta marca el inicio de la actividad. Si ya estás de alta, esta vía se cierra.</li>
       <li>Preséntalo en tu oficina del SEPE o a través de la sede electrónica, junto con una memoria explicativa del proyecto (en qué vas a invertir el dinero y qué actividad vas a desarrollar).</li>
@@ -152,7 +181,7 @@
     </ul>
     <p>Si tu negocio necesita capital desde el primer día (maquinaria, local, existencias), el pago único tiene sentido. Si puedes arrancar con poca inversión y te basta con un colchón mensual, compatibilizar suele ser más sencillo.</p>
 
-    <h2>Errores frecuentes</h2>
+    <h2 id="errores-frecuentes">Errores frecuentes</h2>
     <ul>
       <li>Darte de alta como autónomo <strong>antes</strong> de solicitar el pago único.</li>
       <li>Confundir el requisito de 5 años (fiscal) con una obligación de devolver el dinero al SEPE.</li>
@@ -161,7 +190,7 @@
       <li>Pedir el pago único con menos de tres mensualidades pendientes o cuando has compatibilizado prestación y trabajo por cuenta propia en los 24 meses anteriores.</li>
     </ul>
 
-    <h2>Ventajas e inconvenientes</h2>
+    <h2 id="ventajas-e-inconvenientes">Ventajas e inconvenientes</h2>
     <p>La principal ventaja es tener capital inicial disponible de golpe para arrancar tu negocio (comprar equipo, pagar los primeros meses de cuota, etc.) sin depender de un préstamo. El inconveniente es que, si el proyecto no funciona, ya no tendrás la prestación por desempleo disponible mes a mes como colchón, y si cesas la actividad antes de los 5 años perderás la exención fiscal sobre el pago único (aunque no tengas que devolverlo al SEPE).</p>
 
     <div class="cta">
@@ -172,7 +201,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿Puedo capitalizar solo una parte del paro y cobrar el resto mensualmente?</summary>
         <p>Sí. Puedes pedir un pago único parcial y reclamar lo no abonado de golpe como subsidio mensual de cuotas, que se paga mientras sigas de alta y cubre tus cotizaciones a la Seguridad Social. Pregunta al SEPE cómo queda tu caso concreto antes de decidir el reparto.</p>

@@ -83,6 +83,21 @@
   .relacionado li{ margin-bottom:0.25rem; }
   .relacionado a{ display:inline-block; padding:0.3rem 0; color:var(--verde-oscuro,#1f5c3a); font-weight:600; text-decoration:none; }
   .relacionado a:hover{ text-decoration:underline; }
+  .resumen{ margin:1.25rem 0 1rem; padding:1rem 1.25rem; background:var(--verde-tinte,#e4f3e8); border:1px solid #c9e4d2; border-left:4px solid var(--verde,#2f7a4f); border-radius:12px; }
+  .resumen strong{ font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--azul,#16231b); }
+  .resumen ul{ margin:0.5rem 0 0; padding-left:1.1rem; }
+  .resumen li{ margin-bottom:0.4rem; }
+  .toc{ margin:0 0 1rem; border:1px solid var(--gris-borde,#e4e1d4); border-radius:12px; padding:0.7rem 1.1rem; font-size:0.92rem; }
+  .toc summary{ cursor:pointer; font-weight:700; color:var(--azul,#16231b); }
+  .toc ol{ margin:0.6rem 0 0.2rem; padding-left:1.2rem; }
+  .toc li{ margin-bottom:0.3rem; }
+  .toc a{ color:var(--verde-oscuro,#1f5c3a); text-decoration:none; }
+  .toc a:hover{ text-decoration:underline; }
+  .doc h2[id]{ scroll-margin-top:1rem; }
+  @media (max-width:520px){
+    .table-scroll table{ min-width:0; font-size:0.77rem; }
+    th, td{ padding:0.45rem 0.25rem; hyphens:auto; overflow-wrap:break-word; }
+  }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573612679839513" crossorigin="anonymous"></script>
 </head>
@@ -98,11 +113,25 @@
     <h1>Despido en periodo de prueba: ¿cobro algo?</h1>
     <p class="updated">Actualizado: 2026 · Normativa: Estatuto de los Trabajadores (Real Decreto Legislativo 2/2015), art. 14</p>
     <p class="intro">Si te comunican que no superas el periodo de prueba, la mala noticia es que no tienes derecho a indemnización ni a preaviso. La buena noticia es que sí cobras lo que se te debe hasta ese momento: el finiquito por los días trabajados. Y, en la mayoría de los casos, puedes pedir el paro.</p>
+    <div class="resumen">
+      <strong>En resumen</strong>
+      <ul>
+        <li>Si no superas el periodo de prueba no tienes derecho a indemnización ni a preaviso, pero sí al finiquito de lo ya generado: días trabajados, vacaciones y pagas extra proporcionales.</li>
+        <li>La duración máxima la fija el convenio. Sin convenio: 6 meses para técnicos titulados; para el resto, 2 meses (empresas de 25 o más trabajadores) o 3 meses (menos de 25); y 1 mes en contratos temporales de hasta 6 meses.</li>
+        <li>Tiene que estar pactado por escrito, y es nulo si ya habías hecho las mismas funciones en esa empresa.</li>
+        <li>Es situación legal de desempleo: puedes pedir el paro si tienes 360 días cotizados en los 6 años anteriores, en los 15 días hábiles siguientes al cese.</li>
+        <li>Puede ser irregular si hay discriminación, si afecta a una trabajadora embarazada sin motivos ajenos al embarazo o si la prueba no es válida; el plazo general para reclamar es de 20 días hábiles.</li>
+      </ul>
+    </div>
+    <details class="toc">
+      <summary>En esta guía</summary>
+      <ol><li><a href="#que-es-el-periodo-de-prueba">¿Qué es el periodo de prueba?</a></li><li><a href="#cuanto-dura-el-periodo-de-prueba">¿Cuánto dura el periodo de prueba?</a></li><li><a href="#que-cobras-si-te-despiden-en-periodo-de">¿Qué cobras si te despiden en periodo de prueba?</a></li><li><a href="#excepciones-cuando-si-podria-ser-irregul">Excepciones: cuándo sí podría ser irregular</a></li><li><a href="#tengo-derecho-al-paro">¿Tengo derecho al paro?</a></li><li><a href="#que-hacer-si-te-despiden-en-periodo-de-p">Qué hacer si te despiden en periodo de prueba</a></li><li><a href="#errores-frecuentes">Errores frecuentes</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol>
+    </details>
 
-    <h2>¿Qué es el periodo de prueba?</h2>
+    <h2 id="que-es-el-periodo-de-prueba">¿Qué es el periodo de prueba?</h2>
     <p>Es un plazo inicial del contrato durante el cual tanto la empresa como el trabajador pueden dar por finalizada la relación laboral libremente, sin necesidad de justificar causa alguna, sin preaviso y sin indemnización. Su finalidad es que ambas partes puedan comprobar si el puesto y la persona encajan. Mientras dura, tienes los mismos derechos y obligaciones que el resto de la plantilla, salvo los derivados de la resolución del contrato, y debes realizar de verdad las tareas objeto de la prueba.</p>
 
-    <h2>¿Cuánto dura el periodo de prueba?</h2>
+    <h2 id="cuanto-dura-el-periodo-de-prueba">¿Cuánto dura el periodo de prueba?</h2>
     <p>La duración máxima la fija el convenio colectivo aplicable. En su defecto, el Estatuto de los Trabajadores establece como límites generales:</p>
     <div class="table-scroll">
     <table>
@@ -116,7 +145,7 @@
     <p>Debe estar pactado por escrito en el contrato; si no figura por escrito, se entiende que no existe periodo de prueba. Además, es nulo el pacto de prueba si ya habías desempeñado las mismas funciones en esa empresa con anterioridad, bajo cualquier modalidad de contratación.</p>
     <p>Las situaciones de incapacidad temporal, nacimiento, adopción, acogimiento, riesgo durante el embarazo o la lactancia y violencia de género interrumpen el cómputo del periodo de prueba solo si ambas partes lo acuerdan. Pasado el periodo sin que nadie haya desistido, el contrato produce plenos efectos y ese tiempo cuenta como antigüedad.</p>
 
-    <h2>¿Qué cobras si te despiden en periodo de prueba?</h2>
+    <h2 id="que-cobras-si-te-despiden-en-periodo-de">¿Qué cobras si te despiden en periodo de prueba?</h2>
     <p>Únicamente el finiquito por los conceptos ya generados:</p>
     <ul>
       <li>Salario de los días efectivamente trabajados.</li>
@@ -135,16 +164,16 @@
     </ul>
     <p>El método de cálculo de las vacaciones puede variar según el convenio; si no están prorrateadas, las pagas extra se añaden aparte en proporción al tiempo devengado. Puedes hacer tu cálculo en la <a href="/calculadora-finiquito.html">calculadora de finiquito</a>.</p>
 
-    <h2>Excepciones: cuándo sí podría ser irregular</h2>
+    <h2 id="excepciones-cuando-si-podria-ser-irregul">Excepciones: cuándo sí podría ser irregular</h2>
     <p>Aunque la extinción en periodo de prueba es libre, hay límites: no puede basarse en motivos discriminatorios (sexo, origen, discapacidad, afiliación sindical, etc.) ni vulnerar derechos fundamentales. En concreto, el desistimiento de la empresa es nulo si afecta a una trabajadora embarazada, salvo que existan motivos no relacionados con el embarazo, y lo mismo vale para la maternidad. Si sospechas que tu caso encaja en alguno de estos supuestos, la extinción podría ser declarada nula, con derecho a la readmisión, y conviene consultarlo con un abogado laboralista cuanto antes por los plazos tan cortos de reclamación.</p>
     <p>También puede ser irregular si el periodo de prueba en sí no es válido: porque no se pactó por escrito, porque supera el máximo legal o del convenio, o porque ya habías hecho esas funciones en la empresa. En esos casos la libertad de desistir desaparece y la extinción debe analizarse como un despido ordinario.</p>
     <h3>Ejemplo: periodo de prueba no válido</h3>
     <p>Imagina que Pablo hubiera trabajado 2 meses con un periodo de prueba nulo y que el despido se calificara como improcedente. La indemnización sería de 33 días por año, prorrateando por meses los periodos inferiores a un año (art. 56 del Estatuto). Con su salario de 21.600 euros al año (59,18 euros al día): 33 x 2 / 12 = 5,5 días; 5,5 x 59,18 = <strong>325,49 euros</strong>. La cifra es pequeña por la poca antigüedad, pero la diferencia práctica es que la empresa tendría que justificar la causa.</p>
 
-    <h2>¿Tengo derecho al paro?</h2>
+    <h2 id="tengo-derecho-al-paro">¿Tengo derecho al paro?</h2>
     <p>La resolución del contrato durante el periodo de prueba a instancia de la empresa figura entre las situaciones legales de desempleo (art. 267 de la Ley General de la Seguridad Social). Necesitas cumplir el periodo mínimo de cotización (360 días en los seis años anteriores) y solicitarlo en los 15 días hábiles siguientes al cese; si te retrasas, pierdes días de prestación. Si dejaste voluntariamente tu empleo anterior para incorporarte a este, el SEPE puede estudiar tu caso con condiciones adicionales, así que consúltalo. Si eres tú quien se marcha durante la prueba, se equipara a una baja voluntaria y no generas derecho al paro. Más detalles en nuestra <a href="/guias/como-solicitar-paro-tramites.html">guía de cómo solicitar el paro</a>.</p>
 
-    <h2>Qué hacer si te despiden en periodo de prueba</h2>
+    <h2 id="que-hacer-si-te-despiden-en-periodo-de-p">Qué hacer si te despiden en periodo de prueba</h2>
     <ul>
       <li>Pide que te lo comuniquen por escrito y con fecha. Así podrás acreditar cuándo terminó tu contrato.</li>
       <li>Revisa tu contrato: ¿figura el periodo de prueba por escrito?, ¿respeta el máximo legal o del convenio?, ¿has hecho antes las mismas funciones en la empresa?</li>
@@ -153,7 +182,7 @@
       <li>Si crees que hay discriminación o la prueba no es válida, ten en cuenta que, como en los despidos, el plazo general para ejercer la acción es de 20 días hábiles (art. 59.3 del Estatuto): consulta cuanto antes. Puedes repasar los plazos en la <a href="/guias/plazos-prescripcion-reclamaciones-laborales.html">guía de plazos de reclamaciones</a>.</li>
     </ul>
 
-    <h2>Errores frecuentes</h2>
+    <h2 id="errores-frecuentes">Errores frecuentes</h2>
     <ul>
       <li>Creer que el periodo de prueba es "gratis" para la empresa y que no tiene límites: tiene duración máxima, requisito de forma escrita y no puede ser discriminatorio.</li>
       <li>No pedir el paro por pensar que "te han echado sin causa": sí es una situación legal de desempleo.</li>
@@ -167,7 +196,7 @@
     </div>
 
     <div class="faq">
-      <h2>Preguntas frecuentes</h2>
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
       <details>
         <summary>¿Puede la empresa alargar el periodo de prueba más de lo pactado?</summary>
         <p>No, el periodo de prueba debe respetar el máximo pactado en el contrato (dentro de los límites legales o del convenio). Superado ese plazo, ya no se puede extinguir el contrato por esta vía libre.</p>
