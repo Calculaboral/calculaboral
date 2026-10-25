@@ -10,7 +10,7 @@ Web estática en español con calculadoras y guías laborales y fiscales de Espa
 
 ## Estructura
 - `index.html`: portada con pestañas Calculadoras y Guías (`#calculadoras`, `#guias`).
-- `calculadora-*.html`: 7 calculadoras (indemnización, finiquito, nómina neta, paro, cuota de autónomos, IRPF de autónomos, modelo 303).
+- `calculadora-*.html`: 8 calculadoras (indemnización, finiquito, nómina neta, paro, cuota de autónomos, IRPF de autónomos, modelo 303, modelo 130); los contadores de las pestañas de `index.html` están escritos a mano: actualizarlos al añadir páginas.
 - `guias/*.html`: guías (unas 1.450-1.970 palabras) y `guias/cifras-clave-2026.html`.
 - `sobre-nosotros.html`, `contacto.html` (contacto: calculaboraloficial@gmail.com).
 - `legal/`: aviso legal, privacidad y cookies, afiliados. Llevan `noindex` a propósito y no están en el sitemap.
