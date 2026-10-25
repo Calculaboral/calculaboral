@@ -38,7 +38,7 @@ for f in archivos:
     if f.startswith("guias/"):
         for marca in ('class="fuentes"', 'class="relacionado"', 'class="disclaimer"', "pagead2"):
             if marca not in t: err(f, f"falta {marca}")
-        n_det = len(re.findall(r"<details", t))
+        n_det = len(re.findall(r'<details(?![^>]*class="toc")', t))  # el índice (class="toc") no es una pregunta frecuente
         n_q = 0
         for j in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S):
             try: n_q = len(json.loads(j).get("mainEntity", []))
