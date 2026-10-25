@@ -142,6 +142,10 @@
   .card h3{ margin:0 0 0.4rem; color:var(--azul); font-size:1.05rem; }
   .card p{ margin:0; font-size:0.9rem; color:#5b665f; }
   .card.oculta{ display:none; }
+  .grupo{ margin-top:1.6rem; }
+  .grupo:first-child{ margin-top:0; }
+  .grupo.oculta{ display:none; }
+  .grupo-titulo{ font-size:1.05rem; margin:0 0 0.7rem; color:var(--azul); }
   .sin-resultados{ text-align:center; color:#6e6e6e; padding: 2rem 1rem; display:none; }
 
   .disclaimer{
@@ -188,9 +192,9 @@
       </div>
       <div class="result-box">
         <span class="label">Indemnización estimada</span>
-        <span class="value num" id="resultVal">4.950,00 €</span>
+        <span class="value num" id="resultVal">9.764,38 €</span>
       </div>
-      <div class="result-foot">33 días de salario por año trabajado · Estatuto de los Trabajadores, art. 56. <a href="calculadora-indemnizacion-despido.html" style="color:var(--verde-oscuro); font-weight:700;">Calculadora completa →</a></div>
+      <div class="result-foot">33 días de salario por año trabajado, con un máximo de 24 mensualidades (Estatuto de los Trabajadores, art. 56). Estimación simplificada: no contempla contratos anteriores al 12 de febrero de 2012. <a href="calculadora-indemnizacion-despido.html" style="color:var(--verde-oscuro); font-weight:700;">Calculadora completa →</a></div>
     </div>
 
     <div class="buscador">
@@ -198,16 +202,6 @@
       <input type="text" id="buscador-input" placeholder="¿Qué quieres calcular?" aria-label="Buscar calculadora o guía" oninput="filtrarHerramientas(this.value)">
     </div>
 
-    <div class="accesos-rapidos">
-      <a class="acceso-rapido" href="calculadora-finiquito.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="2" y1="13" x2="22" y2="13"/></svg> Finiquito</a>
-      <a class="acceso-rapido" href="calculadora-indemnizacion-despido.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg> Indemnización</a>
-      <a class="acceso-rapido" href="calculadora-nomina-neta.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/></svg> Nómina neta</a>
-      <a class="acceso-rapido" href="calculadora-paro.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg> Paro</a>
-      <a class="acceso-rapido" href="calculadora-cuota-autonomos.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="18" x2="15" y2="12"/></svg> Autónomos</a>
-      <a class="acceso-rapido" href="calculadora-irpf-autonomos.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="12" width="3" height="8"/><rect x="11" y="8" width="3" height="12"/><rect x="16" y="4" width="3" height="16"/></svg> IRPF autónomos</a>
-      <a class="acceso-rapido" href="calculadora-modelo-303-iva.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg> Modelo 303</a>
-      <a class="acceso-rapido" href="calculadora-modelo-130.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg> Modelo 130</a>
-    </div>
 
     <div class="confianza">
       <span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% gratis</span>
@@ -228,13 +222,13 @@
     <div class="grid">
       <a class="card c1" href="calculadora-indemnizacion-despido.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg></span>
-        <h3>Indemnización por despido y finiquito</h3>
-        <p>Calcula la indemnización por despido improcedente, objetivo o procedente, y una estimación del finiquito.</p>
+        <h3>Indemnización por despido</h3>
+        <p>Cuánto te corresponde si te despiden (improcedente, objetivo o procedente), con una estimación rápida del finiquito.</p>
       </a>
       <a class="card c2" href="calculadora-finiquito.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="2" y1="13" x2="22" y2="13"/></svg></span>
-        <h3>Finiquito (cálculo detallado)</h3>
-        <p>Calcula vacaciones no disfrutadas, parte proporcional de pagas extra y salario pendiente.</p>
+        <h3>Finiquito detallado</h3>
+        <p>Para ajustar el finiquito al detalle: vacaciones no disfrutadas, parte proporcional de pagas extra y salario pendiente.</p>
       </a>
       <a class="card c0" href="calculadora-nomina-neta.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/></svg></span>
@@ -257,12 +251,12 @@
         <p>Estima tu IRPF anual por comunidad autónoma: rendimiento neto, reducciones y modelo 130.</p>
       </a>
       <a class="card c1" href="calculadora-modelo-303-iva.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span>
         <h3>Modelo 303: IVA trimestral</h3>
         <p>Calcula el resultado de tu declaración de IVA: repercutido menos soportado, por tipos, con compensación de trimestres anteriores.</p>
       </a>
       <a class="card c1" href="calculadora-modelo-130.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></span>
         <h3>Modelo 130: pago fraccionado de IRPF</h3>
         <p>Calcula cuánto ingresas cada trimestre: rendimiento neto acumulado, 20 %, retenciones y pagos anteriores, con las casillas de la AEAT.</p>
       </a>
@@ -271,102 +265,120 @@
   </section>
 
   <section id="guias" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-guias">
-    <div class="grid">
-      <a class="card c1" href="guias/despido-improcedente-vs-objetivo.html">
+        <div class="grupo">
+      <h2 class="grupo-titulo">Despido y finiquito</h2>
+      <div class="grid">
+        <a class="card c1" href="guias/despido-improcedente-vs-objetivo.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0L5 7Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg></span>
         <h3>Despido procedente, improcedente y objetivo: diferencias</h3>
         <p>Qué significa cada tipo de despido y cuánto te corresponde según cuál te apliquen.</p>
       </a>
-      <a class="card c3" href="guias/plazos-prescripcion-reclamaciones-laborales.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v4l-6 6-6-6V2Z"/><path d="M6 22h12v-4l-6-6-6 6v4Z"/></svg></span>
-        <h3>Plazos y prescripción en reclamaciones laborales</h3>
-        <p>Tabla completa de plazos para reclamar despido, finiquito y otras cantidades adeudadas.</p>
-      </a>
-      <a class="card c1" href="guias/modelo-303-iva-trimestral-autonomos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="18" x2="15" y2="12"/></svg></span>
-        <h3>Modelo 303: IVA trimestral para autónomos</h3>
-        <p>Cómo se calcula, tipos de IVA, plazos trimestrales y quién está exento.</p>
-      </a>
-      <a class="card c2" href="guias/despido-colectivo-ere-vs-individual.html">
+        <a class="card c2" href="guias/despido-colectivo-ere-vs-individual.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span>
         <h3>Despido colectivo (ERE) vs despido individual</h3>
         <p>Diferencias, procedimiento de negociación, e indemnización aplicable en cada caso.</p>
       </a>
-      <a class="card c0" href="guias/no-me-pagan-el-finiquito.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/><line x1="4.5" y1="4.5" x2="19.5" y2="19.5"/></svg></span>
-        <h3>Qué hacer si no te pagan el finiquito</h3>
-        <p>Pasos a seguir, plazos de reclamación e intereses por mora si la empresa no paga o se retrasa.</p>
-      </a>
-      <a class="card c3" href="guias/guia-autonomos-alta-cuotas-irpf.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><line x1="13" y1="10" x2="18" y2="10"/><line x1="13" y1="14" x2="18" y2="14"/></svg></span>
-        <h3>Guía de autónomos: alta, cuotas e IRPF</h3>
-        <p>Cómo darte de alta, la tarifa plana, la cotización por ingresos reales y tus obligaciones fiscales básicas.</p>
-      </a>
-      <a class="card c1" href="guias/modelo-130-pagos-fraccionados-irpf-autonomos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
-        <h3>Modelo 130: pagos fraccionados de IRPF</h3>
-        <p>Quién debe presentarlo, cómo se calcula el 20% y quién está exento.</p>
-      </a>
-      <a class="card c1" href="guias/retencion-irpf-factura-autonomos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
-        <h3>Retención en la factura de un autónomo</h3>
-        <p>Cuándo se aplica el 15 % o el 7 %, cómo se calcula y cómo afecta al modelo 130.</p>
-      </a>
-      <a class="card c2" href="guias/como-solicitar-paro-tramites.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span>
-        <h3>Cómo solicitar el paro: trámites paso a paso</h3>
-        <p>Requisitos, documentación, plazo de 15 días hábiles y cómo hacerlo online.</p>
-      </a>
-      <a class="card c0" href="guias/que-incluye-tu-nomina-conceptos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/></svg></span>
-        <h3>Qué incluye tu nómina: guía de conceptos</h3>
-        <p>Salario base, complementos, percepciones no salariales y deducciones explicados.</p>
-      </a>
-      <a class="card c1" href="guias/finiquito-baja-voluntaria.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span>
-        <h3>¿Tengo derecho a finiquito si me voy voluntariamente?</h3>
-        <p>Qué cobras (y qué no) si presentas la baja voluntaria en tu empresa.</p>
-      </a>
-      <a class="card c2" href="guias/no-cumplir-preaviso-15-dias.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
-        <h3>Qué pasa si no cumplo el preaviso de 15 días</h3>
-        <p>El descuento que puede aplicarte la empresa en el finiquito si no avisas a tiempo.</p>
-      </a>
-      <a class="card c0" href="guias/despido-periodo-prueba.html">
+        <a class="card c0" href="guias/despido-periodo-prueba.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
         <h3>Despido en periodo de prueba: ¿cobro algo?</h3>
         <p>Sin indemnización ni preaviso, pero sí finiquito. Te explicamos qué sí cobras.</p>
       </a>
-      <a class="card c3" href="guias/indemnizacion-fin-contrato-temporal.html">
+        <a class="card c3" href="guias/indemnizacion-fin-contrato-temporal.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
         <h3>Indemnización por fin de contrato temporal</h3>
         <p>12 días de salario por año cuando tu contrato temporal no se renueva, y sus excepciones.</p>
       </a>
-      <a class="card c1" href="guias/capitalizar-paro-autonomos.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg></span>
-        <h3>Capitalizar el paro para hacerse autónomo</h3>
-        <p>Cómo cobrar tu prestación en un pago único para invertirla en tu negocio.</p>
+        <a class="card c3" href="guias/plazos-prescripcion-reclamaciones-laborales.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v4l-6 6-6-6V2Z"/><path d="M6 22h12v-4l-6-6-6 6v4Z"/></svg></span>
+        <h3>Plazos y prescripción en reclamaciones laborales</h3>
+        <p>Tabla completa de plazos para reclamar despido, finiquito y otras cantidades adeudadas.</p>
       </a>
-      <a class="card c2" href="guias/cifras-clave-2026.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
-        <h3>Cifras clave de 2026</h3>
-        <p>SMI, IPREM, topes del paro, cotizaciones e indemnizaciones en una sola página, con su fuente.</p>
+        <a class="card c0" href="guias/no-me-pagan-el-finiquito.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/><line x1="4.5" y1="4.5" x2="19.5" y2="19.5"/></svg></span>
+        <h3>Qué hacer si no te pagan el finiquito</h3>
+        <p>Pasos a seguir, plazos de reclamación e intereses por mora si la empresa no paga o se retrasa.</p>
       </a>
-      <a class="card c2" href="guias/smi-2026-neto.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7" x2="12" y2="17"/><path d="M9.5 9.5a2.5 2.5 0 0 1 2.5-1.5c1.4 0 2.5 1 2.5 2s-1 1.5-2.5 2-2.5 1-2.5 2 1.1 2 2.5 2a2.5 2.5 0 0 0 2.5-1.5"/></svg></span>
-        <h3>El SMI de 2026 en neto: cuánto cobras al mes</h3>
-        <p>1.221€/mes en 14 pagas: te explicamos cuánto es en neto y por qué apenas se paga IRPF.</p>
+        <a class="card c1" href="guias/finiquito-baja-voluntaria.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span>
+        <h3>¿Tengo derecho a finiquito si me voy voluntariamente?</h3>
+        <p>Qué cobras (y qué no) si presentas la baja voluntaria en tu empresa.</p>
       </a>
-      <a class="card c3" href="guias/gastos-deducibles-autonomos-irpf.html">
-        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></span>
-        <h3>Gastos deducibles para autónomos en el IRPF</h3>
-        <p>Qué puedes desgravar: suministros, dietas, vehículo, cuota de autónomos y más.</p>
+        <a class="card c2" href="guias/no-cumplir-preaviso-15-dias.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
+        <h3>Qué pasa si no cumplo el preaviso de 15 días</h3>
+        <p>El descuento que puede aplicarte la empresa en el finiquito si no avisas a tiempo.</p>
       </a>
-      <a class="card c0" href="guias/tabla-paro-dias-cotizados.html">
+      </div>
+    </div>
+    <div class="grupo">
+      <h2 class="grupo-titulo">Paro</h2>
+      <div class="grid">
+        <a class="card c2" href="guias/como-solicitar-paro-tramites.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="5" y1="10" x2="5" y2="19"/><line x1="10" y1="10" x2="10" y2="19"/><line x1="14" y1="10" x2="14" y2="19"/><line x1="19" y1="10" x2="19" y2="19"/><line x1="3" y1="21" x2="21" y2="21"/></svg></span>
+        <h3>Cómo solicitar el paro: trámites paso a paso</h3>
+        <p>Requisitos, documentación, plazo de 15 días hábiles y cómo hacerlo online.</p>
+      </a>
+        <a class="card c0" href="guias/tabla-paro-dias-cotizados.html">
         <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="20"/></svg></span>
         <h3>Tabla del paro: meses según días cotizados</h3>
         <p>De 4 meses a 2 años: la tabla oficial que relaciona días cotizados con duración del paro.</p>
       </a>
+        <a class="card c1" href="guias/capitalizar-paro-autonomos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg></span>
+        <h3>Capitalizar el paro para hacerse autónomo</h3>
+        <p>Cómo cobrar tu prestación en un pago único para invertirla en tu negocio.</p>
+      </a>
+      </div>
+    </div>
+    <div class="grupo">
+      <h2 class="grupo-titulo">Nómina y cifras de 2026</h2>
+      <div class="grid">
+        <a class="card c0" href="guias/que-incluye-tu-nomina-conceptos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4 4 0 1 0 0 7"/><line x1="7" y1="10.5" x2="14" y2="10.5"/><line x1="7" y1="13.5" x2="13" y2="13.5"/></svg></span>
+        <h3>Qué incluye tu nómina: guía de conceptos</h3>
+        <p>Salario base, complementos, percepciones no salariales y deducciones explicados.</p>
+      </a>
+        <a class="card c2" href="guias/smi-2026-neto.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7" x2="12" y2="17"/><path d="M9.5 9.5a2.5 2.5 0 0 1 2.5-1.5c1.4 0 2.5 1 2.5 2s-1 1.5-2.5 2-2.5 1-2.5 2 1.1 2 2.5 2a2.5 2.5 0 0 0 2.5-1.5"/></svg></span>
+        <h3>El SMI de 2026 en neto: cuánto cobras al mes</h3>
+        <p>1.221€/mes en 14 pagas: te explicamos cuánto es en neto y por qué apenas se paga IRPF.</p>
+      </a>
+        <a class="card c2" href="guias/cifras-clave-2026.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+        <h3>Cifras clave de 2026</h3>
+        <p>SMI, IPREM, topes del paro, cotizaciones e indemnizaciones en una sola página, con su fuente.</p>
+      </a>
+      </div>
+    </div>
+    <div class="grupo">
+      <h2 class="grupo-titulo">Autónomos e impuestos</h2>
+      <div class="grid">
+        <a class="card c3" href="guias/guia-autonomos-alta-cuotas-irpf.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><line x1="13" y1="10" x2="18" y2="10"/><line x1="13" y1="14" x2="18" y2="14"/></svg></span>
+        <h3>Guía de autónomos: alta, cuotas e IRPF</h3>
+        <p>Cómo darte de alta, la tarifa plana, la cotización por ingresos reales y tus obligaciones fiscales básicas.</p>
+      </a>
+        <a class="card c1" href="guias/modelo-303-iva-trimestral-autonomos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span>
+        <h3>Modelo 303: IVA trimestral para autónomos</h3>
+        <p>Cómo se calcula, tipos de IVA, plazos trimestrales y quién está exento.</p>
+      </a>
+        <a class="card c1" href="guias/modelo-130-pagos-fraccionados-irpf-autonomos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></span>
+        <h3>Modelo 130: pagos fraccionados de IRPF</h3>
+        <p>Quién debe presentarlo, cómo se calcula el 20% y quién está exento.</p>
+      </a>
+        <a class="card c1" href="guias/retencion-irpf-factura-autonomos.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
+        <h3>Retención en la factura de un autónomo</h3>
+        <p>Cuándo se aplica el 15 % o el 7 %, cómo se calcula y cómo afecta al modelo 130.</p>
+      </a>
+        <a class="card c3" href="guias/gastos-deducibles-autonomos-irpf.html">
+        <span class="card-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></span>
+        <h3>Gastos deducibles para autónomos en el IRPF</h3>
+        <p>Qué puedes desgravar: suministros, dietas, vehículo, cuota de autónomos y más.</p>
+      </a>
+      </div>
     </div>
     <p class="sin-resultados">No hemos encontrado ninguna guía para tu búsqueda.</p>
   </section>
@@ -428,6 +440,9 @@
           card.classList.add('oculta');
         }
       });
+      panel.querySelectorAll('.grupo').forEach(function (g) {
+        g.classList.toggle('oculta', g.querySelectorAll('.card:not(.oculta)').length === 0);
+      });
       visiblesPorPanel[id] = visibles;
       const sinResultados = panel.querySelector('.sin-resultados');
       if (sinResultados) {
@@ -453,11 +468,12 @@
     const salVal = document.getElementById('salVal');
     const yrVal = document.getElementById('yrVal');
     const resultVal = document.getElementById('resultVal');
-    function fmt(n){ return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+    function miles(i){ return String(i).replace(/\B(?=(\d{3})+(?!\d))/g,'.'); }
+    function fmt(n){ const p=n.toFixed(2).split('.'); return miles(p[0])+','+p[1]; }
     function update(){
       const sal = parseInt(salSlider.value,10);
       const yr = parseInt(yrSlider.value,10);
-      salVal.textContent = sal.toLocaleString('es-ES') + ' €';
+      salVal.textContent = miles(sal) + ' €';
       yrVal.textContent = yr + (yr===1 ? ' año' : ' años');
       const diario = (sal*12/365);
       const indemnizacion = Math.min(diario*33*yr, sal*24);
