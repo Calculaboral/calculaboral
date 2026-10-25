@@ -285,7 +285,7 @@
       <li>Con 1 hijo: mínimo ~749€, máximo ~1.400€</li>
       <li>Con 2 o más hijos: mínimo ~749€, máximo ~1.575€</li>
     </ul>
-    <p>Durante el cobro, el SEPE descuenta de tu prestación un ~4,7% en concepto de cotización a la Seguridad Social (a tu cargo). La prestación tributa en el IRPF como rendimiento del trabajo, y el SEPE puede aplicar la retención que corresponda según tu importe y tu situación personal.</p>
+    <p>Durante el cobro, el SEPE descuenta de tu prestación en torno a un 4,85 % de tu base reguladora (aprox.: 4,7 % de contingencias comunes más el 0,15 % del MEI) en concepto de cotización a la Seguridad Social a tu cargo. La prestación tributa en el IRPF como rendimiento del trabajo, y el SEPE puede aplicar la retención que corresponda según tu importe y tu situación personal.</p>
     <p>Para el cálculo oficial y la solicitud, usa el <a href="https://www.sepe.es" target="_blank" rel="noopener">simulador y sede electrónica del SEPE</a>.</p>
   </div>
 
@@ -426,8 +426,8 @@
     cuantiaTramo2 = Math.min(Math.max(cuantiaTramo2, topes.min), topes.max);
 
     // Descuento aproximado de cotización a cargo del beneficiario (SEPE la retiene)
-    const descuentoSS1 = salarioBruto * 0.047;
-    const descuentoSS2 = salarioBruto * 0.047;
+    const descuentoSS1 = salarioBruto * 0.0485; // ~4,7 % + 0,15 % MEI, sobre la base reguladora (aprox.)
+    const descuentoSS2 = salarioBruto * 0.0485;
     const netoAproxTramo1 = Math.max(cuantiaTramo1 - descuentoSS1, 0);
     const netoAproxTramo2 = Math.max(cuantiaTramo2 - descuentoSS2, 0);
 

@@ -337,7 +337,7 @@
 
     resultadoDiv.innerHTML = `
       <h2>Cuota mensual estimada</h2>
-      <div class="cifra">${formatoEuro(cuotaFinal)}/mes</div>
+      <div class="cifra">${formatoEuro(cuotaFinal)}/mes${tarifaPlana ? ' aprox.' : ''}</div>
       <div class="table-scroll"><table>
         <tr><td>Rendimiento neto mensual estimado</td><td>${formatoEuro(rendimientoMensualNeto)}</td></tr>
         <tr><td>Tramo de cotización 2026</td><td>Tramo ${numeroTramo} de 15</td></tr>

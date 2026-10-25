@@ -522,7 +522,7 @@
     const baseParaIRPF = Math.max(rendimientoNeto - reduccionTrade, 0);
     const minimo = minimoPersonalFamiliar(numHijos, edad, discapacidad);
     const irpfAnual = calcularIRPFAnual(baseParaIRPF, minimo, ccaa);
-    const tipoEfectivo = ingresos > 0 ? (irpfAnual / rendimientoNeto) * 100 : 0;
+    const tipoEfectivo = rendimientoNeto > 0 ? (irpfAnual / rendimientoNeto) * 100 : 0;
 
     const nombresCCAA = {
       andalucia: 'Andalucía', aragon: 'Aragón', asturias: 'Asturias', baleares: 'Illes Balears',

@@ -255,7 +255,7 @@
 
   <div class="legal-box">
     <h2>Cómo se calcula (y por qué es una estimación)</h2>
-    <p><strong>Seguridad Social (aportación del trabajador):</strong> se aplica un porcentaje fijo sobre el salario bruto, que incluye contingencias comunes, desempleo, formación profesional y el Mecanismo de Equidad Intergeneracional (MEI). El porcentaje de desempleo varía ligeramente según si el contrato es indefinido o temporal. Este cálculo sí es preciso, salvo que tu salario supere la base máxima de cotización vigente, en cuyo caso la cuota se calcula solo hasta ese límite, no sobre el salario completo.</p>
+    <p><strong>Seguridad Social (aportación del trabajador):</strong> se aplica un porcentaje fijo sobre el salario bruto, que incluye contingencias comunes, desempleo, formación profesional y el Mecanismo de Equidad Intergeneracional (MEI). El porcentaje de desempleo varía ligeramente según si el contrato es indefinido o temporal. La calculadora aplica el límite de la base máxima de cotización de 2026 (5.101,20 € al mes), de modo que la cuota no crece por encima de ese tope.</p>
     <p><strong>IRPF:</strong> el IRPF se calcula sumando dos escalas progresivas: la <strong>estatal</strong> (igual en todo el territorio común) y la <strong>autonómica</strong> de tu comunidad de residencia, que sí varía bastante entre territorios (por ejemplo, el tipo marginal máximo va del 45% en Madrid a cerca del 54% en la Comunidad Valenciana). Si indicas tu comunidad, esta calculadora suma ambas escalas oficiales; si no la indicas, usa una aproximación basada en la media. También tiene en cuenta hijos a cargo, edad, discapacidad, y la reducción por obtención de rendimientos del trabajo (art. 20 LIRPF), que puede llegar a 7.302€ anuales para salarios bajos y explica, por ejemplo, por qué alguien que cobra el SMI apenas paga IRPF. Aun así, la retención real que aplica tu empresa sigue un procedimiento oficial (Reglamento del IRPF, Real Decreto 439/2007) que además considera si tienes más de un pagador o pensión compensatoria, por lo que esta calculadora da una cifra orientativa ajustada, pero no idéntica a la que calculará tu empresa.</p>
     <p>Para el cálculo exacto y oficial de tu retención, puedes usar el <a href="https://www2.agenciatributaria.gob.es/wlpl/wlpl-tools/servlet/S1?SISTEMA=SR" target="_blank" rel="noopener">simulador de retenciones de la Agencia Tributaria</a>.</p>
   </div>
@@ -496,7 +496,9 @@
     const formacionProfesional = 0.0010;
     const mei = 0.0015; // MEI trabajador 2026: 0,9% total, 1/6 a cargo del trabajador
     const porcentajeSS = contingenciasComunes + desempleo + formacionProfesional + mei;
-    const cuotaSSAnual = salarioBrutoAnual * porcentajeSS;
+    const BASE_MAXIMA_ANUAL = 5101.20 * 12; // base máxima de cotización 2026: 5.101,20 €/mes
+    const baseCotizacionAnual = Math.min(salarioBrutoAnual, BASE_MAXIMA_ANUAL);
+    const cuotaSSAnual = baseCotizacionAnual * porcentajeSS;
 
     // Rendimiento neto del trabajo (salario - SS - gasto genérico de 2.000€, art. 19.2.f LIRPF)
     const gastoGenericoAnual = 2000;
